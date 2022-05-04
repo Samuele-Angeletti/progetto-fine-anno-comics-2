@@ -44,6 +44,42 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PlatformMovement"",
+                    ""type"": ""Value"",
+                    ""id"": ""ab102ec3-8234-4b31-933f-07324073aa54"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""bdb8eaf2-9ccc-4ae2-b908-49ba7a8783d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ZeroGravityMovement"",
+                    ""type"": ""Value"",
+                    ""id"": ""edd8c99f-2982-472f-8331-6d430a26c162"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChangeState"",
+                    ""type"": ""Button"",
+                    ""id"": ""9e3bc429-8405-456e-abee-aa716735988a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -189,6 +225,116 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""ad33a59a-4667-492b-b2b7-840d529d5602"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlatformMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""cce13d52-521a-4f46-bb1c-140eafd0d623"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlatformMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b740d232-1a9d-48e5-a172-464aedcf1d8d"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlatformMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c970f34d-fdeb-4dca-9061-29948b3d367a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""df753e05-fa1f-4889-b28f-a34a330bc07d"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZeroGravityMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""4867fd09-b362-4c0f-8d2e-42ff0b75beca"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZeroGravityMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""3833f7a6-c9bf-4441-a475-dac8ace03a69"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZeroGravityMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b07c2b87-e2e3-43b1-b0ca-f6b28f0d1405"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZeroGravityMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""73358f43-e6d3-4209-ac52-89e689162dfa"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZeroGravityMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""121e7081-b810-482a-a848-c9477800da8a"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeState"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -199,6 +345,10 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Rotation = m_Player.FindAction("Rotation", throwIfNotFound: true);
+        m_Player_PlatformMovement = m_Player.FindAction("PlatformMovement", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_ZeroGravityMovement = m_Player.FindAction("ZeroGravityMovement", throwIfNotFound: true);
+        m_Player_ChangeState = m_Player.FindAction("ChangeState", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -260,12 +410,20 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Rotation;
+    private readonly InputAction m_Player_PlatformMovement;
+    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_ZeroGravityMovement;
+    private readonly InputAction m_Player_ChangeState;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
         public PlayerActions(@InputControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Rotation => m_Wrapper.m_Player_Rotation;
+        public InputAction @PlatformMovement => m_Wrapper.m_Player_PlatformMovement;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @ZeroGravityMovement => m_Wrapper.m_Player_ZeroGravityMovement;
+        public InputAction @ChangeState => m_Wrapper.m_Player_ChangeState;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -281,6 +439,18 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Rotation.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotation;
                 @Rotation.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotation;
                 @Rotation.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotation;
+                @PlatformMovement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlatformMovement;
+                @PlatformMovement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlatformMovement;
+                @PlatformMovement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlatformMovement;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @ZeroGravityMovement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZeroGravityMovement;
+                @ZeroGravityMovement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZeroGravityMovement;
+                @ZeroGravityMovement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZeroGravityMovement;
+                @ChangeState.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeState;
+                @ChangeState.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeState;
+                @ChangeState.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeState;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -291,6 +461,18 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Rotation.started += instance.OnRotation;
                 @Rotation.performed += instance.OnRotation;
                 @Rotation.canceled += instance.OnRotation;
+                @PlatformMovement.started += instance.OnPlatformMovement;
+                @PlatformMovement.performed += instance.OnPlatformMovement;
+                @PlatformMovement.canceled += instance.OnPlatformMovement;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @ZeroGravityMovement.started += instance.OnZeroGravityMovement;
+                @ZeroGravityMovement.performed += instance.OnZeroGravityMovement;
+                @ZeroGravityMovement.canceled += instance.OnZeroGravityMovement;
+                @ChangeState.started += instance.OnChangeState;
+                @ChangeState.performed += instance.OnChangeState;
+                @ChangeState.canceled += instance.OnChangeState;
             }
         }
     }
@@ -299,5 +481,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
+        void OnPlatformMovement(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnZeroGravityMovement(InputAction.CallbackContext context);
+        void OnChangeState(InputAction.CallbackContext context);
     }
 }
