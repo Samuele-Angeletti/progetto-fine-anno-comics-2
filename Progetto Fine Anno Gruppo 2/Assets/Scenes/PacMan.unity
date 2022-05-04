@@ -4831,6 +4831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LifeText: {fileID: 448269970}
   m_BatterySlider: {fileID: 588295577}
+  m_FileName: ModuloUno
 --- !u!1001 &919938397
 PrefabInstance:
   m_ObjectHideFlags: 0
