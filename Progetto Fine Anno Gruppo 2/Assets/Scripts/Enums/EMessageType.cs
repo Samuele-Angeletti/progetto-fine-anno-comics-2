@@ -6,5 +6,8 @@ public enum EMessageType
 {
     none,
     GameOver,
-    PowerUp
+    PowerUp,
+    ModuleDocked,
+    ModuleDestroyed,
+    NoBattery
 }

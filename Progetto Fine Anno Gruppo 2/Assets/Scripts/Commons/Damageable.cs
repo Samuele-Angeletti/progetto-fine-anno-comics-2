@@ -3,32 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damageable : MonoBehaviour
+namespace Commons
 {
-    [SerializeField] float m_MaxLife;
-
-    [Header("Save File")]
-    [SerializeField] string m_FileName;
-
-    private float m_CurrentLife;
-
-    private void Awake()
+    public class Damageable : MonoBehaviour
     {
-        m_CurrentLife = m_MaxLife;
-    }
+        [SerializeField] float m_MaxLife;
 
-    public void SaveData()
-    {
-        SaveAndLoadSystem.Save(new DamageableInfos(m_MaxLife, m_CurrentLife), m_FileName);
-    }
+        private float m_CurrentLife;
+        private IDamageable m_DamageableHolder;
 
-    internal void TakeDamage(float m_DamageAmount)
-    {
-        m_CurrentLife -= m_DamageAmount;
-        if(m_CurrentLife <= 0)
+        public float MaxLife => m_MaxLife;
+        public float CurrentLife => m_CurrentLife;
+
+
+        private void Awake()
         {
-            m_CurrentLife = 0;
-            // send message
+            m_CurrentLife = m_MaxLife;
+            m_DamageableHolder = GetComponent<IDamageable>();
         }
+
+        internal void TakeDamage(float m_DamageAmount)
+        {
+            m_CurrentLife -= m_DamageAmount;
+
+            if (m_DamageableHolder != null)
+                m_DamageableHolder.GetDamage(m_CurrentLife);
+
+            if (m_CurrentLife <= 0)
+            {
+                m_CurrentLife = 0;
+                PubSub.PubSub.Publish(new ModuleDestroyedMessage());
+            }
+        }
+
     }
 }

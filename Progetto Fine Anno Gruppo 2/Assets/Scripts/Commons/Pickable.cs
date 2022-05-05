@@ -15,7 +15,10 @@ namespace Commons
 
             SwitcherSystem.SwitchMessageType(m_MessageType,
                 () => PubSub.PubSub.Publish(new GameOverMicroGameMessage()), // to replace if gameOver can be used from pickables even in other situations
-                () => PubSub.PubSub.Publish(new PowerUpMessage(true)));
+                () => PubSub.PubSub.Publish(new PowerUpMessage(true)),
+                null,
+                null,
+                null);
 
             Destroy(gameObject);
         }

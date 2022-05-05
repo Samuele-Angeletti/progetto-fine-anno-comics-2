@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damager : MonoBehaviour
+namespace Commons
 {
-    [SerializeField] float m_DamageAmount;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class Damager : MonoBehaviour
     {
-        Damageable d = collision.collider.GetComponent<Damageable>();
-        if(d != null)
+        [SerializeField] float m_DamageAmount;
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            d.TakeDamage(m_DamageAmount);
+            Damageable d = collision.collider.GetComponent<Damageable>();
+            if (d != null)
+            {
+                d.TakeDamage(m_DamageAmount);
+            }
         }
     }
 }

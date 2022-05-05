@@ -55,7 +55,7 @@ public static class SaveAndLoadSystem
         }
         catch (Exception e)
         {
-            //PubSub.PubSub.Publish(new ScreenMessage(e.ToString(), EScreenMessagePosition.Up, Color.black, 1f));
+            Debug.LogError(e);
             return default(T);
         }
     }
@@ -76,7 +76,7 @@ public static class SaveAndLoadSystem
         }
         catch (Exception e)
         {
-            //PubSub.PubSub.Publish(new ScreenMessage(e.ToString(), EScreenMessagePosition.Up, Color.black, 1f));
+            Debug.LogError(e);
             return default(T);
         }
     }

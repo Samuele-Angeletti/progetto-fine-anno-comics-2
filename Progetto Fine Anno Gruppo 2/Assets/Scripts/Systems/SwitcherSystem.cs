@@ -5,7 +5,7 @@ using UnityEngine;
 public static class SwitcherSystem
 {
    
-    public static void SwitchMessageType(EMessageType messageType, Action gameOver, Action powerUp)
+    public static void SwitchMessageType(EMessageType messageType, Action gameOver, Action powerUp, Action moduleDocked, Action moduleDestroyed, Action noBattery)
     {
         switch (messageType)
         {
@@ -16,6 +16,15 @@ public static class SwitcherSystem
                 break;
             case EMessageType.PowerUp:
                 powerUp.Invoke();
+                break;
+            case EMessageType.ModuleDocked:
+                moduleDocked.Invoke();
+                break;
+            case EMessageType.ModuleDestroyed:
+                moduleDestroyed.Invoke();
+                break;
+            case EMessageType.NoBattery:
+                noBattery.Invoke();
                 break;
         }
     }
