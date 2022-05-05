@@ -80,6 +80,15 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""8de74b2e-3ad9-45ed-89c3-133c62aadd9f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -335,6 +344,17 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""action"": ""ChangeState"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e793362b-57a0-44e6-91ca-b4c306c5bec8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -349,6 +369,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_ZeroGravityMovement = m_Player.FindAction("ZeroGravityMovement", throwIfNotFound: true);
         m_Player_ChangeState = m_Player.FindAction("ChangeState", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -414,6 +435,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_ZeroGravityMovement;
     private readonly InputAction m_Player_ChangeState;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
@@ -424,6 +446,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @ZeroGravityMovement => m_Wrapper.m_Player_ZeroGravityMovement;
         public InputAction @ChangeState => m_Wrapper.m_Player_ChangeState;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -451,6 +474,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @ChangeState.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeState;
                 @ChangeState.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeState;
                 @ChangeState.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeState;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -473,6 +499,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @ChangeState.started += instance.OnChangeState;
                 @ChangeState.performed += instance.OnChangeState;
                 @ChangeState.canceled += instance.OnChangeState;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -485,5 +514,6 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnZeroGravityMovement(InputAction.CallbackContext context);
         void OnChangeState(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

@@ -22,6 +22,13 @@ namespace ArchimedesMiniGame
 
             inputControls.Player.Rotation.performed += StartRotation;
             inputControls.Player.Rotation.canceled += StopRotation;
+
+            inputControls.Player.Pause.performed += PauseGame;
+        }
+
+        private void PauseGame(InputAction.CallbackContext obj)
+        {
+            PubSub.PubSub.Publish(new OpenMenuMessage(EMenu.Pause));
         }
 
         private void StopRotation(InputAction.CallbackContext obj)

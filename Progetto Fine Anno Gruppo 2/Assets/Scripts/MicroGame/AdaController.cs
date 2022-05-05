@@ -18,8 +18,13 @@ namespace MicroGame
             inputControls.Player.Enable();
 
             inputControls.Player.Movement.started += StartMovement;
+            inputControls.Player.Pause.performed += PauseGame;
         }
 
+        private void PauseGame(InputAction.CallbackContext obj)
+        {
+            PubSub.PubSub.Publish(new OpenMenuMessage(EMenu.Pause));
+        }
 
         private void StartMovement(InputAction.CallbackContext obj)
         {
