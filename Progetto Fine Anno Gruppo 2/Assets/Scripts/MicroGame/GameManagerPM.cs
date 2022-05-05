@@ -33,6 +33,10 @@ namespace MicroGame
         }
         #endregion
 
+        [Header("Enemies Settings")]
+        [SerializeField] Enemy m_EnemyPrefab;
+        [SerializeField] Transform[] m_EnemiesSpawnPoints;
+
         [Header("UI Stuff")]
         [SerializeField] TextMeshProUGUI m_LifeText;
         [SerializeField] Slider m_BatterySlider;
@@ -43,6 +47,8 @@ namespace MicroGame
         private List<Pickable> m_PickableList = new List<Pickable>();
         private int m_PickablesInScene;
         private int m_PickablePicked = 0;
+        private bool[] m_SpawnPointUsed;
+
         private void Awake()
         {
             Pickable[] pickables = FindObjectsOfType<Pickable>();
@@ -51,6 +57,7 @@ namespace MicroGame
                 m_PickableList.Add(pickables[i]);
             }
             m_PickablesInScene = m_PickableList.Count;
+            m_SpawnPointUsed = new bool[m_EnemiesSpawnPoints.Length];
         }
 
         private void Start()
@@ -68,31 +75,68 @@ namespace MicroGame
 
             if (damagePercentage == 0)
             {
-                Debug.Log("Spawna 1");
+                SpawnEnemies(1);
             }
             else if (damagePercentage <= 0.2f)
             {
-                Debug.Log("Spawna 2");
+                SpawnEnemies(2);
             }
             else if (damagePercentage <= 0.4f)
             {
-                Debug.Log("Spawna 3");
+                SpawnEnemies(3);
             }
             else if (damagePercentage <= 0.6f)
             {
-                Debug.Log("Spawna 4");
+                SpawnEnemies(4);
             }
             else if (damagePercentage <= 0.8f)
             {
-                Debug.Log("Spawna 5");
+                SpawnEnemies(5);
             }
             else if (damagePercentage < 1f)
             {
-                Debug.Log("Spawna 6");
+                SpawnEnemies(6);
             }
             else
             {
-                Debug.Log("Spawna 7");
+                SpawnEnemies(7);
+            }
+        }
+
+        private void SpawnEnemies(int enemiesQuantity)
+        {
+            for (int i = 0; i < enemiesQuantity; i++)
+            {
+                Instantiate(m_EnemyPrefab, ChooseFreeSpawnPoint(), Quaternion.identity);
+            }
+        }
+
+        private Vector3 ChooseFreeSpawnPoint()
+        {
+            int attemptPerform = 0;
+            while(true)
+            {
+                int rndIndex = UnityEngine.Random.Range(0, m_EnemiesSpawnPoints.Length);
+                if(!m_SpawnPointUsed[rndIndex])
+                {
+                    m_SpawnPointUsed[rndIndex] = true;
+                    return m_EnemiesSpawnPoints[rndIndex].position;
+                }
+                else if(attemptPerform >= 10)
+                {
+                    for (int i = 0; i < m_SpawnPointUsed.Length; i++)
+                    {
+                        if(!m_SpawnPointUsed[i])
+                        {
+                            attemptPerform = 0;
+                        }
+                    }
+                    if(attemptPerform > 0)
+                    {
+                        return m_EnemiesSpawnPoints[0].position; // if all the spawn points have been used, the enemies get spawned at the first spawn point (this shouldn't happen, each enemy should have its own spawn point)
+                    }
+                }
+                attemptPerform++;
             }
         }
 
