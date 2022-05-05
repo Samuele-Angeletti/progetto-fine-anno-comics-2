@@ -49,8 +49,8 @@ namespace MainGame
 
         public override void OnStart()
         {
-            //inputActions.Player.PlatformMovement.Enable();            // INPUT SYSTEM TO FIX
-            //inputActions.Player.Jump.Enable();
+            inputActions.Player.PlatformMovement.Enable();
+            inputActions.Player.Jump.Enable();
         }
 
         public override void OnUpdate()
@@ -61,8 +61,8 @@ namespace MainGame
 
         public override void OnEnd()
         {
-            //inputActions.Player.PlatformMovement.Disable();           // INPUT SYSTEM TO FIX
-            //inputActions.Player.Jump.Disable();
+            inputActions.Player.PlatformMovement.Disable();
+            inputActions.Player.Jump.Disable();
         }
 
         public override void MyOnCollisionEnter2D(Collision2D collision)
@@ -95,28 +95,28 @@ namespace MainGame
         {
             //m_playerAnimator.SetFloat("JumpVelocity", m_rigidbody.velocity.y);
 
-            //if (inputActions.Player.Jump.ReadValue<float>() == 1 && m_coyoteTimeCounter > 0)              // INPUT SYSTEM TO FIX
-            //{
-            //    isJumping = true;
-            //    m_timerJump = m_timerJumpButtonIsPressed;
-            //    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, Vector2.up.y * m_jumpHeight);
-            //}
-            //if (inputActions.Player.Jump.IsPressed() && isJumping == true)
-            //{
+            if (inputActions.Player.Jump.ReadValue<float>() == 1 && m_coyoteTimeCounter > 0)
+            {
+                isJumping = true;
+                m_timerJump = m_timerJumpButtonIsPressed;
+                m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, Vector2.up.y * m_jumpHeight);
+            }
+            if (inputActions.Player.Jump.IsPressed() && isJumping == true)
+            {
 
-            //    if (m_timerJump > 0)
-            //    {
-            //        m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, Vector2.up.y * m_jumpHeight);
-            //        m_timerJump -= Time.deltaTime;
-            //    }
-            //    else
-            //    {
-            //        isJumping = false;
-            //    }
+                if (m_timerJump > 0)
+                {
+                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, Vector2.up.y * m_jumpHeight);
+                    m_timerJump -= Time.deltaTime;
+                }
+                else
+                {
+                    isJumping = false;
+                }
 
-            //}
-            //if (inputActions.Player.Jump.ReadValue<float>() == 0)
-            //    isJumping = false;
+            }
+            if (inputActions.Player.Jump.ReadValue<float>() == 0)
+                isJumping = false;
 
 
 
@@ -137,31 +137,31 @@ namespace MainGame
 
         private void Movement()
         {
-            //m_direction = inputActions.Player.PlatformMovement.ReadValue<Vector2>();                              // INPUT SYSTEM TO FIX
-            //if (Mathf.Abs(m_rigidbody.velocity.x) > m_movementVelocity)
-            //{
-            //    m_rigidbody.velocity = new Vector2(Mathf.Sign(m_rigidbody.velocity.x) * m_movementVelocity, m_rigidbody.velocity.y);
-            //}
+            m_direction = inputActions.Player.PlatformMovement.ReadValue<Vector2>();
+            if (Mathf.Abs(m_rigidbody.velocity.x) > m_movementVelocity)
+            {
+                m_rigidbody.velocity = new Vector2(Mathf.Sign(m_rigidbody.velocity.x) * m_movementVelocity, m_rigidbody.velocity.y);
+            }
 
-            //if (inputActions.Player.PlatformMovement.ReadValue<Vector2>().x != 0)
-            //{
+            if (inputActions.Player.PlatformMovement.ReadValue<Vector2>().x != 0)
+            {
 
-            //    if (m_rigidbody.velocity.x > 0)
-            //    {
-            //        FlipSprite(true);
-            //    }
-            //    if (m_rigidbody.velocity.x < -0.1)
-            //    {
-            //        FlipSprite(false);
-            //    }
-            //    m_playerAnimator.SetBool("IsMoving", true);
-            //}
-            //if (inputActions.Player.PlatformMovement.ReadValue<Vector2>().x == 0)
-            //{
-            //    m_playerAnimator.SetBool("IsMoving", false);
+                if (m_rigidbody.velocity.x > 0)
+                {
+                    FlipSprite(true);
+                }
+                if (m_rigidbody.velocity.x < -0.1)
+                {
+                    FlipSprite(false);
+                }
+                m_playerAnimator.SetBool("IsMoving", true);
+            }
+            if (inputActions.Player.PlatformMovement.ReadValue<Vector2>().x == 0)
+            {
+                m_playerAnimator.SetBool("IsMoving", false);
 
-            //}
-            //m_rigidbody.velocity += m_direction * m_speed * Time.fixedDeltaTime;
+            }
+            m_rigidbody.velocity += m_direction * m_speed * Time.fixedDeltaTime;
         }
 
         private void FlipSprite(bool v)

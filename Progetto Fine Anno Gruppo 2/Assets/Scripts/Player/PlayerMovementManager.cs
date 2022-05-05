@@ -63,11 +63,11 @@ namespace MainGame
         // Update is called once per frame
         void Update()
         {
-            //m_stateMachine.OnUpdate();                           
-            //if (inputActions.Player.ChangeState.IsPressed())                          // INPUT SYSTEM TO FIX
-            //{
-            //    m_stateMachine.SetState(EPlayerState.ZeroGravityMovement);
-            //}
+            m_stateMachine.OnUpdate();
+            if (inputActions.Player.ChangeState.IsPressed())
+            {
+                m_stateMachine.SetState(EPlayerState.ZeroGravityMovement);
+            }
         }
         private void FixedUpdate()
         {

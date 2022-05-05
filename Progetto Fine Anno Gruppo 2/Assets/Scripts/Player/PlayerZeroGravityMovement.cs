@@ -34,19 +34,19 @@ namespace MainGame
         private void Movement()
         {
             if (isMoving) return;
-            //if (!isMoving)
-            //{
-            //    Vector2 direction = inputActions.Player.ZeroGravityMovement.ReadValue<Vector2>();         // INPUT SYSTEM TO FIX
-            //    m_rigidbody.velocity = direction * m_speed * Time.deltaTime;
-            //    isMoving = true;
-            //}
+            if (!isMoving)
+            {
+                Vector2 direction = inputActions.Player.ZeroGravityMovement.ReadValue<Vector2>();         
+                m_rigidbody.velocity = direction * m_speed * Time.deltaTime;
+                isMoving = true;
+            }
         }
 
         public override void OnStart()
         {
-            //inputActions?.Player.ZeroGravityMovement.Enable();                    // INPUT SYSTEM TO FIX
-            //m_rigidbody.gravityScale = 0;
-            //Debug.Log("Sono nello stato senza gravità");
+            inputActions?.Player.ZeroGravityMovement.Enable();
+            m_rigidbody.gravityScale = 0;
+            Debug.Log("Sono nello stato senza gravità");
         }
 
         public override void OnUpdate()
@@ -55,7 +55,7 @@ namespace MainGame
 
         public override void OnEnd()
         {
-            // inputActions?.Player.ZeroGravityMovement.Disable();              // INPUT SYSTEM TO FIX
+            inputActions?.Player.ZeroGravityMovement.Disable();
 
         }
 
