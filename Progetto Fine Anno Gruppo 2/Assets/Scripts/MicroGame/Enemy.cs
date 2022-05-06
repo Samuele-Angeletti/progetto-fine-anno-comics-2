@@ -64,9 +64,15 @@ namespace MicroGame
             }
         }
 
-        private void OnDestroy()
+
+        public void OnDisableSubscribe()
         {
             PubSub.PubSub.Unsubscribe(this, typeof(PowerUpMessage));
+        }
+
+        private void OnDestroy()
+        {
+            OnDisableSubscribe();
         }
     }
 }

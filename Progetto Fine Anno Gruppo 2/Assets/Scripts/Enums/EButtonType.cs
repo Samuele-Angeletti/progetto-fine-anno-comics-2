@@ -2,5 +2,6 @@ public enum EButtonType
 {
 	OpenMenu,
 	QuitGame, 
-	CloaseAllMenu
+	CloaseAllMenu,
+	GoToScene
 }

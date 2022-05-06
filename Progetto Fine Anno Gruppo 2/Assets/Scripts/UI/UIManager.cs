@@ -43,9 +43,16 @@ public class UIManager : MonoBehaviour, ISubscriber
 
 	private void OpenMenu(EMenu menuToOpen)
 	{
+		if(m_CurrentMenu == GetMenuByEnum(menuToOpen) && menuToOpen != EMenu.Pause)
+        {
+			m_CurrentMenu.Close();
+			m_CurrentMenu = null;
+			return;
+		}
+
 		if (!m_Paused)
 		{
-			if (m_CurrentMenu == m_PauseMenu)
+			if (m_CurrentMenu == m_PauseMenu && m_PauseMenu != null)
 			{
 				if (menuToOpen != EMenu.Pause)
 				{
@@ -90,6 +97,17 @@ public class UIManager : MonoBehaviour, ISubscriber
 			default:
 				return null;
 		}
+	}
+
+	public void OnDisableSubscribe()
+	{
+		PubSub.PubSub.Unsubscribe(this, typeof(OpenMenuMessage));
+		PubSub.PubSub.Unsubscribe(this, typeof(CloseAllMenusMessage));
+	}
+
+	private void OnDestroy()
+	{
+		OnDisableSubscribe();
 	}
 
 }

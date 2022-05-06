@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 namespace ArchimedesMiniGame
 {
     public class PlayerController : MonoBehaviour
@@ -49,6 +49,17 @@ namespace ArchimedesMiniGame
         private void StopMoving(InputAction.CallbackContext obj)
         {
             m_Module.AddForce(obj.ReadValue<Vector2>());
+        }
+
+        private void OnDestroy()
+        {
+            inputControls.Player.Movement.performed -= StartMoving;
+            inputControls.Player.Movement.canceled -= StopMoving;
+
+            inputControls.Player.Rotation.performed -= StartRotation;
+            inputControls.Player.Rotation.canceled -= StopRotation;
+
+            inputControls.Player.Pause.performed -= PauseGame;
         }
 
         #endregion

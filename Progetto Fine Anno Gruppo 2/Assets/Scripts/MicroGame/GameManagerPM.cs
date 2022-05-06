@@ -180,6 +180,19 @@ namespace MicroGame
                 Debug.Log("Gioco finito");
             }
         }
+
+        public void OnDisableSubscribe()
+        {
+            PubSub.PubSub.Unsubscribe(this, typeof(PickablePickedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(GameOverMicroGameMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
+        }
+
+        private void OnDestroy()
+        {
+            OnDisableSubscribe();
+        }
     }
 
 }

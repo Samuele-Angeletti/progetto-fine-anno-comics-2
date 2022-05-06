@@ -7,5 +7,6 @@ namespace PubSub
     public interface ISubscriber
     {
         void OnPublish(IMessage message);
+        void OnDisableSubscribe();
     }
 }

@@ -108,5 +108,19 @@ namespace ArchimedesMiniGame
         {
             m_DockingAttemptButton.interactable = active;
         }
+
+        public void OnDisableSubscribe()
+        {
+            PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
+        }
+
+        private void OnDestroy()
+        {
+            OnDisableSubscribe();
+        }
     }
 }

@@ -30,6 +30,12 @@ namespace MicroGame
         {
             m_AdaLogic.NewDirection(obj.ReadValue<Vector2>());
         }
+
+        private void OnDestroy()
+        {
+            inputControls.Player.Movement.started -= StartMovement;
+            inputControls.Player.Pause.performed -= PauseGame;
+        }
         #endregion
 
         [SerializeField] CharacterLogic m_AdaLogic;
