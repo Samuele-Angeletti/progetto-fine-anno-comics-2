@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9d7746b6f6b5cc24aadff2c0bec64f9b
   - enabled: 1
-    path: Assets/Scenes/PlatformScenePreview.unity
+    path: Assets/Scenes/ForDialogueSystem.unity
     guid: 138a61b6f1c79364296c5e1852488c65
   - enabled: 1
     path: Assets/Scenes/ArchimedesMiniGame.unity
