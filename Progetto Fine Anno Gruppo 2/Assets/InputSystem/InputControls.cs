@@ -89,6 +89,15 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""4c46edaa-942d-4d99-a8c3-d9d165736340"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -355,6 +364,28 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d59faa0f-abc4-436d-88b3-77f7525704d8"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f831ea36-89a0-413d-9c6a-97c7c8b15811"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -370,6 +401,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         m_Player_ZeroGravityMovement = m_Player.FindAction("ZeroGravityMovement", throwIfNotFound: true);
         m_Player_ChangeState = m_Player.FindAction("ChangeState", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -436,6 +468,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ZeroGravityMovement;
     private readonly InputAction m_Player_ChangeState;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_Interaction;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
@@ -447,6 +480,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         public InputAction @ZeroGravityMovement => m_Wrapper.m_Player_ZeroGravityMovement;
         public InputAction @ChangeState => m_Wrapper.m_Player_ChangeState;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -477,6 +511,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Interaction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteraction;
+                @Interaction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteraction;
+                @Interaction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteraction;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -502,6 +539,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Interaction.started += instance.OnInteraction;
+                @Interaction.performed += instance.OnInteraction;
+                @Interaction.canceled += instance.OnInteraction;
             }
         }
     }
@@ -515,5 +555,6 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         void OnZeroGravityMovement(InputAction.CallbackContext context);
         void OnChangeState(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
     }
 }
