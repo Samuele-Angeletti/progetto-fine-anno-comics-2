@@ -10,14 +10,16 @@ namespace MicroGame
         [SerializeField] Rigidbody2D m_Rigidbody;
         [SerializeField] float m_Speed;
         [SerializeField] EController controller;
+        [SerializeField] Vector2 m_StoppingDistance;
 
         [Header("Solo per IA")]
         [Tooltip("Tempo massimo per la ricerca di una nuova direzione. Il tempo è all'interno di una Coroutine ed è randomico tra 0 e questo numero")]
         [SerializeField] float m_MaxRandomTime;
 
-        private Vector2 m_Direction;
-        private Wall m_CurrentWall;
-        
+        private Vector2 m_Direction;       
+        private Vector2 m_NextDirection;       
+
+
         private void Start()
         {
             if(controller == EController.IA)
@@ -33,36 +35,42 @@ namespace MicroGame
 
         public void NewDirection(Vector2 newDirection)
         {
-            m_Direction = newDirection.normalized;
+            if (ForwardCheck(newDirection.normalized))
+            {
+                m_Direction = newDirection.normalized;
+            }
+            else if(m_Direction != Vector2.zero) // if asked for a new direction but the character is already moving and can't go in that direction, so this stores the next direction to go asap
+            {
+                m_NextDirection = newDirection.normalized;
+            }
         }
 
         private void Update()
         {
-            if(controller == EController.IA)
+            if (controller == EController.IA)
             {
-                if(m_Direction == Vector2.zero)
+                if (m_Direction == Vector2.zero)
                 {
-                    FindNextDirection();
+                    m_Direction = RandomDirection();
                 }
             }
-        }
-
-        private void FindNextDirection()
-        {
-            bool find = false;
-            while(!find)
+            else
             {
-                find = true;
-                m_Direction = RandomDirection();
-                RaycastHit2D[] raycastHits = Physics2D.RaycastAll(transform.position, m_Direction, 1f);
-                for (int i = 0; i < raycastHits.Length; i++)
+                if(m_NextDirection != Vector2.zero) // this control is for the next move that the player asked for.
                 {
-                    if(raycastHits[i].collider.gameObject.GetComponent<Wall>() != null)
+                    if(ForwardCheck(m_NextDirection))
                     {
-                        find = false;
+                        m_Direction = m_NextDirection;
+                        m_NextDirection = Vector2.zero;
                     }
                 }
             }
+
+            if (!ForwardCheck(m_Direction))
+            {
+                m_Direction = Vector2.zero;
+            }
+            
         }
 
         private Vector2 RandomDirection()
@@ -82,14 +90,42 @@ namespace MicroGame
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        public bool ForwardCheck(Vector2 direction)
         {
-            if (m_CurrentWall == collision.gameObject.GetComponent<Wall>())
-                return;
-            else
-                m_CurrentWall = collision.gameObject.GetComponent<Wall>();
+            RaycastHit2D[] raycastHits = new RaycastHit2D[10];
+            int hits = Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, 0.6f);
+            
+            if(hits > 0)
+            {
+                for (int i = 0; i < hits; i++)
+                {
+                    if(raycastHits[i].collider.GetComponent<Wall>() != null)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
 
-            if (m_CurrentWall != null) m_Direction = Vector3.zero;
+        private float GetAngle(Vector2 direction)
+        {
+            if(direction.x > 0)
+            {
+                return 90;
+            }
+            else if(direction.y > 0)
+            {
+                return 180;
+            }
+            else if(direction.x < 0)
+            {
+                return -90;
+            }
+            else
+            {
+                return -180;
+            }
         }
 
         private IEnumerator SearchNewDirection()
@@ -97,8 +133,9 @@ namespace MicroGame
             while (true)
             {
                 yield return new WaitForSeconds(UnityEngine.Random.Range(0, m_MaxRandomTime));
-                FindNextDirection();
+                m_Direction = RandomDirection();
             }
         }
+
     }
 }

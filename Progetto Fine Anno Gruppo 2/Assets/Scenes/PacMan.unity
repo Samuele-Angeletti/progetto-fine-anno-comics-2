@@ -9200,6 +9200,7 @@ MonoBehaviour:
   m_Rigidbody: {fileID: 1906938089}
   m_Speed: 200
   controller: 0
+  m_StoppingDistance: {x: 1, y: 0.2}
   m_MaxRandomTime: 0
 --- !u!114 &1906938092
 MonoBehaviour:

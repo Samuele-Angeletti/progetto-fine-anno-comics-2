@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Rigidbody: {fileID: 8392742050940053586}
   m_Speed: 180
   controller: 1
+  m_StoppingDistance: {x: 0.9, y: 0.2}
   m_MaxRandomTime: 3
 --- !u!50 &8392742050940053586
 Rigidbody2D:
