@@ -64,6 +64,8 @@ namespace MicroGame
         {
             PubSub.PubSub.Subscribe(this, typeof(PickablePickedMessage));
             PubSub.PubSub.Subscribe(this, typeof(GameOverMicroGameMessage));
+            PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
 
             StartSettings();
         }
@@ -156,6 +158,14 @@ namespace MicroGame
             else if(message is GameOverMicroGameMessage)
             {
                 Debug.Log("Gioco finito");
+            }
+            else if (message is PauseGameMessage)
+            {
+                Time.timeScale = 0;
+            }
+            else if (message is ResumeGameMessage)
+            {
+                Time.timeScale = 1;
             }
         }
 

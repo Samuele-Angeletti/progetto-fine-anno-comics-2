@@ -1,5 +1,6 @@
 public enum EButtonType
 {
 	OpenMenu,
-	QuitGame
+	QuitGame, 
+	CloaseAllMenu
 }

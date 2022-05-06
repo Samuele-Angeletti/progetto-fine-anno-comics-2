@@ -16,10 +16,11 @@ public class UIManager : MonoBehaviour, ISubscriber
 	[SerializeField] UIMainDisplay m_MainDisplay;
 
 	private Menu m_CurrentMenu;
-
+	private bool m_Paused;
 	void Start()
 	{
 		PubSub.PubSub.Subscribe(this, typeof(OpenMenuMessage));
+		PubSub.PubSub.Subscribe(this, typeof(CloseAllMenusMessage));
 	}
 
 	public void OnPublish(IMessage message)
@@ -29,18 +30,44 @@ public class UIManager : MonoBehaviour, ISubscriber
 			OpenMenuMessage openMenu = (OpenMenuMessage)message;
 			OpenMenu(openMenu.MenuType);
 		}
+		else if(message is CloseAllMenusMessage)
+        {
+			m_SettingsMenu.Close();
+			m_PauseMenu.Close();
+			m_ConfirmChoiseMenu.Close();
+			m_CurrentMenu = null;
+			m_Paused = false;
+
+		}
 	}
 
 	private void OpenMenu(EMenu menuToOpen)
 	{
-		if(m_CurrentMenu == GetMenuByEnum(menuToOpen)) // se apro lo stesso, chiudo lo stesso menu
+		if (!m_Paused)
+		{
+			if (m_CurrentMenu == m_PauseMenu)
+			{
+				if (menuToOpen != EMenu.Pause)
+				{
+					m_CurrentMenu.Hide();
+					m_Paused = true;
+				}
+				else
+                {
+					m_CurrentMenu.Close();
+					m_CurrentMenu = null;
+					return;
+				}
+			}
+		}
+		else if(menuToOpen != EMenu.Main)
         {
 			m_CurrentMenu.Close();
-			m_CurrentMenu = null;
+			m_Paused = false;
+			m_PauseMenu.Show();
+			m_CurrentMenu = m_PauseMenu;
 			return;
-		}
-
-		if (m_CurrentMenu != null && menuToOpen != EMenu.ConfirmChoise) m_CurrentMenu.Close();
+        }
 
 		m_CurrentMenu = GetMenuByEnum(menuToOpen);
 		m_CurrentMenu.Open();

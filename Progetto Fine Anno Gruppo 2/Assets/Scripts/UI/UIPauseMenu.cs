@@ -16,4 +16,14 @@ public class UIPauseMenu : Menu
 		base.Close();
 		PubSub.PubSub.Publish(new ResumeGameMessage());
 	}
+
+    public override void Hide()
+    {
+		base.Close();
+    }
+
+    public override void Show()
+    {
+		base.Open();
+	}
 }

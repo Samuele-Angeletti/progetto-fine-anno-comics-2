@@ -52,6 +52,8 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
             PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
+            PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
 
             ActiveDockingAttemptButton(false);
             ActiveStopSpeedButton(false);
@@ -76,6 +78,14 @@ namespace ArchimedesMiniGame
             else if(message is NoBatteryMessage)
             {
                 SaveData();
+            }
+            else if(message is PauseGameMessage)
+            {
+                Time.timeScale = 0;
+            }
+            else if(message is ResumeGameMessage)
+            {
+                Time.timeScale = 1;
             }
         }
 
