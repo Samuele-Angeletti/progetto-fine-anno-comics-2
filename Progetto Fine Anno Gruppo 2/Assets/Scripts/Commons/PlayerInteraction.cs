@@ -27,8 +27,6 @@ public class PlayerInteraction : MonoBehaviour
             {
                 interactable.Interact();
             }
-            
-            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
