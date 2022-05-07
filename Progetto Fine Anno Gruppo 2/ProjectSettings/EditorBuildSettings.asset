@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PacMan.unity
     guid: 960694061c7a07947b9222d6b636cca2
+  - enabled: 1
+    path: Assets/Scenes/PlatformScenePreview.unity
+    guid: 01882418958a6124491e485d622fc914
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b9e39bed2c0218f41b912f970dc5ae1b, type: 2}
