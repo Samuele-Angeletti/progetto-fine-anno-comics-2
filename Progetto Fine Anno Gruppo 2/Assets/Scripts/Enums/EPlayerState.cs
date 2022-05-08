@@ -5,6 +5,9 @@ using UnityEngine;
 
 public enum EPlayerState
 {
-   PlatformMovement,
-   ZeroGravityMovement
+   Walking,
+   Running,
+   Jumping,
+   Landing,
+   ZeroG
 }

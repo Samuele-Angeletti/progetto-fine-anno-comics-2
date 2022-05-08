@@ -14,7 +14,7 @@ namespace ArchimedesMiniGame
             Module m = collision.GetComponent<Module>();
             if(m != null)
             {
-                GameManagerES.Instance.ActiveStopSpeedButton(true);
+                GameManagerES.Instance.ActiveDockingAttemptButton(true);
             }
         }
 
@@ -23,7 +23,6 @@ namespace ArchimedesMiniGame
             Module m = collision.GetComponent<Module>();
             if (m != null)
             {
-                GameManagerES.Instance.ActiveStopSpeedButton(false);
                 GameManagerES.Instance.ActiveDockingAttemptButton(false);
             }
         }

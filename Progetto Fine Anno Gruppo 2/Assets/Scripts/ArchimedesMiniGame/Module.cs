@@ -5,20 +5,20 @@ using UnityEngine;
 using Commons;
 namespace ArchimedesMiniGame
 {
-    public class Module : MonoBehaviour, IDamageable
+    public class Module : Controllable, IDamageable
     {
         [Header("Main settings")]
         [SerializeField] float m_Acceleration;
         [SerializeField] float m_MaxSpeed;
         [SerializeField] float m_RotationSpeed;
         [SerializeField] GameObject m_DockingSide;
+        [Space(10)]
         [Header("Battery Settings")]
         [SerializeField] float m_MaxBattery;
         [SerializeField] float m_UseSpeed;
 
         private float m_CurrentBattery;
         private Rigidbody2D m_Rigidbody;
-        private Vector2 m_Direction;
         private Vector2 m_RotationDirection;
         private Damageable m_Damageable;
 
@@ -59,21 +59,21 @@ namespace ArchimedesMiniGame
             }
         }
 
-        internal void Rotate(Vector2 rotationVector)
+        public override void MoveRotation(Vector2 newDirection)
         {
             m_Rigidbody.freezeRotation = true;
             m_Rigidbody.freezeRotation = false;
             if (m_CurrentBattery > 0)
             {
-                m_RotationDirection = rotationVector.normalized;
+                m_RotationDirection = newDirection.normalized;
             }
         }
 
-        internal void AddForce(Vector2 movementVector)
+        public override void MoveDirection(Vector2 newDirection)
         {
             if (m_CurrentBattery > 0)
             {
-                m_Direction = transform.forward - new Vector3(movementVector.x, movementVector.y);
+                m_Direction = transform.forward - new Vector3(newDirection.x, newDirection.y);
             }
         }
 

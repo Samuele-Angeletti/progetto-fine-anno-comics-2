@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using PubSub;
 using UnityEngine.UI;
-
+using Commons;
 namespace ArchimedesMiniGame
 {
+    [RequireComponent(typeof(PlayerInputSystem))]
     public class GameManagerES : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
@@ -30,21 +31,24 @@ namespace ArchimedesMiniGame
         }
         #endregion
 
+        [Header("Player Settings")]
+        [SerializeField] Controllable m_Controllable;
+
         [Header("UI References")]
         [SerializeField] Slider m_BatterySlider;
         [SerializeField] Slider m_DamageSlider;
         [SerializeField] Button m_DockingAttemptButton;
-        [SerializeField] Button m_StopSpeedButton;
 
 
         [Header("Save File")]
         [Tooltip("Nome del file da creare per salvare i dati di danneggiamento. Se questa stringa viene omessa, verrà usato il nome del GameObject del Modulo corrente")]
         [SerializeField] string m_FileName;
 
-        public Module m_CurrentModule; // to fix
+        private PlayerInputSystem m_PlayerInputs;
 
         private void Awake()
         {
+            m_PlayerInputs = GetComponent<PlayerInputSystem>();
         }
 
         private void Start()
@@ -55,14 +59,15 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
 
+            m_PlayerInputs.SetControllable(m_Controllable);
+
             ActiveDockingAttemptButton(false);
-            ActiveStopSpeedButton(false);
         }
 
         public void SaveData()
         {
-            m_FileName = m_FileName == "" ? m_CurrentModule.gameObject.name : m_FileName;
-            SaveAndLoadSystem.Save(m_CurrentModule.GetDamageableInfo(), m_FileName);
+            m_FileName = m_FileName == "" ? m_Controllable.gameObject.name : m_FileName;
+            SaveAndLoadSystem.Save(m_Controllable.GetComponent<Module>().GetDamageableInfo(), m_FileName);
         }
 
         public void OnPublish(IMessage message)
@@ -97,11 +102,6 @@ namespace ArchimedesMiniGame
         public void UpdateLifeSlider(float current, float maxValue)
         {
             m_DamageSlider.value = current / maxValue;
-        }
-
-        public void ActiveStopSpeedButton(bool active)
-        {
-            m_StopSpeedButton.interactable = active;
         }
 
         public void ActiveDockingAttemptButton(bool active)

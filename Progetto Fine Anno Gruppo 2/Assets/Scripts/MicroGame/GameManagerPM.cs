@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 namespace MicroGame
 {
+    [RequireComponent(typeof(PlayerInputSystem))]
     public class GameManagerPM : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
@@ -33,6 +34,9 @@ namespace MicroGame
         }
         #endregion
 
+        [Header("Player Settings")]
+        [SerializeField] Controllable m_Controllable;
+
         [Header("Enemies Settings")]
         [SerializeField] Enemy m_EnemyPrefab;
         [SerializeField] Transform[] m_EnemiesSpawnPoints;
@@ -44,6 +48,7 @@ namespace MicroGame
         [Header("Load File")]
         [SerializeField] string m_FileName;
 
+        private PlayerInputSystem m_PlayerInputs;
         private List<Pickable> m_PickableList = new List<Pickable>();
         private int m_PickablesInScene;
         private int m_PickablePicked = 0;
@@ -58,6 +63,7 @@ namespace MicroGame
             }
             m_PickablesInScene = m_PickableList.Count;
             m_SpawnPointUsed = new bool[m_EnemiesSpawnPoints.Length];
+            m_PlayerInputs = GetComponent<PlayerInputSystem>();
         }
 
         private void Start()
@@ -66,6 +72,8 @@ namespace MicroGame
             PubSub.PubSub.Subscribe(this, typeof(GameOverMicroGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
+
+            m_PlayerInputs.SetControllable(m_Controllable);
 
             StartSettings();
         }

@@ -8,37 +8,8 @@ namespace MicroGame
 {
     public class AdaController : MonoBehaviour
     {
-        #region INPUTS
-        public InputControls inputControls;
 
-        private void Awake()
-        {
-            inputControls = new InputControls();
-
-            inputControls.Player.Enable();
-
-            inputControls.Player.Movement.started += StartMovement;
-            inputControls.Player.Pause.performed += PauseGame;
-        }
-
-        private void PauseGame(InputAction.CallbackContext obj)
-        {
-            PubSub.PubSub.Publish(new OpenMenuMessage(EMenu.Pause));
-        }
-
-        private void StartMovement(InputAction.CallbackContext obj)
-        {
-            m_AdaLogic.NewDirection(obj.ReadValue<Vector2>());
-        }
-
-        private void OnDestroy()
-        {
-            inputControls.Player.Movement.started -= StartMovement;
-            inputControls.Player.Pause.performed -= PauseGame;
-        }
-        #endregion
-
-        [SerializeField] CharacterLogic m_AdaLogic;
+        [SerializeField] CharacterLogicPM m_AdaLogic;
         [SerializeField] int m_MaxLifes;
         [SerializeField] Animator m_Animator;
         [SerializeField] Transform m_SpawnPoint;
@@ -67,9 +38,9 @@ namespace MicroGame
                 PubSub.PubSub.Publish(new GameOverMicroGameMessage());
             }
 
-            m_AdaLogic.NewDirection(Vector2.zero);
+            m_AdaLogic.MoveDirection(Vector2.zero);
             GameManagerPM.Instance.UIUpdateLife(m_CurrentLifes);
-            inputControls.Player.Disable();
+
         }
 
         public void PlaceOnSpawnPoint()
@@ -78,7 +49,6 @@ namespace MicroGame
             GetComponent<BoxCollider2D>().enabled = true;
             m_Graphics.SetActive(true);
 
-            inputControls.Player.Enable();
         }
 
         public void SpawnParticleEffect()

@@ -5,20 +5,18 @@ using UnityEngine;
 
 namespace MicroGame
 {
-    public class CharacterLogic : MonoBehaviour, ITeleportable
+    public class CharacterLogicPM : Controllable, ITeleportable
     {
+        [Space(10)]
         [SerializeField] Rigidbody2D m_Rigidbody;
         [SerializeField] float m_Speed;
         [SerializeField] EController controller;
-        [SerializeField] Vector2 m_StoppingDistance;
 
         [Header("Solo per IA")]
         [Tooltip("Tempo massimo per la ricerca di una nuova direzione. Il tempo è all'interno di una Coroutine ed è randomico tra 0 e questo numero")]
         [SerializeField] float m_MaxRandomTime;
-
-        private Vector2 m_Direction;       
+  
         private Vector2 m_NextDirection;       
-
 
         private void Start()
         {
@@ -33,7 +31,7 @@ namespace MicroGame
             m_Rigidbody.velocity = m_Direction * m_Speed * Time.fixedDeltaTime;
         }
 
-        public void NewDirection(Vector2 newDirection)
+        public override void MoveDirection(Vector2 newDirection)
         {
             if (ForwardCheck(newDirection.normalized))
             {
@@ -90,43 +88,6 @@ namespace MicroGame
             }
         }
 
-        public bool ForwardCheck(Vector2 direction)
-        {
-            RaycastHit2D[] raycastHits = new RaycastHit2D[10];
-            int hits = Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, 0.6f);
-            
-            if(hits > 0)
-            {
-                for (int i = 0; i < hits; i++)
-                {
-                    if(raycastHits[i].collider.GetComponent<Wall>() != null)
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
-        private float GetAngle(Vector2 direction)
-        {
-            if(direction.x > 0)
-            {
-                return 90;
-            }
-            else if(direction.y > 0)
-            {
-                return 180;
-            }
-            else if(direction.x < 0)
-            {
-                return -90;
-            }
-            else
-            {
-                return -180;
-            }
-        }
 
         private IEnumerator SearchNewDirection()
         {

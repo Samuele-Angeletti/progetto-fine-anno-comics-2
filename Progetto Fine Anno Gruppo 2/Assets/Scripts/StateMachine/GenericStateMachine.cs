@@ -32,6 +32,5 @@ public class GenericStateMachine<T> : MonoBehaviour where T : Enum
     public void OnUpdate() => _currentState?.OnUpdate();
     public void OnFixedUpdate() => _currentState?.OnFixedUpdate();
     public void MyOnCollisionEnter2D(Collision2D collision) => _currentState?.MyOnCollisionEnter2D(collision);
-
     
 }

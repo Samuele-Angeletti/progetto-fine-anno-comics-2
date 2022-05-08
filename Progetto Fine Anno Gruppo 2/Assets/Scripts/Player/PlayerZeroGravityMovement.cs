@@ -36,7 +36,7 @@ namespace MainGame
             if (isMoving) return;
             if (!isMoving)
             {
-                Vector2 direction = inputActions.Player.ZeroGravityMovement.ReadValue<Vector2>();         
+                Vector2 direction = inputActions.Player.MovementWASD.ReadValue<Vector2>();         
                 m_rigidbody.velocity = direction * m_speed * Time.deltaTime;
                 isMoving = true;
             }
@@ -44,7 +44,7 @@ namespace MainGame
 
         public override void OnStart()
         {
-            inputActions?.Player.ZeroGravityMovement.Enable();
+            inputActions?.Player.MovementWASD.Enable();
             m_rigidbody.gravityScale = 0;
             Debug.Log("Sono nello stato senza gravità");
         }
@@ -55,7 +55,7 @@ namespace MainGame
 
         public override void OnEnd()
         {
-            inputActions?.Player.ZeroGravityMovement.Disable();
+            inputActions?.Player.MovementWASD.Disable();
 
         }
 

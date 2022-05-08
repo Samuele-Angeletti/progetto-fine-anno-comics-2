@@ -49,8 +49,7 @@ namespace MainGame
 
         public override void OnStart()
         {
-            inputActions.Player.PlatformMovement.Enable();
-            inputActions.Player.Jump.Enable();
+            inputActions.Player.Enable();
         }
 
         public override void OnUpdate()
@@ -61,8 +60,7 @@ namespace MainGame
 
         public override void OnEnd()
         {
-            inputActions.Player.PlatformMovement.Disable();
-            inputActions.Player.Jump.Disable();
+            inputActions.Player.Disable();
         }
 
         public override void MyOnCollisionEnter2D(Collision2D collision)
@@ -137,13 +135,13 @@ namespace MainGame
 
         private void Movement()
         {
-            m_direction = inputActions.Player.PlatformMovement.ReadValue<Vector2>();
+            m_direction = inputActions.Player.MovementArrows.ReadValue<Vector2>();
             if (Mathf.Abs(m_rigidbody.velocity.x) > m_movementVelocity)
             {
                 m_rigidbody.velocity = new Vector2(Mathf.Sign(m_rigidbody.velocity.x) * m_movementVelocity, m_rigidbody.velocity.y);
             }
 
-            if (inputActions.Player.PlatformMovement.ReadValue<Vector2>().x != 0)
+            if (inputActions.Player.MovementArrows.ReadValue<Vector2>().x != 0)
             {
 
                 if (m_rigidbody.velocity.x > 0)
@@ -154,11 +152,11 @@ namespace MainGame
                 {
                     FlipSprite(false);
                 }
-                m_playerAnimator.SetBool("IsMoving", true);
+                m_playerAnimator?.SetBool("IsMoving", true);
             }
-            if (inputActions.Player.PlatformMovement.ReadValue<Vector2>().x == 0)
+            if (inputActions.Player.MovementArrows.ReadValue<Vector2>().x == 0)
             {
-                m_playerAnimator.SetBool("IsMoving", false);
+                m_playerAnimator?.SetBool("IsMoving", false);
 
             }
             m_rigidbody.velocity += m_direction * m_speed * Time.fixedDeltaTime;
