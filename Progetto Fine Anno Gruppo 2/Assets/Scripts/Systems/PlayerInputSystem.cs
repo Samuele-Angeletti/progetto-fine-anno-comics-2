@@ -20,10 +20,17 @@ namespace Commons
 
             ActiveNormalMovement();
 
+            inputControls.Player.Interaction.performed += Interact;
+
             inputControls.Module.Rotation.performed += StartRotation;
             inputControls.Module.Rotation.canceled += StopRotation;
 
             inputControls.Player.Pause.performed += PauseGame;
+        }
+
+        private void Interact(InputAction.CallbackContext obj)
+        {
+            m_CurrentControllable.Interact();
         }
 
         private void PauseGame(InputAction.CallbackContext obj)
@@ -64,9 +71,11 @@ namespace Commons
         private void DeactiveMovement()
         {
             inputControls.Player.MovementWASD.performed -= StartMoving;
-            //inputControls.Player.MovementArrows.performed -= StartMoving;
             inputControls.Player.MovementWASD.canceled -= StopMoving;
-            //inputControls.Player.MovementArrows.canceled -= StopMoving;
+
+
+            inputControls.Player.MovementArrows.performed -= StartMoving;
+            inputControls.Player.MovementArrows.canceled -= StopMoving;
         }
 
 
@@ -82,16 +91,18 @@ namespace Commons
 
         private void ActiveContinousMovement()
         {
-            //inputControls.Player.MovementArrows.started += StartMoving;
+            inputControls.Player.MovementArrows.started += StartMoving;
+
             inputControls.Player.MovementWASD.started += StartMoving;
         }
 
         private void ActiveNormalMovement()
         {
-            //inputControls.Player.MovementArrows.performed += StartMoving;
             inputControls.Player.MovementWASD.performed += StartMoving;
-            //inputControls.Player.MovementArrows.canceled += StopMoving;
             inputControls.Player.MovementWASD.canceled += StopMoving;
+
+            inputControls.Player.MovementArrows.performed += StartMoving;
+            inputControls.Player.MovementArrows.canceled += StopMoving;
 
             inputControls.Player.Jump.performed += StartJump;
             inputControls.Player.Jump.canceled += StopJump;

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using PubSub;
+using Commons;
 namespace MainGame
 {
-    public class PlayerMovementManager : Controllable
+    public class PlayerMovementManager : Controllable, ISubscriber
     {
         [HideInInspector]
         public GenericStateMachine<EPlayerState> StateMachine;
@@ -17,42 +18,43 @@ namespace MainGame
         public Animator PlayerAnimator;
         [HideInInspector]
         public SpriteRenderer SpriteRenderer;
-        public float Speed = 40;
-
-        [Header("Per Stato Platform")]
-        public float JumpHeight;
-        public float InertiaTime;
-        public float InertiaDecelerator;
-        public float MaxSpeed;
-        public float TimerJumpButtonIsPressed;
-        public float GravityScale;
-        public LayerMask GroundMask;
         [HideInInspector]
         public bool IsGrounded, IsJumping;
 
+        [Header("Movement Settings")]
+        public float Speed = 40;
+        public float InertiaTime;
+        public float InertiaDecelerator;
+        public float MaxSpeed;
 
+        [Header("Jump Settings")]
+        public float JumpHeight;
+        public float TimerJumpButtonIsPressed;
+        public float GravityScale;
+        public LayerMask GroundMask;
 
-        [Header("Per stato zero gravity")]
-        public float m_SpeedInZeroGravity;
+        [Header("Zero Gravity Settings")]
+        public float SpeedInZeroGravity;
 
         public Vector2 Direction;
+
+        private Interacter m_Interacter;
 
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             PlayerCollider = GetComponent<Collider2D>();
             PlayerAnimator = GetComponent<Animator>();
-            SpriteRenderer = GetComponent<SpriteRenderer>();
+            SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
             StateMachine = new GenericStateMachine<EPlayerState>();
+            m_Interacter = GetComponent<Interacter>();
         }
 
         void Start()
         {
-            //m_stateMachine.RegisterState(EPlayerState.PlatformMovement, new PlayerPlatformMovement(m_stateMachine, this, m_rigidbody, m_playerCollider, m_playerAnimator,
-            //    m_spriteRenderer, m_speed, jumpHeight, movementVelocity, timerJumpButtonIsPressed, groundMask));
-            //m_stateMachine.RegisterState(EPlayerState.ZeroGravityMovement, new PlayerZeroGravityMovement(m_stateMachine, m_rigidbody, m_playerCollider,
-            //    m_playerAnimator, m_spriteRenderer, speedInZeroGravity));
-            //m_stateMachine.SetState(EPlayerState.PlatformMovement);
+            PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
+
+
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Running, new RunningPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Jumping, new JumpingPlayerState(this));
@@ -71,7 +73,7 @@ namespace MainGame
 
         private void GroundCheck()
         {
-            if (!ForwardCheck(Vector3.down))
+            if (!ForwardCheck(Vector3.down, 1.05f))
             {
                 IsGrounded = true;
             }
@@ -102,9 +104,41 @@ namespace MainGame
         }
 
 
-        public void FlipSprite(bool flipped)
+        public void FlipSpriteOnX(bool flipped)
         {
             SpriteRenderer.flipX = !flipped;
+        }
+        
+        public void FlipSpriteOnY(bool flipped)
+        {
+            SpriteRenderer.flipY = !flipped;
+        }
+
+        public void OnPublish(IMessage message)
+        {
+            if(message is ZeroGMessage)
+            {
+                ZeroGMessage zeroGMessage = (ZeroGMessage)message;
+                if (zeroGMessage.Active)
+                    StateMachine.SetState(EPlayerState.ZeroG);
+                else
+                    StateMachine.SetState(EPlayerState.Walking);
+            }
+        }
+
+        public void OnDisableSubscribe()
+        {
+            PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
+        }
+
+        private void OnDestroy()
+        {
+            OnDisableSubscribe();
+        }
+
+        public override void Interact()
+        {
+            m_Interacter.GetInteractable().Interact();
         }
     }
 

@@ -97,11 +97,11 @@ public class WalkingPlayerState : State
 
             if (m_Owner.Rigidbody.velocity.x > 0)
             {
-                m_Owner.FlipSprite(true);
+                m_Owner.FlipSpriteOnX(true);
             }
             if (m_Owner.Rigidbody.velocity.x < -0.1)
             {
-                m_Owner.FlipSprite(false);
+                m_Owner.FlipSpriteOnX(false);
             }
             m_Owner.PlayerAnimator?.SetBool("IsMoving", true);
         }

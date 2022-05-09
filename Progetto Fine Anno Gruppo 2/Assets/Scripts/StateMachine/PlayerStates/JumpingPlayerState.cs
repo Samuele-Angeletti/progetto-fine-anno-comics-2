@@ -48,6 +48,11 @@ public class JumpingPlayerState : State
             m_TimePassed = 0;
             m_Owner.IsJumping = false;
         }
+
+        if(!m_Owner.ForwardCheck(Vector3.up, 1.1f))
+        {
+            m_Owner.StateMachine.SetState(EPlayerState.Landing);
+        }
     }
 
     private void Jump()
@@ -70,11 +75,11 @@ public class JumpingPlayerState : State
 
             if (m_Owner.Rigidbody.velocity.x > 0)
             {
-                m_Owner.FlipSprite(true);
+                m_Owner.FlipSpriteOnX(true);
             }
             if (m_Owner.Rigidbody.velocity.x < -0.1)
             {
-                m_Owner.FlipSprite(false);
+                m_Owner.FlipSpriteOnX(false);
             }
         }
         m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.MaxSpeed * Time.fixedDeltaTime;

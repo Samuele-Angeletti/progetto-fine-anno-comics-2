@@ -4,6 +4,7 @@ using UnityEngine;
 using Commons;
 using MicroGame;
 using MainGame;
+using System;
 
 public class Controllable : MonoBehaviour
 {
@@ -35,11 +36,21 @@ public class Controllable : MonoBehaviour
 
     }
 
+    public virtual void Interact()
+    {
+
+    }
+
     public virtual void Jump(bool jumping)
     {
 
     }
 
+    /// <summary>
+    /// Returns true if it is possible to go in that direction. False instead
+    /// </summary>
+    /// <param name="direction">Direction to go</param>
+    /// <returns></returns>
     public bool ForwardCheck(Vector2 direction)
     {
         RaycastHit2D[] raycastHits = new RaycastHit2D[10];
@@ -58,6 +69,23 @@ public class Controllable : MonoBehaviour
         return true;
     }
 
+    public bool ForwardCheck(Vector2 direction, float distance)
+    {
+        RaycastHit2D[] raycastHits = new RaycastHit2D[10];
+        int hits = Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
+
+        if (hits > 0)
+        {
+            for (int i = 0; i < hits; i++)
+            {
+                if (raycastHits[i].collider.GetComponent<Wall>() != null)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     private float GetAngle(Vector2 direction)
     {
@@ -73,9 +101,13 @@ public class Controllable : MonoBehaviour
         {
             return -90;
         }
-        else
+        else if(direction.y < 0)
         {
             return -180;
+        }
+        else
+        {
+            return 0;
         }
     }
 }
