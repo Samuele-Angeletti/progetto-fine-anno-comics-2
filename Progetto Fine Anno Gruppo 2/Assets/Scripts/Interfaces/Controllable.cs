@@ -15,7 +15,15 @@ public class Controllable : MonoBehaviour
     [HideInInspector]
     internal Vector2 m_Direction;
 
-    public bool ContinousMovement => m_ContinousMovement;
+    public bool ContinousMovement
+    { 
+        get => m_ContinousMovement;
+        set
+        {
+            m_ContinousMovement = value;
+            PubSub.PubSub.Publish(new ChangeContinousMovementMessage(value));
+        }
+    }
 
     public virtual void MoveDirection(Vector2 newDirection)
     {
@@ -23,6 +31,11 @@ public class Controllable : MonoBehaviour
     }
 
     public virtual void MoveRotation(Vector2 newDirection)
+    {
+
+    }
+
+    public virtual void Jump(bool jumping)
     {
 
     }

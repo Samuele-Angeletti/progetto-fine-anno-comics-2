@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -67,24 +68,16 @@ namespace Commons
             inputControls.Player.MovementWASD.canceled -= StopMoving;
             //inputControls.Player.MovementArrows.canceled -= StopMoving;
         }
-        #endregion
 
-        private Controllable m_CurrentControllable;
 
-        public void SetControllable(Controllable controllable)
+        private void StopJump(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable = controllable;
+            m_CurrentControllable.Jump(false);
+        }
 
-            DeactiveMovement();
-
-            if (m_CurrentControllable.ContinousMovement)
-            {
-                ActiveContinousMovement();
-            }
-            else
-            {
-                ActiveNormalMovement();
-            }
+        private void StartJump(InputAction.CallbackContext obj)
+        {
+            m_CurrentControllable.Jump(true);
         }
 
         private void ActiveContinousMovement()
@@ -99,6 +92,32 @@ namespace Commons
             inputControls.Player.MovementWASD.performed += StartMoving;
             //inputControls.Player.MovementArrows.canceled += StopMoving;
             inputControls.Player.MovementWASD.canceled += StopMoving;
+
+            inputControls.Player.Jump.performed += StartJump;
+            inputControls.Player.Jump.canceled += StopJump;
+        }
+        #endregion
+
+        private Controllable m_CurrentControllable;
+
+        public void SetControllable(Controllable controllable)
+        {
+            m_CurrentControllable = controllable;
+
+            ChangeContinousMovement(m_CurrentControllable.ContinousMovement);
+        }
+
+        public void ChangeContinousMovement(bool active)
+        {
+            DeactiveMovement();
+            if (active)
+            {
+                ActiveContinousMovement();
+            }
+            else
+            {
+                ActiveNormalMovement();
+            }
         }
     }
 }

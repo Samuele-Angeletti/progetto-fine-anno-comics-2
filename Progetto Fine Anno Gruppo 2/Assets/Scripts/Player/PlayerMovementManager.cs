@@ -17,16 +17,19 @@ namespace MainGame
         public Animator PlayerAnimator;
         [HideInInspector]
         public SpriteRenderer SpriteRenderer;
+        public float Speed = 40;
 
         [Header("Per Stato Platform")]
-        [Range(0, 30)]
         public float JumpHeight;
-        [Range(0, 30)]
-        public float MovementVelocity;
-        [Range(0f, 1f)]
+        public float InertiaTime;
+        public float InertiaDecelerator;
+        public float MaxSpeed;
         public float TimerJumpButtonIsPressed;
+        public float GravityScale;
         public LayerMask GroundMask;
+        [HideInInspector]
         public bool IsGrounded, IsJumping;
+
 
 
         [Header("Per stato zero gravity")]
@@ -41,7 +44,6 @@ namespace MainGame
             PlayerAnimator = GetComponent<Animator>();
             SpriteRenderer = GetComponent<SpriteRenderer>();
             StateMachine = new GenericStateMachine<EPlayerState>();
-
         }
 
         void Start()
@@ -52,7 +54,11 @@ namespace MainGame
             //    m_playerAnimator, m_spriteRenderer, speedInZeroGravity));
             //m_stateMachine.SetState(EPlayerState.PlatformMovement);
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
-
+            StateMachine.RegisterState(EPlayerState.Running, new RunningPlayerState(this));
+            StateMachine.RegisterState(EPlayerState.Jumping, new JumpingPlayerState(this));
+            StateMachine.RegisterState(EPlayerState.ZeroG, new ZeroGPlayerState(this));
+            StateMachine.RegisterState(EPlayerState.Landing, new LandingPlayerState(this));
+           
             StateMachine.SetState(EPlayerState.Walking);
         }
 
@@ -60,11 +66,21 @@ namespace MainGame
         void Update()
         {
             StateMachine.OnUpdate();
-            //if (inputActions.Player.ChangeState.IsPressed())
-            //{
-            //    m_stateMachine.SetState(EPlayerState.ZeroGravityMovement);
-            //}
+            GroundCheck();
         }
+
+        private void GroundCheck()
+        {
+            if (!ForwardCheck(Vector3.down))
+            {
+                IsGrounded = true;
+            }
+            else
+            {
+                IsGrounded = false;
+            }
+        }
+
         private void FixedUpdate()
         {
             StateMachine.OnFixedUpdate();
@@ -80,6 +96,16 @@ namespace MainGame
             Direction = newDirection.normalized;
         }
 
+        public override void Jump(bool jumping)
+        {
+            IsJumping = jumping;
+        }
+
+
+        public void FlipSprite(bool flipped)
+        {
+            SpriteRenderer.flipX = !flipped;
+        }
     }
 
 }

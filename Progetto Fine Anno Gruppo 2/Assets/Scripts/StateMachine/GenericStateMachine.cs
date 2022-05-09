@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericStateMachine<T> : MonoBehaviour where T : Enum
+public class GenericStateMachine<T> where T : Enum
 {
     private Dictionary<T,State> _allStates = new Dictionary<T,State>();
     private State _currentState;

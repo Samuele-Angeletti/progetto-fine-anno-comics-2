@@ -5,8 +5,12 @@ using MainGame;
 
 public class ZeroGPlayerState : State
 {
-    private PlayerMovementManager M_Owner;
+    private PlayerMovementManager m_Owner;
 
+    public ZeroGPlayerState(PlayerMovementManager owner)
+    {
+        m_Owner = owner;
+    }
 
     public override void MyOnCollisionEnter2D(Collision2D collision)
     {
@@ -25,7 +29,7 @@ public class ZeroGPlayerState : State
 
     public override void OnStart()
     {
-
+        Debug.Log("STATO: ZERO G");
     }
 
     public override void OnUpdate()

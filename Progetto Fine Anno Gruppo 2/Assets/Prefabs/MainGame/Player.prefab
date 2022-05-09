@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3608097785748641212}
   - component: {fileID: 3608097785748641213}
   - component: {fileID: 3608097785748641186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,15 +48,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fe05eede852b549a44523e36ac0d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 5.4
-  movementVelocity: 4
-  timerJumpButtonIsPressed: 0.171
-  groundMask:
+  m_StoppingDistance: {x: 1, y: 0.2}
+  m_ContinousMovement: 0
+  Rigidbody: {fileID: 0}
+  PlayerCollider: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
+  SpriteRenderer: {fileID: 0}
+  Speed: 30
+  JumpHeight: 200
+  InertiaTime: 0
+  InertiaDecelerator: 9
+  MaxSpeed: 5
+  TimerJumpButtonIsPressed: 0.5
+  GravityScale: -30
+  GroundMask:
     serializedVersion: 2
-    m_Bits: 64
-  isGrounded: 0
-  isJumping: 0
-  speedInZeroGravity: 200
+    m_Bits: 1
+  IsGrounded: 0
+  IsJumping: 0
+  m_SpeedInZeroGravity: 20
+  Direction: {x: 0, y: 0}
 --- !u!95 &3608097785748641208
 Animator:
   serializedVersion: 4
@@ -141,10 +152,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5.28
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5.16
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

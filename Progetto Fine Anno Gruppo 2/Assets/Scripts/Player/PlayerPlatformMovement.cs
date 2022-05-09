@@ -54,7 +54,7 @@ namespace MainGame
 
         public override void OnUpdate()
         {
-            Jump();
+            //Jump();
             CoyoteTimeAndGroundCheck();
         }
 
@@ -89,37 +89,7 @@ namespace MainGame
             return isGrounded;
 
         }
-        private void Jump()
-        {
-            //m_playerAnimator.SetFloat("JumpVelocity", m_rigidbody.velocity.y);
-
-            if (inputActions.Player.Jump.ReadValue<float>() == 1 && m_coyoteTimeCounter > 0)
-            {
-                isJumping = true;
-                m_timerJump = m_timerJumpButtonIsPressed;
-                m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, Vector2.up.y * m_jumpHeight);
-            }
-            if (inputActions.Player.Jump.IsPressed() && isJumping == true)
-            {
-
-                if (m_timerJump > 0)
-                {
-                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, Vector2.up.y * m_jumpHeight);
-                    m_timerJump -= Time.deltaTime;
-                }
-                else
-                {
-                    isJumping = false;
-                }
-
-            }
-            if (inputActions.Player.Jump.ReadValue<float>() == 0)
-                isJumping = false;
-
-
-
-
-        }
+       
         private void CoyoteTimeAndGroundCheck()
         {
             if (CheckIfGrounded())
