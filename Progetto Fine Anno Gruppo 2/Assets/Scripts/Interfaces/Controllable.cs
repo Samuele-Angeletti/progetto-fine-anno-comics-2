@@ -87,6 +87,12 @@ public class Controllable : MonoBehaviour
         return true;
     }
 
+    public RaycastHit2D[] ForwardCheck(Vector2 direction, float distance, RaycastHit2D[] raycastHits)
+    {
+        Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
+        return raycastHits;
+    }
+
     private float GetAngle(Vector2 direction)
     {
         if (direction.x > 0)

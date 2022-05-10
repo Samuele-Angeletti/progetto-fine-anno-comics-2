@@ -66,13 +66,14 @@ namespace MainGame
 
         void Update()
         {
+            Direction = new Vector2(Direction.x, 0);
             StateMachine.OnUpdate();
             GroundCheck();
         }
 
         private void GroundCheck()
         {
-            if (!ForwardCheck(Vector3.down, 1.05f))
+            if (!ForwardCheck(Vector3.down, 0.55f))
             {
                 IsGrounded = true;
             }
@@ -145,7 +146,7 @@ namespace MainGame
 
         public void RotatePlayer(int degrees)
         {
-            transform.eulerAngles = new Vector3(0, 0, degrees);
+            SpriteRenderer.gameObject.transform.eulerAngles = new Vector3(0, 0, degrees);
         }
     }
 

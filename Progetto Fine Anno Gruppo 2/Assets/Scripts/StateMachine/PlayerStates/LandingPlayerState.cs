@@ -38,6 +38,7 @@ public class LandingPlayerState : State
         if(m_Owner.IsGrounded)
         {
             m_Owner.Rigidbody.velocity = new Vector2(m_Owner.Rigidbody.velocity.x, 0);
+            m_Owner.Direction = new Vector2(m_Owner.Direction.x, 0);
             m_Owner.StateMachine.SetState(EPlayerState.Walking);
         }
     }

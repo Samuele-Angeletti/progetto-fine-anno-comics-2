@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MainGame;
+using MicroGame;
+using UnityEngine.Tilemaps;
 
 public class ZeroGPlayerState : State
 {
@@ -47,6 +49,7 @@ public class ZeroGPlayerState : State
             if (m_Owner.Direction.magnitude != 0)
             {
                 m_CurrentDirection = m_Owner.Direction;
+                FlipSprite(270, 90, 0, 180);
                 m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", true);
             }
         }
@@ -63,33 +66,29 @@ public class ZeroGPlayerState : State
         {
             if (m_Owner.Rigidbody.velocity == Vector2.zero)
             {
-                FlipSprite();
+                FlipSprite(90, 270, 180, 0);
                 m_CurrentDirection = Vector3.zero;
             }
         }
     }
 
-    private void FlipSprite()
+    private void FlipSprite(int right, int left, int up, int down)
     {
         if(m_CurrentDirection.x > 0)
         {
-            //m_Owner.FlipSpriteOnX(false);
-            m_Owner.RotatePlayer(90);
+            m_Owner.RotatePlayer(right);
         }
         else if(m_CurrentDirection.y > 0)
         {
-            //m_Owner.FlipSpriteOnY(false);
-            m_Owner.RotatePlayer(180);
+            m_Owner.RotatePlayer(up);
         }
         else if(m_CurrentDirection.x < 0)
         {
-            //m_Owner.FlipSpriteOnX(true);
-            m_Owner.RotatePlayer(270);
+            m_Owner.RotatePlayer(left);
         }
         else if(m_CurrentDirection.y < 0)
         {
-            //m_Owner.FlipSpriteOnY(true);
-            m_Owner.RotatePlayer(0);
+            m_Owner.RotatePlayer(down);
         }
 
         m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", false);
