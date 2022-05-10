@@ -87,8 +87,7 @@ public class WalkingPlayerState : State
 
     private void Movement()
     {
-        m_Owner.Direction = new Vector2(m_Owner.Direction.x, 0);
-
+        m_Owner.Direction = m_Owner.Direction.x > 0 ? new Vector2(1, 0) : new Vector2(-1, 0);
 
         if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > m_Owner.MaxSpeed)
         {
