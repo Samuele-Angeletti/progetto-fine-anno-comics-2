@@ -22,7 +22,8 @@ public class ZeroGPlayerState : State
 
     public override void OnEnd()
     {
-
+        m_Owner.PlayerAnimator?.SetBool("IdleZeroG", false);
+        m_Owner.RotatePlayer(0);
     }
 
     public override void OnFixedUpdate()
@@ -33,6 +34,7 @@ public class ZeroGPlayerState : State
     public override void OnStart()
     {
         Debug.Log("STATO: ZERO G");
+        m_Owner.PlayerAnimator?.SetBool("IdleZeroG", true);
         m_IsMoving = false;
     }
 
@@ -45,16 +47,15 @@ public class ZeroGPlayerState : State
             if (m_Owner.Direction.magnitude != 0)
             {
                 m_CurrentDirection = m_Owner.Direction;
+                m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", true);
             }
         }
-
-        
-
     }
 
     private void Movement()
     {
         if (m_IsMoving) return;
+
         
         m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.SpeedInZeroGravity * Time.fixedDeltaTime;
 
@@ -72,19 +73,25 @@ public class ZeroGPlayerState : State
     {
         if(m_CurrentDirection.x > 0)
         {
-            m_Owner.FlipSpriteOnX(false);
+            //m_Owner.FlipSpriteOnX(false);
+            m_Owner.RotatePlayer(90);
         }
         else if(m_CurrentDirection.y > 0)
         {
-            m_Owner.FlipSpriteOnY(false);
+            //m_Owner.FlipSpriteOnY(false);
+            m_Owner.RotatePlayer(180);
         }
         else if(m_CurrentDirection.x < 0)
         {
-            m_Owner.FlipSpriteOnX(true);
+            //m_Owner.FlipSpriteOnX(true);
+            m_Owner.RotatePlayer(270);
         }
         else if(m_CurrentDirection.y < 0)
         {
-            m_Owner.FlipSpriteOnY(true);
+            //m_Owner.FlipSpriteOnY(true);
+            m_Owner.RotatePlayer(0);
         }
+
+        m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", false);
     }
 }

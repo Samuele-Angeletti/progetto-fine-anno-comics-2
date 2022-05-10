@@ -56,7 +56,6 @@ namespace MainGame
 
 
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
-            StateMachine.RegisterState(EPlayerState.Running, new RunningPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Jumping, new JumpingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.ZeroG, new ZeroGPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Landing, new LandingPlayerState(this));
@@ -138,7 +137,15 @@ namespace MainGame
 
         public override void Interact()
         {
-            m_Interacter.GetInteractable().Interact();
+            if (Rigidbody.velocity.magnitude == 0)
+            {
+                m_Interacter.GetInteractable()?.Interact();
+            }
+        }
+
+        public void RotatePlayer(int degrees)
+        {
+            transform.eulerAngles = new Vector3(0, 0, degrees);
         }
     }
 

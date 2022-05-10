@@ -79,7 +79,10 @@ public class WalkingPlayerState : State
             }
         }
 
-        Debug.Log(m_Owner.Rigidbody.velocity);
+        if(Mathf.Abs(m_Owner.Rigidbody.velocity.x) > 0)
+            m_Owner.PlayerAnimator?.SetFloat("Walking", 1);
+        else
+            m_Owner.PlayerAnimator?.SetFloat("Walking", -1);
     }
 
     private void Movement()
@@ -103,12 +106,6 @@ public class WalkingPlayerState : State
             {
                 m_Owner.FlipSpriteOnX(false);
             }
-            m_Owner.PlayerAnimator?.SetBool("IsMoving", true);
-        }
-        if (m_Owner.Direction.x == 0)
-        {
-            m_Owner.PlayerAnimator?.SetBool("IsMoving", false);
-
         }
         m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.MaxSpeed * Time.fixedDeltaTime;
     }

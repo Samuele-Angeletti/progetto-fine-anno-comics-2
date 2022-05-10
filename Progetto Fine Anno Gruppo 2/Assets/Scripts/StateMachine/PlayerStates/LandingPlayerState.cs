@@ -19,7 +19,7 @@ public class LandingPlayerState : State
 
     public override void OnEnd()
     {
-
+        m_Owner.PlayerAnimator?.SetBool("Landing", false);
     }
 
     public override void OnFixedUpdate()
@@ -30,7 +30,7 @@ public class LandingPlayerState : State
     public override void OnStart()
     {
         Debug.Log("STATO: LANDING");
-        m_Owner.PlayerAnimator?.SetBool("Land", true);
+        m_Owner.PlayerAnimator?.SetBool("Landing", true);
     }
 
     public override void OnUpdate()

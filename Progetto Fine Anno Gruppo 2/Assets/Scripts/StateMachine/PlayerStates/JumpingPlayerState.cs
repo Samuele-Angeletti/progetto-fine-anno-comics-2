@@ -20,6 +20,7 @@ public class JumpingPlayerState : State
     public override void OnEnd()
     {
         m_TimePassed = 0;
+        m_Owner.PlayerAnimator?.SetBool("Jumping", false);
     }
 
     public override void OnFixedUpdate()
@@ -32,7 +33,7 @@ public class JumpingPlayerState : State
     {
         Debug.Log("STATO: JUMPING");
         m_TimePassed = 0;
-        m_Owner.PlayerAnimator?.SetBool("Jump", true);
+        m_Owner.PlayerAnimator?.SetBool("Jumping", true);
     }
 
     public override void OnUpdate()
