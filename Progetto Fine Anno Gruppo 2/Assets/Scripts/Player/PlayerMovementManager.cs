@@ -66,14 +66,14 @@ namespace MainGame
 
         void Update()
         {
-            Direction = new Vector2(Direction.x, 0);
+            
             StateMachine.OnUpdate();
             GroundCheck();
         }
 
         private void GroundCheck()
         {
-            if (!ForwardCheck(Vector3.down, 0.55f))
+            if (!ForwardCheck(Vector3.down, 0.01f))
             {
                 IsGrounded = true;
             }

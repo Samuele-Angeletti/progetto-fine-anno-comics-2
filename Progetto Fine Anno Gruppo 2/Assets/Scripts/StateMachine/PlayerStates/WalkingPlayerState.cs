@@ -61,6 +61,7 @@ public class WalkingPlayerState : State
 
     public override void OnUpdate()
     {
+        m_Owner.Direction = new Vector2(m_Owner.Direction.x, 0);
         if (m_Owner.IsJumping)
         {
             m_Owner.StateMachine.SetState(EPlayerState.Jumping);
