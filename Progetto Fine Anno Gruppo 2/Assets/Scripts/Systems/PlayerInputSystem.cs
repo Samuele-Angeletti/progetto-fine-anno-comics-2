@@ -92,8 +92,10 @@ namespace Commons
         private void ActiveContinousMovement()
         {
             inputControls.Player.MovementArrows.started += StartMoving;
+            inputControls.Player.MovementArrows.canceled += StopMoving;
 
             inputControls.Player.MovementWASD.started += StartMoving;
+            inputControls.Player.MovementWASD.canceled += StopMoving;
         }
 
         private void ActiveNormalMovement()

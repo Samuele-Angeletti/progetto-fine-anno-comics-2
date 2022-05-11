@@ -24,7 +24,7 @@ public class LandingPlayerState : State
 
     public override void OnFixedUpdate()
     {
-        m_Owner.Direction = new Vector2(m_Owner.Direction.x, 0);
+        m_Owner.InputDirection = new Vector2(m_Owner.InputDirection.x, 0);
         m_Owner.Movement();
         Land();
     }
@@ -41,7 +41,7 @@ public class LandingPlayerState : State
         if (m_Owner.IsGrounded)
         {
             m_Owner.Rigidbody.velocity = new Vector2(m_Owner.Rigidbody.velocity.x, 0);
-            m_Owner.Direction = new Vector2(m_Owner.Direction.x, 0);
+            m_Owner.InputDirection = new Vector2(m_Owner.InputDirection.x, 0);
             m_Owner.StateMachine.SetState(EPlayerState.Walking);
         }
     }
@@ -55,7 +55,6 @@ public class LandingPlayerState : State
 
         m_Owner.Rigidbody.velocity = m_FallingSpeed;
 
-        Debug.Log(m_Owner.Rigidbody.velocity);
     }
 
 

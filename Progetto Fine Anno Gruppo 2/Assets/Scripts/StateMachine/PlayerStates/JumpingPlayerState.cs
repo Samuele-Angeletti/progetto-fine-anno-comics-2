@@ -25,7 +25,7 @@ public class JumpingPlayerState : State
 
     public override void OnFixedUpdate()
     {
-        m_Owner.Direction = new Vector2(m_Owner.Direction.x, 0);
+        m_Owner.InputDirection = new Vector2(m_Owner.InputDirection.x, 0);
         m_Owner.Movement();
         Jump();
     }
@@ -52,7 +52,7 @@ public class JumpingPlayerState : State
             m_Owner.IsJumping = false;
         }
 
-        if (!m_Owner.ForwardCheck(Vector3.up, 0.55f))
+        if (!m_Owner.ForwardCheck(Vector3.up, 1f))
         {
             m_Owner.StateMachine.SetState(EPlayerState.Landing);
         }

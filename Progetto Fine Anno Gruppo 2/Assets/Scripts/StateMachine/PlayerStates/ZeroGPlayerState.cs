@@ -4,6 +4,7 @@ using UnityEngine;
 using MainGame;
 using MicroGame;
 using UnityEngine.Tilemaps;
+using System;
 
 public class ZeroGPlayerState : State
 {
@@ -19,7 +20,6 @@ public class ZeroGPlayerState : State
 
     public override void MyOnCollisionEnter2D(Collision2D collision)
     {
-        
     }
 
     public override void OnEnd()
@@ -43,34 +43,48 @@ public class ZeroGPlayerState : State
 
     public override void OnUpdate()
     {
-        m_IsMoving = m_Owner.Rigidbody.velocity != Vector2.zero;
-
+        //m_IsMoving = m_Owner.Rigidbody.velocity != Vector2.zero;
+        
         if (!m_IsMoving)
         {
-            if (m_Owner.Direction.magnitude != 0)
+            if (m_Owner.InputDirection.magnitude != 0 && m_CurrentDirection.magnitude == 0)
             {
-                m_CurrentDirection = m_Owner.Direction;
+                m_IsMoving = true;
+                m_CurrentDirection = m_Owner.InputDirection;
                 FlipSprite(270, 90, 0, 180, -0.233f, 0.233f);
                 m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", true);
             }
         }
+        else
+        {
+            if (m_CurrentDirection.magnitude != 0)
+            {
+                if (m_Owner.Rigidbody.velocity == Vector2.zero)
+                {
+                    if(m_CurrentDirection.y > 0)
+                    {
+                        if (!m_Owner.ForwardCheck(m_CurrentDirection, 1f))
+                        {
+                            FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
+                            m_CurrentDirection = Vector3.zero;
+                            m_IsMoving = false;
+                        }
+                    }
+                    else if (!m_Owner.ForwardCheck(m_CurrentDirection, 0.5f))
+                    {
+                        FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
+                        m_CurrentDirection = Vector3.zero;
+                        m_IsMoving = false;
+                    }
+                }
+            }
+        }
+
     }
 
     private void Movement()
     {
-        if (m_IsMoving) return;
-
-        
-        m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.SpeedInZeroGravity * Time.fixedDeltaTime;
-
-        if (m_CurrentDirection.magnitude != 0)
-        {
-            if (m_Owner.Rigidbody.velocity == Vector2.zero)
-            {
-                FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
-                m_CurrentDirection = Vector3.zero;
-            }
-        }
+        m_Owner.Rigidbody.velocity = m_Owner.SpeedInZeroGravity * Time.fixedDeltaTime * m_CurrentDirection;
     }
 
     private void FlipSprite(int right, int left, int up, int down, float leftXPos, float rightXPos)
@@ -83,6 +97,7 @@ public class ZeroGPlayerState : State
         else if(m_CurrentDirection.y > 0)
         {
             m_Owner.RotatePlayer(up);
+            m_Owner.SetSpriteXPos(0);
         }
         else if(m_CurrentDirection.x < 0)
         {
@@ -92,6 +107,7 @@ public class ZeroGPlayerState : State
         else if(m_CurrentDirection.y < 0)
         {
             m_Owner.RotatePlayer(down);
+            m_Owner.SetSpriteXPos(0);
         }
 
         m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", false);

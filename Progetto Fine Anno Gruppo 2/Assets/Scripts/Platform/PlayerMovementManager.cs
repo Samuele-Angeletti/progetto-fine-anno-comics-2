@@ -24,7 +24,6 @@ namespace MainGame
         public bool IsGrounded, IsJumping;
 
         [Header("Movement Settings")]
-        public float Speed = 40;
         public float InertiaTime;
         public float InertiaDecelerator;
         public float MaxSpeed;
@@ -39,7 +38,8 @@ namespace MainGame
         [Header("Zero Gravity Settings")]
         public float SpeedInZeroGravity;
 
-        public Vector2 Direction;
+        [Header("Debug Infos")]
+        public Vector2 InputDirection;
 
         private Interacter m_Interacter;
 
@@ -102,7 +102,7 @@ namespace MainGame
 
         public override void MoveDirection(Vector2 newDirection)
         {
-            Direction = newDirection.normalized;
+            InputDirection = newDirection.normalized;
         }
 
         public override void Jump(bool jumping)
@@ -126,6 +126,7 @@ namespace MainGame
             if (message is ZeroGMessage)
             {
                 ZeroGMessage zeroGMessage = (ZeroGMessage)message;
+                ContinousMovement = zeroGMessage.Active;
                 if (zeroGMessage.Active)
                     StateMachine.SetState(EPlayerState.ZeroG);
                 else
@@ -159,24 +160,16 @@ namespace MainGame
         public void Movement()
         {
 
-            if (Mathf.Abs(Rigidbody.velocity.x) > MaxSpeed)
+            if (Rigidbody.velocity.x > 0.001f && SpriteRenderer.flipX)
             {
-                Rigidbody.velocity = new Vector2(Mathf.Sign(Rigidbody.velocity.x) * MaxSpeed, Rigidbody.velocity.y);
+                FlipSpriteOnX(true);
+            }
+            if (Rigidbody.velocity.x < -0.001f && !SpriteRenderer.flipX)
+            {
+                FlipSpriteOnX(false);
             }
 
-            if (Direction.x != 0)
-            {
-
-                if (Rigidbody.velocity.x > 0)
-                {
-                    FlipSpriteOnX(true);
-                }
-                if (Rigidbody.velocity.x < -0.1)
-                {
-                    FlipSpriteOnX(false);
-                }
-            }
-            Rigidbody.velocity = Direction * MaxSpeed * Time.fixedDeltaTime;
+            Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
         }
     }
 

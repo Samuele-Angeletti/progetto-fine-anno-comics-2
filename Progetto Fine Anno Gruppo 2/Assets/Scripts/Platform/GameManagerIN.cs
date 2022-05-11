@@ -65,7 +65,6 @@ namespace MainGame
             {
                 ChangeContinousMovementMessage changeContinousMovement = (ChangeContinousMovementMessage)message;
                 m_PlayerInputs.ChangeContinousMovement(changeContinousMovement.Active);
-                Debug.Log(message);
             }
             else if(message is ZeroGMessage)
             {
