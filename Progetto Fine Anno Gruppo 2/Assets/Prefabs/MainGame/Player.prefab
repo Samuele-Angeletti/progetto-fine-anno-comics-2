@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fe05eede852b549a44523e36ac0d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StoppingDistance: {x: 0.3, y: 0.01}
+  m_StoppingDistance: {x: 0.47, y: 0.01}
   m_ContinousMovement: 0
   Rigidbody: {fileID: 0}
   PlayerCollider: {fileID: 0}
@@ -62,9 +62,10 @@ MonoBehaviour:
   InertiaTime: 0.2
   InertiaDecelerator: 15
   MaxSpeed: 150
-  JumpHeight: 200
-  TimerJumpButtonIsPressed: 0.4
-  GravityScale: -30
+  JumpHeight: 280
+  JumpDecelerator: -450
+  TimerJumpButtonIsPressed: 0.5
+  GravityScale: -20
   GroundMask:
     serializedVersion: 2
     m_Bits: 1
