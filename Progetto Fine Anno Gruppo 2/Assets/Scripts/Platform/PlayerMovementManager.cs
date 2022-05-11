@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using PubSub;
 using Commons;
+using System;
+
 namespace MainGame
 {
     public class PlayerMovementManager : Controllable, ISubscriber
@@ -63,6 +65,10 @@ namespace MainGame
             StateMachine.SetState(EPlayerState.Walking);
         }
 
+        internal void SetSpriteXPos(float xPos)
+        {
+            SpriteRenderer.transform.localPosition = new Vector3(xPos, SpriteRenderer.transform.localPosition.y);
+        }
 
         void Update()
         {

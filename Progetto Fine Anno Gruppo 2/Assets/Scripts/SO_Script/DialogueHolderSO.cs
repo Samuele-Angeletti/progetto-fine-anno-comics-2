@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="DialogueSO")]
+[CreateAssetMenu(fileName ="NuovoDialogo", menuName ="DialogueSO")]
 public class DialogueHolderSO : ScriptableObject
 {
     [Header("Settings Dialogo")]

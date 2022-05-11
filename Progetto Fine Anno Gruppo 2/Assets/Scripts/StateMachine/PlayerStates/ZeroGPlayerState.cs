@@ -26,6 +26,7 @@ public class ZeroGPlayerState : State
     {
         m_Owner.PlayerAnimator?.SetBool("IdleZeroG", false);
         m_Owner.RotatePlayer(0);
+        m_Owner.SetSpriteXPos(0);
     }
 
     public override void OnFixedUpdate()
@@ -49,7 +50,7 @@ public class ZeroGPlayerState : State
             if (m_Owner.Direction.magnitude != 0)
             {
                 m_CurrentDirection = m_Owner.Direction;
-                FlipSprite(270, 90, 0, 180);
+                FlipSprite(270, 90, 0, 180, -0.233f, 0.233f);
                 m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", true);
             }
         }
@@ -66,17 +67,18 @@ public class ZeroGPlayerState : State
         {
             if (m_Owner.Rigidbody.velocity == Vector2.zero)
             {
-                FlipSprite(90, 270, 180, 0);
+                FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
                 m_CurrentDirection = Vector3.zero;
             }
         }
     }
 
-    private void FlipSprite(int right, int left, int up, int down)
+    private void FlipSprite(int right, int left, int up, int down, float leftXPos, float rightXPos)
     {
         if(m_CurrentDirection.x > 0)
         {
             m_Owner.RotatePlayer(right);
+            m_Owner.SetSpriteXPos(rightXPos);
         }
         else if(m_CurrentDirection.y > 0)
         {
@@ -85,6 +87,7 @@ public class ZeroGPlayerState : State
         else if(m_CurrentDirection.x < 0)
         {
             m_Owner.RotatePlayer(left);
+            m_Owner.SetSpriteXPos(leftXPos);
         }
         else if(m_CurrentDirection.y < 0)
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Commons;
 using PubSub;
+
 namespace MainGame
 {
     [RequireComponent(typeof(PlayerInputSystem))]
@@ -33,6 +34,9 @@ namespace MainGame
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
 
+        [Header("Debug Settings")]
+        [SerializeField] DebugText m_ElapsedTimeZeroG;
+
         private PlayerInputSystem m_PlayerInputs;
 
         private void Awake()
@@ -44,6 +48,9 @@ namespace MainGame
         private void Start()
         {
             PubSub.PubSub.Subscribe(this, typeof(ChangeContinousMovementMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
+            PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
             m_PlayerInputs.SetControllable(m_Controllable);
         }
 
@@ -59,6 +66,27 @@ namespace MainGame
                 ChangeContinousMovementMessage changeContinousMovement = (ChangeContinousMovementMessage)message;
                 m_PlayerInputs.ChangeContinousMovement(changeContinousMovement.Active);
                 Debug.Log(message);
+            }
+            else if(message is ZeroGMessage)
+            {
+                ZeroGMessage zeroG = (ZeroGMessage)message;
+                if(zeroG.Active)
+                {
+                    m_ElapsedTimeZeroG.Active(true);
+                    m_ElapsedTimeZeroG.SetMessage("ELAPSED TIME IN ZERO G: ");
+                }
+                else
+                {
+                    m_ElapsedTimeZeroG.Active(false);
+                }
+            }
+            else if (message is PauseGameMessage)
+            {
+                Time.timeScale = 0;
+            }
+            else if (message is ResumeGameMessage)
+            {
+                Time.timeScale = 1;
             }
         }
 

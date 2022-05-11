@@ -6,7 +6,7 @@ public class JumpingPlayerState : State
 {
     private PlayerMovementManager m_Owner;
     private float m_TimePassed = 0;
-
+    private float m_JumpHeigth;
     public JumpingPlayerState(PlayerMovementManager owner)
     {
         m_Owner = owner;
@@ -34,6 +34,7 @@ public class JumpingPlayerState : State
         Debug.Log("STATO: JUMPING");
         m_TimePassed = 0;
         m_Owner.PlayerAnimator?.SetBool("Jumping", true);
+        m_JumpHeigth = m_Owner.JumpHeight;
     }
 
     public override void OnUpdate()
@@ -50,7 +51,7 @@ public class JumpingPlayerState : State
             m_Owner.IsJumping = false;
         }
 
-        if(!m_Owner.ForwardCheck(Vector3.up, 0.55f))
+        if(!m_Owner.ForwardCheck(Vector3.up, 1f))
         {
             m_Owner.StateMachine.SetState(EPlayerState.Landing);
         }
@@ -58,7 +59,8 @@ public class JumpingPlayerState : State
 
     private void Jump()
     {
-        m_Owner.Rigidbody.velocity = new Vector2(m_Owner.Rigidbody.velocity.x, Vector2.up.y * m_Owner.JumpHeight * Time.fixedDeltaTime);
+        m_Owner.Rigidbody.velocity = new Vector2(m_Owner.Rigidbody.velocity.x, Vector2.up.y * m_JumpHeigth * Time.fixedDeltaTime);
+        m_JumpHeigth += Time.fixedDeltaTime * m_Owner.GravityScale;
     }
 
     private void Movement()
