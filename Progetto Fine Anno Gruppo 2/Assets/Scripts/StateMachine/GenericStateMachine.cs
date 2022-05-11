@@ -6,7 +6,7 @@ using UnityEngine;
 public class GenericStateMachine<T> where T : Enum
 {
     private Dictionary<T,State> _allStates = new Dictionary<T,State>();
-    private State _currentState;
+    public State _currentState;
 
     public void RegisterState(T stateType, State state)
     {

@@ -25,14 +25,7 @@ public class WalkingPlayerState : State
     {
         if (Mathf.Abs(m_Owner.InputDirection.magnitude) > 0)
         {
-            if (m_Owner.InputDirection.x > 0)
-            {
-                m_Owner.InputDirection = new Vector2(1, 0);
-            }
-            else if (m_Owner.InputDirection.x < 0)
-            {
-                m_Owner.InputDirection = new Vector2(-1, 0);
-            }
+            m_Owner.InputDirection = new Vector2(m_Owner.InputDirection.x, 0);
             m_Owner.Movement();
         }
         if (m_OnDeceleration)

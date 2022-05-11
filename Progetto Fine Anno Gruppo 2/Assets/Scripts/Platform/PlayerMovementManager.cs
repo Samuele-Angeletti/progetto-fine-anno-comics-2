@@ -170,6 +170,7 @@ namespace MainGame
             }
 
             Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
+
         }
     }
 

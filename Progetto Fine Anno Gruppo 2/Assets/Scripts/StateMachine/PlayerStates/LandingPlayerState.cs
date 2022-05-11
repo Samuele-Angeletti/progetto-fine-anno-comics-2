@@ -44,6 +44,7 @@ public class LandingPlayerState : State
             m_Owner.InputDirection = new Vector2(m_Owner.InputDirection.x, 0);
             m_Owner.StateMachine.SetState(EPlayerState.Walking);
         }
+        
     }
 
     private void Land()

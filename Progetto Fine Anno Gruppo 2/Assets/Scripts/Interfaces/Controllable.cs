@@ -87,6 +87,24 @@ public class Controllable : MonoBehaviour
         return true;
     }
 
+    public bool ForwardCheck(Vector2 direction, float distance, Vector2 startPos)
+    {
+        RaycastHit2D[] raycastHits = new RaycastHit2D[10];
+        int hits = Physics2D.BoxCastNonAlloc(startPos, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
+
+        if (hits > 0)
+        {
+            for (int i = 0; i < hits; i++)
+            {
+                if (raycastHits[i].collider.GetComponent<Wall>() != null)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public RaycastHit2D[] ForwardCheck(Vector2 direction, float distance, RaycastHit2D[] raycastHits)
     {
         Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);

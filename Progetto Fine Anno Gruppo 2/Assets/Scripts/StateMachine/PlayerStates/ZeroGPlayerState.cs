@@ -43,8 +43,26 @@ public class ZeroGPlayerState : State
 
     public override void OnUpdate()
     {
-        //m_IsMoving = m_Owner.Rigidbody.velocity != Vector2.zero;
+        if (m_Owner.InputDirection.x != 0 )
+        {
+            if (m_Owner.ForwardCheck(m_Owner.InputDirection, 0.5f, m_Owner.SpriteRenderer.transform.position))
+            {
+                Move();
+            }
+        }
+        else
+        {
+            if(m_Owner.ForwardCheck(m_Owner.InputDirection, 1f))
+            {
+                Move();
+            }
+        }
         
+
+    }
+
+    private void Move()
+    {
         if (!m_IsMoving)
         {
             if (m_Owner.InputDirection.magnitude != 0 && m_CurrentDirection.magnitude == 0)
@@ -61,25 +79,29 @@ public class ZeroGPlayerState : State
             {
                 if (m_Owner.Rigidbody.velocity == Vector2.zero)
                 {
-                    if(m_CurrentDirection.y > 0)
+                    if (m_CurrentDirection.y > 0)
                     {
                         if (!m_Owner.ForwardCheck(m_CurrentDirection, 1f))
                         {
-                            FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
-                            m_CurrentDirection = Vector3.zero;
-                            m_IsMoving = false;
+                            StopMovement();
                         }
                     }
                     else if (!m_Owner.ForwardCheck(m_CurrentDirection, 0.5f))
                     {
-                        FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
-                        m_CurrentDirection = Vector3.zero;
-                        m_IsMoving = false;
+                        StopMovement();
                     }
                 }
             }
         }
+    }
 
+    private void StopMovement()
+    {
+        FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
+        m_CurrentDirection = Vector3.zero;
+        m_IsMoving = false;
+
+        m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", false);
     }
 
     private void Movement()
@@ -110,6 +132,5 @@ public class ZeroGPlayerState : State
             m_Owner.SetSpriteXPos(0);
         }
 
-        m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", false);
     }
 }
