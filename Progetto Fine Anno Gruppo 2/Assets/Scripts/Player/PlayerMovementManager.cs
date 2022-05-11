@@ -29,6 +29,7 @@ namespace MainGame
 
         [Header("Jump Settings")]
         public float JumpHeight;
+        public float JumpDecelerator;
         public float TimerJumpButtonIsPressed;
         public float GravityScale;
         public LayerMask GroundMask;
@@ -147,6 +148,29 @@ namespace MainGame
         public void RotatePlayer(int degrees)
         {
             SpriteRenderer.gameObject.transform.eulerAngles = new Vector3(0, 0, degrees);
+        }
+
+        public void Movement()
+        {
+            
+            if (Mathf.Abs(Rigidbody.velocity.x) > MaxSpeed)
+            {
+                Rigidbody.velocity = new Vector2(Mathf.Sign(Rigidbody.velocity.x) * MaxSpeed, Rigidbody.velocity.y);
+            }
+
+            if (Direction.x != 0)
+            {
+
+                if (Rigidbody.velocity.x > 0)
+                {
+                    FlipSpriteOnX(true);
+                }
+                if (Rigidbody.velocity.x < -0.1)
+                {
+                    FlipSpriteOnX(false);
+                }
+            }
+            Rigidbody.velocity = Direction * MaxSpeed * Time.fixedDeltaTime;
         }
     }
 
