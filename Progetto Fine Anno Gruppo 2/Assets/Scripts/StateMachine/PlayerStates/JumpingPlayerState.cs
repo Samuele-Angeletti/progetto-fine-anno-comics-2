@@ -25,7 +25,8 @@ public class JumpingPlayerState : State
 
     public override void OnFixedUpdate()
     {
-        Movement();
+        m_Owner.Direction = new Vector2(m_Owner.Direction.x, 0);
+        m_Owner.Movement();
         Jump();
     }
 
@@ -39,19 +40,19 @@ public class JumpingPlayerState : State
 
     public override void OnUpdate()
     {
-        if(!m_Owner.IsJumping && !m_Owner.IsGrounded)
+        if (!m_Owner.IsJumping && !m_Owner.IsGrounded)
         {
             m_Owner.StateMachine.SetState(EPlayerState.Landing);
         }
 
         m_TimePassed += Time.deltaTime;
-        if(m_TimePassed >= m_Owner.TimerJumpButtonIsPressed)
+        if (m_TimePassed >= m_Owner.TimerJumpButtonIsPressed)
         {
             m_TimePassed = 0;
             m_Owner.IsJumping = false;
         }
 
-        if(!m_Owner.ForwardCheck(Vector3.up, 1f))
+        if (!m_Owner.ForwardCheck(Vector3.up, 0.55f))
         {
             m_Owner.StateMachine.SetState(EPlayerState.Landing);
         }
@@ -60,32 +61,32 @@ public class JumpingPlayerState : State
     private void Jump()
     {
         m_Owner.Rigidbody.velocity = new Vector2(m_Owner.Rigidbody.velocity.x, Vector2.up.y * m_JumpHeigth * Time.fixedDeltaTime);
-        m_JumpHeigth += Time.fixedDeltaTime * m_Owner.GravityScale;
+        m_JumpHeigth += Time.fixedDeltaTime * m_Owner.JumpDecelerator;
     }
 
-    private void Movement()
-    {
-        m_Owner.Direction = new Vector2(m_Owner.Direction.x, m_Owner.Rigidbody.velocity.y);
+    //private void Movement()
+    //{
 
 
-        if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > m_Owner.MaxSpeed)
-        {
-            m_Owner.Rigidbody.velocity = new Vector2(Mathf.Sign(m_Owner.Rigidbody.velocity.x) * m_Owner.MaxSpeed, m_Owner.Rigidbody.velocity.y);
-        }
 
-        if (m_Owner.Direction.x != 0)
-        {
+    //    if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > m_Owner.MaxSpeed)
+    //    {
+    //        m_Owner.Rigidbody.velocity = new Vector2(Mathf.Sign(m_Owner.Rigidbody.velocity.x) * m_Owner.MaxSpeed, m_Owner.Rigidbody.velocity.y);
+    //    }
 
-            if (m_Owner.Rigidbody.velocity.x > 0)
-            {
-                m_Owner.FlipSpriteOnX(true);
-            }
-            if (m_Owner.Rigidbody.velocity.x < -0.1)
-            {
-                m_Owner.FlipSpriteOnX(false);
-            }
-        }
-        m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.MaxSpeed * Time.fixedDeltaTime;
-    }
+    //    if (m_Owner.Direction.x != 0)
+    //    {
+
+    //        if (m_Owner.Rigidbody.velocity.x > 0)
+    //        {
+    //            m_Owner.FlipSpriteOnX(true);
+    //        }
+    //        if (m_Owner.Rigidbody.velocity.x < -0.1)
+    //        {
+    //            m_Owner.FlipSpriteOnX(false);
+    //        }
+    //    }
+    //    m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.MaxSpeed * Time.fixedDeltaTime;
+    //}
 
 }

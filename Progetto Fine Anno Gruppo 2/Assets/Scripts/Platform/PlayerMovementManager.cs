@@ -31,6 +31,7 @@ namespace MainGame
 
         [Header("Jump Settings")]
         public float JumpHeight;
+        public float JumpDecelerator;
         public float TimerJumpButtonIsPressed;
         public float GravityScale;
         public LayerMask GroundMask;
@@ -61,18 +62,18 @@ namespace MainGame
             StateMachine.RegisterState(EPlayerState.Jumping, new JumpingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.ZeroG, new ZeroGPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Landing, new LandingPlayerState(this));
-           
+
             StateMachine.SetState(EPlayerState.Walking);
         }
 
-        internal void SetSpriteXPos(float xPos)
+        internal void SetSpriteXPos(float rightXPos)
         {
-            SpriteRenderer.transform.localPosition = new Vector3(xPos, SpriteRenderer.transform.localPosition.y);
+            SpriteRenderer.transform.localPosition = new Vector3(rightXPos, 0, 0);
         }
 
         void Update()
         {
-            
+
             StateMachine.OnUpdate();
             GroundCheck();
         }
@@ -114,7 +115,7 @@ namespace MainGame
         {
             SpriteRenderer.flipX = !flipped;
         }
-        
+
         public void FlipSpriteOnY(bool flipped)
         {
             SpriteRenderer.flipY = !flipped;
@@ -122,7 +123,7 @@ namespace MainGame
 
         public void OnPublish(IMessage message)
         {
-            if(message is ZeroGMessage)
+            if (message is ZeroGMessage)
             {
                 ZeroGMessage zeroGMessage = (ZeroGMessage)message;
                 if (zeroGMessage.Active)
@@ -153,6 +154,29 @@ namespace MainGame
         public void RotatePlayer(int degrees)
         {
             SpriteRenderer.gameObject.transform.eulerAngles = new Vector3(0, 0, degrees);
+        }
+
+        public void Movement()
+        {
+
+            if (Mathf.Abs(Rigidbody.velocity.x) > MaxSpeed)
+            {
+                Rigidbody.velocity = new Vector2(Mathf.Sign(Rigidbody.velocity.x) * MaxSpeed, Rigidbody.velocity.y);
+            }
+
+            if (Direction.x != 0)
+            {
+
+                if (Rigidbody.velocity.x > 0)
+                {
+                    FlipSpriteOnX(true);
+                }
+                if (Rigidbody.velocity.x < -0.1)
+                {
+                    FlipSpriteOnX(false);
+                }
+            }
+            Rigidbody.velocity = Direction * MaxSpeed * Time.fixedDeltaTime;
         }
     }
 

@@ -24,7 +24,17 @@ public class WalkingPlayerState : State
     public override void OnFixedUpdate()
     {
         if (Mathf.Abs(m_Owner.Direction.magnitude) > 0)
-            Movement();
+        {
+            if (m_Owner.Direction.x > 0)
+            {
+                m_Owner.Direction = new Vector2(1, 0);
+            }
+            else if (m_Owner.Direction.x < 0)
+            {
+                m_Owner.Direction = new Vector2(-1, 0);
+            }
+            m_Owner.Movement();
+        }
         if (m_OnDeceleration)
         {
             Decelerate();
@@ -80,42 +90,42 @@ public class WalkingPlayerState : State
             }
         }
 
-        if(Mathf.Abs(m_Owner.Rigidbody.velocity.x) > 0)
+        if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > 0)
             m_Owner.PlayerAnimator?.SetFloat("Walking", 1);
         else
             m_Owner.PlayerAnimator?.SetFloat("Walking", -1);
     }
 
-    private void Movement()
-    {
-        if(m_Owner.Direction.x > 0)
-        {
-            m_Owner.Direction = new Vector2(1, 0);
-        }
-        else if(m_Owner.Direction.x < 0)
-        {
-            m_Owner.Direction = new Vector2(-1, 0);
-        }
+    //public void Movement()
+    //{
+    //    if(m_Owner.Direction.x > 0)
+    //    {
+    //        m_Owner.Direction = new Vector2(1, 0);
+    //    }
+    //    else if(m_Owner.Direction.x < 0)
+    //    {
+    //        m_Owner.Direction = new Vector2(-1, 0);
+    //    }
 
 
-        if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > m_Owner.MaxSpeed)
-        {
-            m_Owner.Rigidbody.velocity = new Vector2(Mathf.Sign(m_Owner.Rigidbody.velocity.x) * m_Owner.MaxSpeed, m_Owner.Rigidbody.velocity.y);
-        }
+    //    if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > m_Owner.MaxSpeed)
+    //    {
+    //        m_Owner.Rigidbody.velocity = new Vector2(Mathf.Sign(m_Owner.Rigidbody.velocity.x) * m_Owner.MaxSpeed, m_Owner.Rigidbody.velocity.y);
+    //    }
 
-        if (m_Owner.Direction.x != 0)
-        {
+    //    if (m_Owner.Direction.x != 0)
+    //    {
 
-            if (m_Owner.Rigidbody.velocity.x > 0)
-            {
-                m_Owner.FlipSpriteOnX(true);
-            }
-            if (m_Owner.Rigidbody.velocity.x < -0.1)
-            {
-                m_Owner.FlipSpriteOnX(false);
-            }
-        }
-        m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.MaxSpeed * Time.fixedDeltaTime;
-    }
+    //        if (m_Owner.Rigidbody.velocity.x > 0)
+    //        {
+    //            m_Owner.FlipSpriteOnX(true);
+    //        }
+    //        if (m_Owner.Rigidbody.velocity.x < -0.1)
+    //        {
+    //            m_Owner.FlipSpriteOnX(false);
+    //        }
+    //    }
+    //    m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.MaxSpeed * Time.fixedDeltaTime;
+    //}
 
 }
