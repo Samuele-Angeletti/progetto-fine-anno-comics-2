@@ -39,8 +39,8 @@ public class LandingPlayerState : State
     public override void OnUpdate()
     {
         if (m_Owner.IsGrounded)
-        {
-            m_Owner.Rigidbody.velocity = new Vector2(m_Owner.Rigidbody.velocity.x, 0);
+           {
+            m_Owner.Rigidbody.velocity = new Vector2(m_FallingSpeed.x, 0);
             m_Owner.InputDirection = new Vector2(m_Owner.InputDirection.x, 0);
             m_Owner.StateMachine.SetState(EPlayerState.Walking);
         }
@@ -55,7 +55,6 @@ public class LandingPlayerState : State
         m_FallingSpeed = new Vector2(castXSpeed, Mathf.Clamp(m_FallingSpeed.y, m_Owner.GravityScale, 0));
 
         m_Owner.Rigidbody.velocity = m_FallingSpeed;
-
     }
 
 
