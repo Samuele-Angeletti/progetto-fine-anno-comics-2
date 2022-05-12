@@ -15,7 +15,7 @@ namespace Commons
         private TextMeshProUGUI m_Text;
         private RawImage m_Background;
 
-        private IInteractable m_CurrentInteractable;
+        private Interactable m_CurrentInteractable;
         private bool m_ActiveUI;
         private float m_TimePassed;
 
@@ -27,7 +27,7 @@ namespace Commons
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            IInteractable interactable = collision.GetComponent<IInteractable>();
+            Interactable interactable = collision.GetComponent<Interactable>();
             if (interactable != null)
             {
                 interactable.ShowUI(true);
@@ -41,7 +41,7 @@ namespace Commons
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            IInteractable interactable = collision.GetComponent<IInteractable>();
+            Interactable interactable = collision.GetComponent<Interactable>();
             if (interactable != null)
             {
                 interactable.ShowUI(false);
@@ -54,7 +54,7 @@ namespace Commons
 
         }
 
-        public IInteractable GetInteractable()
+        public Interactable GetInteractable()
         {
             return m_CurrentInteractable;
         }
@@ -69,17 +69,21 @@ namespace Commons
                     AddColorToUI(m_TimePassed / m_FadeTime);
                     if(m_TimePassed >= m_FadeTime)
                     {
-                        m_TimePassed = 0;
-                        m_ActiveUI = false;
-                        AddColorToUI(1);
+                        ShowAndDeactive();
                     }
                 }
                 else
                 {
-                    AddColorToUI(1);
-                    m_ActiveUI = false;
+                    ShowAndDeactive();
                 }
             }
+        }
+
+        private void ShowAndDeactive()
+        {
+            m_TimePassed = 0;
+            m_ActiveUI = false;
+            AddColorToUI(1);
         }
 
         private void AddColorToUI(float amount)
