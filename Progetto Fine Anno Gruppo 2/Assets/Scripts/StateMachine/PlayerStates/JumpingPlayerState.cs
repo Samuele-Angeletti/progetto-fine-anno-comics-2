@@ -52,7 +52,7 @@ public class JumpingPlayerState : State
             m_Owner.IsJumping = false;
         }
 
-        if (!m_Owner.ForwardCheck(Vector3.up, 1f))
+        if (!m_Owner.ForwardCheckOfWall(Vector3.up, 1f))
         {
             m_Owner.StateMachine.SetState(EPlayerState.Landing);
         }

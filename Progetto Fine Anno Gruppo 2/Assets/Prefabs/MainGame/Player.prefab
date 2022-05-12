@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3608097785748641215}
   - component: {fileID: 3608097785748641211}
+  - component: {fileID: 543330954}
+  - component: {fileID: 126510098576153070}
   - component: {fileID: 3608097785748641208}
   - component: {fileID: 3608097785748641213}
   - component: {fileID: 3608097785748641186}
-  - component: {fileID: 543330954}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -58,7 +59,6 @@ MonoBehaviour:
   SpriteRenderer: {fileID: 0}
   IsGrounded: 0
   IsJumping: 0
-  Speed: 30
   InertiaTime: 0.2
   InertiaDecelerator: 15
   MaxSpeed: 150
@@ -70,7 +70,36 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   SpeedInZeroGravity: 150
-  Direction: {x: 0, y: 0}
+  InputDirection: {x: 0, y: 0}
+--- !u!114 &543330954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3608097785748641184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e7f5dcff842cb4384388e150c87b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIText: {fileID: 7783969764306389104}
+  m_AnimatedUI: 1
+  m_FadeTime: 0.5
+--- !u!114 &126510098576153070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3608097785748641184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d68db6c13adf543809526a1e8a1840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxLife: 1
+  m_MessageType: 6
 --- !u!95 &3608097785748641208
 Animator:
   serializedVersion: 4
@@ -138,21 +167,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &543330954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3608097785748641184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e7f5dcff842cb4384388e150c87b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIText: {fileID: 7783969764306389104}
-  m_AnimatedUI: 1
-  m_FadeTime: 0.5
 --- !u!1 &3736648666047681635
 GameObject:
   m_ObjectHideFlags: 0

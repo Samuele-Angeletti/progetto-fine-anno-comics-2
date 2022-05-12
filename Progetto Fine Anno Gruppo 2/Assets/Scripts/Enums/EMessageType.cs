@@ -9,5 +9,6 @@ public enum EMessageType
     PowerUp,
     ModuleDocked,
     ModuleDestroyed,
-    NoBattery
+    NoBattery,
+    PlayerDeath
 }

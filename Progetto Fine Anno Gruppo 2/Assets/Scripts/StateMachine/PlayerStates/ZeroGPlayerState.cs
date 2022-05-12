@@ -27,6 +27,7 @@ public class ZeroGPlayerState : State
         m_Owner.PlayerAnimator?.SetBool("IdleZeroG", false);
         m_Owner.RotatePlayer(0);
         m_Owner.SetSpriteXPos(0);
+        m_CurrentDirection = Vector2.zero;
     }
 
     public override void OnFixedUpdate()
@@ -45,14 +46,14 @@ public class ZeroGPlayerState : State
     {
         if (m_Owner.InputDirection.x != 0 )
         {
-            if (m_Owner.ForwardCheck(m_Owner.InputDirection, 0.5f, m_Owner.SpriteRenderer.transform.position))
+            if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 0.5f, m_Owner.SpriteRenderer.transform.position))
             {
                 Move();
             }
         }
         else
         {
-            if(m_Owner.ForwardCheck(m_Owner.InputDirection, 1f))
+            if(m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 1f))
             {
                 Move();
             }
@@ -81,12 +82,12 @@ public class ZeroGPlayerState : State
                 {
                     if (m_CurrentDirection.y > 0)
                     {
-                        if (!m_Owner.ForwardCheck(m_CurrentDirection, 1f))
+                        if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 1f))
                         {
                             StopMovement();
                         }
                     }
-                    else if (!m_Owner.ForwardCheck(m_CurrentDirection, 0.5f))
+                    else if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 0.5f))
                     {
                         StopMovement();
                     }
