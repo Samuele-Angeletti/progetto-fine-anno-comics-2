@@ -87,7 +87,7 @@ public class ZeroGPlayerState : State
                             StopMovement();
                         }
                     }
-                    else if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 0.5f))
+                    else if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 0.5f)) // questo non detecta le piattaforme perchè sono troppo in alto, da rivedere
                     {
                         StopMovement();
                     }

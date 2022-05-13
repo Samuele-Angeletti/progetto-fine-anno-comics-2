@@ -94,19 +94,39 @@ namespace MainGame
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.GetComponent<Wind>() != null)
+            JumpIncreaser ji = collision.GetComponent<JumpIncreaser>();
+
+            if (collision.GetComponent<Lift>() != null)
             {
-                StateMachine.SetState(EPlayerState.Flying);
+                if (StateMachine.CurrentState.GetType() != typeof(FlyingPlayerState))
+                {
+                    if (StateMachine.CurrentState is ZeroGPlayerState)
+                        PubSub.PubSub.Publish(new ZeroGMessage(false));
+
+                    StateMachine.SetState(EPlayerState.Flying);
+                }
+            }
+            else if(ji != null)
+            {
+                ji.StoreJumpHegiht(JumpHeight);
+                JumpHeight = ji.GetNewJumpHeght();
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.GetComponent<Wind>() != null)
+            JumpIncreaser ji = collision.GetComponent<JumpIncreaser>();
+
+            if (collision.GetComponent<Lift>() != null)
             {
                 StateMachine.SetState(EPlayerState.Walking);
             }
+            else if(ji != null)
+            {
+                JumpHeight = ji.GetOldJumpHeght();
+            }
         }
+
         private void GroundCheck()
         {
             if (!ForwardCheckOfWall(Vector3.down, 0.01f))
