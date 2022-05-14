@@ -94,9 +94,9 @@ namespace MainGame
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            JumpIncreaser ji = collision.GetComponent<JumpIncreaser>();
+            JumpIncreaser ji = collision.GetComponentInParent<JumpIncreaser>();
 
-            if (collision.GetComponent<Lift>() != null)
+            if (collision.GetComponentInParent<Lift>() != null)
             {
                 if (StateMachine.CurrentState.GetType() != typeof(FlyingPlayerState))
                 {
@@ -115,9 +115,9 @@ namespace MainGame
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            JumpIncreaser ji = collision.GetComponent<JumpIncreaser>();
+            JumpIncreaser ji = collision.GetComponentInParent<JumpIncreaser>();
 
-            if (collision.GetComponent<Lift>() != null)
+            if (collision.GetComponentInParent<Lift>() != null)
             {
                 StateMachine.SetState(EPlayerState.Walking);
             }

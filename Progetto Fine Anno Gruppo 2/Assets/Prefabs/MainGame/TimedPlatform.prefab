@@ -191,8 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc7303aa2fe9544b0383d52c178136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_StartDelayTime: 0
   m_TimeActive: 1
   m_TimeNotActive: 1
-  m_StartWithNotActiveTimer: 0
+  m_StartNotActiveTimer: 0
   m_ObjectToUse: {fileID: 2988905384998418793}
   m_ActivatorCheckPoint: {fileID: 0}
