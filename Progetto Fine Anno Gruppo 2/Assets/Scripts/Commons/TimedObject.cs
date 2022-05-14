@@ -20,10 +20,10 @@ namespace Commons
         private float m_TimePassed;
         private bool m_Active;
         private bool m_StartDelay;
+
         private void Start()
         {
             PubSub.PubSub.Subscribe(this, typeof(CheckPointMessage));
-            
         }
 
         private void Update()
