@@ -10,6 +10,7 @@ namespace Commons
 
     public class TimedObject : Activable, ISubscriber
     {
+        [Header("Timed Object Settings")]
         [SerializeField] float m_StartDelayTime;
         [SerializeField] float m_TimeActive;
         [SerializeField] float m_TimeNotActive;
@@ -66,7 +67,7 @@ namespace Commons
             if (message is ActivableMessage)
             {
                 ActivableMessage activableMessage = (ActivableMessage)message;
-                if (activableMessage.Activator == m_Activator && activableMessage.Active)
+                if (activableMessage.Activator == Activator && activableMessage.Active)
                 {
                     OnActive();
                 }
@@ -98,11 +99,12 @@ namespace Commons
 
         public override void OnStartVariablesReferredCheck()
         {
-            if (m_Activator == null)
+            if (Activator == null)
             {
                 Debug.LogError($"L'oggetto {gameObject.name} non contiene un Activator!");
             }
         }
+
     }
 
 }
