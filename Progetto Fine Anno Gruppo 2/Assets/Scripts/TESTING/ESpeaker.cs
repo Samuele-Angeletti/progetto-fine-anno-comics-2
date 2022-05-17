@@ -4,6 +4,6 @@ using UnityEngine;
 
 public enum ESpeaker
 {
-    Riemann,
+    Reimann,
     Ada
 }

@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="NuovoDialogo", menuName ="DialogueSO")]
+[CreateAssetMenu(menuName ="DialogueSO")]
 public class DialogueHolderSO : ScriptableObject
 {
     [Header("Settings Dialogo")]
     public bool IsSkippable;
-    public List<DialogueLineSO> Dialogo;
+    public List<DialogueLine> Dialogo;
 }
 
 
 [System.Serializable]
-public struct DialogueLineSO
+public struct DialogueLine
 {
+    
     public ESpeaker WhoIsSpeaking;
     [TextArea]
     public string DialougueLine;
-    public bool IsTheLastOne;
+    
 
 
 
