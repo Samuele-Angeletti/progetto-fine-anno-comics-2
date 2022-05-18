@@ -5,7 +5,7 @@ namespace Commons
 {
     public class Gizmosable : MonoBehaviour
     {
-        [SerializeField] public Activator Activator;
+        [SerializeField] public GameObject InterestedObject;
 #if UNITY_EDITOR
         [Header("Gizmos Settings")]
         [SerializeField] bool m_ActiveGizmos;
@@ -17,9 +17,9 @@ namespace Commons
             if (m_ActiveGizmos)
             {
                 Gizmos.color = m_LineColor;
-                Gizmos.DrawLine(transform.position, Activator.transform.position);
+                Gizmos.DrawLine(transform.position, InterestedObject.transform.position);
                 Gizmos.color = m_CircleColor;
-                Gizmos.DrawSphere(Activator.transform.position, m_Radius);
+                Gizmos.DrawSphere(InterestedObject.transform.position, m_Radius);
             }
         }
 #endif

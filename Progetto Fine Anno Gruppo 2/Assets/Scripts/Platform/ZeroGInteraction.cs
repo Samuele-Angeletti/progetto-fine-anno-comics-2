@@ -15,7 +15,7 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
         }
 
-        public override void Interact()
+        public override void Interact(Interacter interacter)
         {
             if (!m_Interacted)
             {

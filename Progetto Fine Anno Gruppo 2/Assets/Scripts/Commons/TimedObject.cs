@@ -67,7 +67,7 @@ namespace Commons
             if (message is ActivableMessage)
             {
                 ActivableMessage activableMessage = (ActivableMessage)message;
-                if (activableMessage.Activator == Activator && activableMessage.Active)
+                if (activableMessage.Activator.gameObject == InterestedObject && activableMessage.Active)
                 {
                     OnActive();
                 }
@@ -99,7 +99,7 @@ namespace Commons
 
         public override void OnStartVariablesReferredCheck()
         {
-            if (Activator == null)
+            if (InterestedObject == null)
             {
                 Debug.LogError($"L'oggetto {gameObject.name} non contiene un Activator!");
             }

@@ -221,7 +221,7 @@ namespace MainGame
         {
             if (Rigidbody.velocity.magnitude == 0)
             {
-                m_Interacter.GetInteractable()?.Interact();
+                m_Interacter.GetInteractable()?.Interact(m_Interacter);
             }
         }
 

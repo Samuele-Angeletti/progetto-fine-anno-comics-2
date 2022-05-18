@@ -5,7 +5,6 @@ using UnityEngine;
 public enum EInteractionType
 {
     ZeroG,
-    OpenDoor,
     GoToCheckPoint,
-    ActiveButton
+    Action
 }
