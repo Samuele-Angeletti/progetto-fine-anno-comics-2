@@ -30,3 +30,17 @@ public class ShowScriptableObjectPropertyDrawer : PropertyDrawer
 
     }
 }
+[CanEditMultipleObjects]
+[CustomEditor(typeof(MonoBehaviour), true)]
+public class MonoBehaviourEditor : Editor
+{
+}
+
+/// <summary>
+/// Required for the fetching of a default editor on ScriptableObject objects.
+/// </summary>
+[CanEditMultipleObjects]
+[CustomEditor(typeof(ScriptableObject), true)]
+public class ScriptableObjectEditor : Editor
+{
+}

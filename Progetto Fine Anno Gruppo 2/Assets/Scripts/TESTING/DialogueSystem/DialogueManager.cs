@@ -1,34 +1,31 @@
 using System.Collections.Generic;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using TMPro;
 using PubSub;
 using UnityEngine.UI;
-using System;
-using System.Threading.Tasks;
+using Commons;
 
 public class DialogueManager : MonoBehaviour, ISubscriber
 {
-   /* PlayerInputAction inputActions;*/ //per motivi di testing sto usando un riferimento diretto all'input, appena verrà aggiunto alla build principale
-                                    //questa parte di codice verrà rivista
+    
     public GameObject dialogueBox;
     public TextMeshProUGUI textToWrite;
     public Image spriteToChange;
 
+
+    private PlayerInputSystem m_PlayerInputs;
     private Queue<string> m_dialogueLine;
     private Queue<ESpeaker> m_whoIsSpeakingRightNow;
 
 
     [HideInInspector]public Sprite spriteAda;
     [HideInInspector]public Sprite spritePlayer;
-
-    
-    [SerializeField]private float m_typeWriterSpeed;
+    [SerializeField] private Controllable m_controllable;
+    [SerializeField] private float m_typeWriterSpeed;
     
     #region SINGLETONE PATTERN
     private static DialogueManager m_instance;
-    
 
     public static DialogueManager Instance
     {
@@ -55,27 +52,18 @@ public class DialogueManager : MonoBehaviour, ISubscriber
             Destroy(this);
             DontDestroyOnLoad(gameObject);
         }
-        //inputActions = new PlayerInputAction();
+        m_PlayerInputs = GetComponent<PlayerInputSystem>();
         m_whoIsSpeakingRightNow = new Queue<ESpeaker>();
         
     }
-    #region TESTING 
-    //private void OnEnable()
-    //{
-    //    inputActions.Player.temp.Enable();
-    //}
-    //private void OnDisable()
-    //{
-    //    inputActions.Player.temp.Disable();
-    //}
-    #endregion      
-    //per motivi di testing sto usando un riferimento diretto all'input, appena verrà aggiunto alla build principale
-    //questa parte di codice verrà rivista
+    
+    
     private void Start()
     {
         PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
         m_dialogueLine = new Queue<string>();
+        m_PlayerInputs.SetControllable(m_controllable);
 
     }
  
@@ -95,7 +83,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
     }
 
 
-    private IEnumerator Startdialogue(DialogueHolderSO dialogueToEnqueue)
+    public IEnumerator Startdialogue(DialogueHolderSO dialogueToEnqueue)
     {
         if (dialogueToEnqueue == null) yield return null;
         m_dialogueLine.Clear();
@@ -162,7 +150,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
             textLabel.text = lineaDiDialogo.Substring(0,charIndex);
             yield return null;
         }
-        //yield return new WaitUntil(() => inputActions.Player.temp.WasPressedThisFrame());
+        //yield return new WaitUntil(() => m_PlayerInputs.inputControls.Player.Interaction.phase == UnityEngine.InputSystem.InputActionPhase.Performed);
 
 
     }
