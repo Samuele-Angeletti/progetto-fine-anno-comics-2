@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[RequireComponent(typeof(BoxCollider2D))]
 public class DialogueTrigger : MonoBehaviour
 {
-    // se i nomi delle variabili vengono cambiate cambiare anche i riferimenti nell' editor script
+    
+    [ShowScriptableObject]
     public DialogueHolderSO m_dialogueToShow;
-    public bool isFinished = false;
+
 
     private void Update()
     {
