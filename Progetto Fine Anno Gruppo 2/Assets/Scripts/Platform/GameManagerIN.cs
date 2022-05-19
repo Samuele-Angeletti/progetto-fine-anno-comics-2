@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Commons;
 using PubSub;
+using Cinemachine;
+using ArchimedesMiniGame;
 
 namespace MainGame
 {
@@ -31,6 +33,10 @@ namespace MainGame
         }
         #endregion
 
+        [Header("Camera Settings")]
+        [SerializeField] CinemachineVirtualCamera m_CameraOnPlayer;
+        [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
+
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
 
@@ -51,7 +57,7 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
-            m_PlayerInputs.SetControllable(m_Controllable);
+            SetNewControllable(m_Controllable);
         }
 
         public void SetContinousMovement(bool active)
@@ -97,6 +103,24 @@ namespace MainGame
         private void OnDestroy()
         {
             OnDisableSubscribe();
+        }
+
+        public void SetNewControllable(Controllable newControllable)
+        {
+            m_Controllable = newControllable;
+            m_PlayerInputs.SetControllable(m_Controllable);
+
+            if(m_Controllable.GetComponent<PlayerMovementManager>() != null)
+            {
+                m_CameraOnPlayer.Priority = 1;
+                m_CameraOnModule.Priority = 0;
+            }
+            else if(m_Controllable.GetComponent<Module>() != null)
+            {
+                m_CameraOnPlayer.Priority = 0;
+                m_CameraOnModule.Priority = 1;
+            }
+
         }
     }
 }

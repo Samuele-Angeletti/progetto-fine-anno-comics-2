@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 706978253}
   - component: {fileID: 706978252}
   - component: {fileID: 706978251}
-  - component: {fileID: 706978254}
+  - component: {fileID: 5363305396972449910}
   m_Layer: 0
   m_Name: ZeroGMap
   m_TagString: Untagged
@@ -216,7 +216,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &706978254
+--- !u!114 &5363305396972449910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,9 +225,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 706978249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c72e9653eac57ac41940fbabe80cecbe, type: 3}
+  m_Script: {fileID: 11500000, guid: ae684d7a5c1b95840a25ea261334bfed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InterestedObject: {fileID: 0}
+  m_ActiveGizmos: 0
+  m_LineColor: {r: 0, g: 0, b: 0, a: 0}
+  m_CircleColor: {r: 0, g: 0, b: 0, a: 0}
+  m_Radius: 0
   InteractionType: 0
 --- !u!1 &8443086812751223412
 GameObject:

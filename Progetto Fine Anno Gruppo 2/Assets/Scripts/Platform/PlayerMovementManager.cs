@@ -230,6 +230,14 @@ namespace MainGame
             SpriteRenderer.gameObject.transform.eulerAngles = new Vector3(0, 0, degrees);
         }
 
+        public override void DebugZeroG()
+        {
+            if (StateMachine.CurrentState is ZeroGPlayerState)
+                PubSub.PubSub.Publish(new ZeroGMessage(false));
+            else
+                PubSub.PubSub.Publish(new ZeroGMessage(true));
+        }
+
     }
 
 }

@@ -31,8 +31,8 @@ namespace ArchimedesMiniGame
 
         private void Start()
         {
-            GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
-            GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
+            //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+            //GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
         }
 
         private void FixedUpdate()
@@ -81,12 +81,12 @@ namespace ArchimedesMiniGame
         {
             m_CurrentBattery -= m_UseSpeed * Time.deltaTime;
 
-            GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+            //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
 
             if(m_CurrentBattery <= 0)
             {
                 m_CurrentBattery = 0;
-                GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+                //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
                 PubSub.PubSub.Publish(new NoBatteryMessage());
             }
         }
@@ -117,7 +117,7 @@ namespace ArchimedesMiniGame
 
         public void GetDamage(float amount)
         {
-            GameManagerES.Instance.UpdateLifeSlider(amount, m_Damageable.MaxLife);
+            //GameManagerES.Instance.UpdateLifeSlider(amount, m_Damageable.MaxLife);
         }
     }
 }

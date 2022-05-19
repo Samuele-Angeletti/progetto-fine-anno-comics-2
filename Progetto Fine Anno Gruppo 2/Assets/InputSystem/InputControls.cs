@@ -71,6 +71,15 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ZeroG"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e79830b-dd74-420b-9c36-8ee309895b28"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -216,6 +225,17 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""action"": ""MovementArrows"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c775c7c-3389-4c3e-aa95-4e8cf9cfa7d1"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZeroG"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -279,6 +299,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
+        m_Player_ZeroG = m_Player.FindAction("ZeroG", throwIfNotFound: true);
         // Module
         m_Module = asset.FindActionMap("Module", throwIfNotFound: true);
         m_Module_Rotation = m_Module.FindAction("Rotation", throwIfNotFound: true);
@@ -346,6 +367,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Interaction;
+    private readonly InputAction m_Player_ZeroG;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
@@ -355,6 +377,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
+        public InputAction @ZeroG => m_Wrapper.m_Player_ZeroG;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -379,6 +402,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Interaction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteraction;
                 @Interaction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteraction;
                 @Interaction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteraction;
+                @ZeroG.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZeroG;
+                @ZeroG.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZeroG;
+                @ZeroG.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZeroG;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -398,6 +424,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Interaction.started += instance.OnInteraction;
                 @Interaction.performed += instance.OnInteraction;
                 @Interaction.canceled += instance.OnInteraction;
+                @ZeroG.started += instance.OnZeroG;
+                @ZeroG.performed += instance.OnZeroG;
+                @ZeroG.canceled += instance.OnZeroG;
             }
         }
     }
@@ -442,6 +471,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
+        void OnZeroG(InputAction.CallbackContext context);
     }
     public interface IModuleActions
     {

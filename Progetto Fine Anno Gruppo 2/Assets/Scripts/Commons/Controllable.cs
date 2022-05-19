@@ -38,6 +38,11 @@ namespace Commons
 
         }
 
+        public virtual void DebugZeroG()
+        {
+
+        }
+
         public virtual void Interact()
         {
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using Commons;
 using PubSub;
 
-public class ButtonInteraction : Interactable
+public class ButtonInteraction : Interactable, ISubscriber
 {
 
     public override void Interact(Interacter interacter)
@@ -12,7 +12,7 @@ public class ButtonInteraction : Interactable
         switch (InteractionType)
         {
             case EInteractionType.ZeroG:
-                Debug.LogError("Per la ZeroG devi usare lo script ZeroGInteraction");
+                ZeroGInteraction();
                 break;
             case EInteractionType.GoToCheckPoint:
                 interacter.transform.position = InterestedObject.transform.position;
@@ -28,4 +28,55 @@ public class ButtonInteraction : Interactable
 
     }
 
+    private bool m_Interacted;
+
+
+    private void Start()
+    {
+        if (InteractionType == EInteractionType.ZeroG)
+        {
+            PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
+        }
+    }
+
+
+    private void ZeroGInteraction()
+    {
+        if (!m_Interacted)
+        {
+            PubSub.PubSub.Publish(new ZeroGMessage(true));
+            m_Interacted = true;
+        }
+        else
+        {
+            PubSub.PubSub.Publish(new ZeroGMessage(false));
+            m_Interacted = false;
+        }
+    }
+
+
+    public void OnPublish(IMessage message)
+    {
+
+        if (InteractionType == EInteractionType.ZeroG)
+        {
+            if (message is ZeroGMessage)
+            {
+                ZeroGMessage zeroGMessage = (ZeroGMessage)message;
+                m_Interacted = zeroGMessage.Active;
+            }
+        }
+    }
+
+    public void OnDisableSubscribe()
+    {
+
+        if (InteractionType == EInteractionType.ZeroG)
+            PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
+    }
+
+    private void OnDestroy()
+    {
+        OnDisableSubscribe();
+    }
 }
