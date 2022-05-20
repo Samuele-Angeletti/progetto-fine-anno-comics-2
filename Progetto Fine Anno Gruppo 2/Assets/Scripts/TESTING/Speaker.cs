@@ -12,7 +12,7 @@ public class Speaker : MonoBehaviour
     {
         trigger = collision.GetComponent<DialogueTrigger>();
         dialogoDaPrendere = collision.GetComponent<DialogueTrigger>().m_dialogueToShow;
-        if (dialogoDaPrendere == null && trigger == null && trigger.modalit‡DiInterazione == EInteraction.OnTriggerEnter)
+        if (dialogoDaPrendere == null && trigger == null && trigger.modalit‡DiInterazione == EDialogueInteraction.OnTriggerEnter)
             PubSub.PubSub.Publish(new StartDialogueMessage(dialogoDaPrendere));
         else
             return;

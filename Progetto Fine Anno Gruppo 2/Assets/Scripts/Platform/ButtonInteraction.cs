@@ -3,24 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Commons;
 using PubSub;
-
-public class ButtonInteraction : Interactable, ISubscriber
+using MainGame;
+public class ButtonInteraction : Interactable
 {
-
+    [Header("Button Interaction Settings")]
+    [SerializeField] bool m_Active = true;
+    
     public override void Interact(Interacter interacter)
     {
-        switch (InteractionType)
-        {
-            case EInteractionType.ZeroG:
-                ZeroGInteraction();
-                break;
-            case EInteractionType.GoToCheckPoint:
-                interacter.transform.position = InterestedObject.transform.position;
-                break;
-            case EInteractionType.Action:
-                InterestedObject.GetComponentInChildren<Interactable>().Interact(interacter);
-                break;
-        }
+        if(m_Active)
+            GameManagerIN.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter);
     }
 
     public override void ShowUI(bool isVisible)
@@ -28,55 +20,8 @@ public class ButtonInteraction : Interactable, ISubscriber
 
     }
 
-    private bool m_Interacted;
-
-
-    private void Start()
+    public void SetActive(bool active)
     {
-        if (InteractionType == EInteractionType.ZeroG)
-        {
-            PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
-        }
-    }
-
-
-    private void ZeroGInteraction()
-    {
-        if (!m_Interacted)
-        {
-            PubSub.PubSub.Publish(new ZeroGMessage(true));
-            m_Interacted = true;
-        }
-        else
-        {
-            PubSub.PubSub.Publish(new ZeroGMessage(false));
-            m_Interacted = false;
-        }
-    }
-
-
-    public void OnPublish(IMessage message)
-    {
-
-        if (InteractionType == EInteractionType.ZeroG)
-        {
-            if (message is ZeroGMessage)
-            {
-                ZeroGMessage zeroGMessage = (ZeroGMessage)message;
-                m_Interacted = zeroGMessage.Active;
-            }
-        }
-    }
-
-    public void OnDisableSubscribe()
-    {
-
-        if (InteractionType == EInteractionType.ZeroG)
-            PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
-    }
-
-    private void OnDestroy()
-    {
-        OnDisableSubscribe();
+        m_Active = active;
     }
 }

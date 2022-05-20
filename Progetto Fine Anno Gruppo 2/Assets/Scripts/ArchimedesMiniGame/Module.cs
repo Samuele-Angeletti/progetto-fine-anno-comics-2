@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Commons;
+using MainGame;
+
 namespace ArchimedesMiniGame
 {
     public class Module : Controllable, IDamageable
@@ -57,6 +59,11 @@ namespace ArchimedesMiniGame
             {
                 m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, m_MaxSpeed);
             }
+        }
+
+        internal void StartEngine()
+        {
+            GameManagerIN.Instance.SetNewControllable(this);
         }
 
         public override void MoveRotation(Vector2 newDirection)

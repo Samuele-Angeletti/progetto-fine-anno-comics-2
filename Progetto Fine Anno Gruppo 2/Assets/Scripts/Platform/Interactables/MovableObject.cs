@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorInteractable : Interactable
+public class MovableObject : Interactable
 {
+    [Header("Movable Object Settings")]
     [SerializeField] Transform m_EndPivot;
     [SerializeField] float m_TransitionSpeed;
     private Vector3 m_StartPivot;

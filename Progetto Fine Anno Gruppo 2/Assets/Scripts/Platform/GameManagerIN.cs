@@ -40,11 +40,19 @@ namespace MainGame
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
 
+        [Header("Button Interaction SO")]
+        [SerializeField] List<ButtonInteractionScriptableObject> m_ButtonInteractionSO;
+
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
 
         private PlayerInputSystem m_PlayerInputs;
-
+        private bool m_ZeroGActive;
+        private PlayerMovementManager m_Player;
+        public bool ZeroGActive
+        {
+            get => m_ZeroGActive;
+        }
         private void Awake()
         {
             
@@ -57,6 +65,8 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
+            PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+            m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
         }
 
@@ -84,6 +94,7 @@ namespace MainGame
                 {
                     m_ElapsedTimeZeroG.Active(false);
                 }
+                m_ZeroGActive = zeroG.Active;
             }
             else if (message is PauseGameMessage)
             {
@@ -93,11 +104,16 @@ namespace MainGame
             {
                 Time.timeScale = 1;
             }
+            else if(message is DockingCompleteMessage)
+            {
+                SetNewControllable(m_Player);
+            }
         }
 
         public void OnDisableSubscribe()
         {
             PubSub.PubSub.Unsubscribe(this, typeof(ChangeContinousMovementMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
         }
 
         private void OnDestroy()
@@ -121,6 +137,11 @@ namespace MainGame
                 m_CameraOnModule.Priority = 1;
             }
 
+        }
+
+        public ButtonInteractionScriptableObject GetButtonInteractionSO(EInteractionType interactionType)
+        {
+            return m_ButtonInteractionSO.Find(x => x.InteractionType == interactionType);
         }
     }
 }

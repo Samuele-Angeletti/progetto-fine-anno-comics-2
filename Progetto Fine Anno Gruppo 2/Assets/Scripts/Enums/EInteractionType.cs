@@ -6,5 +6,7 @@ public enum EInteractionType
 {
     ZeroG,
     GoToCheckPoint,
-    Action
+    OpenDoor,
+    ActiveModule,
+    PlayPacMan
 }

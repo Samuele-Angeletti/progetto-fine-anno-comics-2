@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EInteraction
+public enum EDialogueInteraction
 {
     OnTriggerEnter,
     OnInteraction
@@ -12,7 +12,7 @@ public enum EInteraction
 public class DialogueTrigger : Interactable
 {
     public bool m_CanInteract = false;
-    public EInteraction modalit‡DiInterazione;
+    public EDialogueInteraction modalit‡DiInterazione;
     [ShowScriptableObject]
     public DialogueHolderSO m_dialogueToShow;
 
@@ -30,9 +30,9 @@ public class DialogueTrigger : Interactable
     {
         switch (modalit‡DiInterazione)
         {
-            case EInteraction.OnTriggerEnter:
+            case EDialogueInteraction.OnTriggerEnter:
                 break;
-            case EInteraction.OnInteraction:
+            case EDialogueInteraction.OnInteraction:
                 m_CanInteract = true;
                 break;
             
