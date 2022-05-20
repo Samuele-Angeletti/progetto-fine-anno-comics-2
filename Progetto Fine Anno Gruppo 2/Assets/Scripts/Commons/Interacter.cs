@@ -28,14 +28,23 @@ namespace Commons
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Interactable interactable = collision.GetComponent<Interactable>();
+            DialogueTrigger trigger = collision.GetComponent<DialogueTrigger>();
             if (interactable != null)
             {
-                interactable.ShowUI(true);
-                m_ActiveUI = true;
-                m_CurrentInteractable = interactable;
-                m_UIText.SetActive(true);
-                m_TimePassed = 0;
-                AddColorToUI(0);
+                if (trigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
+                {
+                    interactable.ShowUI(false);
+                }
+                else
+                {
+                    interactable.ShowUI(true);
+                    m_ActiveUI = true;
+                    m_CurrentInteractable = interactable;
+                    m_UIText.SetActive(true);
+                    m_TimePassed = 0;
+                    AddColorToUI(0);
+                }
+                
             }
         }
 

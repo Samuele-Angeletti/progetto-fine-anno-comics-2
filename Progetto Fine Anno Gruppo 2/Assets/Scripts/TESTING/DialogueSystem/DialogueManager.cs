@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
     public GameObject dialogueBox;
     public TextMeshProUGUI textToWrite;
     public Image spriteToChange;
-
+    
 
     private PlayerInputSystem m_PlayerInputs;
     private Queue<string> m_dialogueLine;
@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
     [HideInInspector]public Sprite spritePlayer;
     [SerializeField] private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
+    public bool dialogueIsPlaying = false;
     
     #region SINGLETONE PATTERN
     private static DialogueManager m_instance;
@@ -85,6 +86,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
 
     public IEnumerator Startdialogue(DialogueHolderSO dialogueToEnqueue)
     {
+        
         if (dialogueToEnqueue == null) yield return null;
         m_dialogueLine.Clear();
         Debug.Log("cancellata");
@@ -115,6 +117,8 @@ public class DialogueManager : MonoBehaviour, ISubscriber
         {
             PubSub.PubSub.Publish(new EndDialogueMessage());
             Debug.Log("dialogo finito");
+            
+            
             yield return null;
         }
 
@@ -139,6 +143,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
 
     private IEnumerator TypeWriteEffect(string lineaDiDialogo, TMP_Text textLabel)
     {
+        dialogueIsPlaying = true;
         float t = 0f;
         int charIndex = 0;
         while (charIndex < lineaDiDialogo.Length)
@@ -150,8 +155,8 @@ public class DialogueManager : MonoBehaviour, ISubscriber
             textLabel.text = lineaDiDialogo.Substring(0,charIndex);
             yield return null;
         }
-        //yield return new WaitUntil(() => m_PlayerInputs.inputControls.Player.Interaction.phase == UnityEngine.InputSystem.InputActionPhase.Performed);
-
+        yield return new WaitUntil(() => m_PlayerInputs.inputControls.Player.Interaction.phase == UnityEngine.InputSystem.InputActionPhase.Performed);
+        dialogueIsPlaying = false;
 
     }
     public void OnDisableSubscribe()
