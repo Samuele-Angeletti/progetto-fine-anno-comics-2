@@ -24,9 +24,9 @@ public class ZeroGPlayerState : State
 
     public override void OnEnd()
     {
-        m_Owner.PlayerAnimator?.SetBool("IdleZeroG", false);
         m_Owner.RotatePlayer(0);
-        m_Owner.SetSpriteXPos(0);
+        m_Owner.SetSpriteXPos(-0.48f);
+        m_CurrentDirection = Vector2.zero;
     }
 
     public override void OnFixedUpdate()
@@ -37,7 +37,8 @@ public class ZeroGPlayerState : State
     public override void OnStart()
     {
         Debug.Log("STATO: ZERO G");
-        m_Owner.PlayerAnimator?.SetBool("IdleZeroG", true);
+        m_Owner.Skeleton.loop = true;
+        m_Owner.Skeleton.AnimationName = "Idol";
         m_IsMoving = false;
     }
 
@@ -45,14 +46,14 @@ public class ZeroGPlayerState : State
     {
         if (m_Owner.InputDirection.x != 0 )
         {
-            if (m_Owner.ForwardCheck(m_Owner.InputDirection, 0.5f, m_Owner.SpriteRenderer.transform.position))
+            if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 0.5f, m_Owner.Skeleton.transform.position))
             {
                 Move();
             }
         }
         else
         {
-            if(m_Owner.ForwardCheck(m_Owner.InputDirection, 1f))
+            if(m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 1f))
             {
                 Move();
             }
@@ -70,7 +71,8 @@ public class ZeroGPlayerState : State
                 m_IsMoving = true;
                 m_CurrentDirection = m_Owner.InputDirection;
                 FlipSprite(270, 90, 0, 180, -0.233f, 0.233f);
-                m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", true);
+                m_Owner.Skeleton.loop = true;
+                m_Owner.Skeleton.AnimationName = "GravitàApice";
             }
         }
         else
@@ -81,12 +83,12 @@ public class ZeroGPlayerState : State
                 {
                     if (m_CurrentDirection.y > 0)
                     {
-                        if (!m_Owner.ForwardCheck(m_CurrentDirection, 1f))
+                        if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 1f))
                         {
                             StopMovement();
                         }
                     }
-                    else if (!m_Owner.ForwardCheck(m_CurrentDirection, 0.5f))
+                    else if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 0.5f)) // questo non detecta le piattaforme perchè sono troppo in alto, da rivedere
                     {
                         StopMovement();
                     }
@@ -100,8 +102,7 @@ public class ZeroGPlayerState : State
         FlipSprite(90, 270, 180, 0, 0.233f, -0.233f);
         m_CurrentDirection = Vector3.zero;
         m_IsMoving = false;
-
-        m_Owner.PlayerAnimator?.SetBool("JumpingZeroG", false);
+        m_Owner.StateMachine.SetState(EPlayerState.Somersault);
     }
 
     private void Movement()

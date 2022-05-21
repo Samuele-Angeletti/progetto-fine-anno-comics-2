@@ -38,6 +38,11 @@ namespace Commons
 
         }
 
+        public virtual void DebugZeroG()
+        {
+
+        }
+
         public virtual void Interact()
         {
 
@@ -53,7 +58,7 @@ namespace Commons
         /// </summary>
         /// <param name="direction">Direction to go</param>
         /// <returns></returns>
-        public bool ForwardCheck(Vector2 direction)
+        public bool ForwardCheckOfWall(Vector2 direction)
         {
             RaycastHit2D[] raycastHits = new RaycastHit2D[10];
             int hits = Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, 0.6f);
@@ -71,7 +76,7 @@ namespace Commons
             return true;
         }
         
-        public bool ForwardCheck(Vector2 direction, float distance)
+        public bool ForwardCheckOfWall(Vector2 direction, float distance)
         {
             RaycastHit2D[] raycastHits = new RaycastHit2D[10];
             int hits = Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
@@ -89,7 +94,7 @@ namespace Commons
             return true;
         }
 
-        public bool ForwardCheck(Vector2 direction, float distance, Vector2 startPos)
+        public bool ForwardCheckOfWall(Vector2 direction, float distance, Vector2 startPos)
         {
             RaycastHit2D[] raycastHits = new RaycastHit2D[10];
             int hits = Physics2D.BoxCastNonAlloc(startPos, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
@@ -107,7 +112,7 @@ namespace Commons
             return true;
         }
 
-        public RaycastHit2D[] ForwardCheck(Vector2 direction, float distance, RaycastHit2D[] raycastHits)
+        public RaycastHit2D[] ForwardCheckOfWall(Vector2 direction, float distance, RaycastHit2D[] raycastHits)
         {
             Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
             return raycastHits;

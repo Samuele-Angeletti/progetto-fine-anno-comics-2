@@ -186,11 +186,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1082d62d97d076c4eb69af0138dcf5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_StoppingDistance: {x: 0, y: 0}
+  m_ContinousMovement: 0
   m_Acceleration: 10
   m_MaxSpeed: 5
   m_RotationSpeed: 30
   m_DockingSide: {fileID: 5088620553301566980}
-  m_FileName: ModuloUno
+  m_MaxBattery: 0
+  m_UseSpeed: 0
 --- !u!114 &1339825258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxLife: 10
+  m_MessageType: 4
 --- !u!1 &5088620553714538216
 GameObject:
   m_ObjectHideFlags: 0

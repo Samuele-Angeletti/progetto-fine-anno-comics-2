@@ -8,7 +8,7 @@ namespace Commons
     public class Damageable : MonoBehaviour
     {
         [SerializeField] float m_MaxLife;
-
+        [SerializeField] EMessageType m_MessageType;
         private float m_CurrentLife;
         private IDamageable m_DamageableHolder;
 
@@ -32,9 +32,13 @@ namespace Commons
             if (m_CurrentLife <= 0)
             {
                 m_CurrentLife = 0;
-                PubSub.PubSub.Publish(new ModuleDestroyedMessage());
+                SwitcherSystem.SwitchMessageType(m_MessageType, null, null, null, () => PubSub.PubSub.Publish(new ModuleDestroyedMessage()), null, () => PubSub.PubSub.Publish(new PlayerDeathMessage()));
             }
         }
 
+        public void SetInitialLife(float amount)
+        {
+            m_CurrentLife = Mathf.Clamp(amount, 1, MaxLife);
+        }
     }
 }

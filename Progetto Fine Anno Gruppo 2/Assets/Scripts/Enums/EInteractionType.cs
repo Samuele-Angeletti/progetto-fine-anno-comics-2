@@ -5,7 +5,8 @@ using UnityEngine;
 public enum EInteractionType
 {
     ZeroG,
-    OpenDoor,
     GoToCheckPoint,
-    ActiveButton
+    OpenDoor,
+    ActiveModule,
+    PlayPacMan
 }

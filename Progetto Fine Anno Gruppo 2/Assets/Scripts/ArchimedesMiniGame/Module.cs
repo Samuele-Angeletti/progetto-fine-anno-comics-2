@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Commons;
+using MainGame;
+
 namespace ArchimedesMiniGame
 {
     public class Module : Controllable, IDamageable
@@ -31,8 +33,8 @@ namespace ArchimedesMiniGame
 
         private void Start()
         {
-            GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
-            GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
+            //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+            //GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
         }
 
         private void FixedUpdate()
@@ -59,6 +61,11 @@ namespace ArchimedesMiniGame
             }
         }
 
+        internal void StartEngine()
+        {
+            GameManagerIN.Instance.SetNewControllable(this);
+        }
+
         public override void MoveRotation(Vector2 newDirection)
         {
             m_Rigidbody.freezeRotation = true;
@@ -81,12 +88,12 @@ namespace ArchimedesMiniGame
         {
             m_CurrentBattery -= m_UseSpeed * Time.deltaTime;
 
-            GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+            //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
 
             if(m_CurrentBattery <= 0)
             {
                 m_CurrentBattery = 0;
-                GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+                //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
                 PubSub.PubSub.Publish(new NoBatteryMessage());
             }
         }
@@ -117,7 +124,7 @@ namespace ArchimedesMiniGame
 
         public void GetDamage(float amount)
         {
-            GameManagerES.Instance.UpdateLifeSlider(amount, m_Damageable.MaxLife);
+            //GameManagerES.Instance.UpdateLifeSlider(amount, m_Damageable.MaxLife);
         }
     }
 }

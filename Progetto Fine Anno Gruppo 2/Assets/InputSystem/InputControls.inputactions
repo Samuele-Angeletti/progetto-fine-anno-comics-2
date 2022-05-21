@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ZeroG",
+                    "type": "Button",
+                    "id": "6e79830b-dd74-420b-9c36-8ee309895b28",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -194,6 +203,17 @@
                     "action": "MovementArrows",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0c775c7c-3389-4c3e-aa95-4e8cf9cfa7d1",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ZeroG",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

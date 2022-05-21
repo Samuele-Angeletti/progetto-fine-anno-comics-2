@@ -20,7 +20,7 @@ public class JumpingPlayerState : State
     public override void OnEnd()
     {
         m_TimePassed = 0;
-        m_Owner.PlayerAnimator?.SetBool("Jumping", false);
+        
     }
 
     public override void OnFixedUpdate()
@@ -34,7 +34,8 @@ public class JumpingPlayerState : State
     {
         Debug.Log("STATO: JUMPING");
         m_TimePassed = 0;
-        m_Owner.PlayerAnimator?.SetBool("Jumping", true);
+        m_Owner.Skeleton.loop = false;
+        m_Owner.Skeleton.AnimationName = "SaltoApice";
         m_JumpHeigth = m_Owner.JumpHeight;
     }
 
@@ -52,7 +53,7 @@ public class JumpingPlayerState : State
             m_Owner.IsJumping = false;
         }
 
-        if (!m_Owner.ForwardCheck(Vector3.up, 1f))
+        if (!m_Owner.ForwardCheckOfWall(Vector3.up, 1f))
         {
             m_Owner.StateMachine.SetState(EPlayerState.Landing);
         }
@@ -64,29 +65,5 @@ public class JumpingPlayerState : State
         m_JumpHeigth += Time.fixedDeltaTime * m_Owner.JumpDecelerator;
     }
 
-    //private void Movement()
-    //{
-
-
-
-    //    if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > m_Owner.MaxSpeed)
-    //    {
-    //        m_Owner.Rigidbody.velocity = new Vector2(Mathf.Sign(m_Owner.Rigidbody.velocity.x) * m_Owner.MaxSpeed, m_Owner.Rigidbody.velocity.y);
-    //    }
-
-    //    if (m_Owner.Direction.x != 0)
-    //    {
-
-    //        if (m_Owner.Rigidbody.velocity.x > 0)
-    //        {
-    //            m_Owner.FlipSpriteOnX(true);
-    //        }
-    //        if (m_Owner.Rigidbody.velocity.x < -0.1)
-    //        {
-    //            m_Owner.FlipSpriteOnX(false);
-    //        }
-    //    }
-    //    m_Owner.Rigidbody.velocity = m_Owner.Direction * m_Owner.MaxSpeed * Time.fixedDeltaTime;
-    //}
 
 }

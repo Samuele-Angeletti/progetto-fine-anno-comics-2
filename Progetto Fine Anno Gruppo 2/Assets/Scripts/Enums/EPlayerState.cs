@@ -8,5 +8,8 @@ public enum EPlayerState
    Walking,
    Jumping,
    Landing,
-   ZeroG
+   ZeroG, 
+   Flying,
+   Landed,
+   Somersault
 }

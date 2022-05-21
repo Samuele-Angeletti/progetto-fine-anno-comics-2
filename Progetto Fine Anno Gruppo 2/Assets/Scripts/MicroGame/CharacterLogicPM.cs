@@ -33,7 +33,7 @@ namespace MicroGame
 
         public override void MoveDirection(Vector2 newDirection)
         {
-            if (ForwardCheck(newDirection.normalized))
+            if (ForwardCheckOfWall(newDirection.normalized))
             {
                 m_Direction = newDirection.normalized;
             }
@@ -56,7 +56,7 @@ namespace MicroGame
             {
                 if(m_NextDirection != Vector2.zero) // this control is for the next move that the player asked for.
                 {
-                    if(ForwardCheck(m_NextDirection))
+                    if(ForwardCheckOfWall(m_NextDirection))
                     {
                         m_Direction = m_NextDirection;
                         m_NextDirection = Vector2.zero;
@@ -64,7 +64,7 @@ namespace MicroGame
                 }
             }
 
-            if (!ForwardCheck(m_Direction))
+            if (!ForwardCheckOfWall(m_Direction))
             {
                 m_Direction = Vector2.zero;
             }

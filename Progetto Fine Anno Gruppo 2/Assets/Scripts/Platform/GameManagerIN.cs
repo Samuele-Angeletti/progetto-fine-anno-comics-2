@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Commons;
 using PubSub;
+using Cinemachine;
+using ArchimedesMiniGame;
 
 namespace MainGame
 {
@@ -31,14 +33,26 @@ namespace MainGame
         }
         #endregion
 
+        [Header("Camera Settings")]
+        [SerializeField] CinemachineVirtualCamera m_CameraOnPlayer;
+        [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
+
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
+
+        [Header("Button Interaction SO")]
+        [SerializeField] List<ButtonInteractionScriptableObject> m_ButtonInteractionSO;
 
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
 
         private PlayerInputSystem m_PlayerInputs;
-
+        private bool m_ZeroGActive;
+        private PlayerMovementManager m_Player;
+        public bool ZeroGActive
+        {
+            get => m_ZeroGActive;
+        }
         private void Awake()
         {
             
@@ -51,7 +65,9 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
-            m_PlayerInputs.SetControllable(m_Controllable);
+            PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+            m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
+            SetNewControllable(m_Controllable);
         }
 
         public void SetContinousMovement(bool active)
@@ -78,6 +94,7 @@ namespace MainGame
                 {
                     m_ElapsedTimeZeroG.Active(false);
                 }
+                m_ZeroGActive = zeroG.Active;
             }
             else if (message is PauseGameMessage)
             {
@@ -87,16 +104,44 @@ namespace MainGame
             {
                 Time.timeScale = 1;
             }
+            else if(message is DockingCompleteMessage)
+            {
+                SetNewControllable(m_Player);
+            }
         }
 
         public void OnDisableSubscribe()
         {
             PubSub.PubSub.Unsubscribe(this, typeof(ChangeContinousMovementMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
         }
 
         private void OnDestroy()
         {
             OnDisableSubscribe();
+        }
+
+        public void SetNewControllable(Controllable newControllable)
+        {
+            m_Controllable = newControllable;
+            m_PlayerInputs.SetControllable(m_Controllable);
+
+            if(m_Controllable.GetComponent<PlayerMovementManager>() != null)
+            {
+                m_CameraOnPlayer.Priority = 1;
+                m_CameraOnModule.Priority = 0;
+            }
+            else if(m_Controllable.GetComponent<Module>() != null)
+            {
+                m_CameraOnPlayer.Priority = 0;
+                m_CameraOnModule.Priority = 1;
+            }
+
+        }
+
+        public ButtonInteractionScriptableObject GetButtonInteractionSO(EInteractionType interactionType)
+        {
+            return m_ButtonInteractionSO.Find(x => x.InteractionType == interactionType);
         }
     }
 }
