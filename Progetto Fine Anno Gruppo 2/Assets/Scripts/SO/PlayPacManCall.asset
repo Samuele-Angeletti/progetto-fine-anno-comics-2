@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2dc0af37ac9f314a9f29a102c349ee1, type: 3}
   m_Name: PlayPacManCall
   m_EditorClassIdentifier: 
-  InteractionType: 0
+  InteractionType: 4

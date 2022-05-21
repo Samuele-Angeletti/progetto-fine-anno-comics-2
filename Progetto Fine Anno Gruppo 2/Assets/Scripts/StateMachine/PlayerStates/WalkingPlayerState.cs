@@ -60,6 +60,7 @@ public class WalkingPlayerState : State
     {
         Debug.Log("STATO: WALKING");
         m_TimePassed = 0;
+        m_Owner.Skeleton.loop = true;
     }
 
     public override void OnUpdate()
@@ -68,10 +69,12 @@ public class WalkingPlayerState : State
         if (m_Owner.IsJumping)
         {
             m_Owner.StateMachine.SetState(EPlayerState.Jumping);
+            return;
         }
         if (!m_Owner.IsGrounded)
         {
             m_Owner.StateMachine.SetState(EPlayerState.Landing);
+            return;
         }
         if (m_Owner.InputDirection.magnitude == 0)
         {
@@ -84,9 +87,15 @@ public class WalkingPlayerState : State
         }
 
         if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > 0)
-            m_Owner.PlayerAnimator?.SetFloat("Walking", 1);
+        {
+            m_Owner.Skeleton.loop = true;
+            m_Owner.Skeleton.AnimationName = "Camminata";
+        }
         else
-            m_Owner.PlayerAnimator?.SetFloat("Walking", -1);
+        {
+            m_Owner.Skeleton.loop = true;
+            m_Owner.Skeleton.AnimationName = "Idol";
+        }
     }
 
 

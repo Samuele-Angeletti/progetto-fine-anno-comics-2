@@ -5,6 +5,7 @@ using UnityEngine;
 using MainGame;
 using ArchimedesMiniGame;
 using UnityEngine.SceneManagement;
+
 [CreateAssetMenu(fileName ="ButtonInteractionSO", menuName ="ButtonInteraction")]
 public class ButtonInteractionScriptableObject : ScriptableObject
 {

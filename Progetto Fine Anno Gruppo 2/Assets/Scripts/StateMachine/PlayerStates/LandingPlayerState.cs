@@ -19,7 +19,6 @@ public class LandingPlayerState : State
 
     public override void OnEnd()
     {
-        m_Owner.PlayerAnimator?.SetBool("Landing", false);
     }
 
     public override void OnFixedUpdate()
@@ -32,7 +31,8 @@ public class LandingPlayerState : State
     public override void OnStart()
     {
         Debug.Log("STATO: LANDING");
-        m_Owner.PlayerAnimator?.SetBool("Landing", true);
+        m_Owner.Skeleton.loop = false;
+        m_Owner.Skeleton.AnimationName = "SaltoDiscesa";
         m_FallingSpeed = Vector2.zero;
     }
 
@@ -42,7 +42,7 @@ public class LandingPlayerState : State
            {
             m_Owner.Rigidbody.velocity = new Vector2(m_FallingSpeed.x, 0);
             m_Owner.InputDirection = new Vector2(m_Owner.InputDirection.x, 0);
-            m_Owner.StateMachine.SetState(EPlayerState.Walking);
+            m_Owner.StateMachine.SetState(EPlayerState.Landed);
         }
         
     }

@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: Dialogo_Tutorial
   m_EditorClassIdentifier: 
   IsSkippable: 0
-  Dialogo: []
+  Dialogo:
+  - WhoIsSpeaking: 0
+    DialougueLine: assasasada
+  - WhoIsSpeaking: 1
+    DialougueLine: dududhiufy
+  - WhoIsSpeaking: 0
+    DialougueLine: viuglygd
+  - WhoIsSpeaking: 1
+    DialougueLine: cliugsluuhf
+  - WhoIsSpeaking: 0
+    DialougueLine: ahahahahahah

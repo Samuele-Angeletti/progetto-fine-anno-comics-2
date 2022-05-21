@@ -31,7 +31,7 @@ namespace Commons
             DialogueTrigger trigger = collision.GetComponent<DialogueTrigger>();
             if (interactable != null)
             {
-                if (trigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
+                if (trigger != null && trigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
                 {
                     interactable.ShowUI(false);
                 }
