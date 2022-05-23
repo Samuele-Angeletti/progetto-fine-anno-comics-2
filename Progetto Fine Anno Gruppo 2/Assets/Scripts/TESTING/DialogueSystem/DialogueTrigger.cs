@@ -16,6 +16,7 @@ public class DialogueTrigger : Interactable, ISubscriber
     public EDialogueInteraction modalitaDiInterazione;
     [ShowScriptableObject]
     public DialogueHolderSO m_dialogueToShow;
+    
 
     private void Start()
     {
