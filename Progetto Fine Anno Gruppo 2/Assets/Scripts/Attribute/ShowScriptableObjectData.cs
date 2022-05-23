@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
 
 [CustomPropertyDrawer(typeof(ShowScriptableObject), true)]
 public class ShowScriptableObjectPropertyDrawer : PropertyDrawer
@@ -11,11 +12,15 @@ public class ShowScriptableObjectPropertyDrawer : PropertyDrawer
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         EditorGUI.PropertyField(position, property, label, true);
-
+        if (property.objectReferenceValue == null)
+        {
+            return;
+        }
         if (property.objectReferenceValue != null)
         {
             property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, GUIContent.none);
         }
+
 
         if (property.isExpanded)
         {
@@ -44,3 +49,4 @@ public class MonoBehaviourEditor : Editor
 public class ScriptableObjectEditor : Editor
 {
 }
+#endif

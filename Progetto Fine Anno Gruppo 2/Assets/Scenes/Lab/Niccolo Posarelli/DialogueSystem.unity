@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Radius: 0
   InteractionType: 2
   modalitaDiInterazione: 1
-  m_dialogueToShow: {fileID: 11400000, guid: 73e62e2c8afc68a4991e803ab8a99203, type: 2}
+  m_dialogueToShow: {fileID: 11400000, guid: fd4a022a9aa19f240903cb4fce97165d, type: 2}
 --- !u!4 &1362263637
 Transform:
   m_ObjectHideFlags: 0

@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
         for (int i = 0; i < dialogueToEnqueue.Dialogo.Count; i++)
         {
             m_whoIsSpeakingRightNow.Enqueue(dialogueToEnqueue.Dialogo[i].WhoIsSpeaking);
-            m_dialogueLine.Enqueue($"{dialogueToEnqueue.Dialogo[i].WhoIsSpeaking}: " + dialogueToEnqueue.Dialogo[i].DialougueLine);
+            m_dialogueLine.Enqueue($"{dialogueToEnqueue.Dialogo[i].WhoIsSpeaking}: " + dialogueToEnqueue.Dialogo[i].DialougueString);
         }
         yield return DisplayNextDialogueLine(dialogueToEnqueue);
 
