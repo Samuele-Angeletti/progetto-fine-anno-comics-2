@@ -157,7 +157,7 @@ namespace MainGame
 
         internal void SetSpriteXPos(float rightXPos)
         {
-            Skeleton.transform.localPosition = new Vector3(rightXPos, 0, 0);
+            //Skeleton.transform.localPosition = new Vector3(rightXPos, 0, 0);
         }
 
         public override void MoveDirection(Vector2 newDirection)
@@ -228,9 +228,10 @@ namespace MainGame
             }
         }
 
-        public void RotatePlayer(int degrees)
+        public void RotatePlayer(int degrees, Vector3 adjusterPos)
         {
-            Skeleton.gameObject.transform.eulerAngles = new Vector3(0, 0, degrees);
+            //Skeleton.transform.eulerAngles = new Vector3(0, 0, degrees);
+            //Skeleton.transform.position += adjusterPos;
         }
 
 #if UNITY_EDITOR

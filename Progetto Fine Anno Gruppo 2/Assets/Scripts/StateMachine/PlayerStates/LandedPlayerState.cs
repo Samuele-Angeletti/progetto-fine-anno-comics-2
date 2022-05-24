@@ -29,7 +29,7 @@ public class LandedPlayerState : State
         Debug.Log("STATO: LANDED");
         m_TimePassed = 0;
         m_Owner.Skeleton.loop = false;
-        m_Owner.Skeleton.AnimationName = "SaltoTermine";
+        m_Owner.Skeleton.AnimationName = "SaltoTermineDue";
     }
 
     public override void OnUpdate()
