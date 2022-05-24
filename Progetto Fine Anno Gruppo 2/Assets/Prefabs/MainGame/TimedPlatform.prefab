@@ -191,9 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc7303aa2fe9544b0383d52c178136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Activator: {fileID: 0}
   m_StartDelayTime: 0
   m_TimeActive: 1
   m_TimeNotActive: 1
   m_StartNotActiveTimer: 0
   m_ObjectToUse: {fileID: 2988905384998418793}
-  m_ActivatorCheckPoint: {fileID: 0}
+  m_ActiveGizmos: 1
+  m_LineColor: {r: 0.98853076, g: 1, b: 0, a: 1}
+  m_CircleColor: {r: 0.2648419, g: 0.7924528, b: 0.15250975, a: 1}
+  m_Radius: 0.2

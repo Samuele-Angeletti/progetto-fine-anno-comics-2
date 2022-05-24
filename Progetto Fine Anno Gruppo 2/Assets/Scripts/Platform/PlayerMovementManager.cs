@@ -5,6 +5,8 @@ using UnityEngine.Events;
 using PubSub;
 using Commons;
 using System;
+using Spine;
+using Spine.Unity;
 
 namespace MainGame
 {
@@ -16,10 +18,8 @@ namespace MainGame
         public Rigidbody2D Rigidbody;
         [HideInInspector]
         public Collider2D PlayerCollider;
-        [HideInInspector]
-        public Animator PlayerAnimator;
-        [HideInInspector]
-        public SpriteRenderer SpriteRenderer;
+        [SerializeField]
+        public SkeletonAnimation Skeleton;
         [HideInInspector]
         public bool IsGrounded, IsJumping;
 
@@ -46,13 +46,11 @@ namespace MainGame
         private Damageable m_Damageable;
 
         public Vector3 NextCheckpoint => m_NextCheckPoint;
-
+        private bool m_Flipped = false;
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             PlayerCollider = GetComponent<Collider2D>();
-            PlayerAnimator = GetComponent<Animator>();
-            SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
             StateMachine = new GenericStateMachine<EPlayerState>();
             m_Interacter = GetComponent<Interacter>();
             m_NextCheckPoint = transform.position;
@@ -71,6 +69,8 @@ namespace MainGame
             StateMachine.RegisterState(EPlayerState.ZeroG, new ZeroGPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Landing, new LandingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Flying, new FlyingPlayerState(this));
+            StateMachine.RegisterState(EPlayerState.Somersault, new SomersaultPlayerState(this));
+            StateMachine.RegisterState(EPlayerState.Landed, new LandedPlayerState(this));
 
             StateMachine.SetState(EPlayerState.Walking);
         }
@@ -142,13 +142,13 @@ namespace MainGame
         public void Movement()
         {
 
-            if (Rigidbody.velocity.x > 0.001f && SpriteRenderer.flipX)
-            {
-                FlipSpriteOnX(true);
-            }
-            if (Rigidbody.velocity.x < -0.001f && !SpriteRenderer.flipX)
+            if (Rigidbody.velocity.x > 0.001f && m_Flipped)
             {
                 FlipSpriteOnX(false);
+            }
+            if (Rigidbody.velocity.x < -0.001f && !m_Flipped)
+            {
+                FlipSpriteOnX(true);
             }
 
             Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
@@ -157,7 +157,7 @@ namespace MainGame
 
         internal void SetSpriteXPos(float rightXPos)
         {
-            SpriteRenderer.transform.localPosition = new Vector3(rightXPos, 0, 0);
+            //Skeleton.transform.localPosition = new Vector3(rightXPos, 0, 0);
         }
 
         public override void MoveDirection(Vector2 newDirection)
@@ -172,13 +172,16 @@ namespace MainGame
 
         public void FlipSpriteOnX(bool flipped)
         {
-            SpriteRenderer.flipX = !flipped;
+            Vector3 scale = flipped ? Vector3.back : Vector3.forward;
+            Skeleton.gameObject.transform.rotation = Quaternion.LookRotation(scale, Vector3.up);
+            m_Flipped = flipped;
         }
 
-        public void FlipSpriteOnY(bool flipped)
-        {
-            SpriteRenderer.flipY = !flipped;
-        }
+        //public void FlipSpriteOnY(bool flipped)
+        //{
+        //    float scale = flipped ? -1 : 1;
+        //    Skeleton.gameObject.transform.localScale = new Vector2(0, scale);
+        //}
 
         public void OnPublish(IMessage message)
         {
@@ -221,15 +224,25 @@ namespace MainGame
         {
             if (Rigidbody.velocity.magnitude == 0)
             {
-                m_Interacter.GetInteractable()?.Interact();
+                m_Interacter.GetInteractable()?.Interact(m_Interacter);
             }
         }
 
-        public void RotatePlayer(int degrees)
+        public void RotatePlayer(int degrees, Vector3 adjusterPos)
         {
-            SpriteRenderer.gameObject.transform.eulerAngles = new Vector3(0, 0, degrees);
+            //Skeleton.transform.eulerAngles = new Vector3(0, 0, degrees);
+            //Skeleton.transform.position += adjusterPos;
         }
 
+#if UNITY_EDITOR
+        public override void DebugZeroG()
+        {
+            if (StateMachine.CurrentState is ZeroGPlayerState)
+                PubSub.PubSub.Publish(new ZeroGMessage(false));
+            else
+                PubSub.PubSub.Publish(new ZeroGMessage(true));
+        }
+#endif 
     }
 
 }

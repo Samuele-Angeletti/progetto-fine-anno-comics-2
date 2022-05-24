@@ -32,6 +32,8 @@ public class FlyingPlayerState : State
     {
         Debug.Log("STATE: FLYING");
         m_Owner.Rigidbody.gravityScale = 1;
+        m_Owner.Skeleton.loop = false;
+        m_Owner.Skeleton.AnimationName = "Gravit‡Apice";
     }
 
     public override void OnUpdate()

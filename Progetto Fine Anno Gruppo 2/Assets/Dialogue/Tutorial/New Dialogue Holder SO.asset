@@ -15,14 +15,10 @@ MonoBehaviour:
   IsSkippable: 0
   Dialogo:
   - WhoIsSpeaking: 0
-    DialougueLine: Ciao sono reimann
-    IsTheLastOne: 0
+    DialougueString: 
   - WhoIsSpeaking: 1
-    DialougueLine: E io sono Ada
-    IsTheLastOne: 0
+    DialougueString: 
   - WhoIsSpeaking: 0
-    DialougueLine: Ciao ada
-    IsTheLastOne: 0
+    DialougueString: 
   - WhoIsSpeaking: 1
-    DialougueLine: 111111111
-    IsTheLastOne: 1
+    DialougueString: 

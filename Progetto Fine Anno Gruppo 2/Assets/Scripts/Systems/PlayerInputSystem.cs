@@ -21,11 +21,17 @@ namespace Commons
             ActiveNormalMovement();
 
             inputControls.Player.Interaction.performed += Interact;
+            inputControls.Player.ZeroG.started += ZeroGDebug;
 
             inputControls.Module.Rotation.performed += StartRotation;
             inputControls.Module.Rotation.canceled += StopRotation;
 
             inputControls.Player.Pause.performed += PauseGame;
+        }
+
+        private void ZeroGDebug(InputAction.CallbackContext obj)
+        {
+            m_CurrentControllable.DebugZeroG();
         }
 
         private void Interact(InputAction.CallbackContext obj)
@@ -109,6 +115,8 @@ namespace Commons
             inputControls.Player.Jump.performed += StartJump;
             inputControls.Player.Jump.canceled += StopJump;
         }
+
+
         #endregion
 
         private Controllable m_CurrentControllable;

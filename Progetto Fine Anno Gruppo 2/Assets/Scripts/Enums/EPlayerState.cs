@@ -9,5 +9,7 @@ public enum EPlayerState
    Jumping,
    Landing,
    ZeroG, 
-   Flying
+   Flying,
+   Landed,
+   Somersault
 }
