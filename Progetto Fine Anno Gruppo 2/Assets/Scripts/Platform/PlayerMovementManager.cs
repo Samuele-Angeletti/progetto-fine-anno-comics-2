@@ -20,6 +20,8 @@ namespace MainGame
         public Collider2D PlayerCollider;
         [SerializeField]
         public SkeletonAnimation Skeleton;
+        [SerializeField] 
+        public GameObject GraphicsPivot;
         [HideInInspector]
         public bool IsGrounded, IsJumping;
 
@@ -45,6 +47,8 @@ namespace MainGame
         private Vector3 m_NextCheckPoint;
         private Damageable m_Damageable;
 
+        [HideInInspector]
+        public EDirection CurrentDirection;
         public Vector3 NextCheckpoint => m_NextCheckPoint;
         private bool m_Flipped = false;
         private void Awake()
@@ -189,6 +193,7 @@ namespace MainGame
             {
                 ZeroGMessage zeroGMessage = (ZeroGMessage)message;
                 ContinousMovement = zeroGMessage.Active;
+                CurrentDirection = EDirection.Up;
                 if (zeroGMessage.Active)
                     StateMachine.SetState(EPlayerState.ZeroG);
                 else
@@ -230,8 +235,8 @@ namespace MainGame
 
         public void RotatePlayer(int degrees, Vector3 adjusterPos)
         {
-            //Skeleton.transform.eulerAngles = new Vector3(0, 0, degrees);
-            //Skeleton.transform.position += adjusterPos;
+            GraphicsPivot.transform.eulerAngles = new Vector3(0, 0, degrees);
+            GraphicsPivot.transform.localPosition += adjusterPos;
         }
 
 #if UNITY_EDITOR

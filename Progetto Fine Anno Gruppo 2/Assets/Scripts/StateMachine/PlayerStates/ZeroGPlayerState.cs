@@ -25,9 +25,11 @@ public class ZeroGPlayerState : State
 
     public override void OnEnd()
     {
-        SetAdjuster(Vector2.zero);
-        if(!m_Somersaulting)
-            m_Owner.RotatePlayer(0, m_Adjuster);
+        if (!m_Somersaulting)
+        {
+            m_Owner.GraphicsPivot.transform.localPosition = new Vector3(0, 0.5f);
+            m_Owner.GraphicsPivot.transform.eulerAngles = Vector3.zero;
+        }
         m_CurrentDirection = Vector2.zero;
     }
 
@@ -43,27 +45,52 @@ public class ZeroGPlayerState : State
         m_Owner.Skeleton.AnimationName = "Idol";
         m_IsMoving = false;
         m_Somersaulting = false;
-        m_Adjuster = Vector2.zero;
+        m_Adjuster = m_Owner.GraphicsPivot.transform.localPosition;
     }
 
     public override void OnUpdate()
     {
-        if (m_Owner.InputDirection.x != 0)
+        if (m_Owner.InputDirection.magnitude != 0)
         {
-            if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 0.5f, m_Owner.Skeleton.transform.position + (Vector3.up / 2)))
+            if (m_Owner.InputDirection.x != 0)
             {
-                Move();
+                if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 1, m_Owner.transform.position + (Vector3.up / 2)))
+                {
+                    Move();
+                }
+            }
+            else
+            {
+                if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 1f))
+                {
+                    Move();
+                }
+            }
+
+        }
+        else if(m_IsMoving)
+        {
+            if (m_CurrentDirection.magnitude != 0)
+            {
+                if (m_Owner.Rigidbody.velocity == Vector2.zero)
+                {
+                    if (m_CurrentDirection.y != 0)
+                    {
+                        if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 1f))
+                        {
+                            StopMovement();
+                        }
+                    }
+                    else
+                    {
+                        if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 0.5f, m_Owner.transform.position + (Vector3.up / 2))) // questo non detecta le piattaforme perchè sono troppo in alto, da rivedere
+                        {
+                            StopMovement();
+                        }
+                    }
+                }
             }
         }
-        else
-        {
-            if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 1f))
-            {
-                Move();
-            }
-        }
-
-
     }
 
     private void Move()
@@ -74,42 +101,18 @@ public class ZeroGPlayerState : State
             {
                 m_IsMoving = true;
                 m_CurrentDirection = m_Owner.InputDirection;
-                FlipSprite(270, 90, 0, 180, false);
-                m_Owner.Skeleton.loop = true;
+                FlipSprite(270, 90, 0, 180);
+                m_Owner.Skeleton.loop = false;
                 m_Owner.Skeleton.AnimationName = "GravitàApice";
-            }
-        }
-        else
-        {
-            if (m_CurrentDirection.magnitude != 0)
-            {
-                if (m_Owner.Rigidbody.velocity == Vector2.zero)
-                {
-                    if (m_CurrentDirection.y > 0)
-                    {
-                        if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 1f))
-                        {
-                            StopMovement();
-                        }
-                    }
-                    else
-                    {
-                        if (!m_Owner.ForwardCheckOfWall(m_CurrentDirection, 0.5f)) // questo non detecta le piattaforme perchè sono troppo in alto, da rivedere
-                        {
-                            StopMovement();
-                        }
-                    }
-                }
             }
         }
     }
 
     private void StopMovement()
     {
-        FlipSprite(90, 270, 180, 0, true);
+        m_Somersaulting = true;
         m_CurrentDirection = Vector3.zero;
         m_IsMoving = false;
-        m_Somersaulting = true;
         m_Owner.StateMachine.SetState(EPlayerState.Somersault);
     }
 
@@ -118,46 +121,54 @@ public class ZeroGPlayerState : State
         m_Owner.Rigidbody.velocity = m_Owner.SpeedInZeroGravity * Time.fixedDeltaTime * m_CurrentDirection;
     }
 
-    private void FlipSprite(int right, int left, int up, int down, bool stopping)
+    private void FlipSprite(int right, int left, int up, int down)
     {
         if(m_CurrentDirection.x > 0)
         {
-            if (stopping)
-                SetAdjuster(new Vector2(1, 0));
+            if(m_Owner.CurrentDirection == EDirection.Left)
+                SetAdjuster(new Vector2(-0.56f, 0));
             else
-                SetAdjuster(new Vector2(0, 0.5f));
+                SetAdjuster(new Vector2(-0.28f, 0));
 
             m_Owner.RotatePlayer(right, m_Adjuster);
+
+            m_Owner.CurrentDirection = EDirection.Right;
         }
         else if(m_CurrentDirection.y > 0)
         {
-            if (stopping)
-                SetAdjuster(new Vector2(0, 1));
-
+            m_Owner.CurrentDirection = EDirection.Up;
+            SetAdjuster(Vector2.zero);
             m_Owner.RotatePlayer(up, m_Adjuster);
+
         }
         else if(m_CurrentDirection.x < 0)
         {
-            if (stopping)
-                SetAdjuster(new Vector2(-1, 0));
+            if(m_Owner.CurrentDirection == EDirection.Right)
+                SetAdjuster(new Vector2(0.56f, 0));
             else
-                SetAdjuster(new Vector2(0, 0.5f));
+                SetAdjuster(new Vector2(0.28f, 0));
 
             m_Owner.RotatePlayer(left, m_Adjuster);
+
+
+            m_Owner.CurrentDirection = EDirection.Left;
         }
         else if(m_CurrentDirection.y < 0)
         {
-            if (stopping)
-                SetAdjuster(new Vector2(0, -1));
-
+            m_Owner.CurrentDirection = EDirection.Down;
+            SetAdjuster(Vector2.zero);
             m_Owner.RotatePlayer(down, m_Adjuster);
+
         }
     }
 
     private void SetAdjuster(Vector2 newAdjuster)
     {
-        if (m_Adjuster.y != 0)
-            newAdjuster = new Vector2(newAdjuster.x, -m_Adjuster.y);
+        if (m_Adjuster.x != 0 && m_Owner.CurrentDirection != EDirection.Left && m_Owner.CurrentDirection != EDirection.Right)
+        {
+            
+            newAdjuster = new Vector2(-m_Adjuster.x, newAdjuster.y);
+        }
 
         m_Adjuster = newAdjuster;
     }

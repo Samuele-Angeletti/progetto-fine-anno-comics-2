@@ -37,16 +37,16 @@ public static class SwitcherSystem
         switch (direction)
         {
             case EDirection.Up:
-                up.Invoke();
+                up?.Invoke();
                 break;
             case EDirection.Down:
-                down.Invoke();
+                down?.Invoke();
                 break;
             case EDirection.Right:
-                right.Invoke();
+                right?.Invoke();
                 break;
             case EDirection.Left:
-                left.Invoke();
+                left?.Invoke();
                 break;
         }
     }
