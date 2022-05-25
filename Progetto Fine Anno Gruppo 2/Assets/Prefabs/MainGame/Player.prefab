@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995784555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.48, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -62,15 +62,15 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3bde88d924bc02a44a0e6818f8ce9b81, type: 2}
-  - {fileID: 2100000, guid: 21875cb5ea2e2934780abbbd174d6fc4, type: 2}
-  - {fileID: 2100000, guid: b5403d63a5389ca448e62bcf3f3c49da, type: 2}
-  - {fileID: 2100000, guid: 493fdc5f87e381c4fa061733d31058b7, type: 2}
-  - {fileID: 2100000, guid: 5ca975191c2ffe5408545ccff5915c7f, type: 2}
-  - {fileID: 2100000, guid: 3bde88d924bc02a44a0e6818f8ce9b81, type: 2}
-  - {fileID: 2100000, guid: 6111adac24541bc4fafd6705b62f4e27, type: 2}
-  - {fileID: 2100000, guid: 007938e453a8aaf4b9d174ac0970e3a9, type: 2}
-  - {fileID: 2100000, guid: 3bde88d924bc02a44a0e6818f8ce9b81, type: 2}
+  - {fileID: 2100000, guid: 6567dcab7e6e1af4888150c522b902af, type: 2}
+  - {fileID: 2100000, guid: e661741450ff93442a4b31adbfaf9d41, type: 2}
+  - {fileID: 2100000, guid: 014d5e24ce3c5d04eab86ab0843d2ae3, type: 2}
+  - {fileID: 2100000, guid: 15fa4d5d25d52d749ba83f9f741a8642, type: 2}
+  - {fileID: 2100000, guid: b678c7fb1022658409940c3872ab1f2b, type: 2}
+  - {fileID: 2100000, guid: 6567dcab7e6e1af4888150c522b902af, type: 2}
+  - {fileID: 2100000, guid: 8152a0819aea94f40990de83775f2a96, type: 2}
+  - {fileID: 2100000, guid: 2113117b45fe0ed4c8b0a28ff7f14be1, type: 2}
+  - {fileID: 2100000, guid: 6567dcab7e6e1af4888150c522b902af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: a7fa498daf0487846a2f821270efdffe, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 6df86beb0bbd56a45999f2e2d069430c, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   Rigidbody: {fileID: 0}
   PlayerCollider: {fileID: 0}
   Skeleton: {fileID: 995784556}
+  m_GraphicsPivot: {fileID: 8086454905939262098}
   IsGrounded: 0
   IsJumping: 0
   InertiaTime: 0.2
@@ -608,7 +609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8086454905939262098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.481, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

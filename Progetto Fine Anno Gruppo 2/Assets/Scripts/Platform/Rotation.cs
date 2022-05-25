@@ -10,32 +10,35 @@ namespace MainGame
 
         private bool m_OnRotation;
         private Vector3 m_Destination;
+        private Vector3 m_NewRotation;
 
         private void Update()
         {
+
             if (m_OnRotation)
             {
                 if (m_Direction == EDirection.Up || m_Direction == EDirection.Right)
                 {
                     Rotate(Vector3.back);
 
-                    if (transform.eulerAngles.z <= m_Destination.z)
+                    if (m_NewRotation.z <= m_Destination.z)
                     {
                         m_OnRotation = false;
 
-                        if(m_Destination.z == 1)
+                        if (m_Destination.z == 1)
                         {
                             m_Destination = Vector3.zero;
                         }
 
                         transform.eulerAngles = m_Destination;
                     }
+                    
                 }
                 else
                 {
                     Rotate(Vector3.forward);
 
-                    if (transform.eulerAngles.z >= m_Destination.z)
+                    if (m_NewRotation.z >= m_Destination.z)
                     {
                         m_OnRotation = false;
 
@@ -48,11 +51,15 @@ namespace MainGame
                     }
                 }
             }
+
         }
 
         private void Rotate(Vector3 direction)
         {
-            transform.Rotate(direction * m_RotationSpeed * Time.deltaTime);
+            m_NewRotation = transform.eulerAngles;
+            m_NewRotation += direction * m_RotationSpeed * Time.deltaTime;
+
+            transform.eulerAngles = m_NewRotation;
         }
 
         public void SetRotationDestination()
@@ -86,6 +93,19 @@ namespace MainGame
                     }
                 }
             }
+        }
+
+        public void SetVectorDestination(Vector3 newDestination, EDirection newDirection)
+        {
+            m_Direction = newDirection;
+            m_Destination = newDestination;
+            m_OnRotation = true;
+            m_NewRotation = transform.eulerAngles;
+        }
+
+        public void AbortRotation()
+        {
+            transform.eulerAngles = m_Destination;
         }
     }
 }
