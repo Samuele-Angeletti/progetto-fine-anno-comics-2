@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3339636587
+    locked: 0
+  - name: Luci
+    uniqueID: 3046036479
+    locked: 0
+  - name: Terreno
+    uniqueID: 4218470845
+    locked: 0
+  - name: Player E Environment
+    uniqueID: 2423475201
+    locked: 0
+  - name: Foreground
+    uniqueID: 36852173
+    locked: 0
