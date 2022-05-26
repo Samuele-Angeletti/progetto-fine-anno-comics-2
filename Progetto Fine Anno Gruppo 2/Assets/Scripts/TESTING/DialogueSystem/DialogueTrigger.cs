@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PubSub;
+using System;
 
 public enum EDialogueInteraction
 {
@@ -14,13 +15,18 @@ public class DialogueTrigger : Interactable, ISubscriber
 {
     private bool m_Interacted;
     public EDialogueInteraction modalitaDiInterazione;
+    public bool CanRepeatLastDialogue = true;
     [ShowScriptableObject]
-    public DialogueHolderSO m_dialogueToShow;
-    
+    public List<DialogueHolderSO> m_dialogueToShow;
+
+   
 
     private void Start()
     {
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
+        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterMessage));
+        PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
+        PubSub.PubSub.Subscribe(this, typeof(OnInteractionDialogueMessage));
     }
     public override void Interact(Interacter interacter)
     {
@@ -29,15 +35,9 @@ public class DialogueTrigger : Interactable, ISubscriber
     }
     private void Update()
     {
-        if (m_Interacted && DialogueManager.Instance.dialogueIsPlaying == false)
+        if (m_Interacted == true && DialoguePlayer.Instance.dialogueIsPlaying == false)
         {
-            if (modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
-            {
-                return;
-            }
-            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow));
             m_Interacted = false;
-
         }
     }
     public override void ShowUI(bool isVisible)
@@ -51,11 +51,34 @@ public class DialogueTrigger : Interactable, ISubscriber
         {
             Destroy(gameObject);
         }
+       
+        if (message is CurrentDialogueFinishedMessage)
+        {
+            if (m_dialogueToShow.Count > 1 || !CanRepeatLastDialogue)
+            {
+                m_dialogueToShow.RemoveAt(0);
+            }
+            if (m_dialogueToShow.Count == 0)
+            {
+                return;
+            }
+
+        }
+        if (message is OnTriggerEnterMessage)
+        {
+            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0]));
+        }
     }
+
+    
 
     public void OnDisableSubscribe()
     {
         PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(OnTriggerEnterMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof (CurrentDialogueFinishedMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(OnInteractionDialogueMessage));
+
 
     }
 }

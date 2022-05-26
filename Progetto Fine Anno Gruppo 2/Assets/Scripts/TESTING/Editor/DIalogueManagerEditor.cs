@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(DialogueManager))]
+[CustomEditor(typeof(DialoguePlayer))]
 public class DIalogueManagerEditor : Editor
 {
     private SerializedProperty adaProperty;
