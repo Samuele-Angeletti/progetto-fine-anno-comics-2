@@ -36,6 +36,8 @@ namespace MainGame
         [Header("Camera Settings")]
         [SerializeField] CinemachineVirtualCamera m_CameraOnPlayer;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
+        [SerializeField] CinemachineVirtualCamera m_CamerOnDialogue;
+        
 
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
@@ -66,7 +68,8 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
-            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
+            PubSub.PubSub.Subscribe(this,typeof(EndDialogueMessage));
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
         }
@@ -78,7 +81,24 @@ namespace MainGame
 
         public void OnPublish(IMessage message)
         {
-            if(message is ChangeContinousMovementMessage)
+            if (message is StartDialogueMessage)
+            {
+                if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
+                {
+                    m_CamerOnDialogue.Priority = 1;
+                    m_CameraOnPlayer.Priority = 0;
+                }
+
+            }
+            if (message is EndDialogueMessage)
+            {
+                if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
+                {
+                    m_CamerOnDialogue.Priority = 0;
+                    m_CameraOnPlayer.Priority = 1;
+                }
+            }
+            if (message is ChangeContinousMovementMessage)
             {
                 ChangeContinousMovementMessage changeContinousMovement = (ChangeContinousMovementMessage)message;
                 m_PlayerInputs.ChangeContinousMovement(changeContinousMovement.Active);
@@ -109,21 +129,14 @@ namespace MainGame
             {
                 SetNewControllable(m_Player);
             }
-            else if(message is StartEngineModuleMessage)
-            {
-                StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
-                SetNewControllable(startEngineModule.Module);
-            }    
         }
 
         public void OnDisableSubscribe()
         {
             PubSub.PubSub.Unsubscribe(this, typeof(ChangeContinousMovementMessage));
-            PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
-            PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
-            PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
-            PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Unsubscribe(this,typeof(StartDialogueMessage));
+            PubSub.PubSub.Unsubscribe(this,typeof(EndDialogueMessage));
         }
 
         private void OnDestroy()

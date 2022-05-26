@@ -15,10 +15,10 @@ MonoBehaviour:
   IsSkippable: 0
   Dialogo:
   - WhoIsSpeaking: 0
-    DialougueString: 
+    DialougueString: sisi
   - WhoIsSpeaking: 1
-    DialougueString: 
+    DialougueString: non
   - WhoIsSpeaking: 0
-    DialougueString: 
+    DialougueString: sis
   - WhoIsSpeaking: 1
-    DialougueString: 
+    DialougueString: non

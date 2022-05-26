@@ -15,12 +15,10 @@ MonoBehaviour:
   IsSkippable: 0
   Dialogo:
   - WhoIsSpeaking: 0
-    DialougueLine: assasasada
+    DialougueString: sisi
   - WhoIsSpeaking: 1
-    DialougueLine: dududhiufy
+    DialougueString: nono
   - WhoIsSpeaking: 0
-    DialougueLine: viuglygd
+    DialougueString: dididi
   - WhoIsSpeaking: 1
-    DialougueLine: cliugsluuhf
-  - WhoIsSpeaking: 0
-    DialougueLine: ahahahahahah
+    DialougueString: suisu

@@ -147,17 +147,20 @@ namespace MainGame
 
         public void Movement()
         {
-
-            if (Rigidbody.velocity.x > 0.001f && m_Flipped)
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
             {
-                FlipSpriteOnX(false);
-            }
-            if (Rigidbody.velocity.x < -0.001f && !m_Flipped)
-            {
-                FlipSpriteOnX(true);
-            }
+                if (Rigidbody.velocity.x > 0.001f && m_Flipped)
+                {
+                    FlipSpriteOnX(false);
+                }
+                if (Rigidbody.velocity.x < -0.001f && !m_Flipped)
+                {
+                    FlipSpriteOnX(true);
+                }
 
-            Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
+                Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
+            }
+                
 
         }
 
@@ -173,7 +176,8 @@ namespace MainGame
 
         public override void Jump(bool jumping)
         {
-            IsJumping = jumping;
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                IsJumping = jumping;
         }
 
         public void FlipSpriteOnX(bool flipped)

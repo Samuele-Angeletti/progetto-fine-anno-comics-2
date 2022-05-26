@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class Speaker : MonoBehaviour
 {
-    DialogueHolderSO dialogoDaPrendere;
     DialogueTrigger trigger;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         trigger = collision.GetComponent<DialogueTrigger>();
-        dialogoDaPrendere = collision.GetComponent<DialogueTrigger>().m_dialogueToShow;
-        if (dialogoDaPrendere != null && trigger != null && trigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
-            PubSub.PubSub.Publish(new StartDialogueMessage(dialogoDaPrendere));
+        if (trigger != null && trigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
+        {
+            PubSub.PubSub.Publish(new OnTriggerEnterMessage());
+        }
         else
             return;
         

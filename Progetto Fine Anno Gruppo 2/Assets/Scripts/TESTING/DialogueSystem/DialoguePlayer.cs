@@ -6,7 +6,7 @@ using PubSub;
 using UnityEngine.UI;
 using Commons;
 
-public class DialogueManager : MonoBehaviour, ISubscriber
+public class DialoguePlayer : MonoBehaviour, ISubscriber
 {
     
     public GameObject dialogueBox;
@@ -26,18 +26,18 @@ public class DialogueManager : MonoBehaviour, ISubscriber
     public bool dialogueIsPlaying = false;
     
     #region SINGLETONE PATTERN
-    private static DialogueManager m_instance;
+    private static DialoguePlayer m_instance;
 
-    public static DialogueManager Instance
+    public static DialoguePlayer Instance
     {
         get
         {
             if (m_instance == null)
             {
-                m_instance = FindObjectOfType<DialogueManager>();
+                m_instance = FindObjectOfType<DialoguePlayer>();
                 if (m_instance == null)
                 {
-                    m_instance = new GameObject().AddComponent<DialogueManager>();
+                    m_instance = new GameObject().AddComponent<DialoguePlayer>();
                 }
             }
             return m_instance;
@@ -63,6 +63,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
     {
         PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
+        PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
         m_dialogueLine = new Queue<string>();
         m_PlayerInputs.SetControllable(m_controllable);
 
@@ -74,12 +75,13 @@ public class DialogueManager : MonoBehaviour, ISubscriber
         {
             StartDialogueMessage dialogueMessage = (StartDialogueMessage)message;
             StartCoroutine(Startdialogue(dialogueMessage.dialogue));
-            
-        }
-        if (message is EndDialogueMessage)
-        {
-            dialogueBox.SetActive(false);
 
+        }
+
+        if (message is CurrentDialogueFinishedMessage)
+        {
+            StopAllCoroutines();
+            dialogueBox.SetActive(false);
         }
     }
 
@@ -115,10 +117,8 @@ public class DialogueManager : MonoBehaviour, ISubscriber
         }
         if (m_dialogueLine.Count == 0)
         {
-            PubSub.PubSub.Publish(new EndDialogueMessage());
             Debug.Log("dialogo finito");
-            
-            
+            PubSub.PubSub.Publish(new CurrentDialogueFinishedMessage());
             yield return null;
         }
 
@@ -156,6 +156,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
             yield return null;
         }
         yield return new WaitUntil(() => m_PlayerInputs.inputControls.Player.Interaction.phase == UnityEngine.InputSystem.InputActionPhase.Performed);
+
         dialogueIsPlaying = false;
 
     }
@@ -163,5 +164,6 @@ public class DialogueManager : MonoBehaviour, ISubscriber
     {
         PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(CurrentDialogueFinishedMessage));
     } 
 }
