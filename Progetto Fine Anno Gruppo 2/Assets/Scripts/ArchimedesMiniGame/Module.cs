@@ -9,11 +9,17 @@ namespace ArchimedesMiniGame
 {
     public class Module : Controllable, IDamageable
     {
+        [Header("References")]
+        [SerializeField] BoxCollider2D m_ExternalCollider;
+        [SerializeField] SpriteRenderer m_ExternalSprite;
+        [SerializeField] GameObject m_MapParent;
+        [Space(10)]
         [Header("Main settings")]
         [SerializeField] float m_Acceleration;
         [SerializeField] float m_MaxSpeed;
         [SerializeField] float m_RotationSpeed;
         [SerializeField] GameObject m_DockingSide;
+        [SerializeField] LayerMask m_DockingMask;
         [Space(10)]
         [Header("Battery Settings")]
         [SerializeField] float m_MaxBattery;
@@ -23,18 +29,19 @@ namespace ArchimedesMiniGame
         private Rigidbody2D m_Rigidbody;
         private Vector2 m_RotationDirection;
         private Damageable m_Damageable;
-
+        private bool m_DockingAttemptAvailable;
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
             m_CurrentBattery = m_MaxBattery;
             m_Damageable = GetComponent<Damageable>();
+            m_Rigidbody.freezeRotation = true;
         }
 
         private void Start()
         {
-            //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
-            //GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
+            GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+            GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
         }
 
         private void FixedUpdate()
@@ -59,11 +66,26 @@ namespace ArchimedesMiniGame
             {
                 m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, m_MaxSpeed);
             }
+
+            if (ForwardCheckOfWall(Vector2.up, 1f, m_DockingSide.transform.position, m_DockingMask))
+            {
+                m_DockingAttemptAvailable = true;
+                GameManagerES.Instance.ActiveDockingAttemptButton(true);
+            }
+            else if(m_DockingAttemptAvailable)
+            {
+                m_DockingAttemptAvailable = false;
+                GameManagerES.Instance.ActiveDockingAttemptButton(false);
+
+            }
         }
 
-        internal void StartEngine()
+        public void StartEngine()
         {
-            GameManagerIN.Instance.SetNewControllable(this);
+            PubSub.PubSub.Publish(new StartEngineModuleMessage(this));
+            m_MapParent.SetActive(false);
+            m_Rigidbody.freezeRotation = false;
+
         }
 
         public override void MoveRotation(Vector2 newDirection)
@@ -88,19 +110,21 @@ namespace ArchimedesMiniGame
         {
             m_CurrentBattery -= m_UseSpeed * Time.deltaTime;
 
-            //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+            GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
 
             if(m_CurrentBattery <= 0)
             {
                 m_CurrentBattery = 0;
-                //GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+                GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
                 PubSub.PubSub.Publish(new NoBatteryMessage());
             }
         }
 
-        public void StopSpeed()
+        public void Stop()
         {
             m_Rigidbody.velocity = Vector2.zero;
+
+            m_Rigidbody.freezeRotation = true;
         }
 
         public void DockingAttempt()
@@ -112,9 +136,18 @@ namespace ArchimedesMiniGame
                 if (d != null && d.IsActive)
                 {
                     Debug.Log("Attracco completato");
+                    m_ExternalCollider.enabled = false;
+                    m_ExternalSprite.enabled = false;
+                    m_MapParent.SetActive(true);
+                    Stop();
                     PubSub.PubSub.Publish(new DockingCompleteMessage());
                 }
             }
+        }
+
+        public override void Interact()
+        {
+            DockingAttempt();
         }
 
         internal DamageableInfos GetDamageableInfo()
@@ -124,7 +157,7 @@ namespace ArchimedesMiniGame
 
         public void GetDamage(float amount)
         {
-            //GameManagerES.Instance.UpdateLifeSlider(amount, m_Damageable.MaxLife);
+            GameManagerES.Instance.UpdateLifeSlider(amount, m_Damageable.MaxLife);
         }
     }
 }

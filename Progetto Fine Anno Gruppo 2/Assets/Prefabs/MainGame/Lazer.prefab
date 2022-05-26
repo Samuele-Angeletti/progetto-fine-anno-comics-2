@@ -95,6 +95,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DamageAmount: 10
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1596697398271516523
 GameObject:
   m_ObjectHideFlags: 0

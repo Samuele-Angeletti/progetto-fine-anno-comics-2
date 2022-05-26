@@ -66,6 +66,7 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
         }
@@ -108,12 +109,21 @@ namespace MainGame
             {
                 SetNewControllable(m_Player);
             }
+            else if(message is StartEngineModuleMessage)
+            {
+                StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
+                SetNewControllable(startEngineModule.Module);
+            }    
         }
 
         public void OnDisableSubscribe()
         {
             PubSub.PubSub.Unsubscribe(this, typeof(ChangeContinousMovementMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
         }
 
         private void OnDestroy()

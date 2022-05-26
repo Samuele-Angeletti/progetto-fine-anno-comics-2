@@ -66,6 +66,8 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
             PubSub.PubSub.Subscribe(this, typeof(CheckPointMessage));
             PubSub.PubSub.Subscribe(this, typeof(PlayerDeathMessage));
+            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
 
 
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
@@ -211,6 +213,14 @@ namespace MainGame
                 PubSub.PubSub.Publish(new ZeroGMessage(false));
                 m_Damageable.SetInitialLife(1);
             }
+            else if(message is StartEngineModuleMessage)
+            {
+                PlayerCollider.enabled = false;
+            }
+            else if(message is DockingCompleteMessage)
+            {
+                PlayerCollider.enabled = true;
+            }
         }
 
         public void OnDisableSubscribe()
@@ -218,6 +228,8 @@ namespace MainGame
             PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(CheckPointMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(PlayerDeathMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
         }
 
         private void OnDestroy()

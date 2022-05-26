@@ -111,6 +111,31 @@ namespace Commons
             }
             return true;
         }
+        /// <summary>
+        /// this one is different, returns true if the layermask is matched, false instead
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <param name="distance"></param>
+        /// <param name="startPos"></param>
+        /// <param name="mask"></param>
+        /// <returns></returns>
+        public bool ForwardCheckOfWall(Vector2 direction, float distance, Vector2 startPos, LayerMask mask)
+        {
+            RaycastHit2D[] raycastHits = new RaycastHit2D[10];
+            int hits = Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, 0.6f);
+
+            if (hits > 0)
+            {
+                for (int i = 0; i < hits; i++)
+                {
+                    if (raycastHits[i] && mask.Contains(raycastHits[i].collider.gameObject.layer))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
         public RaycastHit2D[] ForwardCheckOfWall(Vector2 direction, float distance, RaycastHit2D[] raycastHits)
         {

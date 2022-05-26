@@ -4,9 +4,10 @@ using UnityEngine;
 using PubSub;
 using UnityEngine.UI;
 using Commons;
+using MainGame;
+
 namespace ArchimedesMiniGame
 {
-    [RequireComponent(typeof(PlayerInputSystem))]
     public class GameManagerES : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
@@ -31,8 +32,7 @@ namespace ArchimedesMiniGame
         }
         #endregion
 
-        [Header("Player Settings")]
-        [SerializeField] Controllable m_Controllable;
+        private Controllable m_Controllable;
 
         [Header("UI References")]
         [SerializeField] Slider m_BatterySlider;
@@ -44,13 +44,6 @@ namespace ArchimedesMiniGame
         [Tooltip("Nome del file da creare per salvare i dati di danneggiamento. Se questa stringa viene omessa, verrà usato il nome del GameObject del Modulo corrente")]
         [SerializeField] string m_FileName;
 
-        private PlayerInputSystem m_PlayerInputs;
-
-        private void Awake()
-        {
-            m_PlayerInputs = GetComponent<PlayerInputSystem>();
-        }
-
         private void Start()
         {
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
@@ -58,8 +51,7 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
-
-            m_PlayerInputs.SetControllable(m_Controllable);
+            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
 
             ActiveDockingAttemptButton(false);
         }
@@ -72,7 +64,13 @@ namespace ArchimedesMiniGame
 
         public void OnPublish(IMessage message)
         {
-            if(message is DockingCompleteMessage)
+            if(message is StartEngineModuleMessage)
+            {
+
+                StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
+                m_Controllable = startEngineModule.Module;
+            }
+            else if(message is DockingCompleteMessage)
             {
                 SaveData();
             }
