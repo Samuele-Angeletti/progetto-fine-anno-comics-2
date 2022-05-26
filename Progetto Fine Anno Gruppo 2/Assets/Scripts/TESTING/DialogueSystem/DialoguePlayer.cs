@@ -80,6 +80,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
         if (message is CurrentDialogueFinishedMessage)
         {
+            StopAllCoroutines();
             dialogueBox.SetActive(false);
         }
     }
@@ -118,7 +119,6 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         {
             Debug.Log("dialogo finito");
             PubSub.PubSub.Publish(new CurrentDialogueFinishedMessage());
-            yield return new WaitForSeconds(0.3f);
             yield return null;
         }
 
