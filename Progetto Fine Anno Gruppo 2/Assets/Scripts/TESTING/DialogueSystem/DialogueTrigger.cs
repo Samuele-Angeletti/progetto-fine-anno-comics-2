@@ -38,6 +38,11 @@ public class DialogueTrigger : Interactable, ISubscriber
         if (m_Interacted == true && DialoguePlayer.Instance.dialogueIsPlaying == false)
         {
             m_Interacted = false;
+            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0]));
+        }
+        if (m_dialogueToShow.Count == 0)
+        {
+            PubSub.PubSub.Publish(new EndDialogueMessage());
         }
     }
     public override void ShowUI(bool isVisible)
@@ -51,16 +56,17 @@ public class DialogueTrigger : Interactable, ISubscriber
         {
             Destroy(gameObject);
         }
-       
         if (message is CurrentDialogueFinishedMessage)
         {
+           
             if (m_dialogueToShow.Count > 1 || !CanRepeatLastDialogue)
             {
-                m_dialogueToShow.RemoveAt(0);
+                m_dialogueToShow.RemoveAt(0); 
+                m_Interacted = false;
             }
             if (m_dialogueToShow.Count == 0)
             {
-                return;
+                m_Interacted = false;
             }
 
         }
