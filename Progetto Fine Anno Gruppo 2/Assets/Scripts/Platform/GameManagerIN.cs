@@ -71,6 +71,7 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
             PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
             PubSub.PubSub.Subscribe(this,typeof(EndDialogueMessage));
+            PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
         }
@@ -91,7 +92,8 @@ namespace MainGame
                 }
 
             }
-            if (message is EndDialogueMessage)
+            
+            if (message is EndDialogueMessage || message is CurrentDialogueFinishedMessage)
             {
                 if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
                 {
@@ -148,6 +150,7 @@ namespace MainGame
             PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
+            PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
         }
 
         private void OnDestroy()

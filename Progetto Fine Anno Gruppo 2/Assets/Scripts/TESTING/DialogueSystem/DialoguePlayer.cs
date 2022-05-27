@@ -118,6 +118,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         {
             Debug.Log("dialogo finito");
             PubSub.PubSub.Publish(new CurrentDialogueFinishedMessage());
+            yield return new WaitForSeconds(1);
             yield return null;
         }
 
