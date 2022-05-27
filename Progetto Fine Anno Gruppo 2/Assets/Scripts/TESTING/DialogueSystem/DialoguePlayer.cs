@@ -65,7 +65,6 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
         m_dialogueLine = new Queue<string>();
-        m_PlayerInputs.SetControllable(m_controllable);
 
     }
  

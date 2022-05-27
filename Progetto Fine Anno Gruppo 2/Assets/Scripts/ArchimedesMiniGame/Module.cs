@@ -30,12 +30,16 @@ namespace ArchimedesMiniGame
         private Vector2 m_RotationDirection;
         private Damageable m_Damageable;
         private bool m_DockingAttemptAvailable;
+        private bool m_Docked;
+        private Vector2 m_MaxSpeedVector;
+        private Vector2 m_CurrentAcceleration;
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
             m_CurrentBattery = m_MaxBattery;
             m_Damageable = GetComponent<Damageable>();
             m_Rigidbody.freezeRotation = true;
+            m_MaxSpeedVector = new Vector2(m_MaxSpeed, m_MaxSpeed);
         }
 
         private void Start()
@@ -46,6 +50,12 @@ namespace ArchimedesMiniGame
 
         private void FixedUpdate()
         {
+            if (m_Direction.magnitude != 0)
+                m_CurrentAcceleration += new Vector2(MathF.Abs(m_Direction.normalized.x), MathF.Abs(m_Direction.normalized.y)) * m_Acceleration * Time.fixedDeltaTime;
+            else
+                m_CurrentAcceleration = Vector2.zero;
+            
+
             m_Rigidbody.velocity += -m_Direction.normalized * m_Acceleration * Time.fixedDeltaTime;
             m_Rigidbody.rotation += m_RotationDirection.x * Time.fixedDeltaTime * m_RotationSpeed;
         }
@@ -67,7 +77,7 @@ namespace ArchimedesMiniGame
                 m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, m_MaxSpeed);
             }
 
-            if (ForwardCheckOfWall(Vector2.up, 1f, m_DockingSide.transform.position, m_DockingMask))
+            if (ForwardCheckOfWall(Vector2.up, 0.6f, m_DockingSide.transform.position, m_DockingMask))
             {
                 m_DockingAttemptAvailable = true;
                 GameManagerES.Instance.ActiveDockingAttemptButton(true);
@@ -78,14 +88,20 @@ namespace ArchimedesMiniGame
                 GameManagerES.Instance.ActiveDockingAttemptButton(false);
 
             }
+
+            GameManagerES.Instance.UpdateSpeed(m_Rigidbody.velocity.magnitude, m_MaxSpeedVector.magnitude);
+            GameManagerES.Instance.UpdateAcceleration(m_CurrentAcceleration.magnitude, m_MaxSpeed);
         }
 
         public void StartEngine()
         {
-            PubSub.PubSub.Publish(new StartEngineModuleMessage(this));
-            m_MapParent.SetActive(false);
-            m_Rigidbody.freezeRotation = false;
-
+            if (!m_Docked)
+            {
+                PubSub.PubSub.Publish(new StartEngineModuleMessage(this));
+                Debug.Log($"START ENGINE: {gameObject.name}");
+                m_MapParent.SetActive(false);
+                m_Rigidbody.freezeRotation = false;
+            }
         }
 
         public override void MoveRotation(Vector2 newDirection)
@@ -116,6 +132,7 @@ namespace ArchimedesMiniGame
             {
                 m_CurrentBattery = 0;
                 GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
+                Stop();
                 PubSub.PubSub.Publish(new NoBatteryMessage());
             }
         }
@@ -140,6 +157,7 @@ namespace ArchimedesMiniGame
                     m_ExternalSprite.enabled = false;
                     m_MapParent.SetActive(true);
                     Stop();
+                    m_Docked = true;
                     PubSub.PubSub.Publish(new DockingCompleteMessage());
                 }
             }
@@ -158,6 +176,9 @@ namespace ArchimedesMiniGame
         public void GetDamage(float amount)
         {
             GameManagerES.Instance.UpdateLifeSlider(amount, m_Damageable.MaxLife);
+            if (m_Damageable.CurrentLife <= 0) Stop();
         }
+
+        
     }
 }

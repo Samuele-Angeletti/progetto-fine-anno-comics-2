@@ -122,7 +122,7 @@ namespace Commons
         public bool ForwardCheckOfWall(Vector2 direction, float distance, Vector2 startPos, LayerMask mask)
         {
             RaycastHit2D[] raycastHits = new RaycastHit2D[10];
-            int hits = Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, 0.6f);
+            int hits = Physics2D.BoxCastNonAlloc(startPos, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
 
             if (hits > 0)
             {

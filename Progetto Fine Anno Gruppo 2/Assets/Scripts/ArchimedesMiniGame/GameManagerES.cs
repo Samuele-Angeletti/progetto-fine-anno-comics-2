@@ -5,6 +5,7 @@ using PubSub;
 using UnityEngine.UI;
 using Commons;
 using MainGame;
+using System;
 
 namespace ArchimedesMiniGame
 {
@@ -37,6 +38,8 @@ namespace ArchimedesMiniGame
         [Header("UI References")]
         [SerializeField] Slider m_BatterySlider;
         [SerializeField] Slider m_DamageSlider;
+        [SerializeField] Slider m_MaxSpeedSlider;
+        [SerializeField] Slider m_AccelerationSlider;
         [SerializeField] Button m_DockingAttemptButton;
 
 
@@ -90,6 +93,16 @@ namespace ArchimedesMiniGame
             {
                 Time.timeScale = 1;
             }
+        }
+
+        public void UpdateSpeed(float current, float maxValue)
+        {
+            m_MaxSpeedSlider.value = current / maxValue;
+        }
+
+        internal void UpdateAcceleration(float magnitude, float acceleration)
+        {
+            m_AccelerationSlider.value = magnitude / acceleration;
         }
 
         public void UpdateBatterySlider(float current, float maxValue)
