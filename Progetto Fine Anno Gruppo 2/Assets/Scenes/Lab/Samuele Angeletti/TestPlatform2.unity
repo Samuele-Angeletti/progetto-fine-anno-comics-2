@@ -8908,7 +8908,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   m_MaxBattery: 100
-  m_UseSpeed: 10
+  m_UseSpeed: 5
 --- !u!61 &1499301355
 BoxCollider2D:
   m_ObjectHideFlags: 0
