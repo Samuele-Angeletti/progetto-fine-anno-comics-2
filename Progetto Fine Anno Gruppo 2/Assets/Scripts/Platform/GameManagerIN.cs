@@ -45,6 +45,7 @@ namespace MainGame
         [Header("Button Interaction SO")]
         [SerializeField] List<ButtonInteractionScriptableObject> m_ButtonInteractionSO;
 
+
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
 
@@ -72,6 +73,10 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
             PubSub.PubSub.Subscribe(this,typeof(EndDialogueMessage));
             PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
+
+
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
         }
@@ -92,8 +97,7 @@ namespace MainGame
                 }
 
             }
-            
-            if (message is EndDialogueMessage || message is CurrentDialogueFinishedMessage)
+            else if (message is EndDialogueMessage || message is CurrentDialogueFinishedMessage)
             {
                 if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
                 {
@@ -101,7 +105,7 @@ namespace MainGame
                     m_CameraOnPlayer.Priority = 1;
                 }
             }
-            if (message is ChangeContinousMovementMessage)
+            else if (message is ChangeContinousMovementMessage)
             {
                 ChangeContinousMovementMessage changeContinousMovement = (ChangeContinousMovementMessage)message;
                 m_PlayerInputs.ChangeContinousMovement(changeContinousMovement.Active);
@@ -137,6 +141,14 @@ namespace MainGame
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
                 SetNewControllable(startEngineModule.Module);
             }
+            else if(message is ModuleDestroyedMessage)
+            {
+                SetNewControllable(m_Player);
+            }
+            else if(message is NoBatteryMessage)
+            {
+                SetNewControllable(m_Player);
+            }
         }
 
         public void OnDisableSubscribe()
@@ -150,7 +162,9 @@ namespace MainGame
             PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
-            PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(CurrentDialogueFinishedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
         }
 
         private void OnDestroy()

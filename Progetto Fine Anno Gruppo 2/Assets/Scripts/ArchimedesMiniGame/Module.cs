@@ -160,6 +160,14 @@ namespace ArchimedesMiniGame
                     m_Docked = true;
                     PubSub.PubSub.Publish(new DockingCompleteMessage());
                 }
+                else if(!d.IsActive)
+                {
+                    Debug.Log("ATTRACCO FALLITO. PUNTO D'ATTRACCO NON ATTIVO");
+                }
+                else
+                {
+                    Debug.Log("ATTRACCO FALLITO. DISTANZA MINIMA NON RAGGIUNTA");
+                }
             }
         }
 

@@ -274,7 +274,7 @@ MonoBehaviour:
   Rigidbody: {fileID: 0}
   PlayerCollider: {fileID: 0}
   Skeleton: {fileID: 995784556}
-  GraphicsPivot: {fileID: 0}
+  GraphicsPivot: {fileID: 8086454905939262098}
   IsGrounded: 0
   IsJumping: 0
   InertiaTime: 0.2
@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3965818130663005570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15857983, y: 0.43270135, z: -0.04916709}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -500,7 +500,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: -1
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 3608097785748641215}
@@ -768,6 +768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472175462304714583}
+  - component: {fileID: 677922931}
   m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
@@ -791,3 +792,17 @@ Transform:
   m_Father: {fileID: 3608097785748641215}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677922931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086454905939262098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7beb27cc268ad6a44817341d0898fefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RotationSpeed: 250
+  m_Direction: 0

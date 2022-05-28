@@ -12,6 +12,8 @@ public class UIMainDisplay : MonoBehaviour, ISubscriber
     {
         PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
 
     }
 
@@ -21,7 +23,7 @@ public class UIMainDisplay : MonoBehaviour, ISubscriber
         {
             animator.SetBool("ActiveModule", true);
         }
-        else if(message is DockingCompleteMessage)
+        else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
         {
             animator.SetBool("ActiveModule", false);
         }
@@ -36,6 +38,8 @@ public class UIMainDisplay : MonoBehaviour, ISubscriber
     {
         PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
         PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+        PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
+        PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
     }
 
 }

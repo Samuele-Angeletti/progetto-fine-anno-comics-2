@@ -11,4 +11,6 @@ public class StartDialogueMessage : IMessage
         this.dialogue = dialogue;
 
     }
+
+    
 }

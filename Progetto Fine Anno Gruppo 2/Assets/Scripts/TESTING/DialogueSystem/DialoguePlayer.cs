@@ -19,11 +19,17 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     private Queue<ESpeaker> m_whoIsSpeakingRightNow;
 
 
-    [HideInInspector]public Sprite spriteAda;
-    [HideInInspector]public Sprite spritePlayer;
+    public Sprite spriteAda;
+    public Sprite spritePlayer;
     [SerializeField] private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
     public bool dialogueIsPlaying = false;
+
+    [Header("Messaggi predefiniti")]
+    [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgNoBattery;
+    [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgDockingComplete;
+    [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgStartEngine;
+    [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgModuleDestroyed;
     
     #region SINGLETONE PATTERN
     private static DialoguePlayer m_instance;
@@ -64,6 +70,13 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
+
+        // modulo
+        PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
+        PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
+        PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+        PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+
         m_dialogueLine = new Queue<string>();
 
     }
@@ -76,11 +89,26 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             StartCoroutine(Startdialogue(dialogueMessage.dialogue));
 
         }
-
-        if (message is CurrentDialogueFinishedMessage)
+        else if (message is CurrentDialogueFinishedMessage)
         {
             StopAllCoroutines();
             dialogueBox.SetActive(false);
+        }
+        else if(message is ModuleDestroyedMessage)
+        {
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed)));
+        }
+        else if (message is NoBatteryMessage)
+        {
+
+        }
+        else if (message is DockingCompleteMessage)
+        {
+
+        }
+        else if (message is StartEngineModuleMessage)
+        {
+
         }
     }
 
@@ -165,5 +193,16 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(CurrentDialogueFinishedMessage));
-    } 
+        // modulo
+        PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
+
+    }
+
+    private DialogueHolderSO GetRandomMessage(DialogueHolderSO dialogueHolderSO)
+    {
+        return dialogueHolderSO; // funzione random
+    }
 }

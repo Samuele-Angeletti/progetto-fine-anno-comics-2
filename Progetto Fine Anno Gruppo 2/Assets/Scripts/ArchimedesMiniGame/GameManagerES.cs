@@ -73,15 +73,7 @@ namespace ArchimedesMiniGame
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
                 m_Controllable = startEngineModule.Module;
             }
-            else if(message is DockingCompleteMessage)
-            {
-                SaveData();
-            }
-            else if(message is ModuleDestroyedMessage)
-            {
-                SaveData();
-            }
-            else if(message is NoBatteryMessage)
+            else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {
                 SaveData();
             }

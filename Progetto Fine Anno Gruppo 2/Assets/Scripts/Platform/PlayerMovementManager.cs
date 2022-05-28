@@ -147,20 +147,18 @@ namespace MainGame
 
         public void Movement()
         {
-            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+           
+            if (Rigidbody.velocity.x > 0.001f && m_Flipped)
             {
-                if (Rigidbody.velocity.x > 0.001f && m_Flipped)
-                {
-                    FlipSpriteOnX(false);
-                }
-                if (Rigidbody.velocity.x < -0.001f && !m_Flipped)
-                {
-                    FlipSpriteOnX(true);
-                }
-
-                Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
+                FlipSpriteOnX(false);
             }
-                
+            if (Rigidbody.velocity.x < -0.001f && !m_Flipped)
+            {
+                FlipSpriteOnX(true);
+            }
+
+            Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
+             
 
         }
 
@@ -176,8 +174,7 @@ namespace MainGame
 
         public override void Jump(bool jumping)
         {
-            if (!DialoguePlayer.Instance.dialogueIsPlaying)
-                IsJumping = jumping;
+            IsJumping = jumping;
         }
 
         public void FlipSpriteOnX(bool flipped)
@@ -221,7 +218,7 @@ namespace MainGame
             {
                 PlayerCollider.enabled = false;
             }
-            else if(message is DockingCompleteMessage)
+            else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {
                 PlayerCollider.enabled = true;
             }
