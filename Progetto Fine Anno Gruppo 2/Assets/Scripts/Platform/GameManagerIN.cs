@@ -36,12 +36,15 @@ namespace MainGame
         [Header("Camera Settings")]
         [SerializeField] CinemachineVirtualCamera m_CameraOnPlayer;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
+        [SerializeField] CinemachineVirtualCamera m_CamerOnDialogue;
+        
 
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
 
         [Header("Button Interaction SO")]
         [SerializeField] List<ButtonInteractionScriptableObject> m_ButtonInteractionSO;
+
 
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
@@ -66,6 +69,14 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
+            PubSub.PubSub.Subscribe(this,typeof(EndDialogueMessage));
+            PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
+
+
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
         }
@@ -77,7 +88,24 @@ namespace MainGame
 
         public void OnPublish(IMessage message)
         {
-            if(message is ChangeContinousMovementMessage)
+            if (message is StartDialogueMessage)
+            {
+                if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
+                {
+                    m_CamerOnDialogue.Priority = 1;
+                    m_CameraOnPlayer.Priority = 0;
+                }
+
+            }
+            else if (message is EndDialogueMessage || message is CurrentDialogueFinishedMessage)
+            {
+                if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
+                {
+                    m_CamerOnDialogue.Priority = 0;
+                    m_CameraOnPlayer.Priority = 1;
+                }
+            }
+            else if (message is ChangeContinousMovementMessage)
             {
                 ChangeContinousMovementMessage changeContinousMovement = (ChangeContinousMovementMessage)message;
                 m_PlayerInputs.ChangeContinousMovement(changeContinousMovement.Active);
@@ -108,12 +136,35 @@ namespace MainGame
             {
                 SetNewControllable(m_Player);
             }
+            else if(message is StartEngineModuleMessage)
+            {
+                StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
+                SetNewControllable(startEngineModule.Module);
+            }
+            else if(message is ModuleDestroyedMessage)
+            {
+                SetNewControllable(m_Player);
+            }
+            else if(message is NoBatteryMessage)
+            {
+                SetNewControllable(m_Player);
+            }
         }
 
         public void OnDisableSubscribe()
         {
+
             PubSub.PubSub.Unsubscribe(this, typeof(ChangeContinousMovementMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(CurrentDialogueFinishedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
         }
 
         private void OnDestroy()

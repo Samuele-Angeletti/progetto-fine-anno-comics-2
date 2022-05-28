@@ -1,6 +1,7 @@
 using Commons;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using PubSub;
 using System;
@@ -14,6 +15,7 @@ public enum EDialogueInteraction
 public class DialogueTrigger : Interactable, ISubscriber
 {
     private bool m_Interacted;
+    DialogueHolderSO lastDialogue;
     public EDialogueInteraction modalitaDiInterazione;
     public bool CanRepeatLastDialogue = true;
     [ShowScriptableObject]
@@ -28,6 +30,7 @@ public class DialogueTrigger : Interactable, ISubscriber
         PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnInteractionDialogueMessage));
     }
+    
     public override void Interact(Interacter interacter)
     {
         m_Interacted = true;
@@ -38,7 +41,9 @@ public class DialogueTrigger : Interactable, ISubscriber
         if (m_Interacted == true && DialoguePlayer.Instance.dialogueIsPlaying == false)
         {
             m_Interacted = false;
+            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0]));
         }
+       
     }
     public override void ShowUI(bool isVisible)
     {
@@ -51,16 +56,18 @@ public class DialogueTrigger : Interactable, ISubscriber
         {
             Destroy(gameObject);
         }
-       
+
         if (message is CurrentDialogueFinishedMessage)
         {
+           
             if (m_dialogueToShow.Count > 1 || !CanRepeatLastDialogue)
             {
-                m_dialogueToShow.RemoveAt(0);
+                m_dialogueToShow.RemoveAt(0); 
+                m_Interacted = false;
             }
             if (m_dialogueToShow.Count == 0)
             {
-                return;
+                PubSub.PubSub.Publish(new EndDialogueMessage());
             }
 
         }

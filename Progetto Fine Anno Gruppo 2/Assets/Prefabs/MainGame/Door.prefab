@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4237420646932340599}
   - component: {fileID: 4237420646932340592}
   - component: {fileID: 1771881190260066110}
+  - component: {fileID: 2825650029117642708}
   m_Layer: 0
   m_Name: DoorLogic
   m_TagString: Untagged
@@ -177,6 +178,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd646866b160394cb021c4ad6ccd2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &2825650029117642708
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4237420646932340594}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4237420647504023777
 GameObject:
   m_ObjectHideFlags: 0

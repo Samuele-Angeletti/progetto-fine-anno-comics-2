@@ -20,7 +20,7 @@ TagManager:
   - Invisible
   - Enemy
   - Deactivable
-  - 
+  - DockingPoint
   - 
   - 
   - 
@@ -41,18 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 3339636587
+  - name: BackGround
+    uniqueID: 582964625
     locked: 0
   - name: Luci
-    uniqueID: 3046036479
+    uniqueID: 2531359699
     locked: 0
   - name: Terreno
-    uniqueID: 4218470845
+    uniqueID: 2006074575
     locked: 0
-  - name: Player E Environment
-    uniqueID: 2423475201
+  - name: Player & Enviroment
+    uniqueID: 2316646929
     locked: 0
-  - name: Foreground
-    uniqueID: 36852173
+  - name: ForeGround
+    uniqueID: 1071387185
     locked: 0
