@@ -2,23 +2,28 @@ using Commons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MovableObject : Interactable
+using PubSub;
+public class MovableObject : Interactable, ISubscriber
 {
     [Header("Movable Object Settings")]
     [SerializeField] Transform m_EndPivot;
     [SerializeField] float m_TransitionSpeed;
+    [SerializeField] bool m_OneShot;
     private Vector3 m_StartPivot;
     private bool m_Active;
-
+    private bool m_Used;
     private void Awake()
     {
         m_StartPivot = transform.position;
     }
+    private void Start()
+    {
 
+        PubSub.PubSub.Subscribe(this, typeof(ActivableMessage));
+    }
     public override void Interact(Interacter interacter)
     {
-        m_Active = true;
+        Active();
     }
 
     private void Update()
@@ -38,5 +43,34 @@ public class MovableObject : Interactable
 
     public override void ShowUI(bool isVisible)
     {
+    }
+    public void OnPublish(IMessage message)
+    {
+        if (message is ActivableMessage)
+        {
+            ActivableMessage activableMessage = (ActivableMessage)message;
+            if (activableMessage.Activator.gameObject == InterestedObject && activableMessage.Active)
+            {
+                Active();
+            }
+        }
+    }
+
+    public void OnDisableSubscribe()
+    {
+        PubSub.PubSub.Unsubscribe(this, typeof(ActivableMessage));
+    }
+
+    private void Active()
+    {
+        if(m_OneShot && !m_Used)
+        {
+            m_Used = true;
+            m_Active = true;
+        }
+        else if(!m_OneShot)
+        {
+            m_Active = true;
+        }
     }
 }
