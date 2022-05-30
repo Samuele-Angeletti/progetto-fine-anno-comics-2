@@ -296,6 +296,10 @@ PrefabInstance:
       propertyPath: m_Lens.OrthographicSize
       value: 0.97
       objectReference: {fileID: 0}
+    - target: {fileID: 4881382218616039631, guid: 4db3d9d58abbf3b4aae3ceb7d63f99d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 5480558082779653237, guid: 4db3d9d58abbf3b4aae3ceb7d63f99d2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -457,6 +461,10 @@ MonoBehaviour:
   m_controllable: {fileID: 1276808339}
   m_typeWriterSpeed: 25
   dialogueIsPlaying: 0
+  m_StandardMsgNoBattery: {fileID: 0}
+  m_StandardMsgDockingComplete: {fileID: 0}
+  m_StandardMsgStartEngine: {fileID: 0}
+  m_StandardMsgModuleDestroyed: {fileID: 0}
 --- !u!4 &1200981153
 Transform:
   m_ObjectHideFlags: 0
@@ -2486,17 +2494,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e4689acdaf81040aa3bd59a5d8ce22, type: 3}
---- !u!114 &1754544209 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4803934439681108397, guid: 4db3d9d58abbf3b4aae3ceb7d63f99d2, type: 3}
-  m_PrefabInstance: {fileID: 766986385}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1786125448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,7 +2526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraOnPlayer: {fileID: 645240569}
   m_CameraOnModule: {fileID: 645240569}
-  m_CamerOnDialogue: {fileID: 1754544209}
+  m_CamerOnDialogue: {fileID: 0}
   m_Controllable: {fileID: 1276808339}
   m_ButtonInteractionSO: []
   m_ElapsedTimeZeroG: {fileID: 0}
