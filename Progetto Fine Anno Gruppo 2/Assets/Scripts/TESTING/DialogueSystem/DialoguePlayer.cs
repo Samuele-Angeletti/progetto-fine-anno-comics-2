@@ -19,8 +19,12 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     private Queue<ESpeaker> m_whoIsSpeakingRightNow;
 
 
-    public Sprite spriteAda;
-    public Sprite spritePlayer;
+    /* Creare una lista di sprite di ada e cambiare l'enumeratore aggiungendo tutte le versioni di ada 
+     * Cambiare il metodo che controlla chi sta parlando aggiungendo le versioni di ada
+    */
+
+    [HideInInspector]public Sprite spriteAda;
+    [HideInInspector]public Sprite spritePlayer;
     [SerializeField] private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
     public bool dialogueIsPlaying = false;
