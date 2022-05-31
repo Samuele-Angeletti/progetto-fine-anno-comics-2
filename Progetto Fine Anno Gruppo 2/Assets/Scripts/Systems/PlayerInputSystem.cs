@@ -99,7 +99,10 @@ namespace Commons
         private void StartJump(InputAction.CallbackContext obj)
         {
             if (!DialoguePlayer.Instance.dialogueIsPlaying)
-                m_CurrentControllable.Jump(true);
+            {
+                if(obj.phase == InputActionPhase.Performed)
+                    m_CurrentControllable.Jump(true);
+            }
         }
 
         private void ActiveContinousMovement()

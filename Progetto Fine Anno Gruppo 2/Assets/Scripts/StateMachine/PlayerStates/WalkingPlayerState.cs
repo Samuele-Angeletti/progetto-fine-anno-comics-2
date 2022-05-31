@@ -6,6 +6,7 @@ public class WalkingPlayerState : State
     private PlayerMovementManager m_Owner;
     private float m_TimePassed = 0;
     private bool m_OnDeceleration;
+
     public WalkingPlayerState(PlayerMovementManager owner)
     {
         m_Owner = owner;
@@ -91,12 +92,10 @@ public class WalkingPlayerState : State
 
         if (Mathf.Abs(m_Owner.Rigidbody.velocity.x) > 0)
         {
-            m_Owner.Skeleton.loop = true;
             m_Owner.Skeleton.AnimationName = "Camminata";
         }
         else
         {
-            m_Owner.Skeleton.loop = true;
             m_Owner.Skeleton.AnimationName = "Idol";
         }
     }
