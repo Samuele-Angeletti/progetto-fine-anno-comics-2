@@ -5,6 +5,7 @@ using TMPro;
 using PubSub;
 using UnityEngine.UI;
 using Commons;
+using System;
 
 public class DialoguePlayer : MonoBehaviour, ISubscriber
 {
@@ -23,8 +24,12 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
      * Cambiare il metodo che controlla chi sta parlando aggiungendo le versioni di ada
     */
 
-    [HideInInspector]public Sprite spriteAda;
-    [HideInInspector]public Sprite spritePlayer;
+
+    [HideInInspector]public Sprite spritePlayer; 
+    [HideInInspector]public Sprite spriteAdaPreIntegrazione; 
+    [HideInInspector]public Sprite spriteAdaPrimaIntegrazione;
+    [HideInInspector]public Sprite spriteAdaSecondaIntegrazione;
+    [HideInInspector]public Sprite spriteAdaFormaFinale;
     [SerializeField] private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
     public bool dialogueIsPlaying = false;
@@ -100,24 +105,28 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         }
         else if(message is ModuleDestroyedMessage)
         {
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgNoBattery.Dialogo)));
+
         }
         else if (message is NoBatteryMessage)
         {
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgDockingComplete.Dialogo)));
 
         }
         else if (message is DockingCompleteMessage)
         {
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgStartEngine.Dialogo)));
 
         }
         else if (message is StartEngineModuleMessage)
         {
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed.Dialogo)));
 
         }
     }
 
 
-    public IEnumerator Startdialogue(DialogueHolderSO dialogueToEnqueue)
+    public IEnumerator Startdialogue(List<DialogueLine> dialogueToEnqueue)
     {
         
         if (dialogueToEnqueue == null) yield return null;
@@ -125,17 +134,19 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         Debug.Log("cancellata");
         dialogueBox.SetActive(true);
 
-        for (int i = 0; i < dialogueToEnqueue.Dialogo.Count; i++)
+        for (int i = 0; i < dialogueToEnqueue.Count; i++)
         {
-            m_whoIsSpeakingRightNow.Enqueue(dialogueToEnqueue.Dialogo[i].WhoIsSpeaking);
-            m_dialogueLine.Enqueue($"{dialogueToEnqueue.Dialogo[i].WhoIsSpeaking}: " + dialogueToEnqueue.Dialogo[i].DialougueString);
+            m_whoIsSpeakingRightNow.Enqueue(dialogueToEnqueue[i].WhoIsSpeaking);
+            m_dialogueLine.Enqueue($"{ESpeakerTostring(dialogueToEnqueue[i].WhoIsSpeaking)}: " + dialogueToEnqueue[i].DialougueString);
         }
-        yield return DisplayNextDialogueLine(dialogueToEnqueue);
+        yield return DisplayNextDialogueLine();
 
 
     }
 
-    public IEnumerator DisplayNextDialogueLine(DialogueHolderSO dialogue)
+    
+
+    public IEnumerator DisplayNextDialogueLine()
     {
        
         while (m_dialogueLine.Count >0)
@@ -156,23 +167,46 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
 
     }
-
     private void ChangeSpeakerImage()
     {
-        ESpeaker intPersonaggio = m_whoIsSpeakingRightNow.Dequeue();
-        if (intPersonaggio == ESpeaker.Reimann)
+        ESpeaker whoIsSpeakingRightNow = m_whoIsSpeakingRightNow.Dequeue();
+        if (whoIsSpeakingRightNow == ESpeaker.Reimann)
         {
             spriteToChange.sprite = spritePlayer;
-            
         }
-        if (intPersonaggio == ESpeaker.Ada)
+        if (whoIsSpeakingRightNow == ESpeaker.Ada_Pre_Integrazione)
         {
-            spriteToChange.sprite = spriteAda;
-            
+            spriteToChange.sprite = spriteAdaPreIntegrazione;
         }
+        if (whoIsSpeakingRightNow == ESpeaker.Ada_Prima_Integrazione)
+        {
+            spriteToChange.sprite = spriteAdaPrimaIntegrazione;
+        }
+        if (whoIsSpeakingRightNow == ESpeaker.Ada_Seconda_Integrazione)
+        {
+            spriteToChange.sprite = spriteAdaSecondaIntegrazione;
+        }
+        if (whoIsSpeakingRightNow == ESpeaker.Ada_Forma_Finale)
+        {
+            spriteToChange.sprite = spriteAdaFormaFinale;
+        }
+
+    }
+    private string ESpeakerTostring(ESpeaker whoIsSpeaking)
+    {
+        string currentSpeaker = string.Empty;
+        if (whoIsSpeaking == ESpeaker.Reimann)
+        {
+            currentSpeaker = "Reimann";
+
+        }
+        if (whoIsSpeaking != ESpeaker.Reimann)
+        {
+            currentSpeaker = "Ada"; 
+        }
+        return currentSpeaker;
         
     }
-
     private IEnumerator TypeWriteEffect(string lineaDiDialogo, TMP_Text textLabel)
     {
         dialogueIsPlaying = true;
@@ -205,8 +239,12 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
     }
 
-    private DialogueHolderSO GetRandomMessage(DialogueHolderSO dialogueHolderSO)
+    private List<DialogueLine> GetRandomMessage(List<DialogueLine> dialogueHolderSO)
     {
-        return dialogueHolderSO; // funzione random
+        
+        int indiceRandomico = UnityEngine.Random.Range(0, dialogueHolderSO.Count);
+        List<DialogueLine> temp = new List<DialogueLine>();
+        temp.Add(dialogueHolderSO[indiceRandomico]);
+        return temp;
     }
 }

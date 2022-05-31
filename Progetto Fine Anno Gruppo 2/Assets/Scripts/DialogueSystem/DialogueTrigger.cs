@@ -41,7 +41,7 @@ public class DialogueTrigger : Interactable, ISubscriber
         if (m_Interacted == true && DialoguePlayer.Instance.dialogueIsPlaying == false)
         {
             m_Interacted = false;
-            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0]));
+            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
         }
        
     }
@@ -73,7 +73,7 @@ public class DialogueTrigger : Interactable, ISubscriber
         }
         if (message is OnTriggerEnterMessage)
         {
-            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0]));
+            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
         }
     }
 

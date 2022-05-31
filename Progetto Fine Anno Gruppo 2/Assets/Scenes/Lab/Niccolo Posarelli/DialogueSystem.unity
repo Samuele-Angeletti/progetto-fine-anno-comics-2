@@ -456,12 +456,15 @@ MonoBehaviour:
   dialogueBox: {fileID: 1589516702}
   textToWrite: {fileID: 415440408}
   spriteToChange: {fileID: 1230962491}
-  spriteAda: {fileID: 21300000, guid: 8854e744e27caec4dabf2100a23ec0d7, type: 3}
   spritePlayer: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  spriteAdaPreIntegrazione: {fileID: 21300000, guid: 8854e744e27caec4dabf2100a23ec0d7, type: 3}
+  spriteAdaPrimaIntegrazione: {fileID: 0}
+  spriteAdaSecondaIntegrazione: {fileID: 0}
+  spriteAdaFormaFinale: {fileID: 0}
   m_controllable: {fileID: 1276808339}
   m_typeWriterSpeed: 25
   dialogueIsPlaying: 0
-  m_StandardMsgNoBattery: {fileID: 0}
+  m_StandardMsgNoBattery: {fileID: 11400000, guid: 23a057f3666f02a4c935c2c2d11c650d, type: 2}
   m_StandardMsgDockingComplete: {fileID: 0}
   m_StandardMsgStartEngine: {fileID: 0}
   m_StandardMsgModuleDestroyed: {fileID: 0}
@@ -715,8 +718,7 @@ MonoBehaviour:
   modalitaDiInterazione: 1
   CanRepeatLastDialogue: 0
   m_dialogueToShow:
-  - {fileID: 11400000, guid: fd4a022a9aa19f240903cb4fce97165d, type: 2}
-  - {fileID: 11400000, guid: 48f2f9a3cd39b2c429761d5fa406ad11, type: 2}
+  - {fileID: 11400000, guid: 23a057f3666f02a4c935c2c2d11c650d, type: 2}
 --- !u!4 &1362263637
 Transform:
   m_ObjectHideFlags: 0

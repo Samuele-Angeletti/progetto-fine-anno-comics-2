@@ -4,12 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "DialogueSO")]
 public class DialogueHolderSO : ScriptableObject
 {
-    [Header("Settings Dialogo")]
-    public bool IsSkippable;
     public List<DialogueLine> Dialogo;
-
-
-
 }
 
 
