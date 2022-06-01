@@ -15,13 +15,13 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     public Image spriteToChange;
     
 
-    private PlayerInputSystem m_PlayerInputs;
+    [SerializeField]private PlayerInputSystem m_PlayerInputs;
     private Queue<string> m_dialogueLine;
     private Queue<ESpeaker> m_whoIsSpeakingRightNow;
 
 
-    /* Creare una lista di sprite di ada e cambiare l'enumeratore aggiungendo tutte le versioni di ada 
-     * Cambiare il metodo che controlla chi sta parlando aggiungendo le versioni di ada
+    /* Risolvere problema con il cambio di controllable
+     * Risolvere attivazione del dialogue box quando si entra nella modalità navicella
     */
 
 
@@ -68,7 +68,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             Destroy(this);
             DontDestroyOnLoad(gameObject);
         }
-        m_PlayerInputs = GetComponent<PlayerInputSystem>();
+
         m_whoIsSpeakingRightNow = new Queue<ESpeaker>();
         
     }
@@ -241,7 +241,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
     private List<DialogueLine> GetRandomMessage(List<DialogueLine> dialogueHolderSO)
     {
-        
+        if (dialogueHolderSO == null) return null;
         int indiceRandomico = UnityEngine.Random.Range(0, dialogueHolderSO.Count);
         List<DialogueLine> temp = new List<DialogueLine>();
         temp.Add(dialogueHolderSO[indiceRandomico]);

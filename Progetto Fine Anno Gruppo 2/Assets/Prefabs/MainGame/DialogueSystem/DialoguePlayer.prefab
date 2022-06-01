@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2059505641050307457
+--- !u!1 &2068696797730342472
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2059505641050307519}
-  - component: {fileID: 2059505641050307518}
-  - component: {fileID: 2146890652555412076}
+  - component: {fileID: 2068696797730342518}
+  - component: {fileID: 2068696797730342519}
+  - component: {fileID: 2068696797730342517}
   m_Layer: 0
-  m_Name: DialogueManager
+  m_Name: DialoguePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2059505641050307519
+--- !u!4 &2068696797730342518
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059505641050307457}
+  m_GameObject: {fileID: 2068696797730342472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.503004, y: -0.46061122, z: -0.09355867}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2059505641050307518
+--- !u!114 &2068696797730342519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059505641050307457}
+  m_GameObject: {fileID: 2068696797730342472}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba2705e98f935634792430cd3655487e, type: 3}
@@ -48,16 +48,25 @@ MonoBehaviour:
   dialogueBox: {fileID: 0}
   textToWrite: {fileID: 0}
   spriteToChange: {fileID: 0}
-  spriteAda: {fileID: 0}
-  spritePlayer: {fileID: 0}
+  spritePlayer: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  spriteAdaPreIntegrazione: {fileID: 21300000, guid: 8854e744e27caec4dabf2100a23ec0d7, type: 3}
+  spriteAdaPrimaIntegrazione: {fileID: 0}
+  spriteAdaSecondaIntegrazione: {fileID: 0}
+  spriteAdaFormaFinale: {fileID: 0}
+  m_controllable: {fileID: 0}
   m_typeWriterSpeed: 25
---- !u!114 &2146890652555412076
+  dialogueIsPlaying: 0
+  m_StandardMsgNoBattery: {fileID: 11400000, guid: 23a057f3666f02a4c935c2c2d11c650d, type: 2}
+  m_StandardMsgDockingComplete: {fileID: 0}
+  m_StandardMsgStartEngine: {fileID: 0}
+  m_StandardMsgModuleDestroyed: {fileID: 0}
+--- !u!114 &2068696797730342517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059505641050307457}
+  m_GameObject: {fileID: 2068696797730342472}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4c21716845f9934d84e8630891bb3ba, type: 3}
