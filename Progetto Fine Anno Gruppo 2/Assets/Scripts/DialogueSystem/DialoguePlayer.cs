@@ -105,22 +105,22 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         }
         else if(message is ModuleDestroyedMessage)
         {
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgNoBattery.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed.Dialogo)));
 
         }
         else if (message is NoBatteryMessage)
         {
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgDockingComplete.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgNoBattery.Dialogo)));
 
         }
         else if (message is DockingCompleteMessage)
         {
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgStartEngine.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgDockingComplete.Dialogo)));
 
         }
         else if (message is StartEngineModuleMessage)
         {
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgStartEngine.Dialogo)));
 
         }
     }

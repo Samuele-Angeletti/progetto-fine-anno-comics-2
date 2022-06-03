@@ -92,8 +92,8 @@ namespace MainGame
             {
                 if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
                 {
-                    m_CamerOnDialogue.Priority = 1;
-                    m_CameraOnPlayer.Priority = 0;
+                    //m_CamerOnDialogue.Priority = 1; // nope. bisogna usare la current camera, perché se passo al modulo e parte il dialogo, allora la telecamera deve andare al modulo
+                    //m_CameraOnPlayer.Priority = 0;
                 }
 
             }
@@ -101,8 +101,8 @@ namespace MainGame
             {
                 if (m_Controllable.GetComponent<PlayerMovementManager>() != null)
                 {
-                    m_CamerOnDialogue.Priority = 0;
-                    m_CameraOnPlayer.Priority = 1;
+                    //m_CamerOnDialogue.Priority = 0;
+                    //m_CameraOnPlayer.Priority = 1;
                 }
             }
             else if (message is ChangeContinousMovementMessage)

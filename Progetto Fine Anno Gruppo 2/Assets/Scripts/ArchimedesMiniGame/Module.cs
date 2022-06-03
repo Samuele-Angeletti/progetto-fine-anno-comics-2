@@ -215,6 +215,7 @@ namespace ArchimedesMiniGame
             m_MapParent.SetActive(true);
             Stop();
             m_Docked = true;
+            Destroy(m_DockingPivot.gameObject);
             PubSub.PubSub.Publish(new DockingCompleteMessage());
         }
 
