@@ -20,6 +20,7 @@ namespace Commons
         private float m_TimePassed;
 
         public bool InteractionAvailable { get; private set; }
+        public Interactable CurrentInteractable => m_CurrentInteractable;
 
         private void Awake()
         {

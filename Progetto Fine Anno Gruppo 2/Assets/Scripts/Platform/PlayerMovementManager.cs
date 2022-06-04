@@ -238,7 +238,7 @@ namespace MainGame
         public override void Interact()
         {
             
-            if (Rigidbody.velocity.magnitude == 0 && Interacter.InteractionAvailable)
+            if (Rigidbody.velocity.magnitude == 0 && Interacter.InteractionAvailable && StateMachine.CurrentState.GetType() != typeof(InteractingPlayerState))
             {
                 StateMachine.SetState(EPlayerState.Interacting);
             }
