@@ -19,6 +19,8 @@ namespace Commons
         private bool m_ActiveUI;
         private float m_TimePassed;
 
+        public bool InteractionAvailable { get; private set; }
+
         private void Awake()
         {
             m_Text = m_UIText.GetComponentInChildren<TextMeshProUGUI>();
@@ -34,10 +36,12 @@ namespace Commons
                 if (trigger != null && trigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
                 {
                     interactable.ShowUI(false);
+                    InteractionAvailable = false;
                 }
                 else
                 {
                     interactable.ShowUI(true);
+                    InteractionAvailable = true;
                     m_ActiveUI = true;
                     m_CurrentInteractable = interactable;
                     m_UIText.SetActive(true);

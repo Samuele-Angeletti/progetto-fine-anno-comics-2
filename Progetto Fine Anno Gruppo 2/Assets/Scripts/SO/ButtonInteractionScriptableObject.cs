@@ -46,7 +46,7 @@ public class ButtonInteractionScriptableObject : ScriptableObject
 
     private void ZeroGInteraction()
     {
-        PubSub.PubSub.Publish(new ZeroGMessage(!GameManagerIN.Instance.ZeroGActive));
+        PubSub.PubSub.Publish(new ZeroGMessage(!GameManager.Instance.ZeroGActive));
     }
 
     private void OpenDoor(GameObject interestedObject, Interacter interacter)

@@ -37,6 +37,8 @@ namespace ArchimedesMiniGame
         private Vector2 m_CurrentAcceleration;
         private DockingPoint m_DockingPoint;
         private bool m_Docking;
+        private bool m_CameraFocused;
+        private Vector3 m_StoppingDistanceModucleFocused = new Vector3(10, 10);
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -92,12 +94,24 @@ namespace ArchimedesMiniGame
                     {
                         m_DockingAttemptAvailable = true;
                         GameManagerES.Instance.ActiveDockingAttemptButton(true);
+                        
                     }
                     else if (m_DockingAttemptAvailable)
                     {
                         m_DockingAttemptAvailable = false;
                         GameManagerES.Instance.ActiveDockingAttemptButton(false);
+                        
+                    }
 
+                    if(ForwardCheckOfWall(Vector2.up, 1f, m_DockingSide.transform.position, m_DockingMask, m_StoppingDistanceModucleFocused))
+                    {
+                        GameManager.Instance.SetActiveCamera(ECameras.ModuleFocused);
+                        m_CameraFocused = true;
+                    }
+                    else if(m_CameraFocused)
+                    {
+                        m_CameraFocused = false;
+                        GameManager.Instance.SetActiveCamera(ECameras.Module);
                     }
 
                 }

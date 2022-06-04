@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: StandardMsgModuleDestroyed
   m_EditorClassIdentifier: 
   Dialogo:
-  - WhoIsSpeaking: 0
-    DialougueString: dada
   - WhoIsSpeaking: 1
-    DialougueString: dada
-  - WhoIsSpeaking: 0
-    DialougueString: dada
+    DialougueString: Modulo distrutto! Vai alla cabina di comando per recuperare
+      i dati e sistemare il danno.
