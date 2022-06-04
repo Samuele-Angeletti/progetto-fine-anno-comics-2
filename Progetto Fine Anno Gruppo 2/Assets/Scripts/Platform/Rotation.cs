@@ -1,11 +1,11 @@
 using UnityEngine;
-
+using Commons;
 namespace MainGame
 {
     public class Rotation : MonoBehaviour
     {
         [SerializeField] float m_RotationSpeed;
-        [Tooltip("Le direzioni UP e DOWN seguono rispettivamente Right e Left, ovvero in senso orario")]
+        [Tooltip("Le direzioni UP e DOWN seguono rispettivamente Right e Left, ovvero in senso orario o antiorario")]
         [SerializeField] EDirection m_Direction;
 
         private bool m_OnRotation;
@@ -107,5 +107,6 @@ namespace MainGame
         {
             transform.eulerAngles = m_Destination;
         }
+
     }
 }

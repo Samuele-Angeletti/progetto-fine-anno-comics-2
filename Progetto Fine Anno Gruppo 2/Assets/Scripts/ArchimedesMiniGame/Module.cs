@@ -19,6 +19,7 @@ namespace ArchimedesMiniGame
         [SerializeField] float m_Acceleration;
         [SerializeField] float m_MaxSpeed;
         [SerializeField] float m_RotationSpeed;
+        [SerializeField] float m_MaxSpeedForDocking = 5f;
         [SerializeField] GameObject m_DockingSide;
         [SerializeField] LayerMask m_DockingMask;
         [Space(10)]
@@ -87,7 +88,7 @@ namespace ArchimedesMiniGame
                         m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, m_MaxSpeed);
                     }
 
-                    if (ForwardCheckOfWall(Vector2.up, 0.6f, m_DockingSide.transform.position, m_DockingMask) && m_Rigidbody.velocity.magnitude < 5f)
+                    if (ForwardCheckOfWall(Vector2.up, 0.6f, m_DockingSide.transform.position, m_DockingMask) && m_Rigidbody.velocity.magnitude <= m_MaxSpeedForDocking)
                     {
                         m_DockingAttemptAvailable = true;
                         GameManagerES.Instance.ActiveDockingAttemptButton(true);
@@ -177,6 +178,11 @@ namespace ArchimedesMiniGame
 
         public void DockingAttempt()
         {
+            if(m_Rigidbody.velocity.magnitude > m_MaxSpeedForDocking)
+            {
+                Debug.Log("VELOCITA' CORRENTE TROPPO ELEVATA, RALLENTARE E RIPROVARE");
+                return;
+            }
             RaycastHit2D[] raycastHits = Physics2D.RaycastAll(m_DockingSide.transform.position, m_DockingSide.transform.up, 0.6f);
             for (int i = 0; i < raycastHits.Length; i++)
             {

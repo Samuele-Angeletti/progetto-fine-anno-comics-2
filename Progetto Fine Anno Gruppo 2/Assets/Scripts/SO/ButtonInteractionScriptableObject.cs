@@ -5,6 +5,7 @@ using UnityEngine;
 using MainGame;
 using ArchimedesMiniGame;
 using UnityEngine.SceneManagement;
+using System;
 
 [CreateAssetMenu(fileName ="ButtonInteractionSO", menuName ="ButtonInteraction")]
 public class ButtonInteractionScriptableObject : ScriptableObject
@@ -30,7 +31,17 @@ public class ButtonInteractionScriptableObject : ScriptableObject
             case EInteractionType.PlayPacMan:
                 PlayPacMan();
                 break;
+            case EInteractionType.RotateRoom:
+                RotateRoom(interestedObject);
+                break;
+            case EInteractionType.OpenTerminal:
+                break;
         }
+    }
+
+    private void RotateRoom(GameObject interestedObject)
+    {
+        interestedObject.GetComponent<Rotation>().SetRotationDestination();
     }
 
     private void ZeroGInteraction()
