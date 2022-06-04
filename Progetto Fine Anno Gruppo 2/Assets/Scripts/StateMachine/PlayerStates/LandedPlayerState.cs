@@ -44,6 +44,10 @@ public class LandedPlayerState : State
             m_Owner.StateMachine.SetState(EPlayerState.Jumping);
             return;
         }
+        if(!m_Owner.IsGrounded)
+        {
+            m_Owner.StateMachine.SetState(EPlayerState.Landing);
+        }
         m_TimePassed += Time.deltaTime;
         if(m_TimePassed >= 1f)
         {

@@ -12,7 +12,7 @@ public class ButtonInteraction : Interactable
     public override void Interact(Interacter interacter)
     {
         if(m_Active)
-            GameManagerIN.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter);
+            GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter);
     }
 
     public override void ShowUI(bool isVisible)

@@ -11,5 +11,6 @@ public enum EPlayerState
    ZeroG, 
    Flying,
    Landed,
-   Somersault
+   Somersault,
+   Interacting
 }

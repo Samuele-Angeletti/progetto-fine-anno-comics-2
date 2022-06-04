@@ -40,6 +40,9 @@ namespace MainGame
         [Header("Zero Gravity Settings")]
         public float SpeedInZeroGravity;
 
+        [Header("Interaction Settings")]
+        [SerializeField] public float InteractionAnimationSpeed;
+
         [Header("Debug Infos")]
         public Vector2 InputDirection;
 
@@ -50,6 +53,9 @@ namespace MainGame
         [HideInInspector]
         public EDirection CurrentDirection;
         public Vector3 NextCheckpoint => m_NextCheckPoint;
+        public Interacter Interacter => m_Interacter;
+
+
         private bool m_Flipped = false;
         private void Awake()
         {
@@ -77,6 +83,7 @@ namespace MainGame
             StateMachine.RegisterState(EPlayerState.Flying, new FlyingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Somersault, new SomersaultPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Landed, new LandedPlayerState(this));
+            StateMachine.RegisterState(EPlayerState.Interacting, new InteractingPlayerState(this));
 
             StateMachine.SetState(EPlayerState.Walking);
         }
@@ -162,11 +169,6 @@ namespace MainGame
 
         }
 
-        internal void SetSpriteXPos(float rightXPos)
-        {
-            //Skeleton.transform.localPosition = new Vector3(rightXPos, 0, 0);
-        }
-
         public override void MoveDirection(Vector2 newDirection)
         {
             InputDirection = newDirection.normalized;
@@ -184,11 +186,6 @@ namespace MainGame
             m_Flipped = flipped;
         }
 
-        //public void FlipSpriteOnY(bool flipped)
-        //{
-        //    float scale = flipped ? -1 : 1;
-        //    Skeleton.gameObject.transform.localScale = new Vector2(0, scale);
-        //}
 
         public void OnPublish(IMessage message)
         {
@@ -240,9 +237,10 @@ namespace MainGame
 
         public override void Interact()
         {
-            if (Rigidbody.velocity.magnitude == 0)
+            
+            if (Rigidbody.velocity.magnitude == 0 && Interacter.InteractionAvailable)
             {
-                m_Interacter.GetInteractable()?.Interact(m_Interacter);
+                StateMachine.SetState(EPlayerState.Interacting);
             }
         }
 

@@ -5,8 +5,8 @@ using PubSub;
 
 public class StartDialogueMessage : IMessage
 {
-    public DialogueHolderSO dialogue;
-    public StartDialogueMessage(DialogueHolderSO dialogue)
+    public List<DialogueLine> dialogue;
+    public StartDialogueMessage(List<DialogueLine> dialogue)
     {
         this.dialogue = dialogue;
 
