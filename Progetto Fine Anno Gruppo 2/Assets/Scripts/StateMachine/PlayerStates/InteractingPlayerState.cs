@@ -22,7 +22,7 @@ public class InteractingPlayerState : State
     public override void OnEnd()
     {
         m_Owner.Skeleton.timeScale = m_CastTimeScale;
-        m_Owner.Interacter.GetInteractable()?.Interact(m_Owner.Interacter);
+
     }
 
     public override void OnFixedUpdate()
@@ -45,7 +45,10 @@ public class InteractingPlayerState : State
         m_TimePassed += Time.deltaTime;
         if(m_TimePassed >= m_Owner.InteractionAnimationSpeed)
         {
-            m_Owner.StateMachine.SetState(EPlayerState.Walking);
+            if (m_Owner.Interacter.CurrentInteractable.InteractionType != EInteractionType.ZeroG)
+                m_Owner.StateMachine.SetState(EPlayerState.Walking);
+
+            m_Owner.Interacter.GetInteractable()?.Interact(m_Owner.Interacter);
         }
     }
 }
