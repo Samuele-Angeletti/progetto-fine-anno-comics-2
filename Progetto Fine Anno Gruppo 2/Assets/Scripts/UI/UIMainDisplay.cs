@@ -4,42 +4,18 @@ using UnityEngine;
 using PubSub;
 using TMPro;
 
-public class UIMainDisplay : MonoBehaviour, ISubscriber
+public class UIMainDisplay : MonoBehaviour
 {
-    Animator animator;
+    [SerializeField] GameObject m_DialogueBackground;
+    [SerializeField] GameObject m_TerminalBackground;
 
-    public void OnDisableSubscribe()
+    public void ActiveDialogueBackground(bool active)
     {
-        PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
-        PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
-        PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
-        PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
-
+        m_DialogueBackground.SetActive(active);
     }
 
-    public void OnPublish(IMessage message)
+    public void ActiveTerminalBackground(bool active)
     {
-        if(message is StartEngineModuleMessage)
-        {
-            animator.SetBool("ActiveModule", true);
-        }
-        else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
-        {
-            animator.SetBool("ActiveModule", false);
-        }
+        m_TerminalBackground.SetActive(active);
     }
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    private void Start()
-    {
-        PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
-        PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
-        PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
-        PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
-    }
-
 }

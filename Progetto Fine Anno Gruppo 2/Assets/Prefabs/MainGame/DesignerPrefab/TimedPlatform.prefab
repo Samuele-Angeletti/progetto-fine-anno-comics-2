@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2988905384998418793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.076902}
-  m_LocalScale: {x: 1, y: 0.31, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2988905385002479862}
   m_RootOrder: 0
@@ -73,11 +73,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1978320367
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3679245, g: 0.15295063, b: 0.025685282, a: 1}
+  m_Sprite: {fileID: 1755570256, guid: dcc71ccfd15affd48bb948d421d79cc0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,14 +104,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &2988905384998418797
 Rigidbody2D:
@@ -191,13 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc7303aa2fe9544b0383d52c178136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Activator: {fileID: 0}
+  InterestedObject: {fileID: 0}
+  m_ActiveGizmos: 1
+  m_LineColor: {r: 0.98853076, g: 1, b: 0, a: 1}
+  m_CircleColor: {r: 0.2648419, g: 0.7924528, b: 0.15250975, a: 1}
+  m_Radius: 0.2
   m_StartDelayTime: 0
   m_TimeActive: 1
   m_TimeNotActive: 1
   m_StartNotActiveTimer: 0
   m_ObjectToUse: {fileID: 2988905384998418793}
-  m_ActiveGizmos: 1
-  m_LineColor: {r: 0.98853076, g: 1, b: 0, a: 1}
-  m_CircleColor: {r: 0.2648419, g: 0.7924528, b: 0.15250975, a: 1}
-  m_Radius: 0.2

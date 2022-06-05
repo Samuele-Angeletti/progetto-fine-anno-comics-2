@@ -1667,8 +1667,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9174635751937658259}
   - component: {fileID: 9174635751937658284}
-  - component: {fileID: 9174635751937658285}
   - component: {fileID: 5232507008613020620}
+  - component: {fileID: 7061536002874702021}
   m_Layer: 5
   m_Name: ExternalUI
   m_TagString: Untagged
@@ -1707,18 +1707,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9174635751937658258}
   m_CullTransparentMesh: 1
---- !u!114 &9174635751937658285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174635751937658258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05231d50ed49dca45af51b2ad6aea297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &5232507008613020620
 Animator:
   serializedVersion: 4
@@ -1739,6 +1727,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7061536002874702021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174635751937658258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25c7611881dbc14bb5548d13678b4b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9174635752029969211
 GameObject:
   m_ObjectHideFlags: 0

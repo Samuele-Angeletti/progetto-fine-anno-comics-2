@@ -1411,7 +1411,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2000
         y: 4160
-        width: 500
+        width: 1000
         height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1427,33 +1427,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetBaseUnity_117
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 4160
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09dedcc320bd0f645840e260d47fd6d8
-      internalID: 1219497518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: TilesetBaseUnity_118
       rect:
         serializedVersion: 2
         x: 3000
         y: 4160
-        width: 500
+        width: 1000
         height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1464,27 +1443,6 @@ TextureImporter:
       bones: []
       spriteID: db985954cce24264fa4272421c51f471
       internalID: -762683865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetBaseUnity_119
-      rect:
-        serializedVersion: 2
-        x: 3500
-        y: 4160
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b921e89868d6544ebe18a87696a30e1
-      internalID: 182762968
       vertices: []
       indices: 
       edges: []
@@ -1600,7 +1558,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3000
         y: 3660
-        width: 500
+        width: 1000
         height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1611,27 +1569,6 @@ TextureImporter:
       bones: []
       spriteID: b81ba0910fd656943957bb54fc77b3bc
       internalID: 1679963951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetBaseUnity_134
-      rect:
-        serializedVersion: 2
-        x: 3500
-        y: 3660
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f358461b41c06eb48a587b3bc415b53e
-      internalID: 1188751611
       vertices: []
       indices: 
       edges: []

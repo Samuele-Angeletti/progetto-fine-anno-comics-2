@@ -37,7 +37,6 @@ namespace Commons
                 if (trigger != null && trigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
                 {
                     interactable.ShowUI(false);
-                    InteractionAvailable = false;
                 }
                 else
                 {
@@ -64,6 +63,7 @@ namespace Commons
                 m_ActiveUI = false;
                 AddColorToUI(0);
                 m_TimePassed = 0;
+                InteractionAvailable = false;
             }
 
         }

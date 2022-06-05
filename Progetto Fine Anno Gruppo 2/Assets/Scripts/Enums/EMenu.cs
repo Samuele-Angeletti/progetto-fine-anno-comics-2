@@ -4,5 +4,6 @@ public enum EMenu
 	Settings,
 	Pause,
 	GameOver,
-	ConfirmChoise
+	ConfirmChoise,
+	TerminalList
 }
