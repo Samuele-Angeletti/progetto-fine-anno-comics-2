@@ -7,7 +7,7 @@ using ArchimedesMiniGame;
 using UnityEngine.SceneManagement;
 using System;
 
-[CreateAssetMenu(fileName ="ButtonInteractionSO", menuName ="ButtonInteraction")]
+[CreateAssetMenu(fileName ="ButtonInteractionSO", menuName ="SO/ButtonInteraction")]
 public class ButtonInteractionScriptableObject : ScriptableObject
 {
     public EInteractionType InteractionType;
@@ -35,8 +35,14 @@ public class ButtonInteractionScriptableObject : ScriptableObject
                 RotateRoom(interestedObject);
                 break;
             case EInteractionType.OpenTerminal:
+                OpenTerminal(interestedObject);
                 break;
         }
+    }
+
+    private void OpenTerminal(GameObject interestedObject)
+    {
+        interestedObject.GetComponent<Terminal>().ReadTerminal();
     }
 
     private void RotateRoom(GameObject interestedObject)

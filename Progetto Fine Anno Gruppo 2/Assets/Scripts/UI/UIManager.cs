@@ -14,20 +14,30 @@ public class UIManager : MonoBehaviour, ISubscriber
 	[SerializeField] UIGameOverMenu m_GameOverMenu;
 	[SerializeField] UIConfirmChoiceMenu m_ConfirmChoiseMenu;
 	[SerializeField] UIMainDisplay m_MainDisplay;
+	[SerializeField] UIExternal m_ExternalUI;
+	[SerializeField] UITerminalList m_TerminalListMenu;
 
 	private Menu m_CurrentMenu;
 	private bool m_Paused;
+	private bool m_TerminalActive;
 	void Start()
 	{
 		PubSub.PubSub.Subscribe(this, typeof(OpenMenuMessage));
 		PubSub.PubSub.Subscribe(this, typeof(CloseAllMenusMessage));
+		PubSub.PubSub.Subscribe(this, typeof(TerminalMessage));
+		PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
 	}
 
 	public void OnPublish(IMessage message)
 	{
 		if (message is OpenMenuMessage)
 		{
-			OpenMenuMessage openMenu = (OpenMenuMessage)message;
+			if(m_TerminalActive)
+            {
+                CloseTerminalView();
+            }
+
+            OpenMenuMessage openMenu = (OpenMenuMessage)message;
 			OpenMenu(openMenu.MenuType);
 		}
 		else if(message is CloseAllMenusMessage)
@@ -35,13 +45,32 @@ public class UIManager : MonoBehaviour, ISubscriber
 			m_SettingsMenu.Close();
 			m_PauseMenu.Close();
 			m_ConfirmChoiseMenu.Close();
+			m_TerminalListMenu.Close();
 			m_CurrentMenu = null;
 			m_Paused = false;
-
+			CloseTerminalView();
 		}
+		else if(message is TerminalMessage)
+        {
+			m_TerminalActive = true;
+        }
+		else if(message is ResumeGameMessage)
+        {
+			if(m_TerminalActive)
+            {
+				m_Paused = false;
+				m_TerminalActive = false;
+            }
+        }
 	}
 
-	private void OpenMenu(EMenu menuToOpen)
+    private void CloseTerminalView()
+    {
+        m_TerminalActive = false;
+        m_MainDisplay.ActiveTerminalBackground(false);
+    }
+
+    private void OpenMenu(EMenu menuToOpen)
 	{
 		if(m_CurrentMenu == GetMenuByEnum(menuToOpen) && menuToOpen != EMenu.Pause)
         {
@@ -52,7 +81,7 @@ public class UIManager : MonoBehaviour, ISubscriber
 
 		if (!m_Paused)
 		{
-			if (m_CurrentMenu == m_PauseMenu && m_PauseMenu != null)
+			if (m_CurrentMenu == m_PauseMenu)
 			{
 				if (menuToOpen != EMenu.Pause)
 				{
@@ -94,6 +123,8 @@ public class UIManager : MonoBehaviour, ISubscriber
 				return m_GameOverMenu;
 			case EMenu.ConfirmChoise:
 				return m_ConfirmChoiseMenu;
+			case EMenu.TerminalList:
+				return m_TerminalListMenu;
 			default:
 				return null;
 		}
@@ -103,6 +134,8 @@ public class UIManager : MonoBehaviour, ISubscriber
 	{
 		PubSub.PubSub.Unsubscribe(this, typeof(OpenMenuMessage));
 		PubSub.PubSub.Unsubscribe(this, typeof(CloseAllMenusMessage));
+		PubSub.PubSub.Unsubscribe(this, typeof(TerminalMessage));
+		PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
 	}
 
 	private void OnDestroy()

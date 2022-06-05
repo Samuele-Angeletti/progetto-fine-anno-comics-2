@@ -27,6 +27,7 @@ public class LandedPlayerState : State
     public override void OnStart()
     {
         Debug.Log("STATO: LANDED");
+        m_Owner.Rigidbody.velocity = Vector2.zero;
         m_TimePassed = 0;
         m_Owner.Skeleton.loop = false;
         m_Owner.Skeleton.AnimationName = "SaltoTermineDue";
