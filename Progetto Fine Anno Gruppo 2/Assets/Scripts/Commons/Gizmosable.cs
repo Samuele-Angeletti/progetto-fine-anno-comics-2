@@ -14,7 +14,7 @@ namespace Commons
         [SerializeField] float m_Radius;
         private void OnDrawGizmos()
         {
-            if (m_ActiveGizmos)
+            if (m_ActiveGizmos && InterestedObject != null)
             {
                 Gizmos.color = m_LineColor;
                 Gizmos.DrawLine(transform.position, InterestedObject.transform.position);
