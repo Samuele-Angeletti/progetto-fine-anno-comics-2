@@ -17,7 +17,7 @@ public class DialogueTrigger : Interactable, ISubscriber
     private bool m_Interacted;
     DialogueHolderSO lastDialogue;
     public EDialogueInteraction modalitaDiInterazione;
-    public bool CanRepeatLastDialogue = true;
+    public bool CanRepeatLastDialogue;
     [ShowScriptableObject]
     public List<DialogueHolderSO> m_dialogueToShow;
 
@@ -41,14 +41,6 @@ public class DialogueTrigger : Interactable, ISubscriber
             {
                 PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
             }
-
-            else if (CanRepeatLastDialogue && m_dialogueToShow.Count == 1)
-            {
-                PubSub.PubSub.Publish(new StartDialogueMessage(lastDialogue.Dialogo));
-
-            }
-
-
         }
 
     }
@@ -66,38 +58,19 @@ public class DialogueTrigger : Interactable, ISubscriber
     {
         if (message is EndDialogueMessage)
         {
-            if (CanRepeatLastDialogue)
-            {
-                return;
-            }
-            else
                 Destroy(gameObject);
         }
 
         else if (message is CurrentDialogueFinishedMessage)
         {
-
-            if (m_dialogueToShow.Count > 1)
-            {
-                m_Interacted = false;
-                m_dialogueToShow.RemoveAt(0);
-
-            }
-            
-          
-            else if (m_dialogueToShow.Count == 0)
-            {
-                PubSub.PubSub.Publish(new EndDialogueMessage());
-            }
+            if (CanRepeatLastDialogue && m_dialogueToShow.Count == 1) return;
+            if (m_dialogueToShow.Count > 0) m_dialogueToShow.RemoveAt(0);
+            if (m_dialogueToShow.Count == 0)PubSub.PubSub.Publish(new EndDialogueMessage());
 
         }
         else if (message is OnTriggerEnterMessage)
         {
             PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
-        }
-        else if (message is OnInteractionDialogueMessage)
-        {
-            
         }
     }
 
