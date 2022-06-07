@@ -37,8 +37,10 @@ public class ButtonInteractionScriptableObject : ScriptableObject
             case EInteractionType.OpenTerminal:
                 OpenTerminal(interestedObject);
                 break;
+
         }
     }
+
 
     private void OpenTerminal(GameObject interestedObject)
     {

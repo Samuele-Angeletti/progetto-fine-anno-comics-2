@@ -15,3 +15,7 @@ MonoBehaviour:
   Dialogo:
   - WhoIsSpeaking: 1
     DialougueString: Attracco Completato!
+  - WhoIsSpeaking: 0
+    DialougueString: non
+  - WhoIsSpeaking: 1
+    DialougueString: Attracco non completato
