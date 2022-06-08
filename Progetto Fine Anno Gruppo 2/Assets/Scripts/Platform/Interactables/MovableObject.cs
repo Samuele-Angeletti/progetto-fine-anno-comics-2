@@ -9,6 +9,7 @@ public class MovableObject : Interactable, ISubscriber
     [SerializeField] Transform m_EndPivot;
     [SerializeField] float m_TransitionSpeed;
     [SerializeField] bool m_OneShot;
+    [SerializeField] bool m_RevertOnTriggerExit;
     private Vector3 m_StartPivot;
     private bool m_Active;
     private bool m_Used;
@@ -50,6 +51,10 @@ public class MovableObject : Interactable, ISubscriber
         {
             ActivableMessage activableMessage = (ActivableMessage)message;
             if (activableMessage.Activator.gameObject == InterestedObject && activableMessage.Active)
+            {
+                Active();
+            }
+            else if(activableMessage.Activator.gameObject == InterestedObject && !activableMessage.Active && m_RevertOnTriggerExit)
             {
                 Active();
             }

@@ -88,9 +88,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1978320367
+  m_SortingLayer: 4
+  m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &995784556
 MonoBehaviour:
@@ -199,6 +199,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   SpeedInZeroGravity: 150
+  InteractionAnimationSpeed: 0.8
   InputDirection: {x: 0, y: 0}
   CurrentDirection: 0
 --- !u!114 &543330954
@@ -556,8 +557,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1978320367
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &3973525561011371515
 MonoBehaviour:

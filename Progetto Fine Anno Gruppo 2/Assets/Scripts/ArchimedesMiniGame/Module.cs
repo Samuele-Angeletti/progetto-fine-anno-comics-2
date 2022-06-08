@@ -236,7 +236,7 @@ namespace ArchimedesMiniGame
             Stop();
             m_Docked = true;
             Destroy(m_DockingPivot.gameObject);
-            PubSub.PubSub.Publish(new DockingCompleteMessage());
+            PubSub.PubSub.Publish(new DockingCompleteMessage(this));
         }
 
         public override void Interact()

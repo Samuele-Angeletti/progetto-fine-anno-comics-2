@@ -5,6 +5,7 @@ using Commons;
 using PubSub;
 using Cinemachine;
 using ArchimedesMiniGame;
+using System;
 
 namespace MainGame
 {
@@ -37,7 +38,6 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnPlayer;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
-        
 
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
@@ -52,6 +52,7 @@ namespace MainGame
         private PlayerInputSystem m_PlayerInputs;
         private bool m_ZeroGActive;
         private PlayerMovementManager m_Player;
+
 
         public bool ZeroGActive
         {
@@ -118,7 +119,8 @@ namespace MainGame
             }
             else if(message is DockingCompleteMessage)
             {
-                SetNewControllable(m_Player);
+                if(m_Player != null)
+                    SetNewControllable(m_Player);
             }
             else if(message is StartEngineModuleMessage)
             {
@@ -154,6 +156,16 @@ namespace MainGame
         private void OnDestroy()
         {
             OnDisableSubscribe();
+        }
+
+        public void SetNewPlayer(PlayerMovementManager player)
+        {
+            m_Player = player;
+            if (m_Controllable.GetComponent<PlayerMovementManager>() == null)
+            {
+                m_CameraOnPlayer.Follow = m_Player.transform;
+                SetNewControllable(m_Player);
+            }
         }
 
         public void SetNewControllable(Controllable newControllable)
