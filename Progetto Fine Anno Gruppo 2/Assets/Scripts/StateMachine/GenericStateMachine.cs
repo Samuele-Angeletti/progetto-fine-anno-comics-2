@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +28,11 @@ public class GenericStateMachine<T> where T : Enum
 
         _currentState = _allStates[stateType];
         _currentState.OnStart();
+    }
+
+    public State GetState(T playerState)
+    {
+        return _allStates[playerState];
     }
 
     public void OnUpdate() => _currentState?.OnUpdate();
