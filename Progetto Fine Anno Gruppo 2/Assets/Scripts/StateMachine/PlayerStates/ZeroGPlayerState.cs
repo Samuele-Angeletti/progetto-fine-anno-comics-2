@@ -14,6 +14,8 @@ public class ZeroGPlayerState : State
     private bool m_IsMoving;
     private bool m_Somersaulting;
     private Vector2 m_Adjuster;
+    public bool PassedThroughInteraction;
+
     public ZeroGPlayerState(PlayerMovementManager owner)
     {
         m_Owner = owner;
@@ -46,6 +48,12 @@ public class ZeroGPlayerState : State
         m_IsMoving = false;
         m_Somersaulting = false;
         m_Adjuster = m_Owner.GraphicsPivot.transform.localPosition;
+
+        if(PassedThroughInteraction)
+        {
+            m_Owner.CurrentDirection = EDirection.Up;
+            PassedThroughInteraction = false;
+        }
     }
 
     public override void OnUpdate()

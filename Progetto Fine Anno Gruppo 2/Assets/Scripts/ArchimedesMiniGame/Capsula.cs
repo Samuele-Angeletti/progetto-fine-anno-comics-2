@@ -10,6 +10,7 @@ namespace ArchimedesMiniGame
 {
     public class Capsula : MonoBehaviour, ISubscriber
     {
+        [SerializeField] bool m_PlayOnStart;
         [SerializeField] PlayerMovementManager m_PlayerPrefab;
         [SerializeField] Transform m_SpawnPoint;
         private Module m_Module;
@@ -47,7 +48,8 @@ namespace ArchimedesMiniGame
         {
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
 
-            Invoke("DebugEngine", 0.5f);
+            if(m_PlayOnStart)
+                Invoke("DebugEngine", 0.5f);
         }
 
         private void DebugEngine()

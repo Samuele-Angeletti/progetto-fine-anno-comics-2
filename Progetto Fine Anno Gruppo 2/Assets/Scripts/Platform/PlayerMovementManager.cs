@@ -54,7 +54,7 @@ namespace MainGame
         public EDirection CurrentDirection;
         public Vector3 NextCheckpoint => m_NextCheckPoint;
         public Interacter Interacter => m_Interacter;
-
+        public bool PassingFromZeroG { get; set; }
 
         private bool m_Flipped = false;
         private void Awake()
@@ -240,6 +240,12 @@ namespace MainGame
             
             if (Rigidbody.velocity.magnitude == 0 && Interacter.InteractionAvailable && StateMachine.CurrentState.GetType() != typeof(InteractingPlayerState))
             {
+                if (StateMachine.CurrentState.GetType() == typeof(ZeroGPlayerState))
+                {
+                    PassingFromZeroG = true;
+                    ZeroGPlayerState zeroGPlayerState = (ZeroGPlayerState)StateMachine.GetState(EPlayerState.ZeroG);
+                    zeroGPlayerState.PassedThroughInteraction = true;
+                }
                 StateMachine.SetState(EPlayerState.Interacting);
             }
         }
