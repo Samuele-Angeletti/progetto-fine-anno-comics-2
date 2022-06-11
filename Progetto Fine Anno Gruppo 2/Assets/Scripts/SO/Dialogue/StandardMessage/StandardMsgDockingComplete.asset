@@ -13,11 +13,5 @@ MonoBehaviour:
   m_Name: StandardMsgDockingComplete
   m_EditorClassIdentifier: 
   Dialogo:
-  - WhoIsSpeaking: 0
-    DialougueString: Attracco Completato!
-  - WhoIsSpeaking: 3
-    DialougueString: Attracco Completato!
-  - WhoIsSpeaking: 1
-    DialougueString: Attracco Completato!
   - WhoIsSpeaking: 1
     DialougueString: Attracco Completato!

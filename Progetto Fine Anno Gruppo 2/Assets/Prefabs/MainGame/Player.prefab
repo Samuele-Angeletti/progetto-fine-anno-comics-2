@@ -198,7 +198,7 @@ MonoBehaviour:
   GroundMask:
     serializedVersion: 2
     m_Bits: 1
-  SpeedInZeroGravity: 150
+  SpeedInZeroGravity: 250
   InteractionAnimationSpeed: 0.8
   InputDirection: {x: 0, y: 0}
   CurrentDirection: 0

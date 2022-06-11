@@ -12,8 +12,13 @@ namespace MainGame
         [SerializeField] bool m_Active;
         [SerializeField] bool m_OneShot;
         [SerializeField] UnityEvent m_EventOnTrigger;
+        [Header("Interaction Settings")]
         [SerializeField] List<EInteractionType> m_CallInteraction;
         [SerializeField] List<GameObject> m_InterestedObjectsOnInteraction;
+        [Header("Dialogue Settings")]
+        [SerializeField] DialogueHolderSO m_DialogueHolderSOs;
+
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.GetComponent<PlayerMovementManager>() != null)
@@ -36,6 +41,10 @@ namespace MainGame
                         GameManager.Instance.GetButtonInteractionSO(eInteraction).Interact(g, interacter);
                         i++;
                     }
+
+                    if(m_DialogueHolderSOs != null)
+                        PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueHolderSOs.Dialogo));
+                    
                 }
             }
         }
