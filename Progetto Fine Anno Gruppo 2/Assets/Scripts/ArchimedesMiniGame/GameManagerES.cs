@@ -33,7 +33,7 @@ namespace ArchimedesMiniGame
         }
         #endregion
 
-        private Controllable m_Controllable;
+        private Module m_CurrentModule;
 
         [Header("UI References")]
         [SerializeField] Slider m_BatterySlider;
@@ -43,9 +43,16 @@ namespace ArchimedesMiniGame
         [SerializeField] Button m_DockingAttemptButton;
 
 
-        [Header("Save File")]
-        [Tooltip("Nome del file da creare per salvare i dati di danneggiamento. Se questa stringa viene omessa, verrà usato il nome del GameObject del Modulo corrente")]
-        [SerializeField] string m_FileName;
+        [Header("Modules")]
+        [SerializeField] List<Module> m_Modules;
+
+        private string m_FileName;
+
+        private void Awake()
+        {
+
+            DontDestroyOnLoad(this.gameObject);
+        }
 
         private void Start()
         {
@@ -61,17 +68,27 @@ namespace ArchimedesMiniGame
 
         public void SaveData()
         {
-            m_FileName = m_FileName == "" ? m_Controllable.gameObject.name : m_FileName;
-            SaveAndLoadSystem.Save(m_Controllable.GetComponent<Module>().GetDamageableInfo(), m_FileName);
+            m_FileName = "ModuleInfo" + m_Modules.IndexOf(m_CurrentModule);
+            SaveAndLoadSystem.Save(m_CurrentModule.GetDamageableInfo(), m_FileName);
+        }
+
+        public string GetCurrentModuleName()
+        {
+            return m_FileName;
+        }
+
+        public void LoadData()
+        {
+            m_CurrentModule.SetInitialParameters(SaveAndLoadSystem.Load<ModuleInfos>(m_FileName));
         }
 
         public void OnPublish(IMessage message)
         {
             if(message is StartEngineModuleMessage)
             {
-
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
-                m_Controllable = startEngineModule.Module;
+                m_CurrentModule = startEngineModule.Module;
+                //LoadData();
             }
             else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {

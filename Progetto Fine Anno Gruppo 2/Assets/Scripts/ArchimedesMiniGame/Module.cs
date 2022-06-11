@@ -69,6 +69,7 @@ namespace ArchimedesMiniGame
             }
         }
 
+
         private void Update()
         {
             if (!m_Docked)
@@ -244,9 +245,15 @@ namespace ArchimedesMiniGame
             DockingAttempt();
         }
 
-        internal DamageableInfos GetDamageableInfo()
+        internal ModuleInfos GetDamageableInfo()
         {
-            return new DamageableInfos(m_Damageable.MaxLife, m_Damageable.CurrentLife);
+            return new ModuleInfos(m_Damageable.MaxLife, m_Damageable.CurrentLife, m_MaxBattery, m_CurrentBattery);
+        }
+
+        internal void SetInitialParameters(ModuleInfos damageableInfos)
+        {
+            m_Damageable.SetMaxLife(damageableInfos.MaxLife);
+            m_Damageable.SetInitialLife(damageableInfos.CurrentLife);
         }
 
         public void GetDamage(float amount)

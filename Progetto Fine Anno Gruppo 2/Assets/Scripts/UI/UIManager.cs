@@ -20,7 +20,13 @@ public class UIManager : MonoBehaviour, ISubscriber
 	private Menu m_CurrentMenu;
 	private bool m_Paused;
 	private bool m_TerminalActive;
-	void Start()
+
+    private void Awake()
+    {
+
+		DontDestroyOnLoad(this.gameObject);
+	}
+    void Start()
 	{
 		PubSub.PubSub.Subscribe(this, typeof(OpenMenuMessage));
 		PubSub.PubSub.Subscribe(this, typeof(CloseAllMenusMessage));
