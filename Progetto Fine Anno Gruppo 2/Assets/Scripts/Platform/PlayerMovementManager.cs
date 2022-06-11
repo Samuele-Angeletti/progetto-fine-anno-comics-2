@@ -155,11 +155,11 @@ namespace MainGame
         public void Movement()
         {
            
-            if (Rigidbody.velocity.x > 0.001f && m_Flipped)
+            if (InputDirection.x > 0.001f && m_Flipped)
             {
                 FlipSpriteOnX(false);
             }
-            if (Rigidbody.velocity.x < -0.001f && !m_Flipped)
+            if (InputDirection.x < -0.001f && !m_Flipped)
             {
                 FlipSpriteOnX(true);
             }

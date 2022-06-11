@@ -62,14 +62,14 @@ public class ZeroGPlayerState : State
         {
             if (m_Owner.InputDirection.x != 0)
             {
-                if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 1, m_Owner.transform.position + (Vector3.up / 2)))
+                if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 0.26f, m_Owner.transform.position + (Vector3.up / 2)))
                 {
                     Move();
                 }
             }
             else
             {
-                if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 1f))
+                if (m_Owner.ForwardCheckOfWall(m_Owner.InputDirection, 0.6f, m_Owner.transform.position + (Vector3.up / 2)))
                 {
                     Move();
                 }
