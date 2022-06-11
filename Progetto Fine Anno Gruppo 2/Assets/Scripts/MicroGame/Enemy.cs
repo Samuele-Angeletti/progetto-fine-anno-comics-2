@@ -72,6 +72,7 @@ namespace MicroGame
 
         private void OnDestroy()
         {
+            GameManagerPM.Instance.RemoveFromList(this);
             OnDisableSubscribe();
         }
     }

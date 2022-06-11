@@ -17,7 +17,7 @@ public class DialogueTrigger : Interactable, ISubscriber
     private bool m_Interacted;
     DialogueHolderSO lastDialogue;
     public EDialogueInteraction modalitaDiInterazione;
-    public bool CanRepeatLastDialogue = true;
+    public bool CanRepeatLastDialogue;
     [ShowScriptableObject]
     public List<DialogueHolderSO> m_dialogueToShow;
 
@@ -25,6 +25,7 @@ public class DialogueTrigger : Interactable, ISubscriber
 
     private void Start()
     {
+        lastDialogue = m_dialogueToShow.Last();
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterMessage));
         PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
@@ -33,17 +34,20 @@ public class DialogueTrigger : Interactable, ISubscriber
     
     public override void Interact(Interacter interacter)
     {
-        m_Interacted = true;
-      
+        if (interacter.InteractionAvailable)
+        {
+
+            if (m_dialogueToShow.Count >= 1)
+            {
+                PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
+            }
+        }
+
     }
     private void Update()
     {
-        if (m_Interacted == true && DialoguePlayer.Instance.dialogueIsPlaying == false)
-        {
-            m_Interacted = false;
-            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
-        }
-       
+      
+
     }
     public override void ShowUI(bool isVisible)
     {
@@ -54,24 +58,17 @@ public class DialogueTrigger : Interactable, ISubscriber
     {
         if (message is EndDialogueMessage)
         {
-            Destroy(gameObject);
+                Destroy(gameObject);
         }
 
-        if (message is CurrentDialogueFinishedMessage)
+        else if (message is CurrentDialogueFinishedMessage)
         {
-           
-            if (m_dialogueToShow.Count > 1 || !CanRepeatLastDialogue)
-            {
-                m_dialogueToShow.RemoveAt(0); 
-                m_Interacted = false;
-            }
-            if (m_dialogueToShow.Count == 0)
-            {
-                PubSub.PubSub.Publish(new EndDialogueMessage());
-            }
+            if (CanRepeatLastDialogue && m_dialogueToShow.Count == 1) return;
+            if (m_dialogueToShow.Count > 0) m_dialogueToShow.RemoveAt(0);
+            if (m_dialogueToShow.Count == 0)PubSub.PubSub.Publish(new EndDialogueMessage());
 
         }
-        if (message is OnTriggerEnterMessage)
+        else if (message is OnTriggerEnterMessage)
         {
             PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
         }

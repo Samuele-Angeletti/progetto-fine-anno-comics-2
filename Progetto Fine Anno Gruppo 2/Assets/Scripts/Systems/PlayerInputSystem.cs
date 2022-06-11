@@ -37,7 +37,9 @@ namespace Commons
 
         private void Interact(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.Interact();
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.Interact();
+
         }
 
         private void PauseGame(InputAction.CallbackContext obj)

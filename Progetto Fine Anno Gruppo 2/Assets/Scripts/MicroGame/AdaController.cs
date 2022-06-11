@@ -35,7 +35,7 @@ namespace MicroGame
 
             if(m_CurrentLifes <= 0)
             {
-                PubSub.PubSub.Publish(new GameOverMicroGameMessage());
+                PubSub.PubSub.Publish(new GameOverMicroGameMessage(false));
             }
 
             m_AdaLogic.MoveDirection(Vector2.zero);

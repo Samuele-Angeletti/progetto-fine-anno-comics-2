@@ -62,6 +62,8 @@ namespace MainGame
         {
             
             m_PlayerInputs = GetComponent<PlayerInputSystem>();
+
+            DontDestroyOnLoad(this.gameObject);
         }
 
         private void Start()

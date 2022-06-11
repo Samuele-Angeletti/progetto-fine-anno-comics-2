@@ -40,5 +40,10 @@ namespace Commons
         {
             m_CurrentLife = Mathf.Clamp(amount, 1, MaxLife);
         }
+
+        public void SetMaxLife(float amount)
+        {
+            m_MaxLife = amount;
+        }
     }
 }

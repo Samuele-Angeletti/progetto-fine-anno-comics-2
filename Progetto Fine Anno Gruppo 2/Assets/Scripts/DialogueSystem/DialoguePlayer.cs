@@ -9,13 +9,13 @@ using System;
 
 public class DialoguePlayer : MonoBehaviour, ISubscriber
 {
-    
+
     public GameObject dialogueBox;
     public TextMeshProUGUI textToWrite;
     public Image spriteToChange;
-    
 
-    [SerializeField]private PlayerInputSystem m_PlayerInputs;
+
+    [SerializeField] private PlayerInputSystem m_PlayerInputs;
     private Queue<string> m_dialogueLine;
     private Queue<ESpeaker> m_whoIsSpeakingRightNow;
 
@@ -25,11 +25,11 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     */
 
 
-    [HideInInspector]public Sprite spritePlayer; 
-    [HideInInspector]public Sprite spriteAdaPreIntegrazione; 
-    [HideInInspector]public Sprite spriteAdaPrimaIntegrazione;
-    [HideInInspector]public Sprite spriteAdaSecondaIntegrazione;
-    [HideInInspector]public Sprite spriteAdaFormaFinale;
+    [HideInInspector] public Sprite spritePlayer;
+    [HideInInspector] public Sprite spriteAdaPreIntegrazione;
+    [HideInInspector] public Sprite spriteAdaPrimaIntegrazione;
+    [HideInInspector] public Sprite spriteAdaSecondaIntegrazione;
+    [HideInInspector] public Sprite spriteAdaFormaFinale;
     [SerializeField] private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
     public bool dialogueIsPlaying = false;
@@ -39,7 +39,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgDockingComplete;
     [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgStartEngine;
     [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgModuleDestroyed;
-    
+
     #region SINGLETONE PATTERN
     private static DialoguePlayer m_instance;
 
@@ -57,7 +57,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             }
             return m_instance;
         }
-       
+
     }
     #endregion
 
@@ -70,10 +70,10 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         }
 
         m_whoIsSpeakingRightNow = new Queue<ESpeaker>();
-        
+
     }
-    
-    
+
+
     private void Start()
     {
         PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
@@ -89,7 +89,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         m_dialogueLine = new Queue<string>();
 
     }
- 
+
     public void OnPublish(IMessage message)
     {
         if (message is StartDialogueMessage)
@@ -103,7 +103,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             StopAllCoroutines();
             dialogueBox.SetActive(false);
         }
-        else if(message is ModuleDestroyedMessage)
+        else if (message is ModuleDestroyedMessage)
         {
             PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed.Dialogo)));
 
@@ -128,7 +128,8 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
     public IEnumerator Startdialogue(List<DialogueLine> dialogueToEnqueue)
     {
-        
+
+
         if (dialogueToEnqueue == null) yield return null;
         m_dialogueLine.Clear();
         Debug.Log("cancellata");
@@ -144,19 +145,20 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
     }
 
-    
+
 
     public IEnumerator DisplayNextDialogueLine()
     {
-       
+    
+
         while (m_dialogueLine.Count >0)
         {
             string temp = m_dialogueLine.Dequeue();
             Debug.Log($"{m_dialogueLine.Count }");
             ChangeSpeakerImage();
             yield return TypeWriteEffect(temp, textToWrite);
-           
-        }
+
+         }
         if (m_dialogueLine.Count == 0)
         {
             Debug.Log("dialogo finito");
@@ -202,10 +204,10 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         }
         if (whoIsSpeaking != ESpeaker.Reimann)
         {
-            currentSpeaker = "Ada"; 
+            currentSpeaker = "Ada";
         }
         return currentSpeaker;
-        
+
     }
     private IEnumerator TypeWriteEffect(string lineaDiDialogo, TMP_Text textLabel)
     {
@@ -214,11 +216,11 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         int charIndex = 0;
         while (charIndex < lineaDiDialogo.Length)
         {
-            t+= Time.deltaTime * m_typeWriterSpeed;
+             t+= Time.deltaTime * m_typeWriterSpeed;
             charIndex = Mathf.FloorToInt(t);
-            charIndex = Mathf.Clamp(charIndex, 0,lineaDiDialogo.Length);
+            charIndex = Mathf.Clamp(charIndex,  0,lineaDiDialogo.Length);
 
-            textLabel.text = lineaDiDialogo.Substring(0,charIndex);
+            textLabel.text = lineaDiDialogo.Substring (0,charIndex);
             yield return null;
         }
         yield return new WaitUntil(() => m_PlayerInputs.inputControls.Player.Interaction.phase == UnityEngine.InputSystem.InputActionPhase.Performed);
@@ -231,7 +233,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(CurrentDialogueFinishedMessage));
-        // modulo
+           // mod
         PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
@@ -248,3 +250,4 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         return temp;
     }
 }
+

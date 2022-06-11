@@ -6,6 +6,7 @@ using PubSub;
 using Commons;
 using TMPro;
 using UnityEngine.UI;
+using ArchimedesMiniGame;
 
 namespace MicroGame
 {
@@ -45,15 +46,15 @@ namespace MicroGame
         [SerializeField] TextMeshProUGUI m_LifeText;
         [SerializeField] Slider m_BatterySlider;
 
-        [Header("Load File")]
-        [SerializeField] string m_FileName;
-
         private PlayerInputSystem m_PlayerInputs;
         private List<Pickable> m_PickableList = new List<Pickable>();
+        private List<Enemy> m_Enemies = new List<Enemy>();
         private int m_PickablesInScene;
         private int m_PickablePicked = 0;
         private bool[] m_SpawnPointUsed;
-
+        private string m_FileName;
+        private ModuleInfos m_CurrentModuleInfos;
+        private int m_EnemiesQuantity;
         private void Awake()
         {
             Pickable[] pickables = FindObjectsOfType<Pickable>();
@@ -64,6 +65,8 @@ namespace MicroGame
             m_PickablesInScene = m_PickableList.Count;
             m_SpawnPointUsed = new bool[m_EnemiesSpawnPoints.Length];
             m_PlayerInputs = GetComponent<PlayerInputSystem>();
+
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Start()
@@ -80,8 +83,9 @@ namespace MicroGame
 
         private void StartSettings()
         {
-            DamageableInfos d = SaveAndLoadSystem.Load<DamageableInfos>(m_FileName);
-            float damagePercentage = d.DamagePercentage();
+            m_FileName = GameManagerES.Instance.GetCurrentModuleName();
+            m_CurrentModuleInfos = SaveAndLoadSystem.Load<ModuleInfos>(m_FileName);
+            float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
 
             if (damagePercentage == 0)
             {
@@ -117,8 +121,9 @@ namespace MicroGame
         {
             for (int i = 0; i < enemiesQuantity; i++)
             {
-                Instantiate(m_EnemyPrefab, ChooseFreeSpawnPoint(), Quaternion.identity);
+                m_Enemies.Add(Instantiate(m_EnemyPrefab, ChooseFreeSpawnPoint(), Quaternion.identity));
             }
+            m_EnemiesQuantity = enemiesQuantity;
         }
 
         private Vector3 ChooseFreeSpawnPoint()
@@ -165,7 +170,15 @@ namespace MicroGame
             }
             else if(message is GameOverMicroGameMessage)
             {
-                Debug.Log("Gioco finito");
+                GameOverMicroGameMessage gameOverMicroGame = (GameOverMicroGameMessage)message;
+                if (gameOverMicroGame.Win)
+                {
+                    m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + (m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
+                    m_CurrentModuleInfos.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
+                    SaveAndLoadSystem.Save(m_CurrentModuleInfos, m_FileName);
+                }
+                else
+                    Debug.Log("Perso, ricomincio");
             }
             else if (message is PauseGameMessage)
             {
@@ -185,7 +198,7 @@ namespace MicroGame
 
             if (m_PickablePicked >= m_PickablesInScene)
             {
-                Debug.Log("Gioco finito");
+                PubSub.PubSub.Publish(new GameOverMicroGameMessage(true));
             }
         }
 
@@ -200,6 +213,11 @@ namespace MicroGame
         private void OnDestroy()
         {
             OnDisableSubscribe();
+        }
+
+        public void RemoveFromList(Enemy enemy)
+        {
+            m_Enemies.Remove(enemy);
         }
     }
 
