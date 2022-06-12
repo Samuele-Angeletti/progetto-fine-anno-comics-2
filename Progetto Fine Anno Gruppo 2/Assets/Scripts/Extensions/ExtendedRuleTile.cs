@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(fileName ="Extended Tile Rule",menuName ="2D/tiles/Extended Rule Tile")]
+[CreateAssetMenu(fileName ="Extended Tile Rule",menuName ="2D/Tiles/Extended Rule Tile")]
 public class ExtendedRuleTile : RuleTile
 {
     public string type;
