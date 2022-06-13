@@ -13,9 +13,13 @@ public class MovableObject : Interactable, ISubscriber
     private Vector3 m_StartPivot;
     private bool m_Active;
     private bool m_Used;
+
     private void Awake()
     {
         m_StartPivot = transform.position;
+
+
+        
     }
     private void Start()
     {

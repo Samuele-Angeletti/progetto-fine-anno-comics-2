@@ -10,5 +10,6 @@ public enum EInteractionType
     ActiveModule,
     PlayPacMan,
     RotateRoom,
-    OpenTerminal
+    OpenTerminal,
+    Integration
 }

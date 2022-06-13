@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4982622388453702750}
   - component: {fileID: 4982622388453702751}
   - component: {fileID: 4982622388453702736}
+  - component: {fileID: 4935531411620680024}
   m_Layer: 0
   m_Name: ButtonInteraction
   m_TagString: Untagged
@@ -138,6 +139,7 @@ MonoBehaviour:
   m_Radius: 0.2
   InteractionType: 2
   m_Active: 1
+  m_OneShot: 0
 --- !u!61 &4982622388453702736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,6 +166,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37227535, y: 0.8378196}
   m_EdgeRadius: 0
+--- !u!114 &4935531411620680024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982622388453702737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42262e3f5650cf149ae972dcff823ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &6954427009570727246
 GameObject:
   m_ObjectHideFlags: 0

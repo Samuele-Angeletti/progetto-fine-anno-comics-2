@@ -5,7 +5,7 @@ using PubSub;
 using UnityEngine.UI;
 using Commons;
 using MainGame;
-using System;
+using System.Linq;
 
 namespace ArchimedesMiniGame
 {
@@ -46,6 +46,9 @@ namespace ArchimedesMiniGame
         [Header("Modules")]
         [SerializeField] List<Module> m_Modules;
 
+        [Header("Scene References")]
+        [SerializeField] ButtonInteraction m_CommandPlat;
+
         private string m_FileName;
 
         private void Awake()
@@ -69,7 +72,7 @@ namespace ArchimedesMiniGame
         public void SaveData()
         {
             m_FileName = "ModuleInfo" + m_Modules.IndexOf(m_CurrentModule);
-            SaveAndLoadSystem.Save(m_CurrentModule.GetDamageableInfo(), m_FileName);
+            SaveAndLoadSystem.Save(m_CurrentModule.GetSavableInfos(), m_FileName);
         }
 
         public string GetCurrentModuleName()
@@ -79,7 +82,7 @@ namespace ArchimedesMiniGame
 
         public void LoadData()
         {
-            m_CurrentModule.SetInitialParameters(SaveAndLoadSystem.Load<ModuleInfos>(m_FileName));
+            m_CurrentModule.SetInitialParameters(SaveAndLoadSystem.Load<SavableInfos>(m_FileName));
         }
 
         public void OnPublish(IMessage message)
@@ -141,6 +144,13 @@ namespace ArchimedesMiniGame
         private void OnDestroy()
         {
             OnDisableSubscribe();
+        }
+
+        public void SetNextModuleToCommandPlat()
+        {
+            int index = m_Modules.IndexOf(m_CurrentModule) + 1;
+            if (index < m_Modules.Count)
+                m_CommandPlat.SetInterestedObject(m_Modules[index].gameObject);
         }
     }
 }

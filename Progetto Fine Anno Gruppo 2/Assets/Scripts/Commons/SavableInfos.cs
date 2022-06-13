@@ -6,19 +6,25 @@ using UnityEngine;
 namespace Commons
 {
     [Serializable]
-    public class ModuleInfos
+    public class SavableInfos
     {
         public float MaxLife;
         public float CurrentLife;
         public float MaxBattery;
         public float CurrentBattery;
+        public float xPos;
+        public float yPos;
+        public float zPos;
 
-        public ModuleInfos(float maxLife, float currentLife, float maxBattery, float currentBattery)
+        public SavableInfos(float maxLife, float currentLife, float maxBattery, float currentBattery, Vector3 currentPosition)
         {
             MaxLife = maxLife;
             CurrentLife = currentLife;
             MaxBattery = maxBattery;
             CurrentBattery = currentBattery;
+            xPos = currentPosition.x;
+            yPos = currentPosition.y;
+            zPos = currentPosition.z;
         }
 
         /// <summary>

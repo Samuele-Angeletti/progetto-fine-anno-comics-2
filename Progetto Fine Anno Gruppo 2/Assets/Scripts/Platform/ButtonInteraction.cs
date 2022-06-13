@@ -28,4 +28,9 @@ public class ButtonInteraction : Interactable
     {
         m_Active = active;
     }
+
+    public void SetInterestedObject(GameObject newInterestedObject)
+    {
+        InterestedObject = newInterestedObject;
+    }
 }

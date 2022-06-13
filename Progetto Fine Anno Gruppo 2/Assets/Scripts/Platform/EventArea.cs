@@ -18,7 +18,6 @@ namespace MainGame
         [Header("Dialogue Settings")]
         [SerializeField] DialogueHolderSO m_DialogueHolderSOs;
 
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.GetComponent<PlayerMovementManager>() != null)
@@ -27,26 +26,58 @@ namespace MainGame
                 if (m_Active)
                 {
                     if (m_OneShot) m_Active = false;
+                    Invoke(interacter);
 
-                    m_EventOnTrigger.Invoke();
-                    int i = 0;
-                    foreach(EInteractionType eInteraction in m_CallInteraction)
-                    {
-                        GameObject g = m_InterestedObjectsOnInteraction[i];
-                        if(g == null)
-                        {
-                            g = new GameObject();
-                            Destroy(g, 2f);
-                        }
-                        GameManager.Instance.GetButtonInteractionSO(eInteraction).Interact(g, interacter);
-                        i++;
-                    }
-
-                    if(m_DialogueHolderSOs != null)
-                        PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueHolderSOs.Dialogo));
-                    
                 }
             }
+        }
+
+        /// <summary>
+        /// Chiama tutti gli eventi: UnityEvent, Interaction, Dialogue
+        /// </summary>
+        /// <param name="interacter">Interacter per dialogo</param>
+        public void Invoke(Interacter interacter)
+        {
+            InvokeEvent();
+            InvokeInteraction(interacter);
+            InvokeDialogue();
+        }
+
+        /// <summary>
+        /// Chiama il Dialogue
+        /// </summary>
+        public void InvokeDialogue()
+        {
+            if (m_DialogueHolderSOs != null)
+                PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueHolderSOs.Dialogo));
+        }
+
+        /// <summary>
+        /// Chiama l'Interaction
+        /// </summary>
+        /// <param name="interacter"></param>
+        public void InvokeInteraction(Interacter interacter)
+        {
+            int i = 0;
+            foreach (EInteractionType eInteraction in m_CallInteraction)
+            {
+                GameObject g = m_InterestedObjectsOnInteraction[i];
+                if (g == null)
+                {
+                    g = new GameObject();
+                    Destroy(g, 2f);
+                }
+                GameManager.Instance.GetButtonInteractionSO(eInteraction).Interact(g, interacter);
+                i++;
+            }
+        }
+
+        /// <summary>
+        /// Chiama lo UnityEvent
+        /// </summary>
+        public void InvokeEvent()
+        {
+            m_EventOnTrigger.Invoke();
         }
     }
 }

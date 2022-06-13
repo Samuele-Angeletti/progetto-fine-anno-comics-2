@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4237420646932340592}
   - component: {fileID: 1771881190260066110}
   - component: {fileID: 2825650029117642708}
+  - component: {fileID: 9165489505851503020}
   m_Layer: 0
   m_Name: DoorLogic
   m_TagString: Untagged
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_EndPivot: {fileID: 4237420647504023776}
   m_TransitionSpeed: 1
   m_OneShot: 0
+  m_RevertOnTriggerExit: 0
 --- !u!61 &4237420646932340592
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -200,6 +202,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9165489505851503020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4237420646932340594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42262e3f5650cf149ae972dcff823ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &4237420647504023777
 GameObject:
   m_ObjectHideFlags: 0

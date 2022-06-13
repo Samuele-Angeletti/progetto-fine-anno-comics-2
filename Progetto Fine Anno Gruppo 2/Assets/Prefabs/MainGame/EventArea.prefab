@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   m_OneShot: 1
+  m_IsTrigger: 1
   m_EventOnTrigger:
     m_PersistentCalls:
       m_Calls: []

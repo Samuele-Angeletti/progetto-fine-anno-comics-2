@@ -37,10 +37,16 @@ public class ButtonInteractionScriptableObject : ScriptableObject
             case EInteractionType.OpenTerminal:
                 OpenTerminal(interestedObject);
                 break;
-
+            case EInteractionType.Integration:
+                Integration(interestedObject);
+                break;
         }
     }
 
+    private void Integration(GameObject interestedObject)
+    {
+        interestedObject.GetComponent<IntegrationEvents>().Invoke();
+    }
 
     private void OpenTerminal(GameObject interestedObject)
     {

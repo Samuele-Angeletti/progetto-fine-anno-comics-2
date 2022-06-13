@@ -53,7 +53,7 @@ namespace MicroGame
         private int m_PickablePicked = 0;
         private bool[] m_SpawnPointUsed;
         private string m_FileName;
-        private ModuleInfos m_CurrentModuleInfos;
+        private SavableInfos m_CurrentModuleInfos;
         private int m_EnemiesQuantity;
         private void Awake()
         {
@@ -84,7 +84,7 @@ namespace MicroGame
         private void StartSettings()
         {
             m_FileName = GameManagerES.Instance.GetCurrentModuleName();
-            m_CurrentModuleInfos = SaveAndLoadSystem.Load<ModuleInfos>(m_FileName);
+            m_CurrentModuleInfos = SaveAndLoadSystem.Load<SavableInfos>(m_FileName);
             float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
 
             if (damagePercentage == 0)

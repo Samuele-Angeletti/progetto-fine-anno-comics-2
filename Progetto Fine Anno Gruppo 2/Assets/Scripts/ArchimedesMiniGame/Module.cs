@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Commons;
 using MainGame;
-
+using PubSub;
 namespace ArchimedesMiniGame
 {
-    public class Module : Controllable, IDamageable
+    public class Module : Controllable, IDamageable, ISubscriber
     {
         [Header("References")]
         [SerializeField] BoxCollider2D m_ExternalCollider;
@@ -52,6 +52,8 @@ namespace ArchimedesMiniGame
         {
             GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
             GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
+
+            PubSub.PubSub.Subscribe(this, typeof(SaveMessage));
         }
 
         private void FixedUpdate()
@@ -245,15 +247,17 @@ namespace ArchimedesMiniGame
             DockingAttempt();
         }
 
-        internal ModuleInfos GetDamageableInfo()
+        internal SavableInfos GetSavableInfos()
         {
-            return new ModuleInfos(m_Damageable.MaxLife, m_Damageable.CurrentLife, m_MaxBattery, m_CurrentBattery);
+            return new SavableInfos(m_Damageable.MaxLife, m_Damageable.CurrentLife, m_MaxBattery, m_CurrentBattery, transform.position);
         }
 
-        internal void SetInitialParameters(ModuleInfos damageableInfos)
+        internal void SetInitialParameters(SavableInfos damageableInfos)
         {
             m_Damageable.SetMaxLife(damageableInfos.MaxLife);
             m_Damageable.SetInitialLife(damageableInfos.CurrentLife);
+            m_CurrentBattery = m_MaxBattery;
+            transform.position = new Vector3(damageableInfos.xPos, damageableInfos.yPos, damageableInfos.zPos);
         }
 
         public void GetDamage(float amount)
@@ -262,6 +266,23 @@ namespace ArchimedesMiniGame
             if (m_Damageable.CurrentLife <= 0) Stop();
         }
 
-        
+        public void OnPublish(IMessage message)
+        {
+            if(message is SaveMessage)
+            {
+                string id = GetComponent<SavableEntity>().Id;
+                SaveAndLoadSystem.StoreSaveData(id, GetSavableInfos());
+            }
+        }
+
+        public void OnDisableSubscribe()
+        {
+            PubSub.PubSub.Unsubscribe(this, typeof(SaveMessage));
+        }
+
+        private void OnDestroy()
+        {
+            OnDisableSubscribe();
+        }
     }
 }

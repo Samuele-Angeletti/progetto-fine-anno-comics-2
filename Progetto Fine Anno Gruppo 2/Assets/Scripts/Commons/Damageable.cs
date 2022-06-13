@@ -15,6 +15,7 @@ namespace Commons
         public float MaxLife => m_MaxLife;
         public float CurrentLife => m_CurrentLife;
 
+        
 
         private void Awake()
         {

@@ -212,5 +212,17 @@ namespace MainGame
         {
             return m_ButtonInteractionSO.Find(x => x.InteractionType == interactionType);
         }
+
+        [ContextMenu("Debug Save")]
+        public void Save()
+        {
+            PubSub.PubSub.Publish(new SaveMessage());
+            Invoke("DebugSave", 1);
+        }
+
+        private void DebugSave()
+        {
+            SaveAndLoadSystem.Save();
+        }
     }
 }
