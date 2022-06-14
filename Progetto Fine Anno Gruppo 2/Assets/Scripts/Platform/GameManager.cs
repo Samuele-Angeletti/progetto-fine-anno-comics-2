@@ -86,6 +86,8 @@ namespace MainGame
             SetNewControllable(m_Controllable);
 
             Load();
+
+            AudioManager.Instance.PlayBackGroundMusic(currentBackGroundMusic);
         }
 
         public void SetContinousMovement(bool active)
