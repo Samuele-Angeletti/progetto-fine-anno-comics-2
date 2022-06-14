@@ -14,8 +14,7 @@ public enum EDialogueInteraction
 [RequireComponent(typeof(BoxCollider2D))]
 public class DialogueTrigger : Interactable, ISubscriber
 {
-    private bool m_Interacted;
-    DialogueHolderSO lastDialogue;
+
     public EDialogueInteraction modalitaDiInterazione;
     public bool CanRepeatLastDialogue;
     [ShowScriptableObject]
@@ -25,7 +24,6 @@ public class DialogueTrigger : Interactable, ISubscriber
 
     private void Start()
     {
-        lastDialogue = m_dialogueToShow.Last();
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterMessage));
         PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
@@ -44,11 +42,7 @@ public class DialogueTrigger : Interactable, ISubscriber
         }
 
     }
-    private void Update()
-    {
-      
 
-    }
     public override void ShowUI(bool isVisible)
     {
 

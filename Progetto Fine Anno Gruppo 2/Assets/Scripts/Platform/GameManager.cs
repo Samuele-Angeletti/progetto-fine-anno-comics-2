@@ -39,6 +39,10 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
 
+        [Header("BackGround Music")]
+        [SerializeField,ShowScriptableObject] AudioAssetSO currentBackGroundMusic;
+
+
         [Header("Player Settings")]
         [SerializeField] Controllable m_Controllable;
 
@@ -83,6 +87,7 @@ namespace MainGame
 
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
+            AudioManager.Instance.PlayBackGroundMusic(currentBackGroundMusic);
         }
 
         public void SetContinousMovement(bool active)
