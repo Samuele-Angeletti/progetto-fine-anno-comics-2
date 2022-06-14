@@ -50,7 +50,8 @@ namespace ArchimedesMiniGame
         [SerializeField] ButtonInteraction m_CommandPlat;
 
         private string m_FileName;
-
+        public Module CurrentModule => m_CurrentModule;
+        private string m_CurrentModuleId = "";
         private void Awake()
         {
 
@@ -75,14 +76,9 @@ namespace ArchimedesMiniGame
             SaveAndLoadSystem.Save(m_CurrentModule.GetSavableInfos(), m_FileName);
         }
 
-        public string GetCurrentModuleName()
+        public string GetCurrentModuleID()
         {
-            return m_FileName;
-        }
-
-        public void LoadData()
-        {
-            m_CurrentModule.SetInitialParameters(SaveAndLoadSystem.Load<SavableInfos>(m_FileName));
+            return m_CurrentModuleId;
         }
 
         public void OnPublish(IMessage message)
@@ -91,11 +87,13 @@ namespace ArchimedesMiniGame
             {
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
                 m_CurrentModule = startEngineModule.Module;
-                //LoadData();
+                m_CurrentModuleId = m_CurrentModule.SavableEntity.Id;
+                Debug.Log(m_CurrentModule.name);
             }
             else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {
-                SaveData();
+                //SaveData();
+                SetNextModuleToCommandPlat();
             }
             else if(message is PauseGameMessage)
             {
@@ -150,7 +148,11 @@ namespace ArchimedesMiniGame
         {
             int index = m_Modules.IndexOf(m_CurrentModule) + 1;
             if (index < m_Modules.Count)
+            {
                 m_CommandPlat.SetInterestedObject(m_Modules[index].gameObject);
+
+                GameManager.Instance.SetTargetForCamera(m_Modules[index].transform);
+            }
         }
     }
 }

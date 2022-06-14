@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
+using Commons;
 
 public static class SaveAndLoadSystem
 {
-    private static Dictionary<string, object> database = new Dictionary<string, object>();
+    private static Dictionary<string, SavableInfos> database = new Dictionary<string, SavableInfos>();
 
-    public static void StoreSaveData(string key, object infos)
+    public static void StoreSaveData(string key, SavableInfos infos)
     {
         if (database.ContainsKey(key))
         {
@@ -19,9 +20,11 @@ public static class SaveAndLoadSystem
             database.Add(key, infos);
         }
 
-        Debug.Log($"key: {key} infos:{database[key].ToString()}");
     }
-
+    public static void OverrideDatabase(Dictionary<string, SavableInfos> newDatabase)
+    {
+        database = newDatabase;
+    }
 
     /// <summary>
     /// Save the file with file name in Application path / SaveData folder
@@ -32,7 +35,7 @@ public static class SaveAndLoadSystem
     {
         try
         {
-            string jsonString = JsonConvert.SerializeObject(objectToSave);
+            string jsonString = JsonUtility.ToJson(objectToSave);
             File.WriteAllText(Application.dataPath + $"/SaveData/{fileName}.json", jsonString);
         }
         catch (Exception e)
@@ -70,7 +73,7 @@ public static class SaveAndLoadSystem
     {
         try
         {
-            string jsonString = JsonUtility.ToJson(database);
+            string jsonString = JsonConvert.SerializeObject(database);
             File.WriteAllText(Application.dataPath + $"/SaveData/SavedDatabase.json", jsonString);
         }
         catch (Exception e)
@@ -112,6 +115,25 @@ public static class SaveAndLoadSystem
         {
             string jsonLoaded = File.ReadAllText($"{path}{fileName}.json");
             return JsonUtility.FromJson<T>(jsonLoaded);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+            return default(T);
+        }
+    }
+
+    /// <summary>
+    /// Load the DATABASE
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    public static T Load<T>()
+    {
+        try
+        {
+            string jsonLoaded = File.ReadAllText(Application.dataPath + $"/SaveData/SavedDatabase.json");
+            return JsonConvert.DeserializeObject<T>(jsonLoaded);
         }
         catch (Exception e)
         {

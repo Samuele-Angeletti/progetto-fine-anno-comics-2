@@ -6,6 +6,7 @@ using PubSub;
 using Cinemachine;
 using ArchimedesMiniGame;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace MainGame
 {
@@ -53,7 +54,7 @@ namespace MainGame
         private bool m_ZeroGActive;
         private PlayerMovementManager m_Player;
 
-
+        private string m_NextSceneName;
         public bool ZeroGActive
         {
             get => m_ZeroGActive;
@@ -83,6 +84,8 @@ namespace MainGame
 
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
+
+            Load();
         }
 
         public void SetContinousMovement(bool active)
@@ -208,21 +211,34 @@ namespace MainGame
             }
         }
 
+        public void SetTargetForCamera(Transform newTarget)
+        {
+            m_CameraOnModule.Follow = newTarget;
+            m_CameraOnModuleFocused.Follow = newTarget;
+        }
+
         public ButtonInteractionScriptableObject GetButtonInteractionSO(EInteractionType interactionType)
         {
             return m_ButtonInteractionSO.Find(x => x.InteractionType == interactionType);
         }
 
-        [ContextMenu("Debug Save")]
-        public void Save()
+
+        public void SaveAndChangeScene(string v)
         {
-            PubSub.PubSub.Publish(new SaveMessage());
-            Invoke("DebugSave", 1);
+            m_NextSceneName = v;
+            Invoke("Save", 0.5f);
         }
 
-        private void DebugSave()
+        private void Save()
         {
             SaveAndLoadSystem.Save();
+            SceneManager.LoadScene(m_NextSceneName);
+        }
+
+        private void Load()
+        {
+            Dictionary<string, SavableInfos> db = SaveAndLoadSystem.Load<Dictionary<string, SavableInfos>>();            
+            PubSub.PubSub.Publish(new LoadMessage(db));
         }
     }
 }

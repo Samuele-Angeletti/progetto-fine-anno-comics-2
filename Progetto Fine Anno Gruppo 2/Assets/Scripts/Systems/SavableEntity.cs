@@ -10,5 +10,9 @@ public class SavableEntity : MonoBehaviour
     public string Id => id;
 
     [ContextMenu("Generate Id")]
-    private void GenerateId() => id = Guid.NewGuid().ToString();
+    private void GenerateId()
+    {
+        if(id == string.Empty)
+            id = Guid.NewGuid().ToString();
+    }
 }

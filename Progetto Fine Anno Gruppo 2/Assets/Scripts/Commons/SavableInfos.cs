@@ -40,5 +40,6 @@ namespace Commons
         {
             CurrentLife = Mathf.Clamp(amount, 0, MaxLife);
         }
+
     }
 }

@@ -74,6 +74,8 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(PlayerDeathMessage));
             PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
 
 
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
@@ -228,6 +230,8 @@ namespace MainGame
             PubSub.PubSub.Unsubscribe(this, typeof(PlayerDeathMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
         }
 
         private void OnDestroy()

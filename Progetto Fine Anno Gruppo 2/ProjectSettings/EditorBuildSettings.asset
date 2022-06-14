@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab/Daniele Dei/TestPlatformPuzzle1.unity
     guid: 6fdbcf059c9fb1d4a8d317d9ddb1de0d
+  - enabled: 1
+    path: Assets/Scenes/Lab/Samuele Angeletti/PacMan.unity
+    guid: 960694061c7a07947b9222d6b636cca2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b9e39bed2c0218f41b912f970dc5ae1b, type: 2}

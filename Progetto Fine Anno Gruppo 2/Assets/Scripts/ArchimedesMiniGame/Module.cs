@@ -39,6 +39,8 @@ namespace ArchimedesMiniGame
         private bool m_Docking;
         private bool m_CameraFocused;
         private Vector3 m_StoppingDistanceModucleFocused = new Vector3(10, 10);
+        private SavableEntity m_SavableEntity;
+        public SavableEntity SavableEntity => m_SavableEntity;
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -46,6 +48,7 @@ namespace ArchimedesMiniGame
             m_Damageable = GetComponent<Damageable>();
             m_Rigidbody.freezeRotation = true;
             m_MaxSpeedVector = new Vector2(m_MaxSpeed, m_MaxSpeed);
+            m_SavableEntity = GetComponent<SavableEntity>();
         }
 
         private void Start()
@@ -54,6 +57,7 @@ namespace ArchimedesMiniGame
             GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
 
             PubSub.PubSub.Subscribe(this, typeof(SaveMessage));
+            PubSub.PubSub.Subscribe(this, typeof(LoadMessage));
         }
 
         private void FixedUpdate()
@@ -74,7 +78,7 @@ namespace ArchimedesMiniGame
 
         private void Update()
         {
-            if (!m_Docked)
+            if (!m_Docked && m_CurrentBattery > 0)
             {
                 if (!m_Docking)
                 {
@@ -124,10 +128,15 @@ namespace ArchimedesMiniGame
                     Docking();
                 }
 
+                if (m_CurrentBattery <= 0)
+                {
+                    Stop();
+                }
 
                 GameManagerES.Instance.UpdateSpeed(m_Rigidbody.velocity.magnitude, m_MaxSpeedVector.magnitude);
                 GameManagerES.Instance.UpdateAcceleration(m_CurrentAcceleration.magnitude, m_MaxSpeed);
             }
+            
         }
 
         private void Docking()
@@ -181,16 +190,15 @@ namespace ArchimedesMiniGame
             {
                 m_CurrentBattery = 0;
                 GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
-                Stop();
                 PubSub.PubSub.Publish(new NoBatteryMessage());
             }
         }
 
         public void Stop()
         {
-            m_Rigidbody.velocity = Vector2.zero;
-
             m_Rigidbody.freezeRotation = true;
+            m_Rigidbody.rotation = transform.eulerAngles.z;
+            m_Rigidbody.velocity = Vector2.zero;
         }
 
         public void DockingAttempt()
@@ -252,12 +260,12 @@ namespace ArchimedesMiniGame
             return new SavableInfos(m_Damageable.MaxLife, m_Damageable.CurrentLife, m_MaxBattery, m_CurrentBattery, transform.position);
         }
 
-        internal void SetInitialParameters(SavableInfos damageableInfos)
+        internal void SetInitialParameters(SavableInfos infos)
         {
-            m_Damageable.SetMaxLife(damageableInfos.MaxLife);
-            m_Damageable.SetInitialLife(damageableInfos.CurrentLife);
+            m_Damageable.SetMaxLife(infos.MaxLife);
+            m_Damageable.SetInitialLife(infos.CurrentLife);
             m_CurrentBattery = m_MaxBattery;
-            transform.position = new Vector3(damageableInfos.xPos, damageableInfos.yPos, damageableInfos.zPos);
+            transform.position = new Vector3(infos.xPos, infos.yPos, infos.zPos);
         }
 
         public void GetDamage(float amount)
@@ -273,7 +281,19 @@ namespace ArchimedesMiniGame
                 string id = GetComponent<SavableEntity>().Id;
                 SaveAndLoadSystem.StoreSaveData(id, GetSavableInfos());
             }
+            if(message is LoadMessage)
+            {
+                LoadMessage loadMessage = (LoadMessage)message;
+                if(loadMessage.Database.ContainsKey(m_SavableEntity.Id))
+                {
+
+                    SetInitialParameters((SavableInfos)loadMessage.Database[m_SavableEntity.Id]);
+
+                }
+            }
         }
+
+
 
         public void OnDisableSubscribe()
         {

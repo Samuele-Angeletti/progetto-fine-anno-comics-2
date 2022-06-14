@@ -63,11 +63,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
     private void Awake()
     {
-        if (m_instance != null)
-        {
-            Destroy(this);
-            DontDestroyOnLoad(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);
 
         m_whoIsSpeakingRightNow = new Queue<ESpeaker>();
 

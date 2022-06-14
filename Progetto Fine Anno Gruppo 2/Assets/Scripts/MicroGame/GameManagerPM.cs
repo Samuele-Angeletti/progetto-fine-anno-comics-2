@@ -7,6 +7,7 @@ using Commons;
 using TMPro;
 using UnityEngine.UI;
 using ArchimedesMiniGame;
+using MainGame;
 
 namespace MicroGame
 {
@@ -52,9 +53,10 @@ namespace MicroGame
         private int m_PickablesInScene;
         private int m_PickablePicked = 0;
         private bool[] m_SpawnPointUsed;
-        private string m_FileName;
+        private string m_CurrentModuleID;
         private SavableInfos m_CurrentModuleInfos;
         private int m_EnemiesQuantity;
+        Dictionary<string, SavableInfos> databaseLoaded;
         private void Awake()
         {
             Pickable[] pickables = FindObjectsOfType<Pickable>();
@@ -66,7 +68,6 @@ namespace MicroGame
             m_SpawnPointUsed = new bool[m_EnemiesSpawnPoints.Length];
             m_PlayerInputs = GetComponent<PlayerInputSystem>();
 
-            DontDestroyOnLoad(gameObject);
         }
 
         private void Start()
@@ -79,12 +80,20 @@ namespace MicroGame
             m_PlayerInputs.SetControllable(m_Controllable);
 
             StartSettings();
+
+            DontDestroyOnLoad(gameObject);
         }
 
         private void StartSettings()
         {
-            m_FileName = GameManagerES.Instance.GetCurrentModuleName();
-            m_CurrentModuleInfos = SaveAndLoadSystem.Load<SavableInfos>(m_FileName);
+            m_CurrentModuleID = GameManagerES.Instance.GetCurrentModuleID();
+
+            databaseLoaded = SaveAndLoadSystem.Load<Dictionary<string, SavableInfos>>();
+            if(databaseLoaded.ContainsKey(m_CurrentModuleID))
+            {
+                m_CurrentModuleInfos = (SavableInfos)databaseLoaded[m_CurrentModuleID];
+            }
+
             float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
 
             if (damagePercentage == 0)
@@ -173,9 +182,7 @@ namespace MicroGame
                 GameOverMicroGameMessage gameOverMicroGame = (GameOverMicroGameMessage)message;
                 if (gameOverMicroGame.Win)
                 {
-                    m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + (m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
-                    m_CurrentModuleInfos.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
-                    SaveAndLoadSystem.Save(m_CurrentModuleInfos, m_FileName);
+                    SaveAndChangeScene(databaseLoaded, m_CurrentModuleID);
                 }
                 else
                     Debug.Log("Perso, ricomincio");
@@ -199,6 +206,7 @@ namespace MicroGame
             if (m_PickablePicked >= m_PickablesInScene)
             {
                 PubSub.PubSub.Publish(new GameOverMicroGameMessage(true));
+
             }
         }
 
@@ -218,6 +226,27 @@ namespace MicroGame
         public void RemoveFromList(Enemy enemy)
         {
             m_Enemies.Remove(enemy);
+        }
+
+        public void SaveAndChangeScene(Dictionary<string, SavableInfos> database, string key)
+        {
+            
+            if(database.ContainsKey(key))
+            {
+                SavableInfos si = (SavableInfos)database[key];
+
+                float lifeGained = (1 - m_CurrentModuleInfos.CurrentLife) * ((m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
+
+                m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + lifeGained);
+
+                si.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
+                si.CurrentLife = m_CurrentModuleInfos.CurrentLife;
+
+                database[key] = si;
+
+                SaveAndLoadSystem.OverrideDatabase(database);
+                GameManager.Instance.SaveAndChangeScene("TestPlatformPuzzle1");
+            }
         }
     }
 

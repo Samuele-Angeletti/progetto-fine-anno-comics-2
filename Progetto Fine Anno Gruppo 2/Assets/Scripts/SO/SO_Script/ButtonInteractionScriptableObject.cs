@@ -75,6 +75,8 @@ public class ButtonInteractionScriptableObject : ScriptableObject
 
     private void PlayPacMan()
     {
-        SceneManager.LoadScene("PacMan");
+        PubSub.PubSub.Publish(new SaveMessage());
+        GameManager.Instance.SaveAndChangeScene("PacMan");
     }
+
 }
