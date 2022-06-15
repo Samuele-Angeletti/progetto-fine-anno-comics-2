@@ -15,23 +15,23 @@ namespace MicroGame
     public class GameManagerPM : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
-        public static GameManagerPM _instance;
+        public static GameManagerPM m_instance;
         public static GameManagerPM Instance
         {
             get
             {
-                if (_instance == null)
+                if (m_instance == null)
                 {
-                    _instance = FindObjectOfType<GameManagerPM>();
+                    m_instance = FindObjectOfType<GameManagerPM>();
 
-                    if (_instance == null)
+                    if (m_instance == null)
                     {
                         GameObject container = new GameObject("GameManager");
-                        _instance = container.AddComponent<GameManagerPM>();
+                        m_instance = container.AddComponent<GameManagerPM>();
                     }
                 }
 
-                return _instance;
+                return m_instance;
             }
         }
         #endregion
@@ -59,6 +59,14 @@ namespace MicroGame
         Dictionary<string, SavableInfos> databaseLoaded;
         private void Awake()
         {
+            if (m_instance == null)
+            {
+                m_instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+                Destroy(gameObject);
+
             Pickable[] pickables = FindObjectsOfType<Pickable>();
             for (int i = 0; i < pickables.Length; i++)
             {
@@ -81,7 +89,6 @@ namespace MicroGame
 
             StartSettings();
 
-            DontDestroyOnLoad(gameObject);
         }
 
         private void StartSettings()
@@ -233,7 +240,7 @@ namespace MicroGame
             
             if(database.ContainsKey(key))
             {
-                SavableInfos si = (SavableInfos)database[key];
+                SavableInfos si = database[key];
 
                 float lifeGained = (1 - m_CurrentModuleInfos.CurrentLife) * ((m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
 

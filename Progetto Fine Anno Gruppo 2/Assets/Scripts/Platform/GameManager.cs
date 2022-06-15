@@ -6,6 +6,7 @@ using PubSub;
 using Cinemachine;
 using ArchimedesMiniGame;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace MainGame
 {
@@ -13,23 +14,23 @@ namespace MainGame
     public class GameManager : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
-        public static GameManager _instance;
+        public static GameManager m_instance;
         public static GameManager Instance
         {
             get
             {
-                if (_instance == null)
+                if (m_instance == null)
                 {
-                    _instance = FindObjectOfType<GameManager>();
+                    m_instance = FindObjectOfType<GameManager>();
 
-                    if (_instance == null)
+                    if (m_instance == null)
                     {
                         GameObject container = new GameObject("GameManager");
-                        _instance = container.AddComponent<GameManager>();
+                        m_instance = container.AddComponent<GameManager>();
                     }
                 }
 
-                return _instance;
+                return m_instance;
             }
         }
         #endregion
@@ -64,10 +65,15 @@ namespace MainGame
         }
         private void Awake()
         {
-            
+            if (m_instance == null)
+            {
+                m_instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+                Destroy(gameObject);
             m_PlayerInputs = GetComponent<PlayerInputSystem>();
 
-            DontDestroyOnLoad(this.gameObject);
         }
 
         private void Start()
@@ -142,6 +148,12 @@ namespace MainGame
             {
                 SetNewControllable(m_Player);
             }
+        }
+
+        internal void SetTargetForCamera(Transform newFollow)
+        {
+            m_CameraOnModule.Follow = newFollow;
+            m_CameraOnModuleFocused.Follow = newFollow;
         }
 
         public void OnDisableSubscribe()
@@ -222,12 +234,19 @@ namespace MainGame
         public void Save()
         {
             PubSub.PubSub.Publish(new SaveMessage());
-            Invoke("DebugSave", 1);
+
+            Invoke("InvokeSave", 1);
         }
 
-        private void DebugSave()
+        private void InvokeSave()
         {
             SaveAndLoadSystem.Save();
+        }
+
+        internal void SaveAndChangeScene(string v)
+        {
+            InvokeSave();
+            SceneManager.LoadScene(v);
         }
     }
 }

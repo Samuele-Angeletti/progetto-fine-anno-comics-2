@@ -21,11 +21,7 @@ public class UIManager : MonoBehaviour, ISubscriber
 	private bool m_Paused;
 	private bool m_TerminalActive;
 
-    private void Awake()
-    {
 
-		DontDestroyOnLoad(this.gameObject);
-	}
     void Start()
 	{
 		PubSub.PubSub.Subscribe(this, typeof(OpenMenuMessage));

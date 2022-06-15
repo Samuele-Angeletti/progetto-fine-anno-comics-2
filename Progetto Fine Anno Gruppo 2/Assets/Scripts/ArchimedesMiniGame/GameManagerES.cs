@@ -12,23 +12,23 @@ namespace ArchimedesMiniGame
     public class GameManagerES : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
-        public static GameManagerES _instance;
+        public static GameManagerES m_instance;
         public static GameManagerES Instance
         {
             get
             {
-                if (_instance == null)
+                if (m_instance == null)
                 {
-                    _instance = FindObjectOfType<GameManagerES>();
+                    m_instance = FindObjectOfType<GameManagerES>();
 
-                    if (_instance == null)
+                    if (m_instance == null)
                     {
                         GameObject container = new GameObject("GameManager");
-                        _instance = container.AddComponent<GameManagerES>();
+                        m_instance = container.AddComponent<GameManagerES>();
                     }
                 }
 
-                return _instance;
+                return m_instance;
             }
         }
         #endregion
@@ -54,8 +54,13 @@ namespace ArchimedesMiniGame
         private string m_CurrentModuleId = "";
         private void Awake()
         {
-
-            DontDestroyOnLoad(this.gameObject);
+            if (m_instance == null)
+            {
+                m_instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+                Destroy(gameObject);
         }
 
         private void Start()
