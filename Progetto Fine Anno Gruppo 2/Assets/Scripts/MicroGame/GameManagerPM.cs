@@ -43,9 +43,11 @@ namespace MicroGame
         [SerializeField] Enemy m_EnemyPrefab;
         [SerializeField] Transform[] m_EnemiesSpawnPoints;
 
-        [Header("UI Stuff")]
-        [SerializeField] TextMeshProUGUI m_LifeText;
-        [SerializeField] Slider m_BatterySlider;
+        [Header("Scene references")]
+        [SerializeField] List<GameObject> m_AllSceneObjects;
+
+        [HideInInspector]
+        public UIPacManInterface UIPacManInterface;
 
         private PlayerInputSystem m_PlayerInputs;
         private List<Pickable> m_PickableList = new List<Pickable>();
@@ -57,6 +59,7 @@ namespace MicroGame
         private SavableInfos m_CurrentModuleInfos;
         private int m_EnemiesQuantity;
         Dictionary<string, SavableInfos> databaseLoaded;
+
         private void Awake()
         {
             if (m_instance == null)
@@ -84,7 +87,7 @@ namespace MicroGame
             PubSub.PubSub.Subscribe(this, typeof(GameOverMicroGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
-
+            UIPacManInterface = UIManager.Instance.PacManInterface;
             m_PlayerInputs.SetControllable(m_Controllable);
 
             StartSettings();
@@ -173,7 +176,7 @@ namespace MicroGame
 
         internal void UIUpdateLife(int m_CurrentLifes)
         {
-            m_LifeText.text = "VITE: " + m_CurrentLifes;
+            UIPacManInterface.LifeText.text = "VITE: " + m_CurrentLifes;
         }
 
         public void OnPublish(IMessage message)
@@ -208,7 +211,7 @@ namespace MicroGame
         {
             m_PickablePicked++;
 
-            m_BatterySlider.value = (float)m_PickablePicked / (float)m_PickablesInScene;
+            UIPacManInterface.BatterySlider.value = (float)m_PickablePicked / (float)m_PickablesInScene;
 
             if (m_PickablePicked >= m_PickablesInScene)
             {
@@ -252,9 +255,24 @@ namespace MicroGame
                 database[key] = si;
 
                 SaveAndLoadSystem.OverrideDatabase(database);
-                GameManager.Instance.SaveAndChangeScene("TestPlatformPuzzle1");
+                DestroyAllObjects();
+                UIManager.Instance.OpenPacManInterface(false);
+
             }
         }
+
+        private void DestroyAllObjects()
+        {
+            foreach(GameObject gameObject in m_AllSceneObjects)
+            {
+                Destroy(gameObject, 3f);
+            }
+
+            m_Enemies.ForEach(x => Destroy(x.gameObject, 3f));
+
+            Destroy(gameObject, 3f);
+        }
+
     }
 
 }

@@ -5,7 +5,27 @@ using PubSub;
 
 public class UIManager : MonoBehaviour, ISubscriber
 {
+	#region SINGLETON PATTERN
+	public static UIManager m_instance;
+	public static UIManager Instance
+	{
+		get
+		{
+			if (m_instance == null)
+			{
+				m_instance = FindObjectOfType<UIManager>();
 
+				if (m_instance == null)
+				{
+					GameObject container = new GameObject("GameManager");
+					m_instance = container.AddComponent<UIManager>();
+				}
+			}
+
+			return m_instance;
+		}
+	}
+	#endregion
 
 	[Header("Scene References")]
 	[SerializeField] UIMainMenu m_MainMenu;
@@ -16,11 +36,22 @@ public class UIManager : MonoBehaviour, ISubscriber
 	[SerializeField] UIMainDisplay m_MainDisplay;
 	[SerializeField] UIExternal m_ExternalUI;
 	[SerializeField] UITerminalList m_TerminalListMenu;
+	[SerializeField] UIPacManInterface m_PacManInterface;
 
 	private Menu m_CurrentMenu;
 	private bool m_Paused;
 	private bool m_TerminalActive;
-
+	public UIPacManInterface PacManInterface => m_PacManInterface;
+    private void Awake()
+    {
+		if (m_instance == null)
+		{
+			m_instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+			Destroy(gameObject);
+	}
 
     void Start()
 	{
@@ -145,4 +176,8 @@ public class UIManager : MonoBehaviour, ISubscriber
 		OnDisableSubscribe();
 	}
 
+	public void OpenPacManInterface(bool active)
+    {
+		m_PacManInterface.gameObject.SetActive(active);
+    }
 }

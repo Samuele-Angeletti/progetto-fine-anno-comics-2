@@ -55,7 +55,7 @@ namespace MicroGame
             {
                 if(m_Catchable)
                 {
-                    Destroy(gameObject);
+                    KillMe();
                 }
                 else
                 {
@@ -64,6 +64,10 @@ namespace MicroGame
             }
         }
 
+        public void KillMe()
+        {
+            Destroy(gameObject);
+        }
 
         public void OnDisableSubscribe()
         {

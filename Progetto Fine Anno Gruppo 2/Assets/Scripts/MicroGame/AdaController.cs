@@ -21,6 +21,12 @@ namespace MicroGame
         private void Start()
         {
             m_CurrentLifes = m_MaxLifes;
+            Invoke("InitialSettings", 0.1f);
+        }
+
+        private void InitialSettings()
+        {
+
             GameManagerPM.Instance.UIUpdateLife(m_CurrentLifes);
         }
 

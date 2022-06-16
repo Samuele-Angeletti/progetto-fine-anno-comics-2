@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using MicroGame;
 
 public class UIMainDisplay : MonoBehaviour, ISubscriber
 {
@@ -38,6 +39,8 @@ public class UIMainDisplay : MonoBehaviour, ISubscriber
                 yield return null;
             }
         }
+        UIManager.Instance.OpenPacManInterface(true);
+        ActiveLoadingBackground(false);
     }
 
     public void ActiveLoadingBackground(bool active)
