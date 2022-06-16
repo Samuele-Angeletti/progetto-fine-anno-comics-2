@@ -7,9 +7,9 @@ public class SliderVolume : MonoBehaviour
 {
     public Slider m_volumeSlider;
 
-    private void OnValidate()
+    private void Start()
     {
-        if (m_volumeSlider != null) return;
-        AudioManager.Instance.ChangeVolumeMusic(m_volumeSlider.value);
+       AudioManager.Instance.ChangeVolumeMusic(m_volumeSlider.value);
     }
+
 }
