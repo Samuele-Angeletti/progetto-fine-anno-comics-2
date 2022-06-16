@@ -58,6 +58,9 @@ namespace ArchimedesMiniGame
 
             PubSub.PubSub.Subscribe(this, typeof(SaveMessage));
             PubSub.PubSub.Subscribe(this, typeof(LoadMessage));
+
+            m_MapParent.SetActive(false);
+            m_ExternalSprite.gameObject.SetActive(true);
         }
 
         private void FixedUpdate()
