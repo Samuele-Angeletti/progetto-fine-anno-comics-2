@@ -24,13 +24,11 @@ namespace ArchimedesMiniGame
         {
             if(message is StartEngineModuleMessage)
             {
-                Debug.Log($"{gameObject.name}'s External Sprite Activated");
-                //m_ExternalSpriteRenderer.enabled = true;
+                m_ExternalSpriteRenderer.enabled = true;
             }
             else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {
-                Debug.Log($"{gameObject.name}'s External Sprite Deactivated");
-                //m_ExternalSpriteRenderer.enabled = false;
+                m_ExternalSpriteRenderer.enabled = false;
             }
         }
     }
