@@ -49,9 +49,8 @@ namespace ArchimedesMiniGame
         [Header("Scene References")]
         [SerializeField] ButtonInteraction m_CommandPlat;
 
-        private string m_FileName;
         public Module CurrentModule => m_CurrentModule;
-        private string m_CurrentModuleId = "";
+        private SavableInfos m_CurrentModuleInfos;
         private void Awake()
         {
             if (m_instance == null)
@@ -71,19 +70,14 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Subscribe(this, typeof(PlayPacManMessage));
 
             ActiveDockingAttemptButton(false);
         }
 
-        public void SaveData()
+        public SavableInfos GetCurrentModuleInfos()
         {
-            m_FileName = "ModuleInfo" + m_Modules.IndexOf(m_CurrentModule);
-            SaveAndLoadSystem.Save(m_CurrentModule.GetSavableInfos(), m_FileName);
-        }
-
-        public string GetCurrentModuleID()
-        {
-            return m_CurrentModuleId;
+            return m_CurrentModuleInfos;
         }
 
         public void OnPublish(IMessage message)
@@ -91,14 +85,16 @@ namespace ArchimedesMiniGame
             if(message is StartEngineModuleMessage)
             {
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
+                CheckModuleOnStartEngine(m_CurrentModule, m_CurrentModule?.GetSavableInfos());
                 m_CurrentModule = startEngineModule.Module;
-                m_CurrentModuleId = m_CurrentModule.SavableEntity.Id;
-                Debug.Log(m_CurrentModule.name);
             }
-            else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
+            else if(message is DockingCompleteMessage)
             {
-                //SaveData();
                 SetNextModuleToCommandPlat();
+            }
+            else if(message is ModuleDestroyedMessage || message is NoBatteryMessage)
+            {
+                m_CurrentModuleInfos = m_CurrentModule.GetSavableInfos();
             }
             else if(message is PauseGameMessage)
             {
@@ -142,6 +138,7 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(PlayPacManMessage));
         }
 
         private void OnDestroy()
@@ -156,7 +153,21 @@ namespace ArchimedesMiniGame
             {
                 m_CommandPlat.SetInterestedObject(m_Modules[index].gameObject);
 
-                GameManager.Instance.SetTargetForCamera(m_Modules[index].transform);
+                StartCoroutine(GameManager.Instance.SetTargetForCamera(m_Modules[index].transform));
+            }
+        }
+
+        public void CheckModuleOnStartEngine(Module module, SavableInfos infos)
+        {
+            if(m_CurrentModule != null)
+            {
+                if (module == m_CurrentModule)
+                {
+                    if (m_CurrentModuleInfos != null)
+                    {
+                        module.SetInitialParameters(m_CurrentModuleInfos);
+                    }
+                }
             }
         }
     }

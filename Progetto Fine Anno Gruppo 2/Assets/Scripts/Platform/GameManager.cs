@@ -150,8 +150,9 @@ namespace MainGame
             }
         }
 
-        internal void SetTargetForCamera(Transform newFollow)
+        internal IEnumerator SetTargetForCamera(Transform newFollow)
         {
+            yield return new WaitForSeconds(3);
             m_CameraOnModule.Follow = newFollow;
             m_CameraOnModuleFocused.Follow = newFollow;
         }
@@ -203,6 +204,11 @@ namespace MainGame
 
         }
 
+        public void ForcePlayerAsControllable()
+        {
+            SetNewControllable(m_Player);
+        }
+
         public void SetActiveCamera(ECameras camera)
         {
             switch (camera)
@@ -241,6 +247,11 @@ namespace MainGame
         private void InvokeSave()
         {
             SaveAndLoadSystem.Save();
+        }
+
+        public void Load()
+        {
+            PubSub.PubSub.Publish(new LoadMessage(SaveAndLoadSystem.Load<Dictionary<string, SavableInfos>>()));
         }
 
         internal void SaveAndChangeScene(string v)

@@ -41,38 +41,38 @@ public class AudioManager : MonoBehaviour
     public AudioAssetSO backGroundMusic;
     private void Start()
     {
-        AudioManager.Instance.PlayBackGroundMusic(backGroundMusic);
+        //AudioManager.Instance.PlayBackGroundMusic(backGroundMusic);
     }
 
     public void PlayBackGroundMusic(AudioAssetSO musicToPlay)
     {
-        if (musicToPlay != null)
-        {
-            if (musicToPlay.audioType == EAudioType.BackGroundMusic)
-            {
-                if (m_backGroundMusic == null)
-                {
-                    m_backGroundMusic = new GameObject("BackGroundMusic");
-                    m_backGroundMusic.AddComponent<AudioSource>();
-                    m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
-                    m_backGroundMusic.GetComponent<AudioSource>().loop = true;
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().Play();
+        //if (musicToPlay != null)
+        //{
+        //    if (musicToPlay.audioType == EAudioType.BackGroundMusic)
+        //    {
+        //        if (m_backGroundMusic == null)
+        //        {
+        //            m_backGroundMusic = new GameObject("BackGroundMusic");
+        //            m_backGroundMusic.AddComponent<AudioSource>();
+        //            m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
+        //            m_backGroundMusic.GetComponent<AudioSource>().loop = true;
+        //            m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
+        //            m_backGroundMusic.GetComponent<AudioSource>().Play();
 
 
-                }
-                else if (m_backGroundMusic != null)
-                {
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().Play();
-                }
-            }
-            else
-                Debug.LogError("The audio is not set to the correct audio type");
+        //        }
+        //        else if (m_backGroundMusic != null)
+        //        {
+        //            m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
+        //            m_backGroundMusic.GetComponent<AudioSource>().Play();
+        //        }
+        //    }
+        //    else
+        //        Debug.LogError("The audio is not set to the correct audio type");
 
-        }
-        else
-            Debug.LogError("This scriptable object is without a audioClip");
+        //}
+        //else
+        //    Debug.LogError("This scriptable object is without a audioClip");
     }
     public void PlayBackGroundMusic(AudioAssetSO audioAsset, float delay)
     {

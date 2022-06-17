@@ -11,7 +11,6 @@ using MainGame;
 
 namespace MicroGame
 {
-    [RequireComponent(typeof(PlayerInputSystem))]
     public class GameManagerPM : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
@@ -49,13 +48,11 @@ namespace MicroGame
         [HideInInspector]
         public UIPacManInterface UIPacManInterface;
 
-        private PlayerInputSystem m_PlayerInputs;
         private List<Pickable> m_PickableList = new List<Pickable>();
         private List<Enemy> m_Enemies = new List<Enemy>();
         private int m_PickablesInScene;
         private int m_PickablePicked = 0;
         private bool[] m_SpawnPointUsed;
-        private string m_CurrentModuleID;
         private SavableInfos m_CurrentModuleInfos;
         private int m_EnemiesQuantity;
         Dictionary<string, SavableInfos> databaseLoaded;
@@ -77,7 +74,6 @@ namespace MicroGame
             }
             m_PickablesInScene = m_PickableList.Count;
             m_SpawnPointUsed = new bool[m_EnemiesSpawnPoints.Length];
-            m_PlayerInputs = GetComponent<PlayerInputSystem>();
 
         }
 
@@ -88,7 +84,7 @@ namespace MicroGame
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
             UIPacManInterface = UIManager.Instance.PacManInterface;
-            m_PlayerInputs.SetControllable(m_Controllable);
+            GameManager.Instance.SetNewControllable(m_Controllable);
 
             StartSettings();
 
@@ -96,13 +92,13 @@ namespace MicroGame
 
         private void StartSettings()
         {
-            m_CurrentModuleID = GameManagerES.Instance.GetCurrentModuleID();
+            m_CurrentModuleInfos = GameManagerES.Instance.GetCurrentModuleInfos();
 
-            databaseLoaded = SaveAndLoadSystem.Load<Dictionary<string, SavableInfos>>();
-            if(databaseLoaded.ContainsKey(m_CurrentModuleID))
-            {
-                m_CurrentModuleInfos = (SavableInfos)databaseLoaded[m_CurrentModuleID];
-            }
+            //databaseLoaded = SaveAndLoadSystem.Load<Dictionary<string, SavableInfos>>();
+            //if(databaseLoaded.ContainsKey(m_CurrentModuleID))
+            //{
+            //    m_CurrentModuleInfos = databaseLoaded[m_CurrentModuleID];
+            //}
 
             float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
 
@@ -192,7 +188,7 @@ namespace MicroGame
                 GameOverMicroGameMessage gameOverMicroGame = (GameOverMicroGameMessage)message;
                 if (gameOverMicroGame.Win)
                 {
-                    SaveAndChangeScene(databaseLoaded, m_CurrentModuleID);
+                    SaveAndChangeScene();
                 }
                 else
                     Debug.Log("Perso, ricomincio");
@@ -238,36 +234,30 @@ namespace MicroGame
             m_Enemies.Remove(enemy);
         }
 
-        public void SaveAndChangeScene(Dictionary<string, SavableInfos> database, string key)
+        public void SaveAndChangeScene()
         {
             
-            if(database.ContainsKey(key))
-            {
-                SavableInfos si = database[key];
+            float lifeGained = (1 - m_CurrentModuleInfos.CurrentLife) * ((m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
 
-                float lifeGained = (1 - m_CurrentModuleInfos.CurrentLife) * ((m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
+            m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + lifeGained);
 
-                m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + lifeGained);
+            m_CurrentModuleInfos.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
 
-                si.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
-                si.CurrentLife = m_CurrentModuleInfos.CurrentLife;
+            //SaveAndLoadSystem.OverrideDatabase(database);
+            GameManager.Instance.ForcePlayerAsControllable();
+            DestroyAllObjects();
+            UIManager.Instance.OpenPacManInterface(false);
 
-                database[key] = si;
-
-                SaveAndLoadSystem.OverrideDatabase(database);
-                DestroyAllObjects();
-                UIManager.Instance.OpenPacManInterface(false);
-
-            }
         }
 
         private void DestroyAllObjects()
         {
             foreach(GameObject gameObject in m_AllSceneObjects)
             {
+                gameObject.SetActive(false);
                 Destroy(gameObject, 3f);
             }
-
+            m_Enemies.ForEach(x => x.gameObject.SetActive(false));
             m_Enemies.ForEach(x => Destroy(x.gameObject, 3f));
 
             Destroy(gameObject, 3f);

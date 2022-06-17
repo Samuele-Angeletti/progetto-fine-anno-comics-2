@@ -65,7 +65,7 @@ namespace ArchimedesMiniGame
 
         private void FixedUpdate()
         {
-            if (!m_Docking && !m_Docked)
+            if (!m_Docking && !m_Docked && m_CurrentBattery > 0)
             {
                 if (m_Direction.magnitude != 0)
                     m_CurrentAcceleration += new Vector2(MathF.Abs(m_Direction.normalized.x), MathF.Abs(m_Direction.normalized.y)) * m_Acceleration * Time.fixedDeltaTime;
@@ -200,6 +200,8 @@ namespace ArchimedesMiniGame
         public void Stop()
         {
             m_Rigidbody.freezeRotation = true;
+            m_Direction = Vector2.zero;
+            m_RotationDirection = Vector2.zero;
             m_Rigidbody.rotation = transform.eulerAngles.z;
             m_Rigidbody.velocity = Vector2.zero;
         }
