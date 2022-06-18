@@ -80,12 +80,21 @@ namespace ArchimedesMiniGame
             return m_CurrentModuleInfos;
         }
 
+        public void SetCurrentModuleInfos(SavableInfos infos)
+        {
+            m_CurrentModuleInfos = infos;
+
+            UpdateBatterySlider(infos.CurrentBattery, infos.MaxBattery);
+            UpdateLifeSlider(infos.CurrentLife, infos.MaxLife);
+                
+        }
+
         public void OnPublish(IMessage message)
         {
             if(message is StartEngineModuleMessage)
             {
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
-                CheckModuleOnStartEngine(m_CurrentModule, m_CurrentModule?.GetSavableInfos());
+                CheckModuleOnStartEngine(m_CurrentModule);
                 m_CurrentModule = startEngineModule.Module;
             }
             else if(message is DockingCompleteMessage)
@@ -157,7 +166,7 @@ namespace ArchimedesMiniGame
             }
         }
 
-        public void CheckModuleOnStartEngine(Module module, SavableInfos infos)
+        public void CheckModuleOnStartEngine(Module module)
         {
             if(m_CurrentModule != null)
             {

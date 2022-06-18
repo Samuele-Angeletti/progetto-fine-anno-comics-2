@@ -13,7 +13,7 @@ public class ExtendedRuleTile : RuleTile
             other = (other as RuleOverrideTile).m_InstanceTile;
 
         ExtendedRuleTile otherTile = other as ExtendedRuleTile;
-        if (other == null)
+        if (other == null || otherTile == null)
             return base.RuleMatch(neighbor, other);
         switch(neighbor)
         {

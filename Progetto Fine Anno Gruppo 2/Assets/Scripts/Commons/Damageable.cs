@@ -39,7 +39,7 @@ namespace Commons
 
         public void SetInitialLife(float amount)
         {
-            m_CurrentLife = Mathf.Clamp(amount, 1, MaxLife);
+            m_CurrentLife = Mathf.Clamp(amount, 0, MaxLife);
         }
 
         public void SetMaxLife(float amount)
