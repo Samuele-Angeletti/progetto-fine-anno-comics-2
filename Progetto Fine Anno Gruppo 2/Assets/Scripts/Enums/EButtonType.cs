@@ -3,5 +3,7 @@ public enum EButtonType
 	OpenMenu,
 	QuitGame, 
 	CloaseAllMenu,
-	GoToScene
+	GoToScene,
+	ForceResume,
+	ReadStoredTerminal
 }

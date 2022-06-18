@@ -4,51 +4,62 @@ using UnityEngine;
 using PubSub;
 using UnityEngine.UI;
 using Commons;
+using MainGame;
+using System.Linq;
+
 namespace ArchimedesMiniGame
 {
-    [RequireComponent(typeof(PlayerInputSystem))]
     public class GameManagerES : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
-        public static GameManagerES _instance;
+        public static GameManagerES m_instance;
         public static GameManagerES Instance
         {
             get
             {
-                if (_instance == null)
+                if (m_instance == null)
                 {
-                    _instance = FindObjectOfType<GameManagerES>();
+                    m_instance = FindObjectOfType<GameManagerES>();
 
-                    if (_instance == null)
+                    if (m_instance == null)
                     {
                         GameObject container = new GameObject("GameManager");
-                        _instance = container.AddComponent<GameManagerES>();
+                        m_instance = container.AddComponent<GameManagerES>();
                     }
                 }
 
-                return _instance;
+                return m_instance;
             }
         }
         #endregion
 
-        [Header("Player Settings")]
-        [SerializeField] Controllable m_Controllable;
+        private Module m_CurrentModule;
 
         [Header("UI References")]
         [SerializeField] Slider m_BatterySlider;
         [SerializeField] Slider m_DamageSlider;
+        [SerializeField] Slider m_MaxSpeedSlider;
+        [SerializeField] Slider m_AccelerationSlider;
         [SerializeField] Button m_DockingAttemptButton;
 
 
-        [Header("Save File")]
-        [Tooltip("Nome del file da creare per salvare i dati di danneggiamento. Se questa stringa viene omessa, verrà usato il nome del GameObject del Modulo corrente")]
-        [SerializeField] string m_FileName;
+        [Header("Modules")]
+        [SerializeField] List<Module> m_Modules;
 
-        private PlayerInputSystem m_PlayerInputs;
+        [Header("Scene References")]
+        [SerializeField] ButtonInteraction m_CommandPlat;
 
+        public Module CurrentModule => m_CurrentModule;
+        private SavableInfos m_CurrentModuleInfos;
         private void Awake()
         {
-            m_PlayerInputs = GetComponent<PlayerInputSystem>();
+            if (m_instance == null)
+            {
+                m_instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+                Destroy(gameObject);
         }
 
         private void Start()
@@ -58,31 +69,32 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
-
-            m_PlayerInputs.SetControllable(m_Controllable);
+            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Subscribe(this, typeof(PlayPacManMessage));
 
             ActiveDockingAttemptButton(false);
         }
 
-        public void SaveData()
+        public SavableInfos GetCurrentModuleInfos()
         {
-            m_FileName = m_FileName == "" ? m_Controllable.gameObject.name : m_FileName;
-            SaveAndLoadSystem.Save(m_Controllable.GetComponent<Module>().GetDamageableInfo(), m_FileName);
+            return m_CurrentModuleInfos;
         }
 
         public void OnPublish(IMessage message)
         {
-            if(message is DockingCompleteMessage)
+            if(message is StartEngineModuleMessage)
             {
-                SaveData();
+                StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
+                CheckModuleOnStartEngine(m_CurrentModule, m_CurrentModule?.GetSavableInfos());
+                m_CurrentModule = startEngineModule.Module;
             }
-            else if(message is ModuleDestroyedMessage)
+            else if(message is DockingCompleteMessage)
             {
-                SaveData();
+                SetNextModuleToCommandPlat();
             }
-            else if(message is NoBatteryMessage)
+            else if(message is ModuleDestroyedMessage || message is NoBatteryMessage)
             {
-                SaveData();
+                m_CurrentModuleInfos = m_CurrentModule.GetSavableInfos();
             }
             else if(message is PauseGameMessage)
             {
@@ -92,6 +104,16 @@ namespace ArchimedesMiniGame
             {
                 Time.timeScale = 1;
             }
+        }
+
+        public void UpdateSpeed(float current, float maxValue)
+        {
+            m_MaxSpeedSlider.value = current / maxValue;
+        }
+
+        internal void UpdateAcceleration(float magnitude, float acceleration)
+        {
+            m_AccelerationSlider.value = magnitude / acceleration;
         }
 
         public void UpdateBatterySlider(float current, float maxValue)
@@ -116,11 +138,37 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(ResumeGameMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(PlayPacManMessage));
         }
 
         private void OnDestroy()
         {
             OnDisableSubscribe();
+        }
+
+        public void SetNextModuleToCommandPlat()
+        {
+            int index = m_Modules.IndexOf(m_CurrentModule) + 1;
+            if (index < m_Modules.Count)
+            {
+                m_CommandPlat.SetInterestedObject(m_Modules[index].gameObject);
+
+                StartCoroutine(GameManager.Instance.SetTargetForCamera(m_Modules[index].transform));
+            }
+        }
+
+        public void CheckModuleOnStartEngine(Module module, SavableInfos infos)
+        {
+            if(m_CurrentModule != null)
+            {
+                if (module == m_CurrentModule)
+                {
+                    if (m_CurrentModuleInfos != null)
+                    {
+                        module.SetInitialParameters(m_CurrentModuleInfos);
+                    }
+                }
+            }
         }
     }
 }

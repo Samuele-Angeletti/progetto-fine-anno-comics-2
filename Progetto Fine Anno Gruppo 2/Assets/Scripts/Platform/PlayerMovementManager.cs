@@ -20,6 +20,8 @@ namespace MainGame
         public Collider2D PlayerCollider;
         [SerializeField]
         public SkeletonAnimation Skeleton;
+        [SerializeField] 
+        public GameObject GraphicsPivot;
         [HideInInspector]
         public bool IsGrounded, IsJumping;
 
@@ -38,6 +40,9 @@ namespace MainGame
         [Header("Zero Gravity Settings")]
         public float SpeedInZeroGravity;
 
+        [Header("Interaction Settings")]
+        [SerializeField] public float InteractionAnimationSpeed;
+
         [Header("Debug Infos")]
         public Vector2 InputDirection;
 
@@ -45,7 +50,12 @@ namespace MainGame
         private Vector3 m_NextCheckPoint;
         private Damageable m_Damageable;
 
+        [HideInInspector]
+        public EDirection CurrentDirection;
         public Vector3 NextCheckpoint => m_NextCheckPoint;
+        public Interacter Interacter => m_Interacter;
+        public bool PassingFromZeroG { get; set; }
+
         private bool m_Flipped = false;
         private void Awake()
         {
@@ -62,6 +72,10 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
             PubSub.PubSub.Subscribe(this, typeof(CheckPointMessage));
             PubSub.PubSub.Subscribe(this, typeof(PlayerDeathMessage));
+            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
 
 
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
@@ -71,6 +85,7 @@ namespace MainGame
             StateMachine.RegisterState(EPlayerState.Flying, new FlyingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Somersault, new SomersaultPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Landed, new LandedPlayerState(this));
+            StateMachine.RegisterState(EPlayerState.Interacting, new InteractingPlayerState(this));
 
             StateMachine.SetState(EPlayerState.Walking);
         }
@@ -141,23 +156,19 @@ namespace MainGame
 
         public void Movement()
         {
-
-            if (Rigidbody.velocity.x > 0.001f && m_Flipped)
+           
+            if (InputDirection.x > 0.001f && m_Flipped)
             {
                 FlipSpriteOnX(false);
             }
-            if (Rigidbody.velocity.x < -0.001f && !m_Flipped)
+            if (InputDirection.x < -0.001f && !m_Flipped)
             {
                 FlipSpriteOnX(true);
             }
 
             Rigidbody.velocity = InputDirection * MaxSpeed * Time.fixedDeltaTime;
+             
 
-        }
-
-        internal void SetSpriteXPos(float rightXPos)
-        {
-            Skeleton.transform.localPosition = new Vector3(rightXPos, 0, 0);
         }
 
         public override void MoveDirection(Vector2 newDirection)
@@ -177,11 +188,6 @@ namespace MainGame
             m_Flipped = flipped;
         }
 
-        //public void FlipSpriteOnY(bool flipped)
-        //{
-        //    float scale = flipped ? -1 : 1;
-        //    Skeleton.gameObject.transform.localScale = new Vector2(0, scale);
-        //}
 
         public void OnPublish(IMessage message)
         {
@@ -189,6 +195,7 @@ namespace MainGame
             {
                 ZeroGMessage zeroGMessage = (ZeroGMessage)message;
                 ContinousMovement = zeroGMessage.Active;
+                CurrentDirection = EDirection.Up;
                 if (zeroGMessage.Active)
                     StateMachine.SetState(EPlayerState.ZeroG);
                 else
@@ -206,6 +213,14 @@ namespace MainGame
                 PubSub.PubSub.Publish(new ZeroGMessage(false));
                 m_Damageable.SetInitialLife(1);
             }
+            else if(message is StartEngineModuleMessage)
+            {
+                PlayerCollider.enabled = false;
+            }
+            else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
+            {
+                PlayerCollider.enabled = true;
+            }
         }
 
         public void OnDisableSubscribe()
@@ -213,6 +228,10 @@ namespace MainGame
             PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(CheckPointMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(PlayerDeathMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
         }
 
         private void OnDestroy()
@@ -222,15 +241,23 @@ namespace MainGame
 
         public override void Interact()
         {
-            if (Rigidbody.velocity.magnitude == 0)
+            
+            if (Rigidbody.velocity.magnitude == 0 && Interacter.InteractionAvailable && StateMachine.CurrentState.GetType() != typeof(InteractingPlayerState))
             {
-                m_Interacter.GetInteractable()?.Interact(m_Interacter);
+                if (StateMachine.CurrentState.GetType() == typeof(ZeroGPlayerState))
+                {
+                    PassingFromZeroG = true;
+                    ZeroGPlayerState zeroGPlayerState = (ZeroGPlayerState)StateMachine.GetState(EPlayerState.ZeroG);
+                    zeroGPlayerState.PassedThroughInteraction = true;
+                }
+                StateMachine.SetState(EPlayerState.Interacting);
             }
         }
 
-        public void RotatePlayer(int degrees)
+        public void RotatePlayer(int degrees, Vector3 adjusterPos)
         {
-            Skeleton.gameObject.transform.eulerAngles = new Vector3(0, 0, degrees);
+            GraphicsPivot.transform.eulerAngles = new Vector3(0, 0, degrees);
+            GraphicsPivot.transform.localPosition += adjusterPos;
         }
 
 #if UNITY_EDITOR

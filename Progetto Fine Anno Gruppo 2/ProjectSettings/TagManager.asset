@@ -20,10 +20,10 @@ TagManager:
   - Invisible
   - Enemy
   - Deactivable
-  - 
-  - 
-  - 
-  - 
+  - DockingPoint
+  - Capsula
+  - WallPM
+  - PickablePM
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 582964625
+    locked: 0
+  - name: Luci
+    uniqueID: 2531359699
+    locked: 0
+  - name: Terreno
+    uniqueID: 2006074575
+    locked: 0
+  - name: Player & Enviroment
+    uniqueID: 2316646929
+    locked: 0
+  - name: ForeGround
+    uniqueID: 1071387185
     locked: 0

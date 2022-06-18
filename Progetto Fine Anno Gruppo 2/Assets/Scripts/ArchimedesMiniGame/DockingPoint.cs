@@ -8,23 +8,11 @@ namespace ArchimedesMiniGame
     public class DockingPoint : MonoBehaviour
     {
         public bool IsActive;
+        [SerializeField] Transform m_DockingPivot;
+        [Tooltip("Questo fa riferimento alla rotazione del punto d'accesso nell'asse Z. Up = 0, Right = 90, Down = 180, Left = 270")]
+        [SerializeField] EDirection m_PivotOrientation;
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            Module m = collision.GetComponent<Module>();
-            if(m != null)
-            {
-                GameManagerES.Instance.ActiveDockingAttemptButton(true);
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            Module m = collision.GetComponent<Module>();
-            if (m != null)
-            {
-                GameManagerES.Instance.ActiveDockingAttemptButton(false);
-            }
-        }
+        public Transform DockingPivot => m_DockingPivot;
+        public EDirection Orientation => m_PivotOrientation;
     }
 }

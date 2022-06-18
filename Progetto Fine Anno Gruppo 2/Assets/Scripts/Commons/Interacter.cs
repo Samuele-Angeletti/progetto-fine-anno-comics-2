@@ -19,6 +19,9 @@ namespace Commons
         private bool m_ActiveUI;
         private float m_TimePassed;
 
+        public bool InteractionAvailable { get; private set; }
+        public Interactable CurrentInteractable => m_CurrentInteractable;
+
         private void Awake()
         {
             m_Text = m_UIText.GetComponentInChildren<TextMeshProUGUI>();
@@ -38,6 +41,7 @@ namespace Commons
                 else
                 {
                     interactable.ShowUI(true);
+                    InteractionAvailable = true;
                     m_ActiveUI = true;
                     m_CurrentInteractable = interactable;
                     m_UIText.SetActive(true);
@@ -59,6 +63,7 @@ namespace Commons
                 m_ActiveUI = false;
                 AddColorToUI(0);
                 m_TimePassed = 0;
+                InteractionAvailable = false;
             }
 
         }

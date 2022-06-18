@@ -31,12 +31,15 @@ namespace Commons
 
         private void ZeroGDebug(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.DebugZeroG();
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.DebugZeroG();
         }
 
         private void Interact(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.Interact();
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.Interact();
+
         }
 
         private void PauseGame(InputAction.CallbackContext obj)
@@ -46,22 +49,26 @@ namespace Commons
 
         private void StopRotation(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.MoveRotation(obj.ReadValue<Vector2>());
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.MoveRotation(obj.ReadValue<Vector2>());
         }
 
         private void StartRotation(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.MoveRotation(obj.ReadValue<Vector2>());
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.MoveRotation(obj.ReadValue<Vector2>());
         }
 
         private void StartMoving(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.MoveDirection(obj.ReadValue<Vector2>());
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.MoveDirection(obj.ReadValue<Vector2>());
         }
 
         private void StopMoving(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.MoveDirection(obj.ReadValue<Vector2>());
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.MoveDirection(obj.ReadValue<Vector2>());
         }
 
         private void OnDestroy()
@@ -87,12 +94,17 @@ namespace Commons
 
         private void StopJump(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.Jump(false);
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+                m_CurrentControllable.Jump(false);
         }
 
         private void StartJump(InputAction.CallbackContext obj)
         {
-            m_CurrentControllable.Jump(true);
+            if (!DialoguePlayer.Instance.dialogueIsPlaying)
+            {
+                if(obj.phase == InputActionPhase.Performed)
+                    m_CurrentControllable.Jump(true);
+            }
         }
 
         private void ActiveContinousMovement()

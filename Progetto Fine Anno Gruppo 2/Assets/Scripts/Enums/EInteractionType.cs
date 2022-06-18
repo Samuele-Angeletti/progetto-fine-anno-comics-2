@@ -8,5 +8,8 @@ public enum EInteractionType
     GoToCheckPoint,
     OpenDoor,
     ActiveModule,
-    PlayPacMan
+    PlayPacMan,
+    RotateRoom,
+    OpenTerminal,
+    Integration
 }

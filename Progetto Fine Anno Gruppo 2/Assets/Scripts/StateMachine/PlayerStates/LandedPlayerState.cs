@@ -27,9 +27,10 @@ public class LandedPlayerState : State
     public override void OnStart()
     {
         Debug.Log("STATO: LANDED");
+        m_Owner.Rigidbody.velocity = Vector2.zero;
         m_TimePassed = 0;
         m_Owner.Skeleton.loop = false;
-        m_Owner.Skeleton.AnimationName = "SaltoTermine";
+        m_Owner.Skeleton.AnimationName = "SaltoTermineDue";
     }
 
     public override void OnUpdate()
@@ -43,6 +44,10 @@ public class LandedPlayerState : State
         {
             m_Owner.StateMachine.SetState(EPlayerState.Jumping);
             return;
+        }
+        if(!m_Owner.IsGrounded)
+        {
+            m_Owner.StateMachine.SetState(EPlayerState.Landing);
         }
         m_TimePassed += Time.deltaTime;
         if(m_TimePassed >= 1f)

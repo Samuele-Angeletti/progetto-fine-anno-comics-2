@@ -15,6 +15,7 @@ namespace Commons
         public float MaxLife => m_MaxLife;
         public float CurrentLife => m_CurrentLife;
 
+        
 
         private void Awake()
         {
@@ -39,6 +40,11 @@ namespace Commons
         public void SetInitialLife(float amount)
         {
             m_CurrentLife = Mathf.Clamp(amount, 1, MaxLife);
+        }
+
+        public void SetMaxLife(float amount)
+        {
+            m_MaxLife = amount;
         }
     }
 }

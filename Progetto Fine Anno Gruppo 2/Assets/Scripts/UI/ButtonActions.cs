@@ -10,7 +10,7 @@ public class ButtonActions : MonoBehaviour
 	[SerializeField] EButtonType m_ButtonType;
 	[SerializeField] EMenu m_MenuToOpen;
     [SerializeField] string m_GoToScene;
-
+    [SerializeField] TerminalScriptableObject m_StoredTerminalToRead;
 	public void Action()
 	{
         switch (m_ButtonType)
@@ -26,6 +26,12 @@ public class ButtonActions : MonoBehaviour
                 break;
             case EButtonType.GoToScene:
                 GoToScene();
+                break;
+            case EButtonType.ForceResume:
+                PubSub.PubSub.Publish(new ResumeGameMessage());
+                break;
+            case EButtonType.ReadStoredTerminal:
+                PubSub.PubSub.Publish(new TerminalMessage(m_StoredTerminalToRead));
                 break;
         }
     }
@@ -49,4 +55,9 @@ public class ButtonActions : MonoBehaviour
 	{
 		Application.Quit();
 	}
+
+    public void SetTerminalSO(TerminalScriptableObject terminalScriptableObject)
+    {
+        m_StoredTerminalToRead = terminalScriptableObject;
+    }
 }

@@ -6,30 +6,31 @@ using PubSub;
 using Commons;
 using TMPro;
 using UnityEngine.UI;
+using ArchimedesMiniGame;
+using MainGame;
 
 namespace MicroGame
 {
-    [RequireComponent(typeof(PlayerInputSystem))]
     public class GameManagerPM : MonoBehaviour, ISubscriber
     {
         #region SINGLETON PATTERN
-        public static GameManagerPM _instance;
+        public static GameManagerPM m_instance;
         public static GameManagerPM Instance
         {
             get
             {
-                if (_instance == null)
+                if (m_instance == null)
                 {
-                    _instance = FindObjectOfType<GameManagerPM>();
+                    m_instance = FindObjectOfType<GameManagerPM>();
 
-                    if (_instance == null)
+                    if (m_instance == null)
                     {
                         GameObject container = new GameObject("GameManager");
-                        _instance = container.AddComponent<GameManagerPM>();
+                        m_instance = container.AddComponent<GameManagerPM>();
                     }
                 }
 
-                return _instance;
+                return m_instance;
             }
         }
         #endregion
@@ -41,21 +42,31 @@ namespace MicroGame
         [SerializeField] Enemy m_EnemyPrefab;
         [SerializeField] Transform[] m_EnemiesSpawnPoints;
 
-        [Header("UI Stuff")]
-        [SerializeField] TextMeshProUGUI m_LifeText;
-        [SerializeField] Slider m_BatterySlider;
+        [Header("Scene references")]
+        [SerializeField] List<GameObject> m_AllSceneObjects;
 
-        [Header("Load File")]
-        [SerializeField] string m_FileName;
+        [HideInInspector]
+        public UIPacManInterface UIPacManInterface;
 
-        private PlayerInputSystem m_PlayerInputs;
         private List<Pickable> m_PickableList = new List<Pickable>();
+        private List<Enemy> m_Enemies = new List<Enemy>();
         private int m_PickablesInScene;
         private int m_PickablePicked = 0;
         private bool[] m_SpawnPointUsed;
+        private SavableInfos m_CurrentModuleInfos;
+        private int m_EnemiesQuantity;
+        Dictionary<string, SavableInfos> databaseLoaded;
 
         private void Awake()
         {
+            if (m_instance == null)
+            {
+                m_instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+                Destroy(gameObject);
+
             Pickable[] pickables = FindObjectsOfType<Pickable>();
             for (int i = 0; i < pickables.Length; i++)
             {
@@ -63,7 +74,7 @@ namespace MicroGame
             }
             m_PickablesInScene = m_PickableList.Count;
             m_SpawnPointUsed = new bool[m_EnemiesSpawnPoints.Length];
-            m_PlayerInputs = GetComponent<PlayerInputSystem>();
+
         }
 
         private void Start()
@@ -72,16 +83,24 @@ namespace MicroGame
             PubSub.PubSub.Subscribe(this, typeof(GameOverMicroGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
             PubSub.PubSub.Subscribe(this, typeof(ResumeGameMessage));
-
-            m_PlayerInputs.SetControllable(m_Controllable);
+            UIPacManInterface = UIManager.Instance.PacManInterface;
+            GameManager.Instance.SetNewControllable(m_Controllable);
 
             StartSettings();
+
         }
 
         private void StartSettings()
         {
-            DamageableInfos d = SaveAndLoadSystem.Load<DamageableInfos>(m_FileName);
-            float damagePercentage = d.DamagePercentage();
+            m_CurrentModuleInfos = GameManagerES.Instance.GetCurrentModuleInfos();
+
+            //databaseLoaded = SaveAndLoadSystem.Load<Dictionary<string, SavableInfos>>();
+            //if(databaseLoaded.ContainsKey(m_CurrentModuleID))
+            //{
+            //    m_CurrentModuleInfos = databaseLoaded[m_CurrentModuleID];
+            //}
+
+            float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
 
             if (damagePercentage == 0)
             {
@@ -117,8 +136,9 @@ namespace MicroGame
         {
             for (int i = 0; i < enemiesQuantity; i++)
             {
-                Instantiate(m_EnemyPrefab, ChooseFreeSpawnPoint(), Quaternion.identity);
+                m_Enemies.Add(Instantiate(m_EnemyPrefab, ChooseFreeSpawnPoint(), Quaternion.identity));
             }
+            m_EnemiesQuantity = enemiesQuantity;
         }
 
         private Vector3 ChooseFreeSpawnPoint()
@@ -152,7 +172,7 @@ namespace MicroGame
 
         internal void UIUpdateLife(int m_CurrentLifes)
         {
-            m_LifeText.text = "VITE: " + m_CurrentLifes;
+            UIPacManInterface.LifeText.text = "VITE: " + m_CurrentLifes;
         }
 
         public void OnPublish(IMessage message)
@@ -165,7 +185,13 @@ namespace MicroGame
             }
             else if(message is GameOverMicroGameMessage)
             {
-                Debug.Log("Gioco finito");
+                GameOverMicroGameMessage gameOverMicroGame = (GameOverMicroGameMessage)message;
+                if (gameOverMicroGame.Win)
+                {
+                    SaveAndChangeScene();
+                }
+                else
+                    Debug.Log("Perso, ricomincio");
             }
             else if (message is PauseGameMessage)
             {
@@ -181,11 +207,12 @@ namespace MicroGame
         {
             m_PickablePicked++;
 
-            m_BatterySlider.value = (float)m_PickablePicked / (float)m_PickablesInScene;
+            UIPacManInterface.BatterySlider.value = (float)m_PickablePicked / (float)m_PickablesInScene;
 
             if (m_PickablePicked >= m_PickablesInScene)
             {
-                Debug.Log("Gioco finito");
+                PubSub.PubSub.Publish(new GameOverMicroGameMessage(true));
+
             }
         }
 
@@ -201,6 +228,41 @@ namespace MicroGame
         {
             OnDisableSubscribe();
         }
+
+        public void RemoveFromList(Enemy enemy)
+        {
+            m_Enemies.Remove(enemy);
+        }
+
+        public void SaveAndChangeScene()
+        {
+            
+            float lifeGained = (1 - m_CurrentModuleInfos.CurrentLife) * ((m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
+
+            m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + lifeGained);
+
+            m_CurrentModuleInfos.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
+
+            //SaveAndLoadSystem.OverrideDatabase(database);
+            GameManager.Instance.ForcePlayerAsControllable();
+            DestroyAllObjects();
+            UIManager.Instance.OpenPacManInterface(false);
+
+        }
+
+        private void DestroyAllObjects()
+        {
+            foreach(GameObject gameObject in m_AllSceneObjects)
+            {
+                gameObject.SetActive(false);
+                Destroy(gameObject, 3f);
+            }
+            m_Enemies.ForEach(x => x.gameObject.SetActive(false));
+            m_Enemies.ForEach(x => Destroy(x.gameObject, 3f));
+
+            Destroy(gameObject, 3f);
+        }
+
     }
 
 }
