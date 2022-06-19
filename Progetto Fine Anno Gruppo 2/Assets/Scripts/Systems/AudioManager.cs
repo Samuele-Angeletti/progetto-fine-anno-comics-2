@@ -72,7 +72,7 @@ public class AudioManager : MonoBehaviour
 
         }
         else
-            Debug.LogError("This scriptable object is without a audioClip");
+            Debug.Log("This scriptable object is without a audioClip");
     }
 
     public void PlayBackGroundMusic(AudioAssetSO audioAsset, float delay)

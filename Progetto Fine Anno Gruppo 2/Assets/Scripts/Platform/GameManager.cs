@@ -39,6 +39,7 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnPlayer;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
+        [SerializeField] BackgroundAxe m_Background;
 
         [Header("BackGround Music")]
         [SerializeField,ShowScriptableObject] AudioAssetSO currentBackGroundMusic;
@@ -57,7 +58,7 @@ namespace MainGame
         private PlayerInputSystem m_PlayerInputs;
         private bool m_ZeroGActive;
         private PlayerMovementManager m_Player;
-
+        private ECameras m_ActiveCamera;
 
         public bool ZeroGActive
         {
@@ -211,24 +212,30 @@ namespace MainGame
 
         public void SetActiveCamera(ECameras camera)
         {
+            if (m_ActiveCamera == camera) return;
+
             switch (camera)
             {
                 case ECameras.Player:
                     m_CameraOnPlayer.Priority = 1;
                     m_CameraOnModule.Priority = 0;
                     m_CameraOnModuleFocused.Priority = 0;
+                    m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnPlayer.m_Lens.OrthographicSize);
                     break;
                 case ECameras.Module:
                     m_CameraOnPlayer.Priority = 0;
                     m_CameraOnModule.Priority = 1;
                     m_CameraOnModuleFocused.Priority = 0;
+                    m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnModule.m_Lens.OrthographicSize);
                     break;
                 case ECameras.ModuleFocused:
                     m_CameraOnPlayer.Priority = 0;
                     m_CameraOnModule.Priority = 0;
                     m_CameraOnModuleFocused.Priority = 1;
+                    m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnModuleFocused.m_Lens.OrthographicSize);
                     break;
             }
+            m_ActiveCamera = camera;
         }
 
         public ButtonInteractionScriptableObject GetButtonInteractionSO(EInteractionType interactionType)
@@ -236,7 +243,7 @@ namespace MainGame
             return m_ButtonInteractionSO.Find(x => x.InteractionType == interactionType);
         }
 
-        [ContextMenu("Debug Save")]
+
         public void Save()
         {
             PubSub.PubSub.Publish(new SaveMessage());
