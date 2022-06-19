@@ -11,7 +11,7 @@ public class ButtonInteraction : Interactable,ISubscriber
     [SerializeField] bool m_OneShot;
     private void Start()
     {
-        if (InteractionType == EInteractionType.PlayPacMan)
+        if (InteractionType == EInteractionType.PlayPacMan || InteractionType == EInteractionType.ActiveModule)
         {
             PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));

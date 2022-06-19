@@ -55,7 +55,7 @@ namespace ArchimedesMiniGame
         private void DebugEngine()
         {
 
-            m_Module.StartEngine();
+            m_Module.TryStartEngine();
         }
     }
 }

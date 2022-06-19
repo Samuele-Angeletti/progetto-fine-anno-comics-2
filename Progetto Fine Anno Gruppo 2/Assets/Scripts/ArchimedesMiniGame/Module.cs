@@ -10,7 +10,7 @@ namespace ArchimedesMiniGame
     public class Module : Controllable, IDamageable, ISubscriber
     {
         [Header("References")]
-        [SerializeField] BoxCollider2D m_ExternalCollider;
+        [SerializeField] PolygonCollider2D m_ExternalCollider;
         [SerializeField] SpriteRenderer m_ExternalSprite;
         [SerializeField] GameObject m_MapParent;
         [SerializeField] Transform m_DockingPivot;
@@ -39,6 +39,7 @@ namespace ArchimedesMiniGame
         private bool m_Docking;
         private bool m_CameraFocused;
         private Vector3 m_StoppingDistanceModucleFocused = new Vector3(10, 10);
+        private Vector3 m_RotationDestination;
         private SavableEntity m_SavableEntity;
         public SavableEntity SavableEntity => m_SavableEntity;
         private void Awake()
@@ -147,22 +148,38 @@ namespace ArchimedesMiniGame
             Vector3 distanceBefore = m_DockingPivot.position - transform.position;
             m_DockingPivot.position = Vector3.Lerp(m_DockingPivot.position, m_DockingPoint.DockingPivot.position, 1 * Time.deltaTime);
             transform.position = transform.position + ((m_DockingPivot.position - transform.position) - distanceBefore);
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, m_RotationDestination, Time.deltaTime * 2);
 
-            if (Vector3.Distance(m_DockingPivot.position, m_DockingPoint.DockingPivot.position) < 0.1f)
+
+
+            if (Vector3.Distance(m_DockingPivot.position, m_DockingPoint.DockingPivot.position) < 0.1f && Vector3.Distance(transform.eulerAngles, m_RotationDestination) < 0.1f)
             {
                 DockingComplete();
             }
         }
 
-        public void StartEngine()
+        public void TryStartEngine()
         {
-            if (!m_Docked)
+            if (!m_Docked && m_CurrentBattery > 0 && m_Damageable.CurrentLife > 0)
             {
-                PubSub.PubSub.Publish(new StartEngineModuleMessage(this));
-                Debug.Log($"START ENGINE: {gameObject.name}");
-                m_MapParent.SetActive(false);
-                m_Rigidbody.freezeRotation = false;
+                StartEngine();
             }
+            else if(m_CurrentBattery <= 0 || m_Damageable.CurrentLife <= 0)
+            {
+                GameManagerES.Instance.CheckModuleOnStartEngine(this);
+                if(m_CurrentBattery > 0 && m_Damageable.CurrentLife > 0)
+                {
+                    StartEngine();
+                }
+            }
+        }
+
+        private void StartEngine()
+        {
+            PubSub.PubSub.Publish(new StartEngineModuleMessage(this));
+            Debug.Log($"START ENGINE: {gameObject.name}");
+            m_MapParent.SetActive(false);
+            m_Rigidbody.freezeRotation = false;
         }
 
         public override void MoveRotation(Vector2 newDirection)
@@ -226,10 +243,10 @@ namespace ArchimedesMiniGame
                     m_Docking = true;
                     m_DockingPoint = d;
                     SwitcherSystem.SwitchDirection(m_DockingPoint.Orientation,
-                        () => transform.eulerAngles = new Vector3(0, 0, 180),
-                        () => transform.eulerAngles = new Vector3(0, 0, 0),
-                        () => transform.eulerAngles = new Vector3(0, 0, 270),
-                        () => transform.eulerAngles = new Vector3(0, 0, 90));
+                        () => m_RotationDestination = new Vector3(0, 0, 180),
+                        () => m_RotationDestination = new Vector3(0, 0, 0),
+                        () => m_RotationDestination = new Vector3(0, 0, 270),
+                        () => m_RotationDestination = new Vector3(0, 0, 90));
                 }
                 else if(d == null || !d.IsActive)
                 {
@@ -246,6 +263,7 @@ namespace ArchimedesMiniGame
         {
             Debug.Log("ATTRACCO COMPLETATO");
             m_Docking = false;
+            transform.eulerAngles = m_RotationDestination;
             m_ExternalCollider.enabled = false;
             m_ExternalSprite.enabled = false;
             m_MapParent.SetActive(true);
@@ -269,7 +287,7 @@ namespace ArchimedesMiniGame
         {
             m_Damageable.SetMaxLife(infos.MaxLife);
             m_Damageable.SetInitialLife(infos.CurrentLife);
-            m_CurrentBattery = m_MaxBattery;
+            m_CurrentBattery = infos.CurrentBattery;
             transform.position = new Vector3(infos.xPos, infos.yPos, infos.zPos);
         }
 

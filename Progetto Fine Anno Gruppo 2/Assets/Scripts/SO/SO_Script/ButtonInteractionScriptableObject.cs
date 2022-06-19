@@ -70,7 +70,7 @@ public class ButtonInteractionScriptableObject : ScriptableObject
     
     private void ActiveModule(GameObject interestedObject)
     {
-        interestedObject.GetComponent<Module>().StartEngine();
+        interestedObject.GetComponent<Module>().TryStartEngine();
     }
 
     private void PlayPacMan()

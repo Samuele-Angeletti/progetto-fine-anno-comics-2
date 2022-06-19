@@ -101,7 +101,7 @@ namespace MicroGame
             //}
 
             float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
-
+            Debug.Log(damagePercentage);
             if (damagePercentage == 0)
             {
                 SpawnEnemies(1);
@@ -237,13 +237,13 @@ namespace MicroGame
         public void SaveAndChangeScene()
         {
             
-            float lifeGained = (1 - m_CurrentModuleInfos.CurrentLife) * ((m_EnemiesQuantity - m_Enemies.Count) / m_EnemiesQuantity);
+            float lifeGained = (float)((float)m_CurrentModuleInfos.MaxLife - (float)m_CurrentModuleInfos.CurrentLife) * (float)(((float)m_EnemiesQuantity - (float)m_Enemies.Count) / (float)m_EnemiesQuantity);
 
             m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + lifeGained);
 
             m_CurrentModuleInfos.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
 
-            //SaveAndLoadSystem.OverrideDatabase(database);
+            GameManagerES.Instance.SetCurrentModuleInfos(m_CurrentModuleInfos);
             GameManager.Instance.ForcePlayerAsControllable();
             DestroyAllObjects();
             UIManager.Instance.OpenPacManInterface(false);

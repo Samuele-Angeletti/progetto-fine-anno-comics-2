@@ -33,7 +33,7 @@ namespace Commons
         /// <returns></returns>
         public float DamagePercentage()
         {
-            return (MaxLife - CurrentLife) / MaxLife;
+            return (float)(MaxLife - CurrentLife) / MaxLife;
         }
 
         public void SetCurrentLife(float amount)
