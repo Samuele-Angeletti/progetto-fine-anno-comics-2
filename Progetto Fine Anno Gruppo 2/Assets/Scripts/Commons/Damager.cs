@@ -9,6 +9,10 @@ namespace Commons
     {
         [SerializeField] float m_DamageAmount;
         [SerializeField] LayerMask m_LayerMask;
+
+        public float DamageAmount => m_DamageAmount;
+        public LayerMask LayerMask => m_LayerMask;
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             Damageable d = collision.collider.GetComponent<Damageable>();
@@ -17,5 +21,13 @@ namespace Commons
                 d.TakeDamage(m_DamageAmount);
             }
         }
+
+        public void Initialize(float damage, LayerMask layerMask)
+        {
+            m_DamageAmount = damage;
+            m_LayerMask = layerMask;
+        }
+
+        
     }
 }

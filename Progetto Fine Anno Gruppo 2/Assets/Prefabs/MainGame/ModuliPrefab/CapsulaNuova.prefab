@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 489341860725416119}
   - component: {fileID: 489341860725416074}
   - component: {fileID: 6983878651503788243}
+  - component: {fileID: 1626364690302287319}
   m_Layer: 16
   m_Name: CapsulaNuova
   m_TagString: Untagged
@@ -387,6 +388,19 @@ PolygonCollider2D:
       - {x: 4.847185, y: -12.526597}
       - {x: 13.988724, y: -7.7195344}
       - {x: 13.9382, y: 0.307321}
+--- !u!114 &1626364690302287319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489341860725416124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2b6be583b99284e94d451daad5b57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpriteTransitionSpeed: 1
 --- !u!1 &489341860836855580
 GameObject:
   m_ObjectHideFlags: 0
