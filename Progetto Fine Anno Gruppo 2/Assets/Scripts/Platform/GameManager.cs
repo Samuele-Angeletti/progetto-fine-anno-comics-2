@@ -51,6 +51,8 @@ namespace MainGame
         [Header("Button Interaction SO")]
         [SerializeField] List<ButtonInteractionScriptableObject> m_ButtonInteractionSO;
 
+        [Header("Archimedes")]
+        [SerializeField] Archimedes m_Archimedes;
 
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
@@ -59,7 +61,7 @@ namespace MainGame
         private bool m_ZeroGActive;
         private PlayerMovementManager m_Player;
         private ECameras m_ActiveCamera;
-
+        public Archimedes Archimedes => m_Archimedes;
         public bool ZeroGActive
         {
             get => m_ZeroGActive;

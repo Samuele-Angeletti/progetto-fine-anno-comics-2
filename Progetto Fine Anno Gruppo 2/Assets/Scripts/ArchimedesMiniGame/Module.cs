@@ -42,6 +42,8 @@ namespace ArchimedesMiniGame
         private Vector3 m_RotationDestination;
         private SavableEntity m_SavableEntity;
         public SavableEntity SavableEntity => m_SavableEntity;
+        private SpriteTransition m_SpriteTransition;
+
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -50,6 +52,7 @@ namespace ArchimedesMiniGame
             m_Rigidbody.freezeRotation = true;
             m_MaxSpeedVector = new Vector2(m_MaxSpeed, m_MaxSpeed);
             m_SavableEntity = GetComponent<SavableEntity>();
+            m_SpriteTransition = GetComponent<SpriteTransition>();
         }
 
         private void Start()
@@ -59,9 +62,14 @@ namespace ArchimedesMiniGame
 
             PubSub.PubSub.Subscribe(this, typeof(SaveMessage));
             PubSub.PubSub.Subscribe(this, typeof(LoadMessage));
+            PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
+            PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
 
             m_MapParent.SetActive(false);
             m_ExternalSprite.gameObject.SetActive(true);
+            m_Rigidbody.bodyType = RigidbodyType2D.Static;
         }
 
         private void FixedUpdate()
@@ -177,6 +185,7 @@ namespace ArchimedesMiniGame
         private void StartEngine()
         {
             PubSub.PubSub.Publish(new StartEngineModuleMessage(this));
+            m_Rigidbody.bodyType = RigidbodyType2D.Dynamic;
             Debug.Log($"START ENGINE: {gameObject.name}");
             m_MapParent.SetActive(false);
             m_Rigidbody.freezeRotation = false;
@@ -264,12 +273,18 @@ namespace ArchimedesMiniGame
             Debug.Log("ATTRACCO COMPLETATO");
             m_Docking = false;
             transform.eulerAngles = m_RotationDestination;
-            m_ExternalCollider.enabled = false;
-            m_ExternalSprite.enabled = false;
-            m_MapParent.SetActive(true);
             Stop();
             m_Docked = true;
             Destroy(m_DockingPivot.gameObject);
+
+            Damager d = gameObject.AddComponent<Damager>();
+            Damager archimedesDamager = GameManager.Instance.Archimedes.GetComponent<Damager>();
+            d.Initialize(archimedesDamager.DamageAmount, archimedesDamager.LayerMask);
+            gameObject.transform.parent = GameManager.Instance.Archimedes.transform;
+            gameObject.layer = GameManager.Instance.Archimedes.gameObject.layer;
+            gameObject.isStatic = true;
+            m_Rigidbody.bodyType = RigidbodyType2D.Static;
+
             PubSub.PubSub.Publish(new DockingCompleteMessage(this));
         }
 
@@ -304,23 +319,42 @@ namespace ArchimedesMiniGame
                 string id = GetComponent<SavableEntity>().Id;
                 SaveAndLoadSystem.StoreSaveData(id, GetSavableInfos());
             }
-            if(message is LoadMessage)
+            else if(message is LoadMessage)
             {
                 LoadMessage loadMessage = (LoadMessage)message;
                 if(loadMessage.Database.ContainsKey(m_SavableEntity.Id))
                 {
 
-                    SetInitialParameters((SavableInfos)loadMessage.Database[m_SavableEntity.Id]);
+                    SetInitialParameters(loadMessage.Database[m_SavableEntity.Id]);
 
                 }
             }
+            else if(message is StartEngineModuleMessage)
+            {
+                m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSprite, EDirection.Up);
+                m_ExternalCollider.enabled = true;
+                m_MapParent.SetActive(false);
+            }
+            else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
+            {
+                m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSprite, EDirection.Down);
+                m_ExternalCollider.enabled = false;
+                m_MapParent.SetActive(true);
+            }
         }
 
+        
 
+        
 
         public void OnDisableSubscribe()
         {
             PubSub.PubSub.Unsubscribe(this, typeof(SaveMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(LoadMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
         }
 
         private void OnDestroy()

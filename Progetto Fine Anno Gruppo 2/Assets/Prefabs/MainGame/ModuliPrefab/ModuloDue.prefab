@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6227090746127709977}
   - component: {fileID: 6227090746127709982}
   - component: {fileID: 7450886071030712792}
+  - component: {fileID: 1300163913353197977}
   m_Layer: 8
   m_Name: ModuloDue
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6227090746127709970}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 159.6, y: 67.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -140,6 +141,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3bc88381-ec3f-4743-aaef-42ba3abb2596
+--- !u!114 &1300163913353197977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227090746127709970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2b6be583b99284e94d451daad5b57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpriteTransitionSpeed: 1
 --- !u!1 &6227090746239670450
 GameObject:
   m_ObjectHideFlags: 0
