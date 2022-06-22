@@ -15,5 +15,6 @@ public class AudioAssetSO : ScriptableObject
 {
     public EAudioType audioType;
     public AudioClip clip;
+    public bool canFade;
 
 }

@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InterestedObject: {fileID: 0}
+  audioOggetto: {fileID: 11400000, guid: 2bdd00294533dd3408ccb9eca28edac9, type: 2}
   m_ActiveGizmos: 1
   m_LineColor: {r: 1, g: 1, b: 1, a: 1}
   m_CircleColor: {r: 1, g: 0, b: 0, a: 1}

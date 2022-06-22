@@ -96,7 +96,6 @@ namespace MainGame
 
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
-            AudioManager.Instance.PlayBackGroundMusic(currentBackGroundMusic);
         }
 
         public void SetContinousMovement(bool active)

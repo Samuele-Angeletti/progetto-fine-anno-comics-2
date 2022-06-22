@@ -6,6 +6,7 @@ namespace Commons
     public class Gizmosable : MonoBehaviour
     {
         [SerializeField] public GameObject InterestedObject;
+
 #if UNITY_EDITOR
         [Header("Gizmos Settings")]
         [SerializeField] bool m_ActiveGizmos;
