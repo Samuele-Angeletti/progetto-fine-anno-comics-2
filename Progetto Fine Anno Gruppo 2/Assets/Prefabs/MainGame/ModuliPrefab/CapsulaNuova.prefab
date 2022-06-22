@@ -260,6 +260,7 @@ MonoBehaviour:
   m_ExternalSprite: {fileID: 489341859262651297}
   m_MapParent: {fileID: 489341860836855580}
   m_DockingPivot: {fileID: 489341859574557971}
+  m_DestinationDockingPoint: {fileID: 0}
   m_Acceleration: 20
   m_MaxSpeed: 40
   m_RotationSpeed: 20
@@ -6417,46 +6418,36 @@ Tilemap:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600819483268277170}
   m_Enabled: 1
-  m_Tiles:
-  - first: {x: 10, y: 36, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741827
+  m_Tiles: {}
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data:
-      e00: 1
+      e00: -2.498059e-24
       e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
+      e02: 3.8750038
+      e03: 3.8750038
+      e10: 4.5916e-41
+      e11: 0
+      e12: 6.81e-43
+      e13: 6.81e-43
+      e20: -1.3871562e+19
+      e21: 1e-45
+      e22: -1.637935e-28
+      e23: 1.206933e-19
+      e30: 4.5904e-41
       e31: 0
-      e32: 0
-      e33: 1
+      e32: 6.81e-43
+      e33: 6.85e-43
   m_TileColorArray:
-  - m_RefCount: 1
-    m_Data: {r: 0.8870077, g: 0.563919, b: 0.5997748, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 4.358e-41, g: 4.358e-41, b: 4.358e-41, a: 4.358e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
