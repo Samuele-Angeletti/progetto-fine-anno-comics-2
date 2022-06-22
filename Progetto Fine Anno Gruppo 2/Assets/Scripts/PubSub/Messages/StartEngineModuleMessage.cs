@@ -7,9 +7,10 @@ using ArchimedesMiniGame;
 public class StartEngineModuleMessage : IMessage
 {
     public Module Module;
-
-    public StartEngineModuleMessage(Module module)
+    public Transform DestinationPoint;
+    public StartEngineModuleMessage(Module module, Transform destinationPoint)
     {
         Module = module;
+        DestinationPoint = destinationPoint;
     }
 }

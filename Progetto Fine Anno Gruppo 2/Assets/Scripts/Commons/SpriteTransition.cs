@@ -53,7 +53,7 @@ namespace Commons
                     if (original.a <= 0) break;
                 }
             }
-            Debug.Log($"{gameObject.name} exit coroutine");
+
             m_ActiveExternalGraphicsCoroutine = null;
         }
     }

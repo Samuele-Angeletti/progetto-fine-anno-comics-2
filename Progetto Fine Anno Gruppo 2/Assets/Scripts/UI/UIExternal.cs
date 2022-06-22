@@ -5,6 +5,9 @@ using PubSub;
 public class UIExternal : MonoBehaviour, ISubscriber
 {
     Animator animator;
+    [SerializeField] UIIndicator m_UiIndicator;
+
+    
 
     public void OnDisableSubscribe()
     {
@@ -20,10 +23,15 @@ public class UIExternal : MonoBehaviour, ISubscriber
         if (message is StartEngineModuleMessage)
         {
             animator.SetBool("ActiveModule", true);
+            m_UiIndicator.gameObject.SetActive(true);
+            StartEngineModuleMessage startEngineModuleMessage = (StartEngineModuleMessage)message;
+            m_UiIndicator.ActiveIndicator(true, startEngineModuleMessage.Module.DockingPoint, startEngineModuleMessage.DestinationPoint);
         }
         else if (message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
         {
             animator.SetBool("ActiveModule", false);
+            m_UiIndicator.ActiveIndicator(false, null, null);
+            m_UiIndicator.gameObject.SetActive(false);
         }
     }
 

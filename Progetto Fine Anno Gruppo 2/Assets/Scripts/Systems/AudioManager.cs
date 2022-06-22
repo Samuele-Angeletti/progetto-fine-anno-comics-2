@@ -71,8 +71,8 @@ public class AudioManager : MonoBehaviour
                 Debug.LogError("The audio is not set to the correct audio type");
 
         }
-        else
-            Debug.Log("This scriptable object is without a audioClip");
+        //else
+            //Debug.Log("This scriptable object is without a audioClip");
     }
 
     public void PlayBackGroundMusic(AudioAssetSO audioAsset, float delay)
