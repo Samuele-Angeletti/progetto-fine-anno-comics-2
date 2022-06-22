@@ -161,11 +161,7 @@ namespace Commons
             }
             return false;
         }
-        public RaycastHit2D[] ForwardCheckOfWall(Vector2 direction, float distance, RaycastHit2D[] raycastHits)
-        {
-            Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
-            return raycastHits;
-        }
+        
 
         private float GetAngle(Vector2 direction)
         {

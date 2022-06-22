@@ -191,7 +191,9 @@ namespace MicroGame
                     SaveAndChangeScene();
                 }
                 else
-                    Debug.Log("Perso, ricomincio");
+                {
+                    ChangeScene();
+                }
             }
             else if (message is PauseGameMessage)
             {
@@ -236,7 +238,7 @@ namespace MicroGame
 
         public void SaveAndChangeScene()
         {
-            
+
             float lifeGained = (float)((float)m_CurrentModuleInfos.MaxLife - (float)m_CurrentModuleInfos.CurrentLife) * (float)(((float)m_EnemiesQuantity - (float)m_Enemies.Count) / (float)m_EnemiesQuantity);
 
             m_CurrentModuleInfos.SetCurrentLife(m_CurrentModuleInfos.CurrentLife + lifeGained);
@@ -244,10 +246,15 @@ namespace MicroGame
             m_CurrentModuleInfos.CurrentBattery = m_CurrentModuleInfos.MaxBattery;
 
             GameManagerES.Instance.SetCurrentModuleInfos(m_CurrentModuleInfos);
+            ChangeScene();
+
+        }
+
+        private void ChangeScene()
+        {
             GameManager.Instance.ForcePlayerAsControllable();
             DestroyAllObjects();
             UIManager.Instance.OpenPacManInterface(false);
-
         }
 
         private void DestroyAllObjects()

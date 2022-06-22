@@ -15,8 +15,7 @@ namespace MicroGame
         [Header("Solo per IA")]
         [Tooltip("Tempo massimo per la ricerca di una nuova direzione. Il tempo è all'interno di una Coroutine ed è randomico tra 0 e questo numero")]
         [SerializeField] float m_MaxRandomTime;
-  
-        private Vector2 m_NextDirection;       
+
 
         private void Start()
         {
@@ -37,10 +36,6 @@ namespace MicroGame
             {
                 m_Direction = newDirection.normalized;
             }
-            else if(m_Direction != Vector2.zero) // if asked for a new direction but the character is already moving and can't go in that direction, so this stores the next direction to go asap
-            {
-                m_NextDirection = newDirection.normalized;
-            }
         }
 
         private void Update()
@@ -50,17 +45,6 @@ namespace MicroGame
                 if (m_Direction == Vector2.zero)
                 {
                     m_Direction = RandomDirection();
-                }
-            }
-            else
-            {
-                if(m_NextDirection != Vector2.zero) // this control is for the next move that the player asked for.
-                {
-                    if(ForwardCheckOfWall(m_NextDirection))
-                    {
-                        m_Direction = m_NextDirection;
-                        m_NextDirection = Vector2.zero;
-                    }
                 }
             }
 

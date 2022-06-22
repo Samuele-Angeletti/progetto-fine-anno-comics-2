@@ -10069,6 +10069,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 301321998933504457, guid: 41fd7256a33d92f469c415f0fc2e02da, type: 3}
+      propertyPath: m_Speed
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 301321998933504458, guid: 41fd7256a33d92f469c415f0fc2e02da, type: 3}
       propertyPath: m_Name
       value: Ada
