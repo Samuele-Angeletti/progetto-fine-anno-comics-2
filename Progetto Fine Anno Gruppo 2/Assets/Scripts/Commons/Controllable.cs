@@ -15,7 +15,7 @@ namespace Commons
         [Tooltip("Se questa funzione è attiva, il movimento del personaggio sarà continuo fino a quando non incontrerà un ostacolo")]
         [SerializeField] bool m_ContinousMovement;
 
-        [HideInInspector]
+
         internal Vector2 m_Direction;
 
         public bool ContinousMovement

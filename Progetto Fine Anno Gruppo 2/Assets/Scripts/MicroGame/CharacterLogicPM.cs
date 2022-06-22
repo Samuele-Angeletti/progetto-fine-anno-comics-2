@@ -16,7 +16,8 @@ namespace MicroGame
         [Tooltip("Tempo massimo per la ricerca di una nuova direzione. Il tempo è all'interno di una Coroutine ed è randomico tra 0 e questo numero")]
         [SerializeField] float m_MaxRandomTime;
 
-
+        private Vector3 m_Destination;
+        private bool m_OnGoing;
         private void Start()
         {
             if(controller == EController.IA)
@@ -27,7 +28,22 @@ namespace MicroGame
 
         private void FixedUpdate()
         {
-            m_Rigidbody.velocity = m_Direction * m_Speed * Time.fixedDeltaTime;
+            if (controller == EController.Human)
+            {
+                Vector3 direction = m_Destination - transform.position;
+                m_Rigidbody.velocity = direction.normalized * m_Speed * Time.fixedDeltaTime;
+                if (Vector3.Distance(transform.position, m_Destination) < 0.1f)
+                {
+                    
+                    transform.position = m_Destination;
+                    m_Rigidbody.velocity = Vector3.zero;
+                    m_OnGoing = false;
+                }
+            }
+            else
+            {
+                m_Rigidbody.velocity = m_Direction * m_Speed * Time.fixedDeltaTime;
+            }
         }
 
         public override void MoveDirection(Vector2 newDirection)
@@ -35,6 +51,11 @@ namespace MicroGame
             if (ForwardCheckOfWall(newDirection.normalized))
             {
                 m_Direction = newDirection.normalized;
+                
+                if(!m_OnGoing || newDirection.magnitude > 0)
+                    m_Destination = new Vector3(m_Direction.x, m_Direction.y) + transform.position;
+
+                if (newDirection.magnitude > 0) m_OnGoing = true;
             }
         }
 
