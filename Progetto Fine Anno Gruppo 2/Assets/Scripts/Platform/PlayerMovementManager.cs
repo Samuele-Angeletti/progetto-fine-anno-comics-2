@@ -210,7 +210,6 @@ namespace MainGame
             {
                 transform.position = m_NextCheckPoint;
                 Rigidbody.velocity = Vector2.zero;
-                PubSub.PubSub.Publish(new ZeroGMessage(false));
                 m_Damageable.SetInitialLife(1);
             }
             else if(message is StartEngineModuleMessage)

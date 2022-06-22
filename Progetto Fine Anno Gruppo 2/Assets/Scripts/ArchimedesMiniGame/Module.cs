@@ -27,6 +27,8 @@ namespace ArchimedesMiniGame
         [Header("Battery Settings")]
         [SerializeField] float m_MaxBattery;
         [SerializeField] float m_UseSpeed;
+        [Space(10)]
+        [SerializeField] Transform m_BurstPivot;
 
         private float m_CurrentBattery;
         private Rigidbody2D m_Rigidbody;
@@ -99,6 +101,7 @@ namespace ArchimedesMiniGame
                     if (m_Direction != Vector2.zero || m_RotationDirection != Vector2.zero)
                     {
                         UseBattery();
+                        UpdateBurstPivot();
                     }
 
                     if (m_Rigidbody.velocity.x >= m_MaxSpeed)
@@ -148,6 +151,14 @@ namespace ArchimedesMiniGame
                 }
 
             }
+            
+        }
+
+        private void UpdateBurstPivot()
+        {
+            if (!m_BurstPivot.gameObject.activeSelf) m_BurstPivot.gameObject.SetActive(true);
+
+            m_BurstPivot.rotation = Quaternion.LookRotation(Vector3.forward, new Vector3(m_Direction.x, m_Direction.y) + m_BurstPivot.eulerAngles);
             
         }
 
