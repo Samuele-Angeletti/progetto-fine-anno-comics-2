@@ -27,6 +27,18 @@ namespace ArchimedesMiniGame
         [Header("Battery Settings")]
         [SerializeField] float m_MaxBattery;
         [SerializeField] float m_UseSpeed;
+        [Space(10)]
+        [Header("Burst Pivot Settings")]
+        [SerializeField] GameObject m_BurstPivot;
+        [SerializeField] Vector3 m_LowLeftRotation;
+        [SerializeField] Vector3 m_LeftRotation;
+        [SerializeField] Vector3 m_UpLeftRotation;
+        [SerializeField] Vector3 m_LowRightRotation;
+        [SerializeField] Vector3 m_RightRotation;
+        [SerializeField] Vector3 m_UpRightRotation;
+        [SerializeField] Vector3 m_LowRotation;
+        [SerializeField] Vector3 m_UpRotation;
+
 
         private float m_CurrentBattery;
         private Rigidbody2D m_Rigidbody;
@@ -99,6 +111,7 @@ namespace ArchimedesMiniGame
                     if (m_Direction != Vector2.zero || m_RotationDirection != Vector2.zero)
                     {
                         UseBattery();
+                        RotateBurst();
                     }
 
                     if (m_Rigidbody.velocity.x >= m_MaxSpeed)
@@ -149,6 +162,48 @@ namespace ArchimedesMiniGame
 
             }
             
+        }
+
+        private void RotateBurst()
+        {
+            if(m_Direction.x > 0)
+            {
+                if(m_Direction.y > 0)
+                {
+                    m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_LowLeftRotation);
+                }
+                else if(m_Direction.y < 0)
+                {
+                    m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_UpLeftRotation);
+                }
+                else
+                {
+                    m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_LeftRotation);
+                }
+            }
+            else if(m_Direction.x < 0)
+            {
+                if (m_Direction.y > 0)
+                {
+                    m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_LowRightRotation);
+                }
+                else if (m_Direction.y < 0)
+                {
+                    m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_UpRightRotation);
+                }
+                else
+                {
+                    m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_RightRotation);
+                }
+            }
+            else if (m_Direction.y > 0)
+            {
+                m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_LowRotation);
+            }
+            else if (m_Direction.y < 0)
+            {
+                m_BurstPivot.transform.rotation = Quaternion.LookRotation(Vector3.forward, m_UpRotation);
+            }
         }
 
         private void LateUpdate()
