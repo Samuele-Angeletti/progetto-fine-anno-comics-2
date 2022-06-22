@@ -574,7 +574,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1000
         y: 6660
-        width: 500
+        width: 501
         height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -593,10 +593,10 @@ TextureImporter:
       name: TilesetBaseUnity_36
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 6660
-        width: 500
-        height: 500
+        x: 1501
+        y: 6659
+        width: 499
+        height: 499
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

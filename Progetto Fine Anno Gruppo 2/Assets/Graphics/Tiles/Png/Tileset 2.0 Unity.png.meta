@@ -740,10 +740,10 @@ TextureImporter:
       name: Tileset 2.0 Unity_79
       rect:
         serializedVersion: 2
-        x: 500
+        x: 498
         y: 3505
-        width: 500
-        height: 500
+        width: 502
+        height: 498
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -763,8 +763,8 @@ TextureImporter:
         serializedVersion: 2
         x: 1000
         y: 3505
-        width: 500
-        height: 500
+        width: 499
+        height: 498
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -866,10 +866,10 @@ TextureImporter:
       name: Tileset 2.0 Unity_89
       rect:
         serializedVersion: 2
-        x: 500
-        y: 3005
-        width: 500
-        height: 500
+        x: 498
+        y: 3007
+        width: 502
+        height: 498
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -888,9 +888,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 3005
-        width: 500
-        height: 500
+        y: 3007
+        width: 499
+        height: 498
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
