@@ -15,7 +15,7 @@ namespace Commons
         [Tooltip("Se questa funzione è attiva, il movimento del personaggio sarà continuo fino a quando non incontrerà un ostacolo")]
         [SerializeField] bool m_ContinousMovement;
 
-        [HideInInspector]
+
         internal Vector2 m_Direction;
 
         public bool ContinousMovement
@@ -161,11 +161,7 @@ namespace Commons
             }
             return false;
         }
-        public RaycastHit2D[] ForwardCheckOfWall(Vector2 direction, float distance, RaycastHit2D[] raycastHits)
-        {
-            Physics2D.BoxCastNonAlloc(transform.position, m_StoppingDistance, GetAngle(direction), direction, raycastHits, distance);
-            return raycastHits;
-        }
+        
 
         private float GetAngle(Vector2 direction)
         {
