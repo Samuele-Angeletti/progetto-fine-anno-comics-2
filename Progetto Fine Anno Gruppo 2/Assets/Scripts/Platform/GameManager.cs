@@ -157,7 +157,7 @@ namespace MainGame
         {
             yield return new WaitForSeconds(3);
             m_CameraOnModule.Follow = newFollow;
-            m_CameraOnModuleFocused.Follow = newFollow;
+            m_CameraOnModuleFocused.Follow = newFollow.gameObject.GetComponent<Module>().DockingPoint.transform;
         }
 
         public void OnDisableSubscribe()

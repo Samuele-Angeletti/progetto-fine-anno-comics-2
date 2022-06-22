@@ -55,7 +55,7 @@ public class ButtonInteractionScriptableObject : ScriptableObject
 
     private void RotateRoom(GameObject interestedObject)
     {
-        interestedObject.GetComponent<Rotation>().SetRotationDestination();
+        interestedObject.GetComponentInChildren<Rotation>().SetRotationDestination();
     }
 
     private void ZeroGInteraction()

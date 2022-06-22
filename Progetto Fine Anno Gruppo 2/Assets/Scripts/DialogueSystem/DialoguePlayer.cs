@@ -128,7 +128,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
         if (dialogueToEnqueue == null) yield return null;
         m_dialogueLine.Clear();
-        Debug.Log("cancellata");
+
         dialogueBox.SetActive(true);
 
         for (int i = 0; i < dialogueToEnqueue.Count; i++)
@@ -150,14 +150,14 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         while (m_dialogueLine.Count >0)
         {
             string temp = m_dialogueLine.Dequeue();
-            Debug.Log($"{m_dialogueLine.Count }");
+
             ChangeSpeakerImage();
             yield return TypeWriteEffect(temp, textToWrite);
 
          }
         if (m_dialogueLine.Count == 0)
         {
-            Debug.Log("dialogo finito");
+
             PubSub.PubSub.Publish(new CurrentDialogueFinishedMessage());
             yield return new WaitForSeconds(1);
             yield return null;

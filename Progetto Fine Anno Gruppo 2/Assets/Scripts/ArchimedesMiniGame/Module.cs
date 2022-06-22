@@ -14,6 +14,7 @@ namespace ArchimedesMiniGame
         [SerializeField] SpriteRenderer m_ExternalSprite;
         [SerializeField] GameObject m_MapParent;
         [SerializeField] Transform m_DockingPivot;
+        [SerializeField] Transform m_DestinationDockingPoint;
         [Space(10)]
         [Header("Main settings")]
         [SerializeField] float m_Acceleration;
@@ -42,8 +43,9 @@ namespace ArchimedesMiniGame
         private Vector3 m_RotationDestination;
         private SavableEntity m_SavableEntity;
         public SavableEntity SavableEntity => m_SavableEntity;
+        public Transform DockingPoint => m_DockingSide.transform;
         private SpriteTransition m_SpriteTransition;
-
+        private bool m_EngineOn;
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -74,7 +76,7 @@ namespace ArchimedesMiniGame
 
         private void FixedUpdate()
         {
-            if (!m_Docking && !m_Docked && m_CurrentBattery > 0)
+            if (!m_Docking && !m_Docked && m_CurrentBattery > 0 && m_EngineOn)
             {
                 if (m_Direction.magnitude != 0)
                     m_CurrentAcceleration += new Vector2(MathF.Abs(m_Direction.normalized.x), MathF.Abs(m_Direction.normalized.y)) * m_Acceleration * Time.fixedDeltaTime;
@@ -90,7 +92,7 @@ namespace ArchimedesMiniGame
 
         private void Update()
         {
-            if (!m_Docked && m_CurrentBattery > 0)
+            if (!m_Docked && m_CurrentBattery > 0 && m_EngineOn)
             {
                 if (!m_Docking)
                 {
@@ -145,10 +147,17 @@ namespace ArchimedesMiniGame
                     Stop();
                 }
 
+            }
+            
+        }
+
+        private void LateUpdate()
+        {
+            if (m_EngineOn)
+            {
                 GameManagerES.Instance.UpdateSpeed(m_Rigidbody.velocity.magnitude, m_MaxSpeedVector.magnitude);
                 GameManagerES.Instance.UpdateAcceleration(m_CurrentAcceleration.magnitude, m_MaxSpeed);
             }
-            
         }
 
         private void Docking()
@@ -184,9 +193,10 @@ namespace ArchimedesMiniGame
 
         private void StartEngine()
         {
-            PubSub.PubSub.Publish(new StartEngineModuleMessage(this));
+            PubSub.PubSub.Publish(new StartEngineModuleMessage(this, m_DestinationDockingPoint));
             m_Rigidbody.bodyType = RigidbodyType2D.Dynamic;
-            Debug.Log($"START ENGINE: {gameObject.name}");
+            m_EngineOn = true;
+
             m_MapParent.SetActive(false);
             m_Rigidbody.freezeRotation = false;
         }
@@ -275,7 +285,8 @@ namespace ArchimedesMiniGame
             transform.eulerAngles = m_RotationDestination;
             Stop();
             m_Docked = true;
-            Destroy(m_DockingPivot.gameObject);
+            m_DockingPivot.transform.parent = gameObject.transform;
+            m_EngineOn = false;
 
             Damager d = gameObject.AddComponent<Damager>();
             Damager archimedesDamager = GameManager.Instance.Archimedes.GetComponent<Damager>();
@@ -342,10 +353,6 @@ namespace ArchimedesMiniGame
                 m_MapParent.SetActive(true);
             }
         }
-
-        
-
-        
 
         public void OnDisableSubscribe()
         {
