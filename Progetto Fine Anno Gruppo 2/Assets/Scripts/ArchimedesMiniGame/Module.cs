@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Commons;
 using MainGame;
 using PubSub;
+using System;
+using UnityEngine;
 namespace ArchimedesMiniGame
 {
     public class Module : Controllable, IDamageable, ISubscriber
@@ -103,6 +101,10 @@ namespace ArchimedesMiniGame
                         UseBattery();
                         UpdateBurstPivot();
                     }
+                    else
+                    {
+                        if (m_BurstPivot.gameObject.activeSelf) m_BurstPivot.gameObject.SetActive(false);
+                    }
 
                     if (m_Rigidbody.velocity.x >= m_MaxSpeed)
                     {
@@ -118,21 +120,21 @@ namespace ArchimedesMiniGame
                     {
                         m_DockingAttemptAvailable = true;
                         GameManagerES.Instance.ActiveDockingAttemptButton(true);
-                        
+
                     }
                     else if (m_DockingAttemptAvailable)
                     {
                         m_DockingAttemptAvailable = false;
                         GameManagerES.Instance.ActiveDockingAttemptButton(false);
-                        
+
                     }
 
-                    if(ForwardCheckOfWall(Vector2.up, 1f, m_DockingSide.transform.position, m_DockingMask, m_StoppingDistanceModucleFocused))
+                    if (ForwardCheckOfWall(Vector2.up, 1f, m_DockingSide.transform.position, m_DockingMask, m_StoppingDistanceModucleFocused))
                     {
                         GameManager.Instance.SetActiveCamera(ECameras.ModuleFocused);
                         m_CameraFocused = true;
                     }
-                    else if(m_CameraFocused)
+                    else if (m_CameraFocused)
                     {
                         m_CameraFocused = false;
                         GameManager.Instance.SetActiveCamera(ECameras.Module);
@@ -151,15 +153,30 @@ namespace ArchimedesMiniGame
                 }
 
             }
-            
+
         }
 
         private void UpdateBurstPivot()
         {
             if (!m_BurstPivot.gameObject.activeSelf) m_BurstPivot.gameObject.SetActive(true);
 
-            m_BurstPivot.rotation = Quaternion.LookRotation(Vector3.forward, new Vector3(m_Direction.x, m_Direction.y) + m_BurstPivot.eulerAngles);
-            
+            if (m_RotationDirection.x > 0)
+            {
+                m_BurstPivot.eulerAngles = transform.eulerAngles + new Vector3(0, 0, 165);
+            }
+            else if (m_RotationDirection.x < 0)
+            {
+                m_BurstPivot.eulerAngles = transform.eulerAngles + new Vector3(0, 0, -165);
+            }
+            else if(m_Direction.x > 0)
+            {
+                m_BurstPivot.eulerAngles = transform.eulerAngles + new Vector3(0, 45, 180);
+            }
+            else
+            {
+                m_BurstPivot.eulerAngles = transform.eulerAngles + new Vector3(0, 0, 180);
+
+            }
         }
 
         private void LateUpdate()
@@ -179,7 +196,6 @@ namespace ArchimedesMiniGame
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, m_RotationDestination, Time.deltaTime * 2);
 
 
-
             if (Vector3.Distance(m_DockingPivot.position, m_DockingPoint.DockingPivot.position) < 0.1f && Vector3.Distance(transform.eulerAngles, m_RotationDestination) < 0.1f)
             {
                 DockingComplete();
@@ -192,10 +208,10 @@ namespace ArchimedesMiniGame
             {
                 StartEngine();
             }
-            else if(m_CurrentBattery <= 0 || m_Damageable.CurrentLife <= 0)
+            else if (m_CurrentBattery <= 0 || m_Damageable.CurrentLife <= 0)
             {
                 GameManagerES.Instance.CheckModuleOnStartEngine(this);
-                if(m_CurrentBattery > 0 && m_Damageable.CurrentLife > 0)
+                if (m_CurrentBattery > 0 && m_Damageable.CurrentLife > 0)
                 {
                     StartEngine();
                 }
@@ -210,6 +226,9 @@ namespace ArchimedesMiniGame
 
             m_MapParent.SetActive(false);
             m_Rigidbody.freezeRotation = false;
+
+            GameManagerES.Instance.UpdateLifeSlider(m_Damageable.CurrentLife, m_Damageable.MaxLife);
+            GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
         }
 
         public override void MoveRotation(Vector2 newDirection)
@@ -236,7 +255,7 @@ namespace ArchimedesMiniGame
 
             GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
 
-            if(m_CurrentBattery <= 0)
+            if (m_CurrentBattery <= 0)
             {
                 m_CurrentBattery = 0;
                 GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
@@ -255,7 +274,7 @@ namespace ArchimedesMiniGame
 
         public void DockingAttempt()
         {
-            if(m_Rigidbody.velocity.magnitude > m_MaxSpeedForDocking)
+            if (m_Rigidbody.velocity.magnitude > m_MaxSpeedForDocking)
             {
                 Debug.Log("VELOCITA' CORRENTE TROPPO ELEVATA, RALLENTARE E RIPROVARE");
                 return;
@@ -278,7 +297,7 @@ namespace ArchimedesMiniGame
                         () => m_RotationDestination = new Vector3(0, 0, 270),
                         () => m_RotationDestination = new Vector3(0, 0, 90));
                 }
-                else if(d == null || !d.IsActive)
+                else if (d == null || !d.IsActive)
                 {
                     Debug.Log("ATTRACCO FALLITO. PUNTO D'ATTRACCO NON ATTIVO");
                 }
@@ -312,7 +331,7 @@ namespace ArchimedesMiniGame
 
         public override void Interact()
         {
-            DockingAttempt();
+            if (!m_Docking) DockingAttempt();
         }
 
         internal SavableInfos GetSavableInfos()
@@ -336,28 +355,28 @@ namespace ArchimedesMiniGame
 
         public void OnPublish(IMessage message)
         {
-            if(message is SaveMessage)
+            if (message is SaveMessage)
             {
                 string id = GetComponent<SavableEntity>().Id;
                 SaveAndLoadSystem.StoreSaveData(id, GetSavableInfos());
             }
-            else if(message is LoadMessage)
+            else if (message is LoadMessage)
             {
                 LoadMessage loadMessage = (LoadMessage)message;
-                if(loadMessage.Database.ContainsKey(m_SavableEntity.Id))
+                if (loadMessage.Database.ContainsKey(m_SavableEntity.Id))
                 {
 
                     SetInitialParameters(loadMessage.Database[m_SavableEntity.Id]);
 
                 }
             }
-            else if(message is StartEngineModuleMessage)
+            else if (message is StartEngineModuleMessage)
             {
                 m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSprite, EDirection.Up);
                 m_ExternalCollider.enabled = true;
                 m_MapParent.SetActive(false);
             }
-            else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
+            else if (message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {
                 m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSprite, EDirection.Down);
                 m_ExternalCollider.enabled = false;

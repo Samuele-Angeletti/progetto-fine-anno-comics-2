@@ -28,6 +28,7 @@ namespace MicroGame
         {
 
             GameManagerPM.Instance.UIUpdateLife(m_CurrentLifes);
+	    m_AdaLogic.ContinousMovement = true;
         }
 
         internal void LoseLife()

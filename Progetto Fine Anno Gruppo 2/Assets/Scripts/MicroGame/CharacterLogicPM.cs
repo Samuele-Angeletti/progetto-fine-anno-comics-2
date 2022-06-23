@@ -32,12 +32,18 @@ namespace MicroGame
             {
                 Vector3 direction = m_Destination - transform.position;
                 m_Rigidbody.velocity = direction.normalized * m_Speed * Time.fixedDeltaTime;
-                if (Vector3.Distance(transform.position, m_Destination) < 0.1f)
+                if (Vector3.Distance(transform.position, m_Destination) < 0.05f)
                 {
-                    
                     transform.position = m_Destination;
-                    m_Rigidbody.velocity = Vector3.zero;
-                    m_OnGoing = false;
+		    if(m_Direction.magnitude != 0)
+		    {
+			MoveDirection(m_Direction);
+	    	    }
+		    else
+		    {
+                        m_Rigidbody.velocity = Vector3.zero;
+                        m_OnGoing = false;
+		    }
                 }
             }
             else

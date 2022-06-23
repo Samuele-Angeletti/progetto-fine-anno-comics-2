@@ -13,7 +13,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     public GameObject dialogueBox;
     public TextMeshProUGUI textToWrite;
     public Image spriteToChange;
-
+    public GameObject ContinueMessage;
 
     [SerializeField] private PlayerInputSystem m_PlayerInputs;
     private Queue<string> m_dialogueLine;
@@ -130,7 +130,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         m_dialogueLine.Clear();
 
         dialogueBox.SetActive(true);
-
+	    ContinueMessage.SetActive(false);
         for (int i = 0; i < dialogueToEnqueue.Count; i++)
         {
             m_whoIsSpeakingRightNow.Enqueue(dialogueToEnqueue[i].WhoIsSpeaking);
@@ -152,9 +152,9 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             string temp = m_dialogueLine.Dequeue();
 
             ChangeSpeakerImage();
-            yield return TypeWriteEffect(temp, textToWrite);
 
-         }
+            yield return TypeWriteEffect(temp, textToWrite);
+        }
         if (m_dialogueLine.Count == 0)
         {
 
@@ -219,6 +219,8 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             textLabel.text = lineaDiDialogo.Substring (0,charIndex);
             yield return null;
         }
+
+        ContinueMessage.SetActive(true);
         yield return new WaitUntil(() => m_PlayerInputs.inputControls.Player.Interaction.phase == UnityEngine.InputSystem.InputActionPhase.Performed);
 
         dialogueIsPlaying = false;
