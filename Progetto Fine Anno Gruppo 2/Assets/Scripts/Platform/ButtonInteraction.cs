@@ -22,7 +22,6 @@ public class ButtonInteraction : Interactable,ISubscriber
         if (m_Active)
         {   
             GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter);
-            
             if (m_OneShot) m_Active = false;
         }
     }

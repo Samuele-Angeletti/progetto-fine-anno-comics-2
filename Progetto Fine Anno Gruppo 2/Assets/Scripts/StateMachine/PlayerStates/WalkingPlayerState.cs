@@ -1,4 +1,7 @@
 using MainGame;
+using Spine;
+using Spine.Unity;
+using System;
 using UnityEngine;
 
 public class WalkingPlayerState : State
@@ -59,10 +62,13 @@ public class WalkingPlayerState : State
 
     public override void OnStart()
     {
+
         Debug.Log("STATO: WALKING");
         m_TimePassed = 0;
         m_Owner.Skeleton.loop = true;
     }
+
+
 
     public override void OnUpdate()
     {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ef3641275a2aa4ca6d896f55e587ff, type: 3}
   m_Name: MODULO1_Background&Soffitto
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 641928330, guid: dcc71ccfd15affd48bb948d421d79cc0, type: 3}
+  m_DefaultSprite: {fileID: -536731667, guid: b02aa033f3d1f2643970431109639434, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:

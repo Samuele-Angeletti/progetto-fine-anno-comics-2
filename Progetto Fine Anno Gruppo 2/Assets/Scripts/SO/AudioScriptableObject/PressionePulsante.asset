@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7effc0028836bb04a80a8cb3b9d8f3aa, type: 3}
   m_Name: PressionePulsante
   m_EditorClassIdentifier: 
-  audioType: 0
-  clip: {fileID: 0}
+  audioType: 2
+  clip: {fileID: 8300000, guid: e885484e1bc99fb47a0ac3f6bfa586b1, type: 3}
+  canFade: 0

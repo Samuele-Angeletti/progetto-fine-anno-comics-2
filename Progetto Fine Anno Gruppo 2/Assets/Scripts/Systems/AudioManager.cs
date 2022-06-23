@@ -42,18 +42,17 @@ public class AudioManager : MonoBehaviour
     private GameObject m_backGroundMusic;
     private GameObject m_Sfx; 
     public AudioAssetSO backGroundMusic;
-    [SerializeField,Range(0.1f,10f)] float m_onEntryEvaluateTime;
-    [SerializeField, Range(0.1f, 10f)] float onExitEvaluateTime;
-    [SerializeField, Range(0f, 1f)] float currentVolume;
-    public AnimationCurve m_onEntryBackGroundMusic;
-    public AnimationCurve onExitBackGroundMusic;
+
+    [SerializeField, Range(0f, 1f)] float currentSFXVolume;
+    [SerializeField, Range(0f, 1f)] float currentMusicVolume;
+
 
     private void Start()
     {
-        PlayBackGroundMusic(backGroundMusic);
+        PlayBackGroundMusic(backGroundMusic,"Musica Di BackGround");
     }
 
-    public void PlayBackGroundMusic(AudioAssetSO musicToPlay)
+    public void PlayBackGroundMusic(AudioAssetSO musicToPlay,string objectName)
     {
         if (musicToPlay != null)
         {
@@ -61,14 +60,13 @@ public class AudioManager : MonoBehaviour
             {
                 if (m_backGroundMusic == null)
                 {
-                    m_backGroundMusic = new GameObject("BackGroundMusic");
+                    m_backGroundMusic = new GameObject(objectName);
                     m_backGroundMusic.AddComponent<AudioSource>();
                     m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
                     m_backGroundMusic.GetComponent<AudioSource>().loop = true;
                     m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
                     m_backGroundMusic.GetComponent<AudioSource>().volume = 0;
                     m_backGroundMusic.GetComponent<AudioSource>().Play();
-                    StartCoroutine(FadeAudioSource(m_backGroundMusic.GetComponent<AudioSource>(), m_onEntryEvaluateTime, 1));
 
 
                 }
@@ -86,7 +84,7 @@ public class AudioManager : MonoBehaviour
             //Debug.Log("This scriptable object is without a audioClip");
     }
 
-    public void PlayBackGroundMusic(AudioAssetSO audioAsset, float delay)
+    public void PlayBackGroundMusic(AudioAssetSO audioAsset, string objectName, float delay)
     {
         if (audioAsset != null)
         {
@@ -94,7 +92,7 @@ public class AudioManager : MonoBehaviour
             {
                 if (m_backGroundMusic == null)
                 {
-                    m_backGroundMusic = new GameObject("BackGroundMusic");
+                    m_backGroundMusic = new GameObject(objectName);
                     m_backGroundMusic.AddComponent<AudioSource>();
                     m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
                     m_backGroundMusic.GetComponent<AudioSource>().loop = true;
@@ -117,7 +115,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("This scriptable object is without a audioClip");
     }
 
-    public void PlayBackGroundMusic(AudioAssetSO musicToPlay,AnimationCurve curve)
+    public void PlayBackGroundMusic(AudioAssetSO musicToPlay, string objectName, AnimationCurve curve)
     {
         if (musicToPlay != null)
         {
@@ -125,14 +123,14 @@ public class AudioManager : MonoBehaviour
             {
                 if (m_backGroundMusic == null)
                 {
-                    m_backGroundMusic = new GameObject("BackGroundMusic");
+                    m_backGroundMusic = new GameObject(objectName);
+
                     m_backGroundMusic.AddComponent<AudioSource>();
                     m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
                     m_backGroundMusic.GetComponent<AudioSource>().loop = true;
                     m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
                     m_backGroundMusic.GetComponent<AudioSource>().volume = 0;
                     m_backGroundMusic.GetComponent<AudioSource>().Play();
-                    StartCoroutine(FadeAudioSource(m_backGroundMusic.GetComponent<AudioSource>(), m_onEntryEvaluateTime, 1));
 
 
                 }
@@ -151,20 +149,20 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void PlaySFX(AudioAssetSO sfxToPlay,GameObject objectThatMakeTheSound,bool canLoop)
+    public void PlaySFX(AudioAssetSO sfxToPlay,string objectName, GameObject objectThatMakeTheSound,bool canLoop,bool is3DSound)
     {
         if (sfxToPlay != null)
         {
             switch (sfxToPlay.audioType)
             {
                 case EAudioType.UISfx:
-                    PlayGenericSFX(sfxToPlay, objectThatMakeTheSound, canLoop);
+                    PlayGenericSFX(sfxToPlay, objectName, objectThatMakeTheSound, false,false);
                     break;
                 case EAudioType.PlayerSFX:
                     PlayPlayerSFX();
                     break;
                 case EAudioType.ObjectSFX:
-                    PlayGenericSFX(sfxToPlay,objectThatMakeTheSound,canLoop);
+                    PlayGenericSFX(sfxToPlay, objectName, objectThatMakeTheSound,canLoop,is3DSound);
                     break;
                 case EAudioType.BackGroundMusic:
                     Debug.LogError("Per un'audio di tipo backGroundMusic bisogna utilizzare la funzione PlayBackGroundMusic()");
@@ -178,7 +176,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    private void PlayGenericSFX(AudioAssetSO sfxToPlay,GameObject objectThatMakeTheSound, bool canLoop)
+    private void PlayGenericSFX(AudioAssetSO sfxToPlay,string objectName, GameObject objectThatMakeTheSound, bool canLoop, bool is3DSound)
     {
         if (objectThatMakeTheSound == null)
         {
@@ -188,12 +186,15 @@ public class AudioManager : MonoBehaviour
         else if (objectThatMakeTheSound.GetComponentInChildren<AudioSource>() == null)
         {
             //Spawning an object with audio source component
-            GameObject audioSourceObject = new GameObject("ObjectSFX");
+            GameObject audioSourceObject = new GameObject(objectName);
             audioSourceObject.AddComponent<AudioSource>();
 
             //Checking if the audio can loop
             if(canLoop) audioSourceObject.GetComponent<AudioSource>().loop = true;
             else audioSourceObject.GetComponent<AudioSource>().loop = false;
+
+            if (is3DSound) audioSourceObject.GetComponent<AudioSource>().spatialBlend = 1;
+            else audioSourceObject.GetComponent<AudioSource>().spatialBlend = 0;
 
             //Making the spawnedObject child with the objectThatMakeTheSound and giving them the same position
             audioSourceObject.transform.SetParent(objectThatMakeTheSound.transform);
@@ -233,7 +234,7 @@ public class AudioManager : MonoBehaviour
     {
         if (m_backGroundMusic.GetComponent<AudioSource>() != null)
         {
-            currentVolume = volumeToChange;
+            currentMusicVolume = volumeToChange;
         }
     }
 
@@ -242,7 +243,7 @@ public class AudioManager : MonoBehaviour
     {
         if (m_Sfx.GetComponent<AudioSource>() != null)
         {
-           currentVolume = volumeToChange;
+           currentSFXVolume = volumeToChange;
         }
     }
     
