@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour 
 {
@@ -24,6 +27,7 @@ public class AudioManager : MonoBehaviour
             return m_instance;
         }
     }
+   
     private void Awake()
     {
         if (m_instance == null)
@@ -34,217 +38,85 @@ public class AudioManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        
     }
 
+   
 
-    
+
+
+
+
     #endregion
-    private GameObject m_backGroundMusic;
-    private GameObject m_Sfx; 
-    public AudioAssetSO backGroundMusic;
 
+    private AudioSource m_musicAudioSource;
+    
+    [SerializeField] AudioMixer m_audioMixer;
+    [SerializeField] List<AudioMixerGroup> m_groups;
     [SerializeField, Range(0f, 1f)] float currentSFXVolume;
     [SerializeField, Range(0f, 1f)] float currentMusicVolume;
+    [Space(10)]
+    [SerializeField] List<AudioSource> m_audioPresentiInScena;
 
-
-    private void Start()
-    {
-        PlayBackGroundMusic(backGroundMusic,"Musica Di BackGround");
-    }
-
-    public void PlayBackGroundMusic(AudioAssetSO musicToPlay,string objectName)
-    {
-        if (musicToPlay != null)
-        {
-            if (musicToPlay.audioType == EAudioType.BackGroundMusic)
-            {
-                if (m_backGroundMusic == null)
-                {
-                    m_backGroundMusic = new GameObject(objectName);
-                    m_backGroundMusic.AddComponent<AudioSource>();
-                    m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
-                    m_backGroundMusic.GetComponent<AudioSource>().loop = true;
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().volume = 0;
-                    m_backGroundMusic.GetComponent<AudioSource>().Play();
-
-
-                }
-                else if (m_backGroundMusic != null)
-                {
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().Play();
-                }
-            }
-            else
-                Debug.LogError("The audio is not set to the correct audio type");
-
-        }
-        //else
-            //Debug.Log("This scriptable object is without a audioClip");
-    }
-
-    public void PlayBackGroundMusic(AudioAssetSO audioAsset, string objectName, float delay)
-    {
-        if (audioAsset != null)
-        {
-            if (audioAsset.audioType == EAudioType.BackGroundMusic)
-            {
-                if (m_backGroundMusic == null)
-                {
-                    m_backGroundMusic = new GameObject(objectName);
-                    m_backGroundMusic.AddComponent<AudioSource>();
-                    m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
-                    m_backGroundMusic.GetComponent<AudioSource>().loop = true;
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = audioAsset.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().PlayDelayed(delay);
-
-
-                }
-                else if (m_backGroundMusic != null)
-                {
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = audioAsset.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().PlayDelayed(delay);
-                }
-            }
-            else
-                Debug.LogErrorFormat("The scriptableObject is null");
-
-        }
-        else
-            Debug.LogError("This scriptable object is without a audioClip");
-    }
-
-    public void PlayBackGroundMusic(AudioAssetSO musicToPlay, string objectName, AnimationCurve curve)
-    {
-        if (musicToPlay != null)
-        {
-            if (musicToPlay.audioType == EAudioType.BackGroundMusic)
-            {
-                if (m_backGroundMusic == null)
-                {
-                    m_backGroundMusic = new GameObject(objectName);
-
-                    m_backGroundMusic.AddComponent<AudioSource>();
-                    m_backGroundMusic.GetComponent<AudioSource>().playOnAwake = false;
-                    m_backGroundMusic.GetComponent<AudioSource>().loop = true;
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().volume = 0;
-                    m_backGroundMusic.GetComponent<AudioSource>().Play();
-
-
-                }
-                else if (m_backGroundMusic != null)
-                {
-                    m_backGroundMusic.GetComponent<AudioSource>().clip = musicToPlay.clip;
-                    m_backGroundMusic.GetComponent<AudioSource>().Play();
-                }
-            }
-            else
-                Debug.LogError("The audio is not set to the correct audio type");
-
-        }
-        else
-            Debug.Log("This scriptable object is without a audioClip");
-    }
-
-
-    public void PlaySFX(AudioAssetSO sfxToPlay,string objectName, GameObject objectThatMakeTheSound,bool canLoop,bool is3DSound)
-    {
-        if (sfxToPlay != null)
-        {
-            switch (sfxToPlay.audioType)
-            {
-                case EAudioType.UISfx:
-                    PlayGenericSFX(sfxToPlay, objectName, objectThatMakeTheSound, false,false);
-                    break;
-                case EAudioType.PlayerSFX:
-                    PlayPlayerSFX();
-                    break;
-                case EAudioType.ObjectSFX:
-                    PlayGenericSFX(sfxToPlay, objectName, objectThatMakeTheSound,canLoop,is3DSound);
-                    break;
-                case EAudioType.BackGroundMusic:
-                    Debug.LogError("Per un'audio di tipo backGroundMusic bisogna utilizzare la funzione PlayBackGroundMusic()");
-                    break;
-
-
-            }
-        }
-        else
-            Debug.LogError("The scriptableObject is null");
-
-    }
-
-    private void PlayGenericSFX(AudioAssetSO sfxToPlay,string objectName, GameObject objectThatMakeTheSound, bool canLoop, bool is3DSound)
-    {
-        if (objectThatMakeTheSound == null)
-        {
-            Debug.LogError("l'oggetto che deve emettere il suono è null");
-            return;
-        }
-        else if (objectThatMakeTheSound.GetComponentInChildren<AudioSource>() == null)
-        {
-            //Spawning an object with audio source component
-            GameObject audioSourceObject = new GameObject(objectName);
-            audioSourceObject.AddComponent<AudioSource>();
-
-            //Checking if the audio can loop
-            if(canLoop) audioSourceObject.GetComponent<AudioSource>().loop = true;
-            else audioSourceObject.GetComponent<AudioSource>().loop = false;
-
-            if (is3DSound) audioSourceObject.GetComponent<AudioSource>().spatialBlend = 1;
-            else audioSourceObject.GetComponent<AudioSource>().spatialBlend = 0;
-
-            //Making the spawnedObject child with the objectThatMakeTheSound and giving them the same position
-            audioSourceObject.transform.SetParent(objectThatMakeTheSound.transform);
-            audioSourceObject.transform.position = objectThatMakeTheSound.transform.position;
-
-            audioSourceObject.GetComponent<AudioSource>().PlayOneShot(sfxToPlay.clip);
-
-
-        }
-        else if (objectThatMakeTheSound.GetComponentInChildren<AudioSource>() != null)
-        {
-            AudioSource temp = objectThatMakeTheSound.GetComponentInChildren<AudioSource>();
-            temp.PlayOneShot(sfxToPlay.clip);
-        }
-    }
-
-    private void PlayPlayerSFX()
-    {
-        throw new NotImplementedException();
-    }
-    private static IEnumerator FadeAudioSource(AudioSource audioSource, float duration, float targetVolume)
-    {
-        float currentTime = 0;
-        float start = audioSource.volume;
-        while (currentTime < duration)
-        {
-            currentTime += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
-            yield return null;
-        }
-        yield break;
-    }
 
     
-
-    public void ChangeVolumeMusic(float volumeToChange)
+    private void GetAllAudioSourceInCurrentScene(Scene scene, LoadSceneMode mode)
     {
-        if (m_backGroundMusic.GetComponent<AudioSource>() != null)
+        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
         {
-            currentMusicVolume = volumeToChange;
+            m_audioPresentiInScena.Add(audio);
         }
     }
-
-
-    public void ChangeVolumeSFX(float volumeToChange)
+    private void RemoveAllAudioSourceInCurrentScene(Scene scene)
     {
-        if (m_Sfx.GetComponent<AudioSource>() != null)
-        {
-           currentSFXVolume = volumeToChange;
-        }
+        m_groups.Clear();
     }
+    private void OnValidate()
+    {
+        if (m_audioMixer != null)
+        {
+            foreach (var mixerGroups in m_audioMixer.FindMatchingGroups("Master"))
+            {
+                if (!m_groups.Find(x => x == mixerGroups))
+                {
+                    m_groups.Add(mixerGroups);
+                }
+
+            }
+        }
+        else if (m_audioMixer == null)
+        {
+            m_groups.Clear();
+        }
+       
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += GetAllAudioSourceInCurrentScene;
+        SceneManager.sceneUnloaded += RemoveAllAudioSourceInCurrentScene;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= GetAllAudioSourceInCurrentScene;
+        SceneManager.sceneUnloaded -= RemoveAllAudioSourceInCurrentScene;
+    }
+    public void ChangeVolumeSFX(float value)
+    {
+        m_audioMixer.SetFloat("SFX",Mathf.Log10(value)*20);
+    }
+    public void ChangeVolumeMusic(float value)
+    {
+        m_audioMixer.SetFloat("BackGroundMusic",value);
     
+    }
+    public void ChangeVolumeAmbience(float value)
+    {
+        m_audioMixer.SetFloat("AmbientSound", value);
+
+    }
+    public void ChangeMasterVolume(float value)
+    {
+        m_audioMixer.SetFloat("Master", value);
+    }
+
 }

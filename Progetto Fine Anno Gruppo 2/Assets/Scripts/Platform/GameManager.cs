@@ -41,8 +41,6 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
         [SerializeField] BackgroundAxe m_Background;
 
-        [Header("BackGround Music")]
-        [SerializeField,ShowScriptableObject] AudioAssetSO currentBackGroundMusic;
 
 
         [Header("Player Settings")]
