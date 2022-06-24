@@ -7,13 +7,14 @@ public class UIIndicator : MonoBehaviour
 	[Header("Scene References")]
 	[SerializeField] Transform m_OriginPoint;
 	[SerializeField] Transform m_DestinationPoint;
+	[SerializeField] GameObject m_ImagePrefab;
 
 	[Header("UI References")]
 	[SerializeField] GameObject m_Indicator;
 	[SerializeField] TextMeshProUGUI m_MetersText;
 
 	private bool m_Active;
-
+	private bool m_Spawned;
 	void Start()
 	{
 	}
@@ -43,6 +44,11 @@ public class UIIndicator : MonoBehaviour
     {
 		int meters = (int)Vector3.Distance(m_DestinationPoint.position, m_OriginPoint.position);
 		string text;
+		if (meters >= 10000 && !m_Spawned)
+		{
+			Instantiate(m_ImagePrefab, Vector3.zero, Quaternion.identity);
+			m_Spawned = true;
+		}
 		if (meters > 1000)
 		{
 			meters /= 1000;

@@ -211,7 +211,7 @@ namespace ArchimedesMiniGame
             else if (m_CurrentBattery <= 0 || m_Damageable.CurrentLife <= 0)
             {
                 GameManagerES.Instance.CheckModuleOnStartEngine(this);
-                if (m_CurrentBattery > 0 && m_Damageable.CurrentLife > 0)
+                if (!m_Docked && m_CurrentBattery > 0 && m_Damageable.CurrentLife > 0)
                 {
                     StartEngine();
                 }

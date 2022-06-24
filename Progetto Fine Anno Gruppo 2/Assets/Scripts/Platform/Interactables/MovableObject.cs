@@ -14,13 +14,6 @@ public class MovableObject : Interactable, ISubscriber
     private bool m_Active;
     private bool m_Used;
 
-    private void Awake()
-    {
-        m_StartPivot = transform.position;
-
-
-        
-    }
     private void Start()
     {
 
@@ -41,7 +34,6 @@ public class MovableObject : Interactable, ISubscriber
                 m_Active = false;
                 transform.position = m_EndPivot.position;
                 m_EndPivot.position = m_StartPivot;
-                m_StartPivot = transform.position;
             }
         }
     }
@@ -56,11 +48,11 @@ public class MovableObject : Interactable, ISubscriber
             ActivableMessage activableMessage = (ActivableMessage)message;
             if (activableMessage.Activator.gameObject == InterestedObject && activableMessage.Active)
             {
-                Active();
+                if(!m_Active) Active();
             }
             else if(activableMessage.Activator.gameObject == InterestedObject && !activableMessage.Active && m_RevertOnTriggerExit)
             {
-                Active();
+                if(!m_Active) Active();
             }
         }
     }
@@ -76,10 +68,12 @@ public class MovableObject : Interactable, ISubscriber
         {
             m_Used = true;
             m_Active = true;
+            m_StartPivot = transform.position;
         }
         else if(!m_OneShot)
         {
             m_Active = true;
+            m_StartPivot = transform.position;
         }
     }
 }
