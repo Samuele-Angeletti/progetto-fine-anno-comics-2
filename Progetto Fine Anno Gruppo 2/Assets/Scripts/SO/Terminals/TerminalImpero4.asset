@@ -12,7 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
   m_Name: TerminalImpero4
   m_EditorClassIdentifier: 
-  Title: 
-  ProgressiveNumber: 
-  Content: 
-  Author: 
+  Title: 'Rapporto: SPARIZIONE DI PAX ASTRALIS'
+  ProgressiveNumber: IV
+  Content: "Giorno: 29 Agosto (calendario standard terrestre)\r\nLuogo: Mirach, costellazione
+    di Andromeda, astra neutralis.\n\nDa quando purtroppo la Capitana di Vascello
+    Irina Mendes \xE8 morta di uno shock allergico, ho dovuto prendere la responsabilit\xE0
+    e umilmente assumere il comando della Persephone, in sua memoria. Da quel momento,
+    per\xF2, \xE8 tutto andato a rotoli.\r\nSono passate ormai 48 ore precise da
+    quando sono arrivate le segnalazioni via Etere della sparizione apparente di
+    Pax Astralis, e dopo indagini da parte della mia flotta, gi\xE0 stazionata intorno
+    a Mirach per via di ordini riguardo [CENSORED], la ISS Persephone si \xE8 mossa
+    come da ordini verso Al\u2019faret, per fornire rinforzi alle indagini.\r\nLe
+    ricerche riguardo una possibile causa hanno dato esito negativo, ma grazie al
+    nostro team scientifico, abbiamo notato che \xE8 assente anche Utopia, satellite
+    naturale di Pax Astralis, cosa che \xE8 assente nei rapporti dati a noi, come
+    da trattati, dai nostri corrispondenti Ascendenti. La Triarchia non ha voluto
+    collaborare all\u2019investigazione con la Persephone [CENSORED]. Date le tracce
+    termiche particolarmente elevate rilevate nei momenti prima del disastro, e le
+    orbite gravitazionali dei pianeti nelle vicinanze alquanto anomale, ci viene
+    da presumere che il pianeta sia stato distrutto tramite l\u2019ausilio di Utopia
+    come arma. [CENSORED]. Il che ci porta ad una sola conclusione: l\u2019Ascendenza
+    \xE8 senza dubbio la colpevole dietro la sparizione di Pax Astralis, con l\u2019aiuto
+    della Triarchia. [CENSORED].[CENSORED].\r\nAttendiamo ulteriori ordini per ulteriori
+    investigazioni o per muoverci in assetto offensivo verso le flotte Triarchiche
+    e Ascendenti gi\xE0 nel settore.\r\nLunga vita all\u2019Impero Raniano, vera
+    origine dell\u2019Umanit\xE0.\r"
+  Author: 'Redattore: Ammiraglio di Divisione Phoenix Callistos, comandante della
+    ISS Persephone '

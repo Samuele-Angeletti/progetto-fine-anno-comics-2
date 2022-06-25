@@ -12,7 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
   m_Name: StoriaAntica1
   m_EditorClassIdentifier: 
-  Title: 
-  ProgressiveNumber: 
-  Content: 
-  Author: 
+  Title: Il Grande Sogno
+  ProgressiveNumber: 1
+  Content: "In tempi immemori, sulla Terra primeva, i nostri antenati guardavano
+    alle stelle, identificando in loro divinit\xE0, auspici, i loro sogni, a volte
+    chiedendosi se eravamo veramente soli, in questo arazzo celeste che si presentava
+    ai loro occhi ogni notte. Raggiunta l'armonia sul nostro pianeta natale, l\u2019Umanit\xE0
+    si lanci\xF2 verso il compagno cremisi del loro mondo natale, riuscendo nel miracolo
+    di farlo passare da un mondo di ruggine ad un mondo di acciaio e alberi. Ma l\u2019Umanit\xE0
+    non era soddisfatta, chiedeva sempre di pi\xF9, una gola inconciliabile, e le
+    stelle nei propri occhi e mani.\r\nDa Marte, pass\xF2 a Venere, che pass\xF2
+    da piogge di ferro a un giardino paradisiaco gargantuesco. Riuscirono, i nostri
+    avi, persino a stabilire colonie nei cieli ostili di Giove e sugli anelli di
+    Saturno, permettendo a chiunque di poter osservare il titano astrale con i propri
+    occhi, da vicino.\r\nGiunti per\xF2 ai freddi e tetri cieli di Plutone e Caronte,
+    il desiderio di esplorare e stabilire nuove civilt\xE0 dell\u2019Umanit\xE0 non
+    si era fermato. Al contrario, era incrementato in forma esponenziale. Costruito
+    uno spazioporto per il lancio di operazioni verso lo spazio profondo su Sedna,
+    il pi\xF9 distante corpo planetario in Sol, l\u2019Umanit\xE0 part\xEC verso
+    una crociata stellare eterna, alla ricerca di un desiderio portato dietro da
+    quando il primo uomo usc\xEC dalla caverna, il Grande Sogno.\r"
+  Author: Khalid lo Storico

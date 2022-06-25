@@ -12,7 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
   m_Name: StoriaAntica2
   m_EditorClassIdentifier: 
-  Title: 
-  ProgressiveNumber: 
-  Content: 
-  Author: 
+  Title: Il Grande Sogno
+  ProgressiveNumber: 2
+  Content: "Millenni passarono, poi, da quando l\u2019Umanit\xE0 part\xEC per il
+    Grande Sogno, alla volta del quadro di polvere di stelle della Via Lattea, trovando
+    per\xF2 un universo vuoto, morto, ma pronto per veder la vita sbocciare. I nostri
+    avi quindi prima partirono con motori a velocit\xE0 luce verso Alpha Centauri,
+    e da l\xEC venne scoperto il viaggio tramite iperspazio. Tramite questa scoperta,
+    ogni angolo della galassia era possibile toccarlo con le nostre mani, e ogni
+    bambino avrebbe potuto vedere tutta la galassia da quel momento in poi. \r\nFu
+    cos\xEC puntammo verso astri sempre pi\xF9 distanti, un caleidoscopio di pianeti
+    e stelle sotto il nostro dominio. Da Neo Genesis, la prima colonia nel sistema
+    di Alpha Centauri, quindi, partimmo verso astri sempre pi\xF9 distanti e luminosi:
+    Epsilon Eridani, Dubhe, Betelgeuse, Arcturus, la Cintura di Orione\u2026nulla
+    era al di fuori della nostra portata. Arrivammo persino a portare sotto la nostra
+    ala i mondi delle Nubi di Magellano, galassie satellite del nostro nascente impero
+    conosciute sin dall\u2019antichit\xE0, osservate da occhi antichi come colpi
+    d\u2019acquerello nell\u2019arazzo cosmico, fermandoci giusto una volta arrivati
+    nella irregolare e piccola galassia satellite Nana dell\u2019Acquario. Ormai
+    il Grande Sogno era giunto al suo apice, e dalla vetta, si pu\xF2 soltanto osservare
+    l\u2019abisso inevitabile che ci attende, come attendeva in quel momento l\u2019Umanit\xE0.
+    La nostra ambizione, la nostra arroganza, infatti, ci aveva oscurato gli occhi
+    verso un futuro ormai inevitabile\u2026\r"
+  Author: Khalid lo Storico

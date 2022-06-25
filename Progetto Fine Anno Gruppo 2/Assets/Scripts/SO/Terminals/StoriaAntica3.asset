@@ -12,7 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
   m_Name: StoriaAntica3
   m_EditorClassIdentifier: 
-  Title: 
-  ProgressiveNumber: 
-  Content: 
-  Author: 
+  Title: La Grande Frattura
+  ProgressiveNumber: 1
+  Content: "Ere e regnanti passarono come giorni da quando l\u2019espansione umana
+    nella Via Lattea nelle galassie satellite raggiunse il proprio apice. Popolazioni
+    nuove nascevano, si arricchivano, fondavano nuovi governi, sotto l\u2019occhio
+    vigile della Terra, e si dissolvevano, polvere di stelle e cenere astrale che
+    tornavano al cosmo, acquari che si svuotavano dell\u2019acqua della vita, come
+    candele accese e poi soffiate, per far poi ripartire il ciclo, dimenticati nelle
+    correnti del tempo.\r\nIl Grande Sogno, per\xF2, come tutte le belt\xE0, giunse
+    ad una fine. Un impero cos\xEC grosso per\xF2 sarebbe diventato ingestibile prima
+    o poi, anche con navi in grado di effettuare salti da una parte della galassia
+    all\u2019altra in pochi giorni. I primi furono i territori extragalattici, nelle
+    galassie satellite, che diventavano sempre pi\xF9 dispendiosi da gestire dal
+    governo centrale. Alcune colonie, come quella della Nana dell\u2019Acquario,
+    svanirono interamente, senza alcuna spiegazione n\xE9 traccia. Scoppiarono le
+    prime ribellioni, alimentate da terroristi ingrati verso il governo terrestre,
+    e le colonie extragalattiche vennero presto tutte rese nuovamente polvere. Celebre
+    fu il discorso di Ulrich di Catonia, che pronunci\xF2 le parole \u201CMAGELLANUS
+    DELENDA EST\u201D quando le ribellioni si trasformarono in autentici massacri
+    contro le forze lealiste. Numerosi furono i bandi emanati dalla Grande Terra,
+    dalla Imperatrice Baahilo: fu espressamente proibito lasciare la Via Lattea o
+    stabilire colonie al di fuori di essa, in quanto i ribelli avevano usato ignoti
+    ordigni a materia oscura che avevano destabilizzato lo spaziotempo nelle regioni
+    afflitte, cos\xEC come l\u2019uso di IA Pensanti, sapienti e dotate di emozioni
+    come un essere umano, e furono aumentate le tasse in maniera sproporzionata in
+    tutti i territori dell\u2019impero, in cui i controlli furono resi molto pi\xF9
+    ferrei. La giustizia, l\u2019onore e la purezza tornarono ad essere sovrane dell\u2019impero
+    galattico, che riport\xF2 la sicurezza, l\u2019uguaglianza e la stabilit\xE0
+    nei propri territori per altri decenni. Ma le crepe create nell\u2019astromoto
+    del conflitto iniziarono ad ingrandirsi sempre di pi\xF9\u2026portando alla fine
+    definitiva del Grande Sogno.\r"
+  Author: Khalid lo Storico
