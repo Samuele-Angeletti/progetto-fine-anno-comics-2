@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalImpero2
+  m_EditorClassIdentifier: 
+  Title: 'Rapporto: ARRESTO INGEGNERE - INDAGINE FUGA DI NOTIZIE '
+  ProgressiveNumber: II
+  Content: "Giorno: 5 Luglio (calendario standard terrestre)\r\nLuogo: Huygens, sistema
+    Hawking, costellazione dell\u2019Eridano\r\n\nSono passate, alla scrittura di
+    questo rapporto, 27 ore dal processo dell\u2019Ingegnere Ludwig Riemann, condannato
+    per sovversione, spionaggio statale, terrorismo astrale, furto di informazioni,
+    condivisione illecita di segreti di stato, e furto di carichi sensibili. Sono
+    stata incaricata di trasportarlo alla sua prigione nel sistema di Keid, dove
+    passer\xE0 i prossimi 230 anni standard in prigione, salvo sconti della pena.\r\nQuello
+    che \xE8 successo \xE8 un errore che non dovr\xE0 ripetersi in futuro. Le interferenze
+    dovute all\u2019avvicinamento alle stelle a neutroni binarie vicino a [CENSORED]
+    hanno portato ad un errore di giudizio non da poco. Non possiamo permetterci
+    che la notizia diventi pubblica, senn\xF2 ci troveremo in una situazione di svantaggio
+    quando [CENSORED]. Nel frattempo scorter\xF2 il condannato alla sua prigione,
+    sul pianeta prigione di Tartarus, e mi assicurer\xF2 di trovare chi sia il responsabile
+    di questa faccenda. La comunicazione \xE8 partita dalla mia nave, ma sono abbastanza
+    sicura che nessuna del mio staff possa essere responsabile. Ne parler\xF2 con
+    il Contrammiraglio Phoenix Callistos, il mio superiore, attualmente in visita.
+    [CENSORED] [CENSORED]\r\nLunga vita all\u2019Impero Raniano, vera culla dell\u2019Umanit\xE0.\r"
+  Author: 'Redattore: Capitano di Vascello Irina Mendes, comandante della ISS Persephone '

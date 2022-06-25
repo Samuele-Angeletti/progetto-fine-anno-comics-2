@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalTriarchia4
+  m_EditorClassIdentifier: 
+  Title: Cybertavolo di Guerra
+  ProgressiveNumber: 0100
+  Content: ">> ID: PROTO, DEUTERO, TRITOS. Informazioni restanti classificate.\r\n>>
+    GIORNO: 7211, CALENDARIO STANDARD TRIARCHICO\r\n>> LUOGO: Cyberspazio, Sala dei
+    Tre\r\n>> RIEPILOGO: Consiglio di Guerra\r\n\r\n>> SVILUPPO:\r\n>> PROTO: Rapporto
+    situazione.\r\n>> DEUTEROS: Cambiamento di Pax Astralis. Novit\xE0: sparito.\r\n>>
+    TRITOS: Richiesta elaborazione su status.\r\n>> PROTO: Pax Astralis. Pianeta
+    nel sistema di Al\u2019faret. Lune: 1, Utopia. Cessazione esistenza (status da
+    confermare) tra le 45:00 e le 47:00 locali.\r\n>> DEUTEROS: Status di Pax Astralis
+    cambiato in Nihil Astra.\r\n>> TRITOS: Nihil Astra? Status riservato solo per
+    emergenze. Richiesta prove di cambio di status.\r\n>> PROTO: Upload prove fotografiche.\r\n>>
+    DEUTEROS: Utopia scomparso a sua volta. Sistema di Pax Astralis contrassegnato
+    tutto come Nihil Astra.\r\n>> TRITOS: Status veridicit\xE0 prove: positivo. Inizio
+    stato di emergenza. Area di Nihil Astra scansionata per prove?\r\n>> PROTO: Positivo.\r\n>>
+    DEUTEROS: Flotta Thompson usata nelle ricerche. Richiamata in extremis per via
+    della situazione. Ricevuto rapporto 12 minuti fa.\r\n>> TRITOS: Richiesta condivisione
+    informazioni.\r\n>> PROTO: Pax Astralis svanito, come se non fosse mai esistito.
+    Comunicazioni etere intercettate rivelano suoni come questo:\r\nRiproduzione
+    file audio. Uniche parole distinguibili sono \u201CSta divorando ogni cosa!\u201D
+    da parte di un civile\r\n>> DEUTEROS: Rilevate inoltre tracce considerevoli di
+    antimateria nel sistema e attorno a Mirach, in Astra Neutralis. Sospettato Impero
+    colpevole. Uso di nuove testate anti-materiche da confermare, ma probabilit\xE0
+    stimata attorno al 73,5%. Verit\xE0 da passare a popolazione.\r\n>> TRITOS: Propongo
+    cospirazione Ascendente-Imperiale per minare piani nostri nell\u2019area e oltre.
+    Comunicazioni via Etere implicheranno uso di Divoratori Ascendenti per ripulire
+    pianeta di popolazione prima di bombardamento.\r\n>> PROTO: Missione segreta
+    unit\xE0 101815-271852 e 212926-382963 non \xE8 uscita al pubblico?\r\n>> DEUTERO:
+    Cittadini convinti Albert Clarke morto in incendio causato da impianto imperiale
+    difettoso. La missione \xE8 da considerarsi un successo.\r\n>> TRITOS: Unit\xE0
+    101815-271852 mostrava segni di individualit\xE0, quindi \xE8 stata eliminata
+    con successo. Unit\xE0 212926-382963 invece in recovery mode, sospetto attacco
+    hacker. Diremo che \xE8 stato Impero.\r\n>> PROTO: Propongo muoversi verso status
+    di guerra e dispiegare flotte verso Al\u2019faret. Flotte Gosling, Sheridan e
+    Naughton gi\xE0 presenti nell\u2019area. Supporto popolazione garantito.\r\n>>
+    Deuteros: aggiornamento: giunta comunicazione di emergenza: intercettate comunicazioni
+    Ascendenti e Imperiali. Confermati intenti ostili verso Triarchia.\r\n>> TRITOS:
+    Consiglio dei Tre approva quindi mozione di guerra?\r\n>> PROTO: Positivo.\r\n>>
+    DEUTEROS: Positivo.\r\n>> TRITOS: Positivo.\r"
+  Author: Proto, Deutero, Tritos
