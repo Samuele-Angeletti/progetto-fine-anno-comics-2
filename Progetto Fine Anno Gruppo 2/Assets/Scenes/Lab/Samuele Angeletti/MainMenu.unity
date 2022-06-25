@@ -641,15 +641,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0.5058824, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0ff7b2fa77b11464d86ea46942738e87, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -986,6 +986,7 @@ MonoBehaviour:
   m_ButtonType: 3
   m_MenuToOpen: 0
   m_GoToScene: PlatformScenePreview
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!114 &1211955322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1137,7 @@ MonoBehaviour:
   m_ButtonType: 0
   m_MenuToOpen: 4
   m_GoToScene: 
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!114 &1429216022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,6 +1288,7 @@ MonoBehaviour:
   m_ButtonType: 0
   m_MenuToOpen: 1
   m_GoToScene: 
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!114 &1819381515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05231d50ed49dca45af51b2ad6aea297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DialogueBackground: {fileID: 0}
+  m_TerminalBackground: {fileID: 0}
+  m_LoadingInterface: {fileID: 0}
+  m_ProgressBar: {fileID: 0}
 --- !u!1 &1917276001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2024,7 @@ MonoBehaviour:
   m_ButtonType: 0
   m_MenuToOpen: 4
   m_GoToScene: 
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!224 &222501578493453501
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2509,6 +2517,7 @@ MonoBehaviour:
   m_ButtonType: 1
   m_MenuToOpen: 0
   m_GoToScene: 
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!224 &222501579589069595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3232,6 +3241,7 @@ MonoBehaviour:
   m_ButtonType: 0
   m_MenuToOpen: 1
   m_GoToScene: 
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!224 &7135040509119855200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3948,6 +3958,9 @@ MonoBehaviour:
   m_GameOverMenu: {fileID: 0}
   m_ConfirmChoiseMenu: {fileID: 5423907502989304578}
   m_MainDisplay: {fileID: 1860229164}
+  m_ExternalUI: {fileID: 0}
+  m_TerminalListMenu: {fileID: 0}
+  m_PacManInterface: {fileID: 0}
 --- !u!224 &8230566179681698630
 RectTransform:
   m_ObjectHideFlags: 0

@@ -145,12 +145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae684d7a5c1b95840a25ea261334bfed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterestedObject: {fileID: 0}
+  InterestedObject: {fileID: 1152023983622047413}
   m_ActiveGizmos: 1
   m_LineColor: {r: 1, g: 1, b: 1, a: 1}
   m_CircleColor: {r: 1, g: 0, b: 0, a: 1}
   m_Radius: 0.2
-  InteractionType: 3
+  InteractionType: 6
   m_Active: 1
   m_OneShot: 0
 --- !u!61 &1152023983622047412
