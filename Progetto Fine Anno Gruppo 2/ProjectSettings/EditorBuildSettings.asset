@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Lab/Samuele Angeletti/MainMenu.unity
+    guid: 9d7746b6f6b5cc24aadff2c0bec64f9b
+  - enabled: 1
     path: Assets/Scenes/Lab/Daniele Dei/TestPlatformPuzzle1.unity
     guid: 6fdbcf059c9fb1d4a8d317d9ddb1de0d
   - enabled: 1

@@ -38,7 +38,7 @@ public class ButtonActions : MonoBehaviour
 
     private void GoToScene()
     {
-        SceneManager.LoadScene(m_GoToScene);
+        PubSub.PubSub.Publish(new GoToSceneMessage(m_GoToScene));
     }
 
     private void CloseAllMenus()
