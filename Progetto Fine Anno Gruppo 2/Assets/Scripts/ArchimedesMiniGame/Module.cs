@@ -145,7 +145,6 @@ namespace ArchimedesMiniGame
                 }
                 else if (m_Docking)
                 {
-                    m_DockingPivot.parent = null;
                     Docking();
                 }
 
@@ -192,15 +191,19 @@ namespace ArchimedesMiniGame
 
         private void Docking()
         {
+
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, m_RotationDestination, Time.deltaTime);
             Vector3 distanceBefore = m_DockingPivot.position - transform.position;
-            m_DockingPivot.position = Vector3.Lerp(m_DockingPivot.position, m_DockingPoint.DockingPivot.position, 1 * Time.deltaTime);
+            m_DockingPivot.position = Vector3.Lerp(m_DockingPivot.position, m_DockingPoint.DockingPivot.position, Time.deltaTime);
             transform.position = transform.position + ((m_DockingPivot.position - transform.position) - distanceBefore);
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, m_RotationDestination, Time.deltaTime * 2);
-
-
-            if (Vector3.Distance(m_DockingPivot.position, m_DockingPoint.DockingPivot.position) < 0.1f && Vector3.Distance(transform.eulerAngles, m_RotationDestination) < 0.1f)
+            if (Vector3.Distance(transform.eulerAngles, m_RotationDestination) < 0.1f)
             {
-                DockingComplete();
+                
+
+                if (Vector3.Distance(m_DockingPivot.position, m_DockingPoint.DockingPivot.position) < 0.1f)
+                {
+                    DockingComplete();
+                }
             }
         }
 

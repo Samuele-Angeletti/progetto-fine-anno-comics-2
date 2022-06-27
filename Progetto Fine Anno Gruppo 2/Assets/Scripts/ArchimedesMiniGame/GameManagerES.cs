@@ -49,6 +49,9 @@ namespace ArchimedesMiniGame
         [Header("Scene References")]
         [SerializeField] ButtonInteraction m_CommandPlat;
 
+        [Header("VFX")]
+        [SerializeField] List<ParticleSystem> m_Asteroids;
+
         public Module CurrentModule => m_CurrentModule;
         private SavableInfos m_CurrentModuleInfos;
         private void Awake()
@@ -96,14 +99,17 @@ namespace ArchimedesMiniGame
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
                 CheckModuleOnStartEngine(m_CurrentModule);
                 m_CurrentModule = startEngineModule.Module;
+                m_Asteroids.ForEach(x => x.gameObject.SetActive(true));
             }
             else if(message is DockingCompleteMessage)
             {
                 SetNextModuleToCommandPlat();
+                m_Asteroids.ForEach(x => x.gameObject.SetActive(false));
             }
             else if(message is ModuleDestroyedMessage || message is NoBatteryMessage)
             {
                 m_CurrentModuleInfos = m_CurrentModule.GetSavableInfos();
+                m_Asteroids.ForEach(x => x.gameObject.SetActive(false));
             }
             else if(message is PauseGameMessage)
             {
