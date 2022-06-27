@@ -41,8 +41,6 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
         [SerializeField] BackgroundAxe m_Background;
 
-        [Header("BackGround Music")]
-        [SerializeField,ShowScriptableObject] AudioAssetSO currentBackGroundMusic;
 
 
         [Header("Player Settings")]
@@ -62,6 +60,7 @@ namespace MainGame
         private PlayerMovementManager m_Player;
         private ECameras m_ActiveCamera;
         public Archimedes Archimedes => m_Archimedes;
+        
         public bool ZeroGActive
         {
             get => m_ZeroGActive;
@@ -266,6 +265,13 @@ namespace MainGame
         {
             InvokeSave();
             SceneManager.LoadScene(v);
+        }
+
+        public void SetCameraOnPlayer(CinemachineVirtualCamera newCamera)
+        {
+            m_CameraOnPlayer = newCamera;
+            if(m_Player != null)
+                m_CameraOnPlayer.Follow = m_Player.transform;
         }
     }
 }

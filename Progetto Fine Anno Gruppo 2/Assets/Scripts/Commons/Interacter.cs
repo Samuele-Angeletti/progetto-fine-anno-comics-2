@@ -1,3 +1,4 @@
+using MainGame;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,11 +22,12 @@ namespace Commons
 
         public bool InteractionAvailable { get; private set; }
         public Interactable CurrentInteractable => m_CurrentInteractable;
-
+        private PlayerMovementManager m_Main;
         private void Awake()
         {
             m_Text = m_UIText.GetComponentInChildren<TextMeshProUGUI>();
             m_Background = m_UIText.GetComponentInChildren<RawImage>();
+            m_Main = GetComponent<PlayerMovementManager>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +50,7 @@ namespace Commons
                     m_TimePassed = 0;
                     AddColorToUI(0);
                 }
-                
+
             }
         }
 
@@ -65,7 +67,6 @@ namespace Commons
                 m_TimePassed = 0;
                 InteractionAvailable = false;
             }
-
         }
 
         public Interactable GetInteractable()

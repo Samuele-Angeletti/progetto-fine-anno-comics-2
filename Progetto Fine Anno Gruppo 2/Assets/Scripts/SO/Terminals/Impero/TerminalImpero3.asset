@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalImpero3
+  m_EditorClassIdentifier: 
+  Title: 'Rapporto: INDAGINE FUGA DI NOTIZIE '
+  ProgressiveNumber: III
+  Content: "Giorno: 13 Luglio (calendario standard terrestre)\r\nLuogo: Okeanos,
+    sistema Cursa, costellazione dell\u2019Eridano\n\nDalla mia ultima indagine si
+    sono presentate nuove prove e possibili indiziati, stando a quanto mi dicono
+    gli investigatori assoldati dalla nobilt\xE0 imperiale e assegnati alla mia nave.
+    In primis, a quanto pare ad orchestrare la fuga di notizie pare fosse un tale
+    Alonso Gutierrez, nobile minore imperiale e gestore di un\u2019azienda dedita
+    alla produzione di computer per i militari, gi\xE0 sospettato da tempo di essere
+    in combutta con la Triarchia date le sue opinioni riguardo [CENSORED]. Da quando
+    le indagini sono partite, per\xF2, lui \xE8 stato coinvolto in un incidente con
+    la sua aero-limousine personale, morendo sul colpo. [CENSORED]. Temo di iniziare
+    ad avere i sospetti su chi possa essere per\xF2 ad aver fatto trapelare queste
+    informazioni cos\xEC sensibili. [CENSORED]. Meglio mi prepari e mandi questi
+    dati ad un mio contatto, seppure probabilmente verr\xF2 punita per questo. [CENSORED].\r\nNel
+    frattempo, sembra che il Contrammiraglio Callistos voglia discutere con me proprio
+    di altre prove venute a galla durante la scrittura di questo rapporto personale.
+    [CENSORED].\r\nLunga vita all\u2019Impero Raniano, vera culla dell\u2019Umanit\xE0.\r"
+  Author: 'Redattore: Capitano di Vascello Irina Mendes, comandante della ISS Persephone '

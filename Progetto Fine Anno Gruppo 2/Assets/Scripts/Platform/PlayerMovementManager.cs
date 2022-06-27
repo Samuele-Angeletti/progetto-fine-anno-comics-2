@@ -56,7 +56,7 @@ namespace MainGame
         public Interacter Interacter => m_Interacter;
         public bool PassingFromZeroG { get; set; }
 
-        private bool m_Flipped = false;
+        public bool Flipped { get; private set; } = false;
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
@@ -157,11 +157,11 @@ namespace MainGame
         public void Movement()
         {
            
-            if (InputDirection.x > 0.001f && m_Flipped)
+            if (InputDirection.x > 0.001f && Flipped)
             {
                 FlipSpriteOnX(false);
             }
-            if (InputDirection.x < -0.001f && !m_Flipped)
+            if (InputDirection.x < -0.001f && !Flipped)
             {
                 FlipSpriteOnX(true);
             }
@@ -185,7 +185,7 @@ namespace MainGame
         {
             Vector3 scale = flipped ? Vector3.back : Vector3.forward;
             Skeleton.gameObject.transform.rotation = Quaternion.LookRotation(scale, Vector3.up);
-            m_Flipped = flipped;
+            Flipped = flipped;
         }
 
 
@@ -241,7 +241,7 @@ namespace MainGame
         public override void Interact()
         {
             
-            if (Rigidbody.velocity.magnitude == 0 && Interacter.InteractionAvailable && StateMachine.CurrentState.GetType() != typeof(InteractingPlayerState))
+            if (Rigidbody.velocity.magnitude == 0 && Interacter.InteractionAvailable && StateMachine.CurrentState.GetType() != typeof(InteractingPlayerState) && StateMachine.CurrentState.GetType() != typeof(SomersaultPlayerState))
             {
                 if (StateMachine.CurrentState.GetType() == typeof(ZeroGPlayerState))
                 {

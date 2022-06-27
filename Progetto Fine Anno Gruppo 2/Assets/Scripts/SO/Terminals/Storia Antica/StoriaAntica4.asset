@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: StoriaAntica4
+  m_EditorClassIdentifier: 
+  Title: La Grande Frattura
+  ProgressiveNumber: 2
+  Content: "Altre generazioni passarono dalla fine della Guerra, e quella che sembrava
+    una nuova era aurea per l\u2019Impero Terrestre, creata grazie ai sacrifici della
+    Imperatrice Baahilo e della sua dinastia di successori, si interruppe drasticamente
+    quando partirono delle forti diatribe sulle Intelligenze Artificiali Pensanti
+    nei territori della Cintura di Orione, ossia i sistemi di Alnilak, Alnilam e
+    Mintaka, i pi\xF9 grandi centri di produzione e ricerca robotica e di intelligenze
+    artificiali; i dibattiti si scaldarono a tal punto che si arriv\xF2 presto alle
+    armi, scatenando un nuovo conflitto intragalattico. \r\nChi spar\xF2 per primo
+    \xE8 un ricordo ormai perso nei meandri della storia, se dal tecnofobo e zelante
+    Imperatore Sahal, o dai nuovi leader di questa nazione nascente, i misteriosi,
+    e apparentemente ancora in vita, Protos, Deutero e Tritos, tanto coordinati ed
+    efficienti quanto scaltri e brutali. Ribattezzatisi Triarchia, non si sarebbero
+    fermati fino a che la Terra non avrebbe ceduto alle loro richieste.\r\nSuccessivamente,
+    dopo pochi anni dall\u2019inizio del conflitto, i pianeti orbitanti Ran, conosciuta
+    anche come Epsilon Eridani, stanchi dell\u2019eccessiva tassazione, della assente
+    rappresentazione nel senato Terrestre, nonostante la loro vicinanza al pianeta
+    natale dell\u2019Umanit\xE0, e di essere sfruttati come miniere e cielo aperto,
+    radunarono numerosi altri sistemi alla loro causa e dichiararono a loro volta
+    indipendenza, ribattezzandosi Impero Raniano come spregio nei confronti dei Casati
+    Terrestri.\r\nLe tre fazioni, incapaci o nolenti di potersi capire a vicenda,
+    presto arrivarono allo scontro armato tutte e tre assieme. Le morti furono innumerevoli,
+    le stelle furono colorate di cremisi col sangue dei bilioni di morti, e interi
+    pianeti furono completamente ridotti in polvere di stelle nuovamente, come Marte,
+    lasciando i propri figli, Phobos e Deimos, orfani, a viaggiare in eterno nel
+    cosmo, ormai senza un padre a guidarli. La Terra stessa fu bombardata e ridotta
+    in un deserto di sabbia sconfinato. \r\nLa Terra, per\xF2, perdur\xF2. Dalle
+    ceneri del pianeta primevo, ormai una distesa radioattiva e con antimateria vagante
+    per le sabbie, nacque un movimento religioso, l\u2019Ascendenza. Vedere la culla
+    dell\u2019umanit\xE0 ridotta in quello stato spinse i fedeli a volerla far rinascere,
+    ma gli incubi delle tecnologie avanzate impiegate in quel conflitto che era durato
+    ormai interi decenni, crearono anche a loro volta una forte tecnofobia nei discendenti
+    dei sopravvissuti, oltre ad una forte voglia di rivalsa. Recuperati e impradonitisi
+    di vecchi terraformatori rimasti integri sulla Terra, ricrearono il paradiso
+    primordiale sul pianeta natale della nostra specie, partendo nuovamente verso
+    le stelle, in una crociata alimentata da uno zelo religioso mai visto prima e
+    una sete di vendetta senza fine.\r\nLa Grande Frattura ormai si era compiuta
+    del tutto. L\u2019Umanit\xE0, ormai spaccata in tre fazioni, non avrebbe mai
+    smesso di attaccarsi a vicenda, in un eterno conflitto per la supremazia, mentre
+    discendeva in una decadenza e barbarie sempre pi\xF9 profonde\u2026\r"
+  Author: Khalid lo Storico

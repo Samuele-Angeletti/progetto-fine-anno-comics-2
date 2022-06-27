@@ -30,6 +30,8 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     [HideInInspector] public Sprite spriteAdaPrimaIntegrazione;
     [HideInInspector] public Sprite spriteAdaSecondaIntegrazione;
     [HideInInspector] public Sprite spriteAdaFormaFinale;
+    [HideInInspector] public Sprite vuotoSprite;
+
     [SerializeField] private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
     public bool dialogueIsPlaying = false;
@@ -134,7 +136,14 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         for (int i = 0; i < dialogueToEnqueue.Count; i++)
         {
             m_whoIsSpeakingRightNow.Enqueue(dialogueToEnqueue[i].WhoIsSpeaking);
-            m_dialogueLine.Enqueue($"{ESpeakerTostring(dialogueToEnqueue[i].WhoIsSpeaking)}: " + dialogueToEnqueue[i].DialougueString);
+            if (m_whoIsSpeakingRightNow.Peek() != ESpeaker.Vuoto)
+            {
+                m_dialogueLine.Enqueue($"{ESpeakerTostring(dialogueToEnqueue[i].WhoIsSpeaking)}: " + dialogueToEnqueue[i].DialougueString);
+            }
+            else
+            {
+                m_dialogueLine.Enqueue(dialogueToEnqueue[i].DialougueString);
+            }
         }
         yield return DisplayNextDialogueLine();
 
@@ -168,7 +177,11 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     private void ChangeSpeakerImage()
     {
         ESpeaker whoIsSpeakingRightNow = m_whoIsSpeakingRightNow.Dequeue();
-        if (whoIsSpeakingRightNow == ESpeaker.Reimann)
+        if (whoIsSpeakingRightNow == ESpeaker.Vuoto)
+        {
+
+        }
+        if (whoIsSpeakingRightNow == ESpeaker.Riemann)
         {
             spriteToChange.sprite = spritePlayer;
         }
@@ -193,12 +206,12 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     private string ESpeakerTostring(ESpeaker whoIsSpeaking)
     {
         string currentSpeaker = string.Empty;
-        if (whoIsSpeaking == ESpeaker.Reimann)
+        if (whoIsSpeaking == ESpeaker.Riemann)
         {
             currentSpeaker = "Reimann";
 
         }
-        if (whoIsSpeaking != ESpeaker.Reimann)
+        if (whoIsSpeaking != ESpeaker.Riemann)
         {
             currentSpeaker = "Ada";
         }

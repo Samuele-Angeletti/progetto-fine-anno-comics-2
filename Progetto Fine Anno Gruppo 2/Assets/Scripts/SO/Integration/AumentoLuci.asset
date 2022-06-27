@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: AumentoLuci
   m_EditorClassIdentifier: 
   integrationEvent: 0
+  LightningIncreaser: 0
+  CinematicToPlay: {fileID: 0}
+  SoundToPlay: {fileID: 0}

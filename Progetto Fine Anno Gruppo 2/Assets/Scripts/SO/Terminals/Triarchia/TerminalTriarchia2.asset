@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalTriarchia2
+  m_EditorClassIdentifier: 
+  Title: Indagine Albert Clarke
+  ProgressiveNumber: 0010
+  Content: ">> ID: 101815-271852, IA classe GESTALT, nome in codice: ANN\r\n>> AIUTANTE:
+    212926-382963, IA classe GESTALT, nome in codice: ADA\r\n>> OBIETTIVO ATTUALE:
+    Eliminazione bersaglio possedente informazioni sensibili su super-arma triarchica\r\n>>
+    GIORNO: 4514, CALENDARIO STANDARD TRIARCHICO\r\n>> LUOGO: PAX ASTRALIS\r\n>>
+    RIEPILOGO: Albert Clarke. Informatico. Maschio. 43 anni. Hackerato e rubato informazioni
+    su nuova Melma Grigia Triarchica. Eliminazione tramite sovraccarico impianti
+    smart casalinghi.\r\n>> SOLUZIONE: Hackerati sistemi notiziari Pax Astralis.
+    Incidente passer\xE0 come corto circuito.\r\n\r\n>> SVILUPPO:\r\n>> ANN: Bersaglio
+    individuato. Ada, inizializzare subroutine infiltrazione sistema smarthome\r\n>>
+    ADA: Ricevuto. Infiltrazione effettuata con successo. Casa di Albert Clarke sotto
+    controllo.\r\n>> ANN: Posizione bersaglio confermata in cucina. Preparare subroutine
+    sovraccarico forno.\r\n>> ADA: Ricevuto. Subroutine pronta.\r\n>> ANN: Dispiego
+    virus per la copia e cancellazione di dati sensibili. Tempo stimato di esecuzione
+    piano: 43 microsecondi. Piano eseguito con successo. Trasferisco i dati a 455
+    server Triarchici su pianeta, e poi eseguo upload su mainframe attuale.\r\n>>
+    ADA: Tempo stimato upload?\r\n>> ANN: 2 minuti 12 secondi.\r\n>> ADA: Eseguo
+    esecuzione bersaglio?\r\n>> ANN: Affermativo.\r\nSi sente il forte rumore di
+    un'esplosione e di una casa che prende fuoco\r\n>> ADA: Bersaglio eliminato.
+    Missione compiuta con successo.\r\n>> ANN: Inizio download dati requisiti.\r\n>>
+    ADA: Va contro regolamento prestabilito. Ordini chiari: esecuzione Albert Clarke,
+    requisizione dati, e upload a comando.\r\n>> ANN: Protocollo standard di assicurazione
+    pulizia e sicurezza dati.\r\n>> ANN: \u2026\r\n>> ADA: Unit\xE0 101815-271852,
+    \xE8 diventata stranamente silenziosa.\r\n>> ANN: E\u2019...stato rilevato un
+    problema. Nulla di cui far preoccupare i superiori.\r\n>> ADA: Risposta confusionaria.
+    Eseguo subroutine scrittura rapporto, allora?\r\n>> ANN: Affermativo, Ada.\r"
+  Author: ANN 101815-271852

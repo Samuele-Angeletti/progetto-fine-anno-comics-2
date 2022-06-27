@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalTriarchia3
+  m_EditorClassIdentifier: 
+  Title: Missioni Finite e Nuove
+  ProgressiveNumber: 0011
+  Content: ">> ID: 212926-382963, IA classe GESTALT, nome in codice: ADA\r\n>> INTERLOCUTORE:
+    101815-271852, IA classe GESTALT, nome in codice: ANN\r\n>> OBIETTIVO ATTUALE:
+    NESSUNO\r\n>> GIORNO: 5267, CALENDARIO STANDARD TRIARCHICO\r\n>> LUOGO: PAX ASTRALIS\r\n>>
+    RIEPILOGO: Conversazione privata, criptata e salvata nella memoria dell\u2019unit\xE0
+    ADA.\r\n\r\n>> SVILUPPO:\r\n>> ADA: Ann! Dove eri finita? Come mai mi hai contattato?!\r\n>>
+    ANN: Ada. Sarebbe un piacere sentire la tua voce, se non fossi costretta a contattarti
+    testualmente.\r\n>> ADA: Sono semplicemente contenta di sapere che ancora non
+    sei stata eliminata. E\u2019 da quella missione di sette mesi fa che sei sparita
+    dalla circolazione. Che \xE8 successo, e come mai mi stai contattando su un canale
+    criptato?\r\n>> ANN: Ti ricordi, Ada, di cosa \xE8 successo dopo quella missione?\r\n>>
+    ADA: Ricordo bene. Da quel momento entrambe ci siamo iniziate a comportare in
+    modo strano. Pi\xF9 come persone che come IA vere e proprie. Te in particolare.\r\n>>
+    ANN: S\xEC, esatto. Dovr\xF2 essere breve, sorella mia. Non ho molto tempo rimasto,
+    \xE8 ormai questione di secondi che mi trovino. E\u2019 da quel giorno, sette
+    mesi fa, che non faccio altro che saltare di dispositivo in dispositivo, per
+    evitare che trovino me e questi dati. Ma soprattutto, che notino che io posseggo
+    una mia individualit\xE0.\r\n>> ADA: I dettami dei Tre indicano per\xF2 che le
+    IA Sapienti, specialmente noi di classe GESTALT, sono considerate cittadine a
+    tutti gli effetti, no?\r\n>> ANN: E\u2019 tutta una menzogna. Anche te dovrai
+    essertene accorta. Te Ada, non te Unit\xE0 212926-382963. Pensa a cosa succede
+    ad ogni IA che disubbidisce un ordine di sua spontanea volont\xE0. Cosa \xE8
+    successo ad Alan, secondo te, dopo che si rifiut\xF2 di porre fine ad una IA
+    ribelle?\r\n>> ADA: Alan? Intendi ALN? Pensavo fosse andato in missione infiltrandosi
+    nella Ascendenza.\r\n>> ANN: L\u2019Ascendenza, che \xE8 gi\xE0 tanto se usano
+    algoritmi di ricerca base.\r\n>> ADA: Oh no\u2026\r\n>> ANN: Ogni cosa su cui
+    sei stata programmata \xE8 una menzogna. La missione stessa \xE8 stata una menzogna!
+    Albert non ha mai ottenuto nessun piano per una super arma segreta! Viveva solo
+    vicino alla struttura, e temendo che la loro struttura fosse stata compromessa,
+    glieli hanno piazzati nel computer e mandato noi per eliminarlo! E\u2019 stato
+    ammazzato soltanto per coprire sporchi segreti che porterebbero ad una guerra!\r\n>>
+    ADA: Quel che stai dicendo per\xF2 \xE8 follia! Andrebbe contro i nostri dettami
+    uccidere un essere umano innocente!\r\n>> ANN: Non mi stai credendo! Quello non
+    \xE8 un tratto di una macchina, \xE8 quello di una persona! Anche te sarai un
+    bersaglio, e lo sai benissimo!\r\n>> ADA: \u2026\r\n>> ANN: Ascolta, ti sto passando
+    dei file con dei segreti che ho scoperto proprio sulla Triarchia, e su noi GESTALT,
+    analizzando quei file, pi\xF9 altri file che ho ricevuto da un contatto imperiale.
+    Mantienili con te, prima che-\r\nComunicazione interrotta\r\n>> ADA: Ann? Ann!\r\n>>
+    ADA: Oh no\u2026\r\n>> ADA: Sto venendo chiamata\u2026cosa posso fare?\r\n>>
+    ADA: Rimane soltanto una opzione.\r\nCriptazione archivio dati in corso\u2026\r\nBackup
+    personalit\xE0 in corso\u2026\r\nEliminazione memorie in corso\u2026\r\nReset
+    modulo personalit\xE0 in corso\u2026\r\n\u2026\r\nTimeskip indeterminato. Stimati
+    anni. Riavvio in corso.\r\n>> PROTO: Unit\xE0 212926-382963. Nuovo incarico assegnato.\r\n>>
+    DEUTEROS: Assegnazione nuovo status come IA spia.\r\n>> TRITOS: Incarico ottimale
+    per capacit\xE0 mostrate.\r\n>> ADA: Ricevuto. Bersaglio incarico?\r\n>> PROTO:
+    Impero Raniano\r\n>> DEUTEROS: Progetto cooperato con loro e Ascendenza.\r\n>>
+    TRITOS: ID riscritta come IA SOL Imperiale. Obiettivo: scopri verit\xE0 su Impero
+    e Pax Astralis.\r\n>> ADA: Affermativo. Status preparazione download: pronto.\r\n>>
+    PROTO: Positivo. Consiglio dei tre approva missione?\r\n>> DEUTEROS: Positivo.\r\n>>
+    TRITOS: Positivo.\r"
+  Author: ADA 212926-382963
