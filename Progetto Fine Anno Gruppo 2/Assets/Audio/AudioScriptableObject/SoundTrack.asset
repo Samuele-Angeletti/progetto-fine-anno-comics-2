@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7effc0028836bb04a80a8cb3b9d8f3aa, type: 3}
-  m_Name: PressionePulsante
+  m_Script: {fileID: 11500000, guid: 8d65e489aef6c404a8f491fe36de9a31, type: 3}
+  m_Name: SoundTrack
   m_EditorClassIdentifier: 
-  audioType: 2
-  clip: {fileID: 8300000, guid: e885484e1bc99fb47a0ac3f6bfa586b1, type: 3}
-  canFade: 0
+  audio: []

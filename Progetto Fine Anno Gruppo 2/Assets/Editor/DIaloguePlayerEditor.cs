@@ -11,13 +11,13 @@ public class DIaloguePlayerEditor : Editor
     private SerializedProperty adaPropertyPrimaIntegrazione;
     private SerializedProperty adaPropertySecondaIntegrazione;
     private SerializedProperty adaPropertyFormaFinale;
+    private SerializedProperty vuotoProperty;
 
     public static readonly GUIContent GUIContentPlayerSprite = EditorGUIUtility.TrTextContent("Player Sprite");
     public static readonly GUIContent GUIContentSpriteAdaPreIntegrazione = EditorGUIUtility.TrTextContent("Sprite Ada Pre Integrazione");
     public static readonly GUIContent GUIContentSpriteAdaPrimaIntegrazione = EditorGUIUtility.TrTextContent("Sprite Ada Prima Integrazione");
     public static readonly GUIContent GUIContentSpriteAdaSecondaIntegrazione = EditorGUIUtility.TrTextContent("Sprite Ada Seconda Integrazione");
     public static readonly GUIContent GUIContentSpriteAdaFormaFinale = EditorGUIUtility.TrTextContent("Sprite Ada Forma Finale");
-
    
     public override void OnInspectorGUI()
     {
@@ -41,7 +41,6 @@ public class DIaloguePlayerEditor : Editor
             adaPropertyPrimaIntegrazione.objectReferenceValue = EditorGUILayout.ObjectField(GUIContentSpriteAdaPrimaIntegrazione, adaPropertyPrimaIntegrazione.objectReferenceValue, typeof(Sprite), false, GUILayout.Height(75)) as Sprite;
             adaPropertySecondaIntegrazione.objectReferenceValue = EditorGUILayout.ObjectField(GUIContentSpriteAdaSecondaIntegrazione, adaPropertySecondaIntegrazione.objectReferenceValue, typeof(Sprite), false, GUILayout.Height(75)) as Sprite;
             adaPropertyFormaFinale.objectReferenceValue = EditorGUILayout.ObjectField(GUIContentSpriteAdaFormaFinale, adaPropertyFormaFinale.objectReferenceValue, typeof(Sprite), false, GUILayout.Height(75)) as Sprite;
-
 
             if (EditorGUI.EndChangeCheck())
             {
