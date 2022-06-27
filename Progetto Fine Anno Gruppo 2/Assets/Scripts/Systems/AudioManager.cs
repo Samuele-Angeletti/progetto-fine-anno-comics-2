@@ -50,17 +50,17 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        ChangeBackgroundMusic(ESoundTrackType.MusicaMenùPrincipale);
-        PlayBackGroundMusic();
-    }
+    //private void Start()
+    //{
+    //    ChangeBackgroundMusic(ESoundTrackType.MusicaMenùPrincipale);
+    //    PlayBackGroundMusic();
+    //}
 
-    private void Update()
-    {
-        ChangeVolumeMusic(currentMusicVolume);
-        ChangeVolumeSFX(currentSFXVolume);
-    }
+    //private void Update()
+    //{
+    //    ChangeVolumeMusic(currentMusicVolume);
+    //    ChangeVolumeSFX(currentSFXVolume);
+    //}
 
 
     #endregion
@@ -76,55 +76,55 @@ public class AudioManager : MonoBehaviour
 
 
 
-    private void OnValidate()
-    {
-        for (int i = 0; i < m_soundTracArray.Length; i++)
-        {
-            if (m_soundTracArray[i].mixerGroup == null)
-                m_soundTracArray[i].mixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
-        }
+    //private void OnValidate()
+    //{
+    //    for (int i = 0; i < m_soundTracArray.Length; i++)
+    //    {
+    //        if (m_soundTracArray[i].mixerGroup == null)
+    //            m_soundTracArray[i].mixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+    //    }
         
 
-    }
+    //}
 
-    public void ChangeVolumeSFX(float value)
-    {
-        m_audioMixer.SetFloat("SFX", value);
-    }
-    public void ChangeVolumeMusic(float value)
-    {
-        m_audioMixer.SetFloat("BackGroundMusic", value);
+    //public void ChangeVolumeSFX(float value)
+    //{
+    //    m_audioMixer.SetFloat("SFX", value);
+    //}
+    //public void ChangeVolumeMusic(float value)
+    //{
+    //    m_audioMixer.SetFloat("BackGroundMusic", value);
     
-    }
-    public void ChangeVolumeAmbience(float value)
-    {
-        m_audioMixer.SetFloat("AmbientSound", value);
+    //}
+    //public void ChangeVolumeAmbience(float value)
+    //{
+    //    m_audioMixer.SetFloat("AmbientSound", value);
 
-    }
-    public void ChangeMasterVolume(float value)
-    {
-        m_audioMixer.SetFloat("Master", value);
-    }
-    public static AudioClip GetRandomAudioClip(AudioClip[] audioClips)
-    {
-        return  audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
-    }
-    public void PlayBackGroundMusic()
-    {
-        m_musicAudioSource.Play();
-    }
-    public void StopBackGroundMusic()
-    {
-        m_musicAudioSource.Stop();
-    }
-    public void ChangeBackgroundMusic(ESoundTrackType soundTrackType)
-    {
-        for (int i = 0; i < m_soundTracArray.Length; i++)
-        {
-            if (m_soundTracArray[i].soundTrack == soundTrackType)
-            {
-                m_musicAudioSource.clip = m_soundTracArray[i].audioToPlay;
-            }
-        }
-    }
+    //}
+    //public void ChangeMasterVolume(float value)
+    //{
+    //    m_audioMixer.SetFloat("Master", value);
+    //}
+    //public static AudioClip GetRandomAudioClip(AudioClip[] audioClips)
+    //{
+    //    return  audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
+    //}
+    //public void PlayBackGroundMusic()
+    //{
+    //    m_musicAudioSource.Play();
+    //}
+    //public void StopBackGroundMusic()
+    //{
+    //    m_musicAudioSource.Stop();
+    //}
+    //public void ChangeBackgroundMusic(ESoundTrackType soundTrackType)
+    //{
+    //    for (int i = 0; i < m_soundTracArray.Length; i++)
+    //    {
+    //        if (m_soundTracArray[i].soundTrack == soundTrackType)
+    //        {
+    //            m_musicAudioSource.clip = m_soundTracArray[i].audioToPlay;
+    //        }
+    //    }
+    //}
 }
