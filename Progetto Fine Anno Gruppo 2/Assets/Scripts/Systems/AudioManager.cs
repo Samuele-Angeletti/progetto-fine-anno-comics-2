@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
+[DisallowMultipleComponent,]
 public class AudioManager : MonoBehaviour 
 {
     #region SINGLETONE
@@ -30,6 +31,12 @@ public class AudioManager : MonoBehaviour
    
     private void Awake()
     {
+        Initialize();
+
+    }
+
+    private void Initialize()
+    {
         if (m_instance == null)
         {
             m_instance = this;
@@ -37,14 +44,23 @@ public class AudioManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
+        m_musicAudioSource = GetComponent<AudioSource>();
+        m_musicAudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
 
-        
     }
 
-   
 
+    private void Start()
+    {
+        ChangeBackgroundMusic(ESoundTrackType.MusicaMenùPrincipale);
+        PlayBackGroundMusic();
+    }
 
-
+    private void Update()
+    {
+        ChangeVolumeMusic(currentMusicVolume);
+        ChangeVolumeSFX(currentSFXVolume);
+    }
 
 
     #endregion
@@ -52,61 +68,32 @@ public class AudioManager : MonoBehaviour
     private AudioSource m_musicAudioSource;
     
     [SerializeField] AudioMixer m_audioMixer;
-    [SerializeField] List<AudioMixerGroup> m_groups;
-    [SerializeField, Range(0f, 1f)] float currentSFXVolume;
-    [SerializeField, Range(0f, 1f)] float currentMusicVolume;
+    [SerializeField] Audio[] m_soundTracArray;
+    [SerializeField, Range(-80f, 20f)] float currentSFXVolume;
+    [SerializeField, Range(-80f, 20f)] float currentMusicVolume;
     [Space(10)]
     [SerializeField] List<AudioSource> m_audioPresentiInScena;
 
 
-    
-    private void GetAllAudioSourceInCurrentScene(Scene scene, LoadSceneMode mode)
-    {
-        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
-        {
-            m_audioPresentiInScena.Add(audio);
-        }
-    }
-    private void RemoveAllAudioSourceInCurrentScene(Scene scene)
-    {
-        m_groups.Clear();
-    }
+
     private void OnValidate()
     {
-        if (m_audioMixer != null)
+        for (int i = 0; i < m_soundTracArray.Length; i++)
         {
-            foreach (var mixerGroups in m_audioMixer.FindMatchingGroups("Master"))
-            {
-                if (!m_groups.Find(x => x == mixerGroups))
-                {
-                    m_groups.Add(mixerGroups);
-                }
+            if (m_soundTracArray[i].mixerGroup == null)
+                m_soundTracArray[i].mixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+        }
+        
 
-            }
-        }
-        else if (m_audioMixer == null)
-        {
-            m_groups.Clear();
-        }
-       
     }
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += GetAllAudioSourceInCurrentScene;
-        SceneManager.sceneUnloaded += RemoveAllAudioSourceInCurrentScene;
-    }
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= GetAllAudioSourceInCurrentScene;
-        SceneManager.sceneUnloaded -= RemoveAllAudioSourceInCurrentScene;
-    }
+
     public void ChangeVolumeSFX(float value)
     {
-        m_audioMixer.SetFloat("SFX",Mathf.Log10(value)*20);
+        m_audioMixer.SetFloat("SFX", value);
     }
     public void ChangeVolumeMusic(float value)
     {
-        m_audioMixer.SetFloat("BackGroundMusic",value);
+        m_audioMixer.SetFloat("BackGroundMusic", value);
     
     }
     public void ChangeVolumeAmbience(float value)
@@ -118,5 +105,26 @@ public class AudioManager : MonoBehaviour
     {
         m_audioMixer.SetFloat("Master", value);
     }
-
+    public static AudioClip GetRandomAudioClip(AudioClip[] audioClips)
+    {
+        return  audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
+    }
+    public void PlayBackGroundMusic()
+    {
+        m_musicAudioSource.Play();
+    }
+    public void StopBackGroundMusic()
+    {
+        m_musicAudioSource.Stop();
+    }
+    public void ChangeBackgroundMusic(ESoundTrackType soundTrackType)
+    {
+        for (int i = 0; i < m_soundTracArray.Length; i++)
+        {
+            if (m_soundTracArray[i].soundTrack == soundTrackType)
+            {
+                m_musicAudioSource.clip = m_soundTracArray[i].audioToPlay;
+            }
+        }
+    }
 }
