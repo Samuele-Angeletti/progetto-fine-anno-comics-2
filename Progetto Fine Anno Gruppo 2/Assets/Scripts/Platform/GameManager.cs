@@ -39,6 +39,7 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnPlayer;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
+        [SerializeField] CinemachineVirtualCamera m_CameraOnTransition;
         [SerializeField] BackgroundAxe m_Background;
 
 
@@ -54,6 +55,7 @@ namespace MainGame
 
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
+
 
         private PlayerInputSystem m_PlayerInputs;
         private bool m_ZeroGActive;
@@ -185,6 +187,7 @@ namespace MainGame
             if (m_Controllable.GetComponent<PlayerMovementManager>() == null)
             {
                 m_CameraOnPlayer.Follow = m_Player.transform;
+                m_CameraOnTransition.Follow = m_Player.transform;
                 SetNewControllable(m_Player);
             }
         }
@@ -270,8 +273,11 @@ namespace MainGame
         public void SetCameraOnPlayer(CinemachineVirtualCamera newCamera)
         {
             m_CameraOnPlayer = newCamera;
-            if(m_Player != null)
+            if (m_Player != null)
+            {
                 m_CameraOnPlayer.Follow = m_Player.transform;
+                m_CameraOnTransition.Follow = m_Player.transform;
+            }
         }
     }
 }
