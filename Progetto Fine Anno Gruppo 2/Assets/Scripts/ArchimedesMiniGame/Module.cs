@@ -1,3 +1,4 @@
+using Cinemachine;
 using Commons;
 using MainGame;
 using PubSub;
@@ -13,6 +14,7 @@ namespace ArchimedesMiniGame
         [SerializeField] GameObject m_MapParent;
         [SerializeField] Transform m_DockingPivot;
         [SerializeField] Transform m_DestinationDockingPoint;
+        [SerializeField] CinemachineVirtualCamera m_MyCameraOnPlayer; 
         [Space(10)]
         [Header("Main settings")]
         [SerializeField] float m_Acceleration;
@@ -318,6 +320,7 @@ namespace ArchimedesMiniGame
             m_DockingPivot.transform.parent = gameObject.transform;
             m_EngineOn = false;
 
+            SetCameraToGameManager();
             Damager d = gameObject.AddComponent<Damager>();
             Damager archimedesDamager = GameManager.Instance.Archimedes.GetComponent<Damager>();
             d.Initialize(archimedesDamager.DamageAmount, archimedesDamager.LayerMask);
@@ -397,6 +400,11 @@ namespace ArchimedesMiniGame
         private void OnDestroy()
         {
             OnDisableSubscribe();
+        }
+
+        public void SetCameraToGameManager()
+        {
+            GameManager.Instance.SetCameraOnPlayer(m_MyCameraOnPlayer);
         }
     }
 }
