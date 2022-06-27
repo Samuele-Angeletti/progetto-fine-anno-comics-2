@@ -510,7 +510,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioMixer: {fileID: 24100000, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
-  m_soundTracArray: []
+  m_soundTrackArray:
+  - soundTrack: 0
+    musicToPlay: {fileID: 0}
+    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
+  - soundTrack: 1
+    musicToPlay: {fileID: 0}
+    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
+  - soundTrack: 0
+    musicToPlay: {fileID: 0}
+    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
+  m_ambienceAudioArray: []
   currentSFXVolume: 0
   currentMusicVolume: 0
   m_audioPresentiInScena: []

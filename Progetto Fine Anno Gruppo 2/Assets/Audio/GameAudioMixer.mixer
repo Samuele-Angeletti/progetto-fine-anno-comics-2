@@ -31,13 +31,13 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 388c901008d8a0747ac6b67482666811
-    name: MyExposedParam 3
+    name: AmbientSound
   - guid: b07d522f0c30942428ea149acbaeeabf
     name: BackGroundMusic
   - guid: 01f9a927efe88b540a8fce0d57c50d1c
-    name: MyExposedParam 2
+    name: Master
   - guid: 6c37cfa328576e044896cff64bb4dad4
-    name: MyExposedParam 1
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - 6f3cdd7f76bf95d408bd473ce7b5dd60

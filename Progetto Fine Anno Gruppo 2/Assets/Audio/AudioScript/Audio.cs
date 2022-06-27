@@ -7,14 +7,14 @@ using UnityEngine.Audio;
 public struct Audio
 {
     public ESoundTrackType soundTrack;
-    public AudioClip audioToPlay;
+    public AudioClip musicToPlay;
     public AudioMixerGroup mixerGroup;
 }
 
 public enum ESoundTrackType
 {
-    MusicaMenùPrincipale,
+    MusicaMenuPrincipale,
     MusicaIntroduzione,
-    MusicaPrimoAtracco,
+    MusicaPrimoAttracco,
     
 }
