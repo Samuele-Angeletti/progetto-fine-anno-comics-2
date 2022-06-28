@@ -13,7 +13,7 @@ public class SpeakerAndListener : MonoBehaviour
         m_dialoguetrigger = collision.GetComponent<DialogueTrigger>();
         m_audioTrigger = collision.GetComponent<AudioTrigger>();
 
-        if (m_dialoguetrigger != null && m_audioTrigger != null && m_dialoguetrigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
+        if (m_dialoguetrigger != null  && m_dialoguetrigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter || m_audioTrigger != null)
         {
             PubSub.PubSub.Publish(new OnTriggerEnterMessage());
         }

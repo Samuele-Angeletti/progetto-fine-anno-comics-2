@@ -24,6 +24,7 @@ public class DialogueTrigger : Interactable, ISubscriber
 
     private void Start()
     {
+
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterMessage));
         PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
@@ -52,13 +53,12 @@ public class DialogueTrigger : Interactable, ISubscriber
     {
         if (message is EndDialogueMessage)
         {
-                Destroy(gameObject);
         }
 
         else if (message is CurrentDialogueFinishedMessage)
         {
             if (CanRepeatLastDialogue && m_dialogueToShow.Count == 1) return;
-            if (m_dialogueToShow.Count > 0) m_dialogueToShow.RemoveAt(0);
+            if (m_dialogueToShow.Count > 0 && !DialoguePlayer.Instance.standardMessageIsPlaying) m_dialogueToShow.RemoveAt(0);
             if (m_dialogueToShow.Count == 0)PubSub.PubSub.Publish(new EndDialogueMessage());
 
         }
