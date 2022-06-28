@@ -30,6 +30,7 @@ namespace ArchimedesMiniGame
         [SerializeField] float m_UseSpeed;
         [Space(10)]
         [SerializeField] Transform m_BurstPivot;
+        [SerializeField] ParticleSystem m_BurstVFXPrefab;
 
         private float m_CurrentBattery;
         private Rigidbody2D m_Rigidbody;
@@ -49,6 +50,7 @@ namespace ArchimedesMiniGame
         public Transform DockingPoint => m_DockingSide.transform;
         private SpriteTransition m_SpriteTransition;
         private bool m_EngineOn;
+        private ParticleSystem m_SpawnedEffect;
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -103,10 +105,19 @@ namespace ArchimedesMiniGame
                     {
                         UseBattery();
                         UpdateBurstPivot();
+                        SpawnVFX();
                     }
                     else
                     {
-                        if (m_BurstPivot.gameObject.activeSelf) m_BurstPivot.gameObject.SetActive(false);
+                        if (m_BurstPivot.gameObject.activeSelf)
+                        {
+                            if(m_SpawnedEffect != null)
+                            {
+                                m_SpawnedEffect.transform.parent = null;
+                                m_SpawnedEffect.Stop();
+                            }
+                            m_BurstPivot.gameObject.SetActive(false);
+                        }
                     }
 
                     if (m_Rigidbody.velocity.x >= m_MaxSpeed)
@@ -179,6 +190,8 @@ namespace ArchimedesMiniGame
                 m_BurstPivot.eulerAngles = transform.eulerAngles + new Vector3(0, 0, 180);
 
             }
+
+
         }
 
         private void LateUpdate()
@@ -262,6 +275,8 @@ namespace ArchimedesMiniGame
             if (m_CurrentBattery > 0)
             {
                 m_Direction = transform.forward - new Vector3(newDirection.x, newDirection.y);
+
+
             }
         }
 
@@ -420,6 +435,15 @@ namespace ArchimedesMiniGame
         public void SetCameraToGameManager()
         {
             GameManager.Instance.SetCameraOnPlayer(m_MyCameraOnPlayer);
+        }
+
+        public void SpawnVFX()
+        {
+            if (m_SpawnedEffect == null)
+            {
+                m_SpawnedEffect = Instantiate(m_BurstVFXPrefab, m_BurstPivot.transform);
+                Destroy(m_SpawnedEffect.gameObject, 5f);
+            }
         }
     }
 }

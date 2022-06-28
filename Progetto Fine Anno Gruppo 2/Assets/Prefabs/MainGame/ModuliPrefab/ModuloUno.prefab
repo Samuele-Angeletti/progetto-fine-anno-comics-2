@@ -19278,6 +19278,7 @@ MonoBehaviour:
   m_MaxBattery: 100
   m_UseSpeed: 5
   m_BurstPivot: {fileID: 2077875576}
+  m_BurstVFXPrefab: {fileID: 0}
 --- !u!114 &6367788920271027284
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -60,6 +60,8 @@ MonoBehaviour:
   m_CameraOnPlayer: {fileID: 0}
   m_CameraOnModule: {fileID: 0}
   m_CameraOnModuleFocused: {fileID: 0}
+  m_CameraOnTransition: {fileID: 0}
+  m_Background: {fileID: 0}
   m_Controllable: {fileID: 0}
   m_ButtonInteractionSO:
   - {fileID: 11400000, guid: e0107090e4d5e994899f6334f1006c77, type: 2}
@@ -69,4 +71,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 231fcb5f399929e439f6e255a3dd85c1, type: 2}
   - {fileID: 11400000, guid: 257d9feaedfe7d840a7f4f34e11a7ffb, type: 2}
   - {fileID: 11400000, guid: a0f4cdc36dadf884fa0da405c68e3876, type: 2}
+  - {fileID: 11400000, guid: e177319f482ec1b4ebfe627f722e61e2, type: 2}
+  m_Archimedes: {fileID: 0}
   m_ElapsedTimeZeroG: {fileID: 0}

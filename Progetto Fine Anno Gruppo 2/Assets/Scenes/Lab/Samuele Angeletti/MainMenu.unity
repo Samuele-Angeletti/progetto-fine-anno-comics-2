@@ -335,11 +335,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8775931993629476770, guid: 18ec53269fa210a4883f91ebda400325, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.98999
+      value: 11.3
       objectReference: {fileID: 0}
     - target: {fileID: 8775931993629476770, guid: 18ec53269fa210a4883f91ebda400325, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.98999
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 8775931993629476770, guid: 18ec53269fa210a4883f91ebda400325, type: 3}
       propertyPath: m_LocalPosition.z
@@ -510,17 +510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioMixer: {fileID: 24100000, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
-  m_soundTrackArray:
-  - soundTrack: 0
-    musicToPlay: {fileID: 0}
-    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
-  - soundTrack: 1
-    musicToPlay: {fileID: 0}
-    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
-  - soundTrack: 0
-    musicToPlay: {fileID: 0}
-    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
-  m_ambienceAudioArray: []
+  m_soundTrackArray: {fileID: 0}
+  m_ambienceAudioArray: {fileID: 0}
   currentSFXVolume: 0
   currentMusicVolume: 0
   m_audioPresentiInScena: []
@@ -899,7 +890,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: 0ff7b2fa77b11464d86ea46942738e87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
