@@ -64691,6 +64691,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_ActiveGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4237420647700527324, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: m_Name
       value: Door
@@ -64780,7 +64800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982622388453702750, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.5
+      value: -14.506
       objectReference: {fileID: 0}
     - target: {fileID: 4982622388453702750, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65363,6 +65383,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_ActiveGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4237420647504023776, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.43
@@ -65582,6 +65622,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_ActiveGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4237420647700527324, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: m_Name
       value: Door
@@ -65797,6 +65857,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_ActiveGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: InterestedObject
       value: 
@@ -66981,9 +67061,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
     - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_ActiveGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: InterestedObject
       value: 
       objectReference: {fileID: 288499178050987118}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_TransitionSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_RevertOnTriggerExit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420647504023776, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.62
+      objectReference: {fileID: 0}
     - target: {fileID: 4237420647700527324, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: m_Name
       value: Door
@@ -67121,9 +67233,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
     - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_ActiveGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: InterestedObject
       value: 
       objectReference: {fileID: 288499177186144093}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_TransitionSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_RevertOnTriggerExit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420647504023776, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4237420647700527324, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: m_Name
       value: Door
@@ -67268,6 +67412,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_LineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237420646932340599, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
+      propertyPath: m_ActiveGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4237420647700527324, guid: e14c96cc405b9fe48a6418b4cb3c08b5, type: 3}
       propertyPath: m_Name
       value: Door

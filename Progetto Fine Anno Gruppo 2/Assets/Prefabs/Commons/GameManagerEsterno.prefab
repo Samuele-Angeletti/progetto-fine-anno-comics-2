@@ -49,4 +49,12 @@ MonoBehaviour:
   m_MaxSpeedSlider: {fileID: 0}
   m_AccelerationSlider: {fileID: 0}
   m_DockingAttemptButton: {fileID: 0}
-  m_FileName: 
+  m_LogMessageHandler: {fileID: 0}
+  m_Modules:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_CommandPlat: {fileID: 0}
+  m_Asteroids:
+  - {fileID: 0}
+  - {fileID: 0}
