@@ -2988,95 +2988,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8246978869723323071, guid: 8d1845c6a88f4154796175238169a534, type: 3}
   m_PrefabInstance: {fileID: 1686890883}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1722484366
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2068696797730342472, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_Name
-      value: DialoguePlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.503004
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.46061122
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.09355867
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342518, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: dialogueBox
-      value: 
-      objectReference: {fileID: 1114327274}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: textToWrite
-      value: 
-      objectReference: {fileID: 1568975209}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_PlayerInputs
-      value: 
-      objectReference: {fileID: 1170036573}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: spriteToChange
-      value: 
-      objectReference: {fileID: 2147427042}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: ContinueMessage
-      value: 
-      objectReference: {fileID: 1225229477}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_StandardMsgStartEngine
-      value: 
-      objectReference: {fileID: 11400000, guid: 2821d6803e25fdb4e9cd0e9de1bd6760, type: 2}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_StandardMsgDockingComplete
-      value: 
-      objectReference: {fileID: 11400000, guid: e8ad5b5e78eff0a45b2ec3e099794243, type: 2}
-    - target: {fileID: 2068696797730342519, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
-      propertyPath: m_StandardMsgModuleDestroyed
-      value: 
-      objectReference: {fileID: 11400000, guid: 3b28fff3c0671704b91128a8d87cf061, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 47483c861f6b00b4d9dbd3b7d34917a0, type: 3}
 --- !u!114 &1762059506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3202,7 +3113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 2111603881}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!4 &1788496803 stripped

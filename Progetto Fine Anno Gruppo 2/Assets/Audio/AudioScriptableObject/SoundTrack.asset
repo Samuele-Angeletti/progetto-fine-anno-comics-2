@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d65e489aef6c404a8f491fe36de9a31, type: 3}
   m_Name: SoundTrack
   m_EditorClassIdentifier: 
-  audio: []
+  audioToSend:
+    musicToPlay: {fileID: 0}
+    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}

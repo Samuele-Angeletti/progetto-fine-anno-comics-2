@@ -1,13 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
+using PubSub;
+using System.Collections.Generic;
+using System.Collections;
 
-[DisallowMultipleComponent,]
-public class AudioManager : MonoBehaviour 
+[DisallowMultipleComponent]
+public class AudioManager : MonoBehaviour, ISubscriber
 {
     #region SINGLETONE
     private static AudioManager m_instance;
@@ -44,40 +44,30 @@ public class AudioManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
-        m_musicAudioSource = GetComponent<AudioSource>();
-        m_musicAudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+        m_firstAudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+        m_secondAudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
 
     }
 
 
-    //private void Start()
-    //{
-    //    ChangeBackgroundMusic(ESoundTrackType.MusicaMenùPrincipale);
-    //    PlayBackGroundMusic();
-    //}
 
-    //private void Update()
-    //{
-    //    ChangeVolumeMusic(currentMusicVolume);
-    //    ChangeVolumeSFX(currentSFXVolume);
-    //}
 
 
     #endregion
+    private AudioSource m_currentAudioSource;
+    private AudioClip m_currentPlayingMusic;
+    private int audioIndex;
+    private Dictionary<int, AudioSource> m_audioSourcesWithIndex;
 
-    private AudioSource m_musicAudioSource;
-    
+    [SerializeField] AudioSource m_firstAudioSource;
+    [SerializeField] AudioSource m_secondAudioSource;
+
     [SerializeField] AudioMixer m_audioMixer;
-    [SerializeField,ShowScriptableObject] AudioHolder m_soundTrackArray;
-    [SerializeField,ShowScriptableObject] AudioHolder m_ambienceAudioArray;
-    [SerializeField, Range(-80f, 20f)] float currentSFXVolume;
-    [SerializeField, Range(-80f, 20f)] float currentMusicVolume;
-    [Space(10)]
-    [SerializeField] List<AudioSource> m_audioPresentiInScena;
+    [SerializeField] float fadinTime;
+    [SerializeField] float targetVolume;
 
+    
 
-
-   
     public void ChangeVolumeSFX(float value)
     {
         m_audioMixer.SetFloat("SFX", value);
@@ -96,26 +86,49 @@ public class AudioManager : MonoBehaviour
     {
         m_audioMixer.SetFloat("Master", value);
     }
-    public static AudioClip GetRandomAudioClip(AudioClip[] audioClips)
+   
+    
+
+    public void OnPublish(IMessage message)
     {
-        return audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
-    }
-    public void PlayBackGroundMusic()
-    {
-        m_musicAudioSource.Play();
-    }
-    public void StopBackGroundMusic()
-    {
-        m_musicAudioSource.Stop();
-    }
-    public void ChangeBackgroundMusic(ESoundTrackType soundTrackType)
-    {
-        for (int i = 0; i < m_soundTrackArray.audioArray.Length; i++)
+        if (message is SendAudioMessage)
         {
-            if (m_soundTrackArray.audioArray[i].soundTrack == soundTrackType)
+            AudioHolder audio = (AudioHolder)message;
+            if (m_currentPlayingMusic != null)
             {
-                m_musicAudioSource.clip = m_soundTrackArray.audioArray[i].musicToPlay;
+                StartCoroutine(StartFade(m_audioMixer, "BackGroundMusic", fadinTime, targetVolume));
+                m_currentPlayingMusic = audio.audioToSend.musicToPlay;
+                m_currentAudioSource.Play();
             }
+
         }
+        else if (message is SendAudioSettingsMessage)
+        {
+            SendAudioSettingsMessage settings = (SendAudioSettingsMessage)message;
+            m_currentAudioSource.playOnAwake = settings.m_PlayOnAwake;
+            m_currentAudioSource.loop = settings.m_CanLoop;
+        }
+    }
+  
+    public void OnDisableSubscribe()
+    {
+        throw new NotImplementedException();
+    }
+    public IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float currentVol;
+        audioMixer.GetFloat(exposedParam, out currentVol);
+        currentVol = Mathf.Pow(10, currentVol / 20);
+        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+            audioMixer.SetFloat(exposedParam, Mathf.Log10(newVol) * 20);
+            yield return null;
+        }
+
+        yield break;
     }
 }

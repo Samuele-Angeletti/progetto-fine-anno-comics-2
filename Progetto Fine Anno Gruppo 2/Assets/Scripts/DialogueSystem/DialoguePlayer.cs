@@ -6,6 +6,8 @@ using PubSub;
 using UnityEngine.UI;
 using Commons;
 using System;
+using MainGame;
+using ArchimedesMiniGame;
 
 public class DialoguePlayer : MonoBehaviour, ISubscriber
 {
@@ -32,7 +34,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     [HideInInspector] public Sprite spriteAdaFormaFinale;
     [HideInInspector] public Sprite vuotoSprite;
 
-    [SerializeField] private Controllable m_controllable;
+    private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
     public bool dialogueIsPlaying = false;
 
@@ -259,6 +261,10 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         List<DialogueLine> temp = new List<DialogueLine>();
         temp.Add(dialogueHolderSO[indiceRandomico]);
         return temp;
+    }
+    private void Update()
+    {
+        m_controllable = GameManager.Instance.m_Controllable;
     }
 }
 
