@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Commons;
 using MainGame;
 using System.Linq;
+using System;
 
 namespace ArchimedesMiniGame
 {
@@ -41,7 +42,7 @@ namespace ArchimedesMiniGame
         [SerializeField] Slider m_MaxSpeedSlider;
         [SerializeField] Slider m_AccelerationSlider;
         [SerializeField] Button m_DockingAttemptButton;
-
+        [SerializeField] LogMessageHandler m_LogMessageHandler;
 
         [Header("Modules")]
         [SerializeField] List<Module> m_Modules;
@@ -184,6 +185,11 @@ namespace ArchimedesMiniGame
                     }
                 }
             }
+        }
+
+        internal void SendLogMessage(string text, float timeDisplay)
+        {
+            m_LogMessageHandler.SpawnMessage(text, timeDisplay);
         }
     }
 }

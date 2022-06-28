@@ -23,6 +23,7 @@ namespace ArchimedesMiniGame
         [SerializeField] float m_MaxSpeedForDocking = 5f;
         [SerializeField] GameObject m_DockingSide;
         [SerializeField] LayerMask m_DockingMask;
+        [SerializeField] float m_DockingSpeed = 1;
         [Space(10)]
         [Header("Battery Settings")]
         [SerializeField] float m_MaxBattery;
@@ -191,18 +192,28 @@ namespace ArchimedesMiniGame
 
         private void Docking()
         {
+            Vector3 cVertex;
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, m_RotationDestination, Time.deltaTime * m_DockingSpeed);
+            if(m_RotationDestination.z == 180 || m_RotationDestination.z == 0)
+            {
+                cVertex = new Vector3(m_DockingPoint.DockingPivot.position.x, transform.position.y);
+            }
+            else
+            {
+                cVertex = new Vector3(transform.position.x, m_DockingPoint.DockingPivot.position.y);
+            }
+            transform.position = Vector3.Lerp(transform.position, cVertex, Time.deltaTime * m_DockingSpeed);
 
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, m_RotationDestination, Time.deltaTime);
-            Vector3 distanceBefore = m_DockingPivot.position - transform.position;
-            m_DockingPivot.position = Vector3.Lerp(m_DockingPivot.position, m_DockingPoint.DockingPivot.position, Time.deltaTime);
-            transform.position = transform.position + ((m_DockingPivot.position - transform.position) - distanceBefore);
             if (Vector3.Distance(transform.eulerAngles, m_RotationDestination) < 0.1f)
             {
-                
-
-                if (Vector3.Distance(m_DockingPivot.position, m_DockingPoint.DockingPivot.position) < 0.1f)
+                if (Vector3.Distance(transform.position, cVertex) < 0.1f)
                 {
-                    DockingComplete();
+                    Vector3 distanceBefore = m_DockingPivot.position - transform.position;
+                    m_DockingPivot.position = Vector3.Lerp(m_DockingPivot.position, m_DockingPoint.DockingPivot.position, Time.deltaTime * m_DockingSpeed);
+                    transform.position = transform.position + ((m_DockingPivot.position - transform.position) - distanceBefore);
+
+                    if(Vector3.Distance(m_DockingPivot.position, m_DockingPoint.DockingPivot.position) <0.1f)
+                        DockingComplete();
                 }
             }
         }
@@ -281,7 +292,7 @@ namespace ArchimedesMiniGame
         {
             if (m_Rigidbody.velocity.magnitude > m_MaxSpeedForDocking)
             {
-                Debug.Log("VELOCITA' CORRENTE TROPPO ELEVATA, RALLENTARE E RIPROVARE");
+                GameManagerES.Instance.SendLogMessage("VELOCITA' CORRENTE TROPPO ELEVATA, RALLENTARE E RIPROVARE", 2f);
                 return;
             }
             RaycastHit2D[] raycastHits = Physics2D.RaycastAll(m_DockingSide.transform.position, m_DockingSide.transform.up, 0.6f);
@@ -290,7 +301,7 @@ namespace ArchimedesMiniGame
                 DockingPoint d = raycastHits[i].collider.GetComponent<DockingPoint>();
                 if (d != null && d.IsActive)
                 {
-                    Debug.Log("AGGANCIO ESEGUITO");
+                    GameManagerES.Instance.SendLogMessage("AGGANGIO ESEGUITO, ATTENDERE", 2f);
                     m_Rigidbody.freezeRotation = true;
                     m_Rigidbody.freezeRotation = false;
                     m_Rigidbody.velocity = Vector3.zero;
@@ -301,21 +312,21 @@ namespace ArchimedesMiniGame
                         () => m_RotationDestination = new Vector3(0, 0, 0),
                         () => m_RotationDestination = new Vector3(0, 0, 270),
                         () => m_RotationDestination = new Vector3(0, 0, 90));
+                    GameManagerES.Instance.ActiveDockingAttemptButton(false);
                 }
                 else if (d == null || !d.IsActive)
                 {
-                    Debug.Log("ATTRACCO FALLITO. PUNTO D'ATTRACCO NON ATTIVO");
+                    GameManagerES.Instance.SendLogMessage("ATTRACCO FALLITO. PUNTO D'ATTRACCO NON ATTIVO", 2f);
                 }
                 else
                 {
-                    Debug.Log("ATTRACCO FALLITO. DISTANZA MINIMA NON RAGGIUNTA");
+                    GameManagerES.Instance.SendLogMessage("ATTRACCO FALLITO. DISTANZA MINIMA NON RAGGIUNTA", 2f);
                 }
             }
         }
 
         private void DockingComplete()
         {
-            Debug.Log("ATTRACCO COMPLETATO");
             m_Docking = false;
             transform.eulerAngles = m_RotationDestination;
             Stop();
@@ -323,7 +334,8 @@ namespace ArchimedesMiniGame
             m_DockingPivot.transform.parent = gameObject.transform;
             m_EngineOn = false;
 
-            SetCameraToGameManager();
+            if(GetComponent<Capsula>() != null) SetCameraToGameManager();
+
             Damager d = gameObject.AddComponent<Damager>();
             Damager archimedesDamager = GameManager.Instance.Archimedes.GetComponent<Damager>();
             d.Initialize(archimedesDamager.DamageAmount, archimedesDamager.LayerMask);
