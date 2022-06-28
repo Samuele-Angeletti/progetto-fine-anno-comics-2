@@ -1849,7 +1849,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1078056381 stripped
 Transform:
@@ -2413,7 +2413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795238524798375737, guid: ba0eb8a1c46720b45855ba1b48af3acd, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1795238524798375737, guid: ba0eb8a1c46720b45855ba1b48af3acd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3189,7 +3189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044132885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.399082, y: -21.45036, z: -10}
+  m_LocalPosition: {x: -89.191216, y: -34.47117, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4063,6 +4063,18 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[0].m_Data
       value: 
       objectReference: {fileID: 306149320}
+    - target: {fileID: 1600819483268277173, guid: 30e681630ed18e3459a19b2806851259, type: 3}
+      propertyPath: m_TileColorArray.Array.data[0].m_Data.b
+      value: 0.5762108
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600819483268277173, guid: 30e681630ed18e3459a19b2806851259, type: 3}
+      propertyPath: m_TileColorArray.Array.data[0].m_Data.g
+      value: 0.52436304
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600819483268277173, guid: 30e681630ed18e3459a19b2806851259, type: 3}
+      propertyPath: m_TileColorArray.Array.data[0].m_Data.r
+      value: 0.7698307
+      objectReference: {fileID: 0}
     - target: {fileID: 4826112139776078811, guid: 30e681630ed18e3459a19b2806851259, type: 3}
       propertyPath: m_EventOnTrigger.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
