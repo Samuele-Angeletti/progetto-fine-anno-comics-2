@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
+  m_Name: Dialogo 4 Entrata Modulo Triarchia
+  m_EditorClassIdentifier: 
+  Dialogo:
+  - WhoIsSpeaking: 0
+    DialougueString: Ada, sono giunto a destinazione.
+  - WhoIsSpeaking: 0
+    DialougueString: "Oh, mamma, se l\u2019ambiente qua \xE8 opprimente\u2026cavi
+      e tubi a vista d\u2019occhio\u2026\xE8 mai stato progettato per un essere umano
+      questo ambiente?"
+  - WhoIsSpeaking: 2
+    DialougueString: "Affermativo: questo \xE8 solo lo stile architettonico aerospaziale
+      triarchico, Ingegnere. Vedo dai suoi valori vitali che la questione la turba."
+  - WhoIsSpeaking: 0
+    DialougueString: "Per forza, sembra un ambiente pi\xF9 per te che per me! \u2026nessuna
+      offesa."
+  - WhoIsSpeaking: 2
+    DialougueString: 'Risposta: anche se questa IA potesse provare sentimenti, non
+      sarebbe offesa.'
+  - WhoIsSpeaking: 0
+    DialougueString: "Uhm\u2026grazie?"
+  - WhoIsSpeaking: 2
+    DialougueString: 'Risposta: prego.'
+  - WhoIsSpeaking: 2
+    DialougueString: "Continuo: il processo che dovr\xE0 attuare sar\xE0 alquanto
+      simile a quanto gi\xE0 effettuato per la sua capsula, Ingegnere, per\xF2 il
+      pulsante per l\u2019integrazione si trova dove \xE8 presente lei attualmente,
+      in fondo al modulo."
+  - WhoIsSpeaking: 2
+    DialougueString: "Lei mander\xE0 semplicemente la proposta di handshake, e questa
+      IA, nella nave, dar\xE0 l\u2019ok per il processo."
+  - WhoIsSpeaking: 0
+    DialougueString: Quindi ora dovremmo collaborare, invece di far lavorare solo
+      me.
+  - WhoIsSpeaking: 0
+    DialougueString: Affermativo.
+  - WhoIsSpeaking: 0
+    DialougueString: "Questo non aiuta con l\u2019ambiente inquietante\u2026Ada,
+      qualcosa che devo sapere sulla Triarchia che mi potrebbe aiutare?"
+  - WhoIsSpeaking: 0
+    DialougueString: "Perch\xE9 sarei molto curioso di sapere se sono tutti cyborg,
+      robot, o esseri controllati mentalmente da qualche IA superiore\u2026cose del
+      genere."
+  - WhoIsSpeaking: 0
+    DialougueString: "Oltre al fatto che nessuno sa nemmeno chi li governi\u2026BRR!
+      Mi vengono i brividi solo a pensarci!"
+  - WhoIsSpeaking: 2
+    DialougueString: 'Risposta: si calmi, Ingegnere. Queste preoccupazioni sono anomale
+      per il suo comportamento. Comunque, sono Proto, Deutero e Tritos'
+  - WhoIsSpeaking: 0
+    DialougueString: ...che?
+  - WhoIsSpeaking: 2
+    DialougueString: "Risposta: Proto, Deutero e Tritos sono i nomi dei tre governanti
+      della Triarchia. Per quanto riguarda l\u2019altro punto\u2026"
+  - WhoIsSpeaking: 2
+    DialougueString: ...
+  - WhoIsSpeaking: 2
+    DialougueString: "Confusione: \xE8 presente un file su Proto, Deutero e Tritos
+      nella mia memoria, ma \xE8 considerato come classificato."
+  - WhoIsSpeaking: 0
+    DialougueString: "Strano\u2026come mai vorrebbero metterlo in memoria se non
+      puoi accedere ad esso?"
+  - WhoIsSpeaking: 2
+    DialougueString: "Continuo: per rispondere ai suoi dubbi, comunque, la Triarchia
+      \xE8 semplicemente una plurimonarchia costituzionale, di stampo tecnocratico,
+      basata sulla ricerca e la costante innovazione."
+  - WhoIsSpeaking: 2
+    DialougueString: "IA senzienti e umani sono considerati cittadini con pari diritti,
+      e non vi \xE8 assolutamente controllo mentale coinvolto."
+  - WhoIsSpeaking: 0
+    DialougueString: "Per essere una IA imperiale ne sai a pacchi su di loro\u2026"
+  - WhoIsSpeaking: 2
+    DialougueString: 'Risposta: sono stati caricati questi file in memoria per assicurarsi
+      una risposta pronta a domande del genere.'
+  - WhoIsSpeaking: 0
+    DialougueString: "Hmm\u2026sar\xE0. Comunque io vedo di arrivare in fondo a questo
+      modulo, te prova a scoprire il perch\xE9 del file criptato!"
+  - WhoIsSpeaking: 2
+    DialougueString: 'Affermativo: lei cerchi di arrivare in fondo a parametri vitali
+      ottimali!'
+  - WhoIsSpeaking: 0
+    DialougueString: Certo Ada-come scusa?!
+  - WhoIsSpeaking: 2
+    DialougueString: <i>Canzoncina allegra</i>
+  - WhoIsSpeaking: 0
+    DialougueString: MI HA MESSO IN ATTESA?!
