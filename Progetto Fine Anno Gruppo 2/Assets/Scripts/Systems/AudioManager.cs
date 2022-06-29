@@ -44,8 +44,8 @@ public class AudioManager : MonoBehaviour, ISubscriber
         }
         else
             Destroy(gameObject);
-        m_firstAudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
-        m_secondAudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+        m_AudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+
 
     }
 
@@ -54,19 +54,27 @@ public class AudioManager : MonoBehaviour, ISubscriber
 
 
     #endregion
-    private AudioSource m_currentAudioSource;
-    private AudioClip m_currentPlayingMusic;
-    private int audioIndex;
-    private Dictionary<int, AudioSource> m_audioSourcesWithIndex;
 
-    [SerializeField] AudioSource m_firstAudioSource;
-    [SerializeField] AudioSource m_secondAudioSource;
-
+    [Header("MENU AUDIO")]
+    [SerializeField] AudioHolder m_menuAudioHolder;
+    [Header("AUDIO REFERENCE")]
+    [SerializeField] AudioSource m_AudioSource;
     [SerializeField] AudioMixer m_audioMixer;
-    [SerializeField] float fadinTime;
-    [SerializeField] float targetVolume;
+    [Header("FADING SETTINGS")]
+    [SerializeField] float fadeInTime;
+    [SerializeField] float fadeOutTime;
 
-    
+
+    private void Start()
+    {
+        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
+
+        PubSub.PubSub.Publish(new SendAudioMessage(m_menuAudioHolder));
+        PubSub.PubSub.Publish(new SendAudioSettingsMessage(true,true));
+    }
+
 
     public void ChangeVolumeSFX(float value)
     {
@@ -84,7 +92,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
     }
     public void ChangeMasterVolume(float value)
     {
-        m_audioMixer.SetFloat("Master", value);
+        m_audioMixer.SetFloat("Master", Mathf.Log10(value) * 20);
     }
    
     
@@ -93,42 +101,66 @@ public class AudioManager : MonoBehaviour, ISubscriber
     {
         if (message is SendAudioMessage)
         {
-            AudioHolder audio = (AudioHolder)message;
-            if (m_currentPlayingMusic != null)
+            SendAudioMessage audio = (SendAudioMessage)message;
+            if (m_AudioSource.clip != null)
             {
-                StartCoroutine(StartFade(m_audioMixer, "BackGroundMusic", fadinTime, targetVolume));
-                m_currentPlayingMusic = audio.audioToSend.musicToPlay;
-                m_currentAudioSource.Play();
+                StartCoroutine(FadeOut(m_AudioSource, fadeOutTime));
+                m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
+                StartCoroutine(FadeIn(m_AudioSource, m_audioMixer, fadeInTime));
+
+            }
+            else if (m_AudioSource.clip == null)
+            {
+                m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
+                StartCoroutine(FadeIn(m_AudioSource, m_audioMixer, fadeInTime));
+
             }
 
         }
         else if (message is SendAudioSettingsMessage)
         {
             SendAudioSettingsMessage settings = (SendAudioSettingsMessage)message;
-            m_currentAudioSource.playOnAwake = settings.m_PlayOnAwake;
-            m_currentAudioSource.loop = settings.m_CanLoop;
+            m_AudioSource.playOnAwake = settings.m_PlayOnAwake;
+            m_AudioSource.loop = settings.m_CanLoop;
         }
     }
   
     public void OnDisableSubscribe()
     {
-        throw new NotImplementedException();
+        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
     }
-    public IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
+    public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
     {
-        float currentTime = 0;
-        float currentVol;
-        audioMixer.GetFloat(exposedParam, out currentVol);
-        currentVol = Mathf.Pow(10, currentVol / 20);
-        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
-        while (currentTime < duration)
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
         {
-            currentTime += Time.deltaTime;
-            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
-            audioMixer.SetFloat(exposedParam, Mathf.Log10(newVol) * 20);
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
             yield return null;
         }
 
-        yield break;
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+    }
+
+    public IEnumerator FadeIn(AudioSource audioSource,AudioMixer mixer, float FadeTime)
+    {
+        float startVolume = 0.2f;
+       
+
+        audioSource.volume = 0;
+        audioSource.Play();
+
+        while (audioSource.volume < 1.0f)
+        {
+            audioSource.volume += startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.volume = 1f;
     }
 }

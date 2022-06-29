@@ -35,7 +35,7 @@ AudioMixerController:
   - guid: b07d522f0c30942428ea149acbaeeabf
     name: BackGroundMusic
   - guid: 01f9a927efe88b540a8fce0d57c50d1c
-    name: Master
+    name: Master_Volume
   - guid: 6c37cfa328576e044896cff64bb4dad4
     name: SFX
   m_AudioMixerGroupViews:
@@ -89,12 +89,12 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: On
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 0a5421b84e3999945b122cc629b0228d
   m_FloatValues:
     6c37cfa328576e044896cff64bb4dad4: 0
-    b07d522f0c30942428ea149acbaeeabf: 0
+    b07d522f0c30942428ea149acbaeeabf: -0.12044228
   m_TransitionOverrides: {}
 --- !u!243 &3627632116020045890
 AudioMixerGroupController:

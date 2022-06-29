@@ -22,21 +22,21 @@ public class AudioTrigger : MonoBehaviour, ISubscriber
     }
     private void Start()
     {
-        PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
+        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
     }
 
    
     public void OnPublish(IMessage message)
     {
-        if (message is OnTriggerEnterMessage)
+        if (message is OnTriggerEnterAudio)
         {
             PubSub.PubSub.Publish(new SendAudioMessage(musicToSend));
         }
     }
     public void OnDisableSubscribe()
     {
-        PubSub.PubSub.Unsubscribe(this, typeof(SendAudioMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(OnTriggerEnterAudio));
     }
     
 }

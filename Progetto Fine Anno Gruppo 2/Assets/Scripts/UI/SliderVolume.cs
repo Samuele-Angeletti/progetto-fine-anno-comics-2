@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SliderVolume : MonoBehaviour
 {
-    public Slider m_volumeSlider;
+    [SerializeField]AudioMixer mixer;
+    [SerializeField] string MixerGroupToTarget;
 
-    private void Start()
+
+    public void SetFloat(float value)
     {
+        if (mixer != null)
+        {
+            mixer.SetFloat(MixerGroupToTarget,Mathf.Log10(value)*20);
+        }
     }
 
 }

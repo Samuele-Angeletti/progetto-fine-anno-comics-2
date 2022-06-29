@@ -26,7 +26,7 @@ public class DialogueTrigger : Interactable, ISubscriber
     {
 
         PubSub.PubSub.Subscribe(this, typeof(EndDialogueMessage));
-        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterMessage));
+        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterDialogueMessage));
         PubSub.PubSub.Subscribe(this, typeof(CurrentDialogueFinishedMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnInteractionDialogueMessage));
     }
@@ -53,6 +53,7 @@ public class DialogueTrigger : Interactable, ISubscriber
     {
         if (message is EndDialogueMessage)
         {
+            Destroy(gameObject);
         }
 
         else if (message is CurrentDialogueFinishedMessage)
@@ -62,7 +63,7 @@ public class DialogueTrigger : Interactable, ISubscriber
             if (m_dialogueToShow.Count == 0)PubSub.PubSub.Publish(new EndDialogueMessage());
 
         }
-        else if (message is OnTriggerEnterMessage)
+        else if (message is OnTriggerEnterDialogueMessage)
         {
             PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
         }
@@ -73,7 +74,7 @@ public class DialogueTrigger : Interactable, ISubscriber
     public void OnDisableSubscribe()
     {
         PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
-        PubSub.PubSub.Unsubscribe(this, typeof(OnTriggerEnterMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(OnTriggerEnterDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof (CurrentDialogueFinishedMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(OnInteractionDialogueMessage));
 

@@ -509,12 +509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b19a7ed04156146b28f20c4f239322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_menuAudioHolder: {fileID: 11400000, guid: 448a1e26892ef044b9dd0e599073ba6c, type: 2}
+  m_AudioSource: {fileID: 1705061206}
   m_audioMixer: {fileID: 24100000, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
-  m_soundTrackArray: {fileID: 0}
-  m_ambienceAudioArray: {fileID: 0}
-  currentSFXVolume: 0
-  currentMusicVolume: 0
-  m_audioPresentiInScena: []
+  fadeInTime: 1
+  fadeOutTime: 1
 --- !u!4 &1705061205
 Transform:
   m_ObjectHideFlags: 0
@@ -541,8 +540,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4009,6 +4008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6679163476565017085}
   - component: {fileID: 6679163476565017084}
+  - component: {fileID: 6679163476565017086}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -4066,7 +4066,19 @@ MonoBehaviour:
   m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6679163476565017086}
+        m_TargetAssemblyTypeName: SliderVolume, Assembly-CSharp
+        m_MethodName: SetFloat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &6679163476565017085
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4090,6 +4102,20 @@ RectTransform:
   m_AnchoredPosition: {x: -0.049804688, y: 0}
   m_SizeDelta: {x: -671.84, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6679163476565017086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6679163476565017075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85979e72b4bd9284aba1411d68d99d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}
+  MixerGroupToTarget: Master_Volume
 --- !u!1 &6679163476600640292
 GameObject:
   m_ObjectHideFlags: 0
