@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1221,7 +1221,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1391,6 +1391,8 @@ MonoBehaviour:
   m_ExternalSprite: {fileID: 1224201755114791578}
   m_MapParent: {fileID: 1224201756691035687}
   m_DockingPivot: {fileID: 1224201755562677288}
+  m_DestinationDockingPoint: {fileID: 0}
+  m_MyCameraOnPlayer: {fileID: 0}
   m_Acceleration: 20
   m_MaxSpeed: 40
   m_RotationSpeed: 20
@@ -1399,8 +1401,11 @@ MonoBehaviour:
   m_DockingMask:
     serializedVersion: 2
     m_Bits: 32768
+  m_DockingSpeed: 1
   m_MaxBattery: 100
   m_UseSpeed: 5
+  m_BurstPivot: {fileID: 0}
+  m_BurstVFXPrefab: {fileID: 0}
 --- !u!114 &1224201756579649929
 MonoBehaviour:
   m_ObjectHideFlags: 0

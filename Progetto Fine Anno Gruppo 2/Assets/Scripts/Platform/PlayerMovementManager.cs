@@ -210,6 +210,12 @@ namespace MainGame
             {
                 transform.position = m_NextCheckPoint;
                 Rigidbody.velocity = Vector2.zero;
+                
+                if (StateMachine.CurrentState.GetType() == typeof(ZeroGPlayerState))
+                {
+                    ZeroGPlayerState zeroGPlayerState = (ZeroGPlayerState)StateMachine.GetState(EPlayerState.ZeroG);
+                    zeroGPlayerState.StopMovement();
+                }
                 m_Damageable.SetInitialLife(1);
             }
             else if(message is StartEngineModuleMessage)

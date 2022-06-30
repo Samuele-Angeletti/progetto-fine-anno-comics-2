@@ -187,23 +187,23 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         {
 
         }
-        if (whoIsSpeakingRightNow == ESpeaker.Riemann)
+        else if (whoIsSpeakingRightNow == ESpeaker.Riemann)
         {
             spriteToChange.sprite = spritePlayer;
         }
-        if (whoIsSpeakingRightNow == ESpeaker.Ada_Pre_Integrazione)
+        else if (whoIsSpeakingRightNow == ESpeaker.Ada_Pre_Integrazione)
         {
             spriteToChange.sprite = spriteAdaPreIntegrazione;
         }
-        if (whoIsSpeakingRightNow == ESpeaker.Ada_Prima_Integrazione)
+        else if (whoIsSpeakingRightNow == ESpeaker.Ada_Prima_Integrazione)
         {
             spriteToChange.sprite = spriteAdaPrimaIntegrazione;
         }
-        if (whoIsSpeakingRightNow == ESpeaker.Ada_Seconda_Integrazione)
+        else if (whoIsSpeakingRightNow == ESpeaker.Ada_Seconda_Integrazione)
         {
             spriteToChange.sprite = spriteAdaSecondaIntegrazione;
         }
-        if (whoIsSpeakingRightNow == ESpeaker.Ada_Forma_Finale)
+        else
         {
             spriteToChange.sprite = spriteAdaFormaFinale;
         }

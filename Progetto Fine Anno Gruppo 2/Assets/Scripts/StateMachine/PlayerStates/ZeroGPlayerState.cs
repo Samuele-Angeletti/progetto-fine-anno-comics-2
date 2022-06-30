@@ -116,7 +116,7 @@ public class ZeroGPlayerState : State
         }
     }
 
-    private void StopMovement()
+    public void StopMovement()
     {
         m_Somersaulting = true;
         m_CurrentDirection = Vector3.zero;

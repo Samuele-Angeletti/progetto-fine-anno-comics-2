@@ -1701,6 +1701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExternalSpriteRenderer: {fileID: 0}
+  m_MyCameraOnPlayer: {fileID: 0}
 --- !u!1001 &707286894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21828,7 +21829,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -62762,6 +62763,8 @@ MonoBehaviour:
   m_ExternalSprite: {fileID: 806207226}
   m_MapParent: {fileID: 1408313927}
   m_DockingPivot: {fileID: 515000392}
+  m_DestinationDockingPoint: {fileID: 0}
+  m_MyCameraOnPlayer: {fileID: 0}
   m_Acceleration: 20
   m_MaxSpeed: 40
   m_RotationSpeed: 20
@@ -62770,8 +62773,11 @@ MonoBehaviour:
   m_DockingMask:
     serializedVersion: 2
     m_Bits: 32768
+  m_DockingSpeed: 1
   m_MaxBattery: 100
   m_UseSpeed: 5
+  m_BurstPivot: {fileID: 0}
+  m_BurstVFXPrefab: {fileID: 0}
 --- !u!61 &1499301355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62971,7 +62977,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

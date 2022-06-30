@@ -503,6 +503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 1
+  m_DockingPivot: {fileID: 0}
+  m_PivotOrientation: 0
 --- !u!61 &736137821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -549,7 +551,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -586,17 +588,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9174635751937658259, guid: efd26e9009aa0df40beecf546c8c0345, type: 3}
   m_PrefabInstance: {fileID: 9174635751369023500}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &774172065 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9174635751937658285, guid: efd26e9009aa0df40beecf546c8c0345, type: 3}
-  m_PrefabInstance: {fileID: 9174635751369023500}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05231d50ed49dca45af51b2ad6aea297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &792957359
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +837,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DamageAmount: 1
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1309137411
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +927,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1065,11 +1059,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa78009570ded84e983d1324d5e7e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Controllable: {fileID: 828230028}
   m_BatterySlider: {fileID: 1802718150}
   m_DamageSlider: {fileID: 163877440}
+  m_MaxSpeedSlider: {fileID: 0}
+  m_AccelerationSlider: {fileID: 0}
   m_DockingAttemptButton: {fileID: 2090939581}
-  m_FileName: ModuloUno
+  m_LogMessageHandler: {fileID: 0}
+  m_Modules: []
+  m_CommandPlat: {fileID: 0}
+  m_Asteroids: []
 --- !u!4 &1921165849
 Transform:
   m_ObjectHideFlags: 0
@@ -1335,7 +1333,10 @@ MonoBehaviour:
   m_PauseMenu: {fileID: 4429362922314727270}
   m_GameOverMenu: {fileID: 0}
   m_ConfirmChoiseMenu: {fileID: 2136583211485457717}
-  m_MainDisplay: {fileID: 774172065}
+  m_MainDisplay: {fileID: 0}
+  m_ExternalUI: {fileID: 0}
+  m_TerminalListMenu: {fileID: 0}
+  m_PacManInterface: {fileID: 0}
 --- !u!114 &2090939581 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9174635751157142705, guid: efd26e9009aa0df40beecf546c8c0345, type: 3}
