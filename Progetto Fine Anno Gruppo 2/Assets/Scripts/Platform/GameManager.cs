@@ -45,7 +45,7 @@ namespace MainGame
 
 
         [Header("Player Settings")]
-        [SerializeField] Controllable m_Controllable;
+        public Controllable m_Controllable;
 
         [Header("Button Interaction SO")]
         [SerializeField] List<ButtonInteractionScriptableObject> m_ButtonInteractionSO;

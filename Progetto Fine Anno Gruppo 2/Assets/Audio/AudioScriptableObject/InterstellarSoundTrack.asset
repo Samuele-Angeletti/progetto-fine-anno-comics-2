@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d65e489aef6c404a8f491fe36de9a31, type: 3}
-  m_Name: AmbienceSound
+  m_Name: InterstellarSoundTrack
   m_EditorClassIdentifier: 
-  audio: []
+  audioToSend:
+    musicToPlay: {fileID: 8300000, guid: df7cb728acab8a047b9915b910e8e1a4, type: 3}
+    mixerGroup: {fileID: 3639502962575626713, guid: cd5c1c71c5f54b445ae598699eeb4828, type: 2}

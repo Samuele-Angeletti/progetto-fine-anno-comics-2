@@ -6,6 +6,8 @@ using PubSub;
 using UnityEngine.UI;
 using Commons;
 using System;
+using MainGame;
+using ArchimedesMiniGame;
 
 public class DialoguePlayer : MonoBehaviour, ISubscriber
 {
@@ -31,8 +33,9 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     [HideInInspector] public Sprite spriteAdaSecondaIntegrazione;
     [HideInInspector] public Sprite spriteAdaFormaFinale;
     [HideInInspector] public Sprite vuotoSprite;
+    [HideInInspector] public bool standardMessageIsPlaying;
 
-    [SerializeField] private Controllable m_controllable;
+    private Controllable m_controllable;
     [SerializeField] private float m_typeWriterSpeed;
     public bool dialogueIsPlaying = false;
 
@@ -66,7 +69,6 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-
         m_whoIsSpeakingRightNow = new Queue<ESpeaker>();
 
     }
@@ -103,23 +105,26 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         }
         else if (message is ModuleDestroyedMessage)
         {
+            standardMessageIsPlaying = true;
             PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed.Dialogo)));
 
         }
         else if (message is NoBatteryMessage)
         {
+            standardMessageIsPlaying = true;
             PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgNoBattery.Dialogo)));
 
         }
         else if (message is DockingCompleteMessage)
         {
+            standardMessageIsPlaying = true;
             PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgDockingComplete.Dialogo)));
 
         }
         else if (message is StartEngineModuleMessage)
         {
+            standardMessageIsPlaying = true;
             PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgStartEngine.Dialogo)));
-
         }
     }
 
@@ -168,6 +173,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         {
 
             PubSub.PubSub.Publish(new CurrentDialogueFinishedMessage());
+            standardMessageIsPlaying = false;
             yield return new WaitForSeconds(1);
             yield return null;
         }
@@ -259,6 +265,10 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         List<DialogueLine> temp = new List<DialogueLine>();
         temp.Add(dialogueHolderSO[indiceRandomico]);
         return temp;
+    }
+    private void Update()
+    {
+        m_controllable = GameManager.Instance.m_Controllable;
     }
 }
 

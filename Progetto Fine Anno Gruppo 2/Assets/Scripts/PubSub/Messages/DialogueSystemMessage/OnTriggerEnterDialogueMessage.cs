@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PubSub;
 
-public class OnTriggerEnterMessage : IMessage
+public class OnTriggerEnterDialogueMessage : IMessage
 {
    
 }

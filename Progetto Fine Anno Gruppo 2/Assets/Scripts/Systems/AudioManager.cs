@@ -1,13 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
+using PubSub;
+using System.Collections.Generic;
+using System.Collections;
 
-[DisallowMultipleComponent,]
-public class AudioManager : MonoBehaviour 
+[DisallowMultipleComponent]
+public class AudioManager : MonoBehaviour, ISubscriber
 {
     #region SINGLETONE
     private static AudioManager m_instance;
@@ -44,40 +44,38 @@ public class AudioManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
-        m_musicAudioSource = GetComponent<AudioSource>();
-        m_musicAudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+        m_AudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+
 
     }
 
 
-    //private void Start()
-    //{
-    //    ChangeBackgroundMusic(ESoundTrackType.MusicaMenùPrincipale);
-    //    PlayBackGroundMusic();
-    //}
 
-    //private void Update()
-    //{
-    //    ChangeVolumeMusic(currentMusicVolume);
-    //    ChangeVolumeSFX(currentSFXVolume);
-    //}
 
 
     #endregion
 
-    private AudioSource m_musicAudioSource;
-    
+    [Header("MENU AUDIO")]
+    [SerializeField] AudioHolder m_menuAudioHolder;
+    [Header("AUDIO REFERENCE")]
+    [SerializeField] AudioSource m_AudioSource;
     [SerializeField] AudioMixer m_audioMixer;
-    [SerializeField,ShowScriptableObject] AudioHolder m_soundTrackArray;
-    [SerializeField,ShowScriptableObject] AudioHolder m_ambienceAudioArray;
-    [SerializeField, Range(-80f, 20f)] float currentSFXVolume;
-    [SerializeField, Range(-80f, 20f)] float currentMusicVolume;
-    [Space(10)]
-    [SerializeField] List<AudioSource> m_audioPresentiInScena;
+    [Header("FADING SETTINGS")]
+    [SerializeField] float fadeInTime;
+    [SerializeField] float fadeOutTime;
 
 
+    private void Start()
+    {
+        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
 
-   
+        PubSub.PubSub.Publish(new SendAudioMessage(m_menuAudioHolder));
+        PubSub.PubSub.Publish(new SendAudioSettingsMessage(true,true));
+    }
+
+
     public void ChangeVolumeSFX(float value)
     {
         m_audioMixer.SetFloat("SFX", value);
@@ -94,28 +92,75 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeMasterVolume(float value)
     {
-        m_audioMixer.SetFloat("Master", value);
+        m_audioMixer.SetFloat("Master", Mathf.Log10(value) * 20);
     }
-    public static AudioClip GetRandomAudioClip(AudioClip[] audioClips)
+   
+    
+
+    public void OnPublish(IMessage message)
     {
-        return audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
-    }
-    public void PlayBackGroundMusic()
-    {
-        m_musicAudioSource.Play();
-    }
-    public void StopBackGroundMusic()
-    {
-        m_musicAudioSource.Stop();
-    }
-    public void ChangeBackgroundMusic(ESoundTrackType soundTrackType)
-    {
-        for (int i = 0; i < m_soundTrackArray.audioArray.Length; i++)
+        if (message is SendAudioMessage)
         {
-            if (m_soundTrackArray.audioArray[i].soundTrack == soundTrackType)
+            SendAudioMessage audio = (SendAudioMessage)message;
+            if (m_AudioSource.clip != null)
             {
-                m_musicAudioSource.clip = m_soundTrackArray.audioArray[i].musicToPlay;
+                StartCoroutine(FadeOut(m_AudioSource, fadeOutTime));
+                m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
+                StartCoroutine(FadeIn(m_AudioSource, m_audioMixer, fadeInTime));
+
             }
+            else if (m_AudioSource.clip == null)
+            {
+                m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
+                StartCoroutine(FadeIn(m_AudioSource, m_audioMixer, fadeInTime));
+
+            }
+
         }
+        else if (message is SendAudioSettingsMessage)
+        {
+            SendAudioSettingsMessage settings = (SendAudioSettingsMessage)message;
+            m_AudioSource.playOnAwake = settings.m_PlayOnAwake;
+            m_AudioSource.loop = settings.m_CanLoop;
+        }
+    }
+  
+    public void OnDisableSubscribe()
+    {
+        PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
+    }
+    public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+    }
+
+    public IEnumerator FadeIn(AudioSource audioSource,AudioMixer mixer, float FadeTime)
+    {
+        float startVolume = 0.2f;
+       
+
+        audioSource.volume = 0;
+        audioSource.Play();
+
+        while (audioSource.volume < 1.0f)
+        {
+            audioSource.volume += startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.volume = 1f;
     }
 }
