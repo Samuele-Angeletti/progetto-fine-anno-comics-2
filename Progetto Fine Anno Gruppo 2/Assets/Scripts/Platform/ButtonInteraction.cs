@@ -6,9 +6,15 @@ using PubSub;
 using MainGame;
 public class ButtonInteraction : Interactable,ISubscriber
 {
+    private AudioSource m_soundSource;
     [Header("Button Interaction Settings")]
     [SerializeField] bool m_Active = true;
     [SerializeField] bool m_OneShot;
+    [SerializeField] AudioHolder m_audioHolder;
+    private void Awake()
+    {
+        m_soundSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         if (InteractionType == EInteractionType.PlayPacMan || InteractionType == EInteractionType.ActiveModule)
@@ -20,7 +26,8 @@ public class ButtonInteraction : Interactable,ISubscriber
     public override void Interact(Interacter interacter)
     {
         if (m_Active)
-        {   
+        {
+            if(m_soundSource != null) m_soundSource.PlayOneShot(m_audioHolder.audioToSend.musicToPlay);
             GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter);
             if (m_OneShot) m_Active = false;
         }

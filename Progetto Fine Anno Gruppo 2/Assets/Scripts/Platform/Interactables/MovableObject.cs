@@ -10,10 +10,15 @@ public class MovableObject : Interactable, ISubscriber
     [SerializeField] float m_TransitionSpeed;
     [SerializeField] bool m_OneShot;
     [SerializeField] bool m_RevertOnTriggerExit;
+    [SerializeField] AudioHolder m_doorSound;
     private Vector3 m_StartPivot;
     private bool m_Active;
     private bool m_Used;
-
+    private AudioSource m_SoundSource;
+    private void Awake()
+    {
+        m_SoundSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
 
@@ -21,6 +26,7 @@ public class MovableObject : Interactable, ISubscriber
     }
     public override void Interact(Interacter interacter)
     {
+        if (m_doorSound != null && m_SoundSource != null) m_SoundSource.PlayOneShot(m_doorSound.audioToSend.musicToPlay);
         Active();
     }
 
