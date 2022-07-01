@@ -67,12 +67,13 @@ public class AudioManager : MonoBehaviour, ISubscriber
 
     private void Start()
     {
+        PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
         PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
-        PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
-
-        PubSub.PubSub.Publish(new SendAudioMessage(m_menuAudioHolder));
+        
         PubSub.PubSub.Publish(new SendAudioSettingsMessage(true,true));
+        PubSub.PubSub.Publish(new SendAudioMessage(m_menuAudioHolder));
+        
     }
 
 
@@ -104,15 +105,15 @@ public class AudioManager : MonoBehaviour, ISubscriber
             SendAudioMessage audio = (SendAudioMessage)message;
             if (m_AudioSource.clip != null)
             {
-                StartCoroutine(FadeOut(m_AudioSource, fadeOutTime));
+                StartCoroutine(StartFade(m_AudioSource, fadeOutTime, 0));
                 m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
-                StartCoroutine(FadeIn(m_AudioSource, m_audioMixer, fadeInTime));
+                StartCoroutine(StartFade(m_AudioSource, fadeInTime, 1));
 
             }
             else if (m_AudioSource.clip == null)
             {
                 m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
-                StartCoroutine(FadeIn(m_AudioSource, m_audioMixer, fadeInTime));
+                StartCoroutine(StartFade(m_AudioSource, fadeInTime, 1));
 
             }
 
@@ -124,43 +125,63 @@ public class AudioManager : MonoBehaviour, ISubscriber
             m_AudioSource.loop = settings.m_CanLoop;
         }
     }
-  
+    
     public void OnDisableSubscribe()
     {
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
         PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
     }
-    public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+
+    //public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    //{
+    //    float startVolume = audioSource.volume;
+
+    //    while (audioSource.volume > 0)
+    //    {
+    //        audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+    //        if (audioSource.volume == 0)
+    //        {
+    //            yield return null ;
+
+    //        }
+
+    //    }
+
+    //    audioSource.Stop();
+    //    audioSource.volume = startVolume;
+
+    //}
+
+    //public IEnumerator FadeIn(AudioSource audioSource,AudioMixer mixer, float FadeTime)
+    //{
+    //    float startVolume = 0.2f;
+
+
+    //    audioSource.volume = 0;
+    //    audioSource.Play();
+
+    //    while (audioSource.volume < 1.0f)
+    //    {
+    //        audioSource.volume += startVolume * Time.deltaTime / FadeTime;
+    //        if (audioSource.volume == 1)
+    //        {
+    //            yield return null;
+    //        }
+    //    }
+
+    public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
-        float startVolume = audioSource.volume;
-
-        while (audioSource.volume > 0)
+        float currentTime = 0;
+        float start = audioSource.volume;
+        while (currentTime < duration)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
             yield return null;
         }
-
-        audioSource.Stop();
-        audioSource.volume = startVolume;
+        yield break;
     }
 
-    public IEnumerator FadeIn(AudioSource audioSource,AudioMixer mixer, float FadeTime)
-    {
-        float startVolume = 0.2f;
-       
 
-        audioSource.volume = 0;
-        audioSource.Play();
-
-        while (audioSource.volume < 1.0f)
-        {
-            audioSource.volume += startVolume * Time.deltaTime / FadeTime;
-
-            yield return null;
-        }
-
-        audioSource.volume = 1f;
-    }
 }
