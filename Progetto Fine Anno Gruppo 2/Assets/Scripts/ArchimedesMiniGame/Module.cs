@@ -4,6 +4,8 @@ using MainGame;
 using PubSub;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+
 namespace ArchimedesMiniGame
 {
     public class Module : Controllable, IDamageable, ISubscriber
@@ -31,6 +33,8 @@ namespace ArchimedesMiniGame
         [Space(10)]
         [SerializeField] Transform m_BurstPivot;
         [SerializeField] ParticleSystem m_BurstVFXPrefab;
+        [Header("Docking Event")]
+        [SerializeField] UnityEvent m_OnDocking;
 
         private float m_CurrentBattery;
         private Rigidbody2D m_Rigidbody;
@@ -88,12 +92,20 @@ namespace ArchimedesMiniGame
                 else
                     m_CurrentAcceleration = Vector2.zero;
 
-
-                m_Rigidbody.velocity += -m_Direction.normalized * m_Acceleration * Time.fixedDeltaTime;
-                m_Rigidbody.rotation += m_RotationDirection.x * Time.fixedDeltaTime * m_RotationSpeed;
+                UpdateMovement();
+                UpdateRotation();
             }
         }
 
+        private void UpdateRotation()
+        {
+            m_Rigidbody.rotation += m_RotationDirection.x * Time.fixedDeltaTime * m_RotationSpeed;
+        }
+
+        private void UpdateMovement()
+        {
+            m_Rigidbody.velocity += -m_Direction.normalized * m_Acceleration * Time.fixedDeltaTime;
+        }
 
         private void Update()
         {
@@ -101,6 +113,10 @@ namespace ArchimedesMiniGame
             {
                 if (!m_Docking)
                 {
+                    DockingButtonChangeCheck();
+
+                    CameraChangeCheck();
+
                     if (m_Direction != Vector2.zero || m_RotationDirection != Vector2.zero)
                     {
                         UseBattery();
@@ -111,7 +127,7 @@ namespace ArchimedesMiniGame
                     {
                         if (m_BurstPivot.gameObject.activeSelf)
                         {
-                            if(m_SpawnedEffect != null)
+                            if (m_SpawnedEffect != null)
                             {
                                 m_SpawnedEffect.transform.parent = null;
                                 m_SpawnedEffect.Stop();
@@ -130,29 +146,7 @@ namespace ArchimedesMiniGame
                         m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, m_MaxSpeed);
                     }
 
-                    if (ForwardCheckOfWall(Vector2.up, 0.6f, m_DockingSide.transform.position, m_DockingMask) && m_Rigidbody.velocity.magnitude <= m_MaxSpeedForDocking)
-                    {
-                        m_DockingAttemptAvailable = true;
-                        GameManagerES.Instance.ActiveDockingAttemptButton(true);
 
-                    }
-                    else if (m_DockingAttemptAvailable)
-                    {
-                        m_DockingAttemptAvailable = false;
-                        GameManagerES.Instance.ActiveDockingAttemptButton(false);
-
-                    }
-
-                    if (ForwardCheckOfWall(Vector2.up, 1f, m_DockingSide.transform.position, m_DockingMask, m_StoppingDistanceModucleFocused))
-                    {
-                        GameManager.Instance.SetActiveCamera(ECameras.ModuleFocused);
-                        m_CameraFocused = true;
-                    }
-                    else if (m_CameraFocused)
-                    {
-                        m_CameraFocused = false;
-                        GameManager.Instance.SetActiveCamera(ECameras.Module);
-                    }
 
                 }
                 else if (m_Docking)
@@ -167,6 +161,36 @@ namespace ArchimedesMiniGame
 
             }
 
+        }
+
+        private void DockingButtonChangeCheck()
+        {
+            if (ForwardCheckOfWall(Vector2.up, 0.6f, m_DockingSide.transform.position, m_DockingMask) && m_Rigidbody.velocity.magnitude <= m_MaxSpeedForDocking)
+            {
+                m_DockingAttemptAvailable = true;
+                GameManagerES.Instance.ActiveDockingAttemptButton(true);
+
+            }
+            else if (m_DockingAttemptAvailable)
+            {
+                m_DockingAttemptAvailable = false;
+                GameManagerES.Instance.ActiveDockingAttemptButton(false);
+
+            }
+        }
+
+        private void CameraChangeCheck()
+        {
+            if (ForwardCheckOfWall(Vector2.up, 1f, m_DockingSide.transform.position, m_DockingMask, m_StoppingDistanceModucleFocused))
+            {
+                GameManager.Instance.SetActiveCamera(ECameras.ModuleFocused);
+                m_CameraFocused = true;
+            }
+            else if (m_CameraFocused)
+            {
+                m_CameraFocused = false;
+                GameManager.Instance.SetActiveCamera(ECameras.Module);
+            }
         }
 
         private void UpdateBurstPivot()
@@ -349,6 +373,7 @@ namespace ArchimedesMiniGame
             m_DockingPivot.transform.parent = gameObject.transform;
             m_EngineOn = false;
 
+
             if(GetComponent<Capsula>() != null) SetCameraToGameManager();
 
             Damager d = gameObject.AddComponent<Damager>();
@@ -359,6 +384,7 @@ namespace ArchimedesMiniGame
             gameObject.isStatic = true;
             m_Rigidbody.bodyType = RigidbodyType2D.Static;
 
+            m_OnDocking.Invoke();
             PubSub.PubSub.Publish(new DockingCompleteMessage(this));
         }
 

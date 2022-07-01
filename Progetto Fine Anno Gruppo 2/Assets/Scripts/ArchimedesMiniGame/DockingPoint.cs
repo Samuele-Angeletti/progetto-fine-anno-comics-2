@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArchimedesMiniGame
@@ -14,5 +12,10 @@ namespace ArchimedesMiniGame
 
         public Transform DockingPivot => m_DockingPivot;
         public EDirection Orientation => m_PivotOrientation;
+
+        public void SetActive(bool active)
+        {
+            IsActive = active;
+        }
     }
 }

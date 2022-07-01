@@ -66344,9 +66344,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Intensity
+      value: 7.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.621
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 73.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 225.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 8.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: 582964625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -1763607597
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 2006074575
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -1978320367
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[5]
+      value: 1071387185
+      objectReference: {fileID: 0}
     - target: {fileID: 7840955382969313456, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7840955382969313456, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66356,9 +66408,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.50000006
       objectReference: {fileID: 0}
+    - target: {fileID: 7840955382969313457, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955382969313457, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955382969313457, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955382969313457, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2784314
+      objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008618, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_Name
-      value: DockingPoint (1)
+      value: DockingPointM1
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008619, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_RootOrder
@@ -66402,6 +66470,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008619, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955383591008620, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008620, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
@@ -67503,9 +67575,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8703281773140397779}
     m_Modifications:
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Intensity
+      value: 7.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.621
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 73.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 225.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 8.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: 582964625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -1763607597
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 2006074575
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -1978320367
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932239875083622266, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[5]
+      value: 1071387185
+      objectReference: {fileID: 0}
     - target: {fileID: 7840955382969313456, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7840955382969313456, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67515,9 +67643,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.50000006
       objectReference: {fileID: 0}
+    - target: {fileID: 7840955382969313457, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955382969313457, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.32941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955382969313457, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: m_Color.r
+      value: 0.22745098
+      objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008618, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_Name
-      value: DockingPoint (2)
+      value: DockingPointM2
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008619, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_RootOrder
@@ -67561,6 +67701,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008619, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955383591008620, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
+      propertyPath: IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008620, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
@@ -68742,7 +68886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008618, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_Name
-      value: DockingPoint
+      value: DockingPointCapsula
       objectReference: {fileID: 0}
     - target: {fileID: 7840955383591008619, guid: ecad7051b4c865041b96766e27ddbcdd, type: 3}
       propertyPath: m_RootOrder

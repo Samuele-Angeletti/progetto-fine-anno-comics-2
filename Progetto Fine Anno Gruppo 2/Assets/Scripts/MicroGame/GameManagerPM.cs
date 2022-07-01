@@ -101,7 +101,7 @@ namespace MicroGame
             //}
 
             float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
-            Debug.Log(damagePercentage);
+
             if (damagePercentage == 0)
             {
                 SpawnEnemies(1);
