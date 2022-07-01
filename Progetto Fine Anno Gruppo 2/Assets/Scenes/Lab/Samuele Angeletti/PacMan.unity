@@ -1086,8 +1086,8 @@ Camera:
   m_GameObject: {fileID: 205473962}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0.3019608, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1108,7 +1108,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 401952
+    m_Bits: 401920
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4680,6 +4680,7 @@ MonoBehaviour:
   - {fileID: 205473962}
   - {fileID: 301321997044457763}
   - {fileID: 474648204}
+  - {fileID: 0}
   UIPacManInterface: {fileID: 0}
 --- !u!1001 &919938397
 PrefabInstance:
