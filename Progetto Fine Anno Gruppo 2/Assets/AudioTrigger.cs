@@ -11,9 +11,11 @@ public class AudioTrigger : MonoBehaviour, ISubscriber
     [SerializeField] bool m_canLoop;
     [SerializeField] bool m_canPlayOnAwake;
     private Collider2D m_collider;
-    [Header("AUDIO SO")]
-    [ShowScriptableObject]
-    public AudioHolder musicToSend;
+    [Header("AUDIO CLIP")]
+    public AudioClip musicToSend;
+    
+    
+    
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class AudioTrigger : MonoBehaviour, ISubscriber
     {
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
+        PubSub.PubSub.Subscribe(this,typeof(GetAudioBeforeChangingMessage));
     }
 
    
@@ -33,10 +36,18 @@ public class AudioTrigger : MonoBehaviour, ISubscriber
         {
             PubSub.PubSub.Publish(new SendAudioMessage(musicToSend));
         }
+        else if (message is GetAudioBeforeChangingMessage)
+        {
+            GetAudioBeforeChangingMessage temp = (GetAudioBeforeChangingMessage)message;
+            musicToSend = temp.clip;
+        }
+
+        
     }
     public void OnDisableSubscribe()
     {
         PubSub.PubSub.Unsubscribe(this, typeof(OnTriggerEnterAudio));
+        PubSub.PubSub.Subscribe(this, typeof(GetAudioBeforeChangingMessage));
     }
     
 }

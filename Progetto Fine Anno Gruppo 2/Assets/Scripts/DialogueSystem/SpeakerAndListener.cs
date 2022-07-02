@@ -27,6 +27,14 @@ public class SpeakerAndListener : MonoBehaviour
         
         
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        m_audioTrigger = collision.GetComponent<AudioTrigger>();
+        if (m_audioTrigger != null)
+        {
+            PubSub.PubSub.Publish(new OnTriggerExitAudio());
+        }
+    }
 
-   
+
 }
