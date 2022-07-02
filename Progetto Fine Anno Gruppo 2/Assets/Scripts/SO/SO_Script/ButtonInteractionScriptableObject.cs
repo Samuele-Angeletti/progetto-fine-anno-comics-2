@@ -12,7 +12,7 @@ public class ButtonInteractionScriptableObject : ScriptableObject
 {
     public EInteractionType InteractionType;
 
-    public void Interact(GameObject interestedObject, Interacter interacter)
+    public void Interact(GameObject interestedObject, Interacter interacter, ButtonInteraction buttonInteractionHolder = null)
     {
         switch (InteractionType)
         {
@@ -23,7 +23,7 @@ public class ButtonInteractionScriptableObject : ScriptableObject
                 interacter.transform.position = interestedObject.transform.position;
                 break;
             case EInteractionType.OpenDoor:
-                OpenDoor(interestedObject, interacter);
+                OpenDoor(interestedObject, interacter, buttonInteractionHolder);
                 break;
             case EInteractionType.ActiveModule:
                 ActiveModule(interestedObject);
@@ -63,9 +63,10 @@ public class ButtonInteractionScriptableObject : ScriptableObject
         PubSub.PubSub.Publish(new ZeroGMessage(!GameManager.Instance.ZeroGActive));
     }
 
-    private void OpenDoor(GameObject interestedObject, Interacter interacter)
+    private void OpenDoor(GameObject interestedObject, Interacter interacter, ButtonInteraction buttonInteractionHolder)
     {
         interestedObject.GetComponentInChildren<Interactable>().Interact(interacter);
+        interestedObject.GetComponentInChildren<MovableObject>().SetButtonActivator(buttonInteractionHolder);
     }
     
     private void ActiveModule(GameObject interestedObject)

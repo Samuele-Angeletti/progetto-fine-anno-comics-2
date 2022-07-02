@@ -141,6 +141,7 @@ MonoBehaviour:
   InteractionType: 2
   m_Active: 1
   m_OneShot: 0
+  m_audioHolder: {fileID: 0}
 --- !u!61 &4982622388453702736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

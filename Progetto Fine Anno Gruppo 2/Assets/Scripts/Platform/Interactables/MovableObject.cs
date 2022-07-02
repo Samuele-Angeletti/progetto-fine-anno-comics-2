@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PubSub;
+using System;
+
 public class MovableObject : Interactable, ISubscriber
 {
     [Header("Movable Object Settings")]
@@ -15,6 +17,8 @@ public class MovableObject : Interactable, ISubscriber
     private bool m_Active;
     private bool m_Used;
     private AudioSource m_SoundSource;
+    private ButtonInteraction m_ButtonInteraction;
+    private bool m_Activated;
     private void Awake()
     {
         m_SoundSource = GetComponent<AudioSource>();
@@ -38,6 +42,11 @@ public class MovableObject : Interactable, ISubscriber
             if(Vector3.Distance(transform.position, m_EndPivot.position) < 0.1f)
             {
                 m_Active = false;
+
+                m_Activated = !m_Activated;
+
+                m_ButtonInteraction.ActiveLight(m_Activated);
+
                 transform.position = m_EndPivot.position;
                 m_EndPivot.position = m_StartPivot;
             }
@@ -81,5 +90,10 @@ public class MovableObject : Interactable, ISubscriber
             m_Active = true;
             m_StartPivot = transform.position;
         }
+    }
+
+    internal void SetButtonActivator(ButtonInteraction buttonInteractionHolder)
+    {
+        m_ButtonInteraction = buttonInteractionHolder;
     }
 }

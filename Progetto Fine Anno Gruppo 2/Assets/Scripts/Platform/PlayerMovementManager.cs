@@ -173,7 +173,20 @@ namespace MainGame
 
         public override void MoveDirection(Vector2 newDirection)
         {
-            InputDirection = newDirection.normalized;
+            float x = newDirection.x;
+            float y = newDirection.y;
+
+            if (x > 0)
+                x = 1;
+            else if (x < 0)
+                x = -1;
+
+            if (y > 0)
+                y = 1;
+            else if (y < 0)
+                y = -1;
+
+            InputDirection = new Vector2(x, y);
         }
 
         public override void Jump(bool jumping)

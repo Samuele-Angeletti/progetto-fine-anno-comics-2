@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Commons;
+using System.Collections;
+using UnityEngine;
 namespace MicroGame
 {
     public class CharacterLogicPM : Controllable, ITeleportable
@@ -20,7 +18,7 @@ namespace MicroGame
         private bool m_OnGoing;
         private void Start()
         {
-            if(controller == EController.IA)
+            if (controller == EController.IA)
             {
                 StartCoroutine(SearchNewDirection());
             }
@@ -35,15 +33,15 @@ namespace MicroGame
                 if (Vector3.Distance(transform.position, m_Destination) < 0.05f)
                 {
                     transform.position = m_Destination;
-		    if(m_Direction.magnitude != 0)
-		    {
-			MoveDirection(m_Direction);
-	    	    }
-		    else
-		    {
+                    if (m_Direction.magnitude != 0)
+                    {
+                        MoveDirection(m_Direction);
+                    }
+                    else
+                    {
                         m_Rigidbody.velocity = Vector3.zero;
                         m_OnGoing = false;
-		    }
+                    }
                 }
             }
             else
@@ -57,8 +55,8 @@ namespace MicroGame
             if (ForwardCheckOfWall(newDirection.normalized))
             {
                 m_Direction = newDirection.normalized;
-                
-                if(!m_OnGoing || newDirection.magnitude > 0)
+
+                if (!m_OnGoing || newDirection.magnitude > 0)
                     m_Destination = new Vector3(m_Direction.x, m_Direction.y) + transform.position;
 
                 if (newDirection.magnitude > 0) m_OnGoing = true;
@@ -79,16 +77,16 @@ namespace MicroGame
             {
                 m_Direction = Vector2.zero;
             }
-            
+
         }
 
         private Vector2 RandomDirection()
         {
-            switch(UnityEngine.Random.Range(0,4))
+            switch (UnityEngine.Random.Range(0, 4))
             {
                 case 0:
                     return Vector2.up;
-                case 1: 
+                case 1:
                     return Vector2.down;
                 case 2:
                     return Vector2.left;

@@ -4,7 +4,7 @@ using UnityEngine;
 using Commons;
 using PubSub;
 using MainGame;
-public class ButtonInteraction : Interactable,ISubscriber
+public class ButtonInteraction : Interactable, ISubscriber
 {
     private AudioSource m_soundSource;
     [Header("Button Interaction Settings")]
@@ -27,8 +27,8 @@ public class ButtonInteraction : Interactable,ISubscriber
     {
         if (m_Active)
         {
-            if(m_soundSource != null) m_soundSource.PlayOneShot(m_audioHolder.audioToSend.musicToPlay);
-            GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter);
+            //if(m_soundSource != null) m_soundSource.PlayOneShot(m_audioHolder.audioToSend.musicToPlay);
+            GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter, this);
             if (m_OneShot) m_Active = false;
         }
     }
@@ -66,5 +66,10 @@ public class ButtonInteraction : Interactable,ISubscriber
     private void OnDestroy()
     {
         OnDisableSubscribe();
+    }
+
+    public void ActiveLight(bool active)
+    {
+        Debug.Log($"LUCE {active}");
     }
 }

@@ -552,9 +552,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6000
-        y: 6505
-        width: 500
-        height: 500
+        y: 6729
+        width: 225
+        height: 276
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1373,8 +1373,8 @@ TextureImporter:
       Tileset 2.0 Unity_108: 377193725
       Tileset 2.0 Unity_132: 733031714
       Tileset 2.0 Unity_91: 1850585085
-      Tileset 2.0 Unity_79: 1180030753
       Tileset 2.0 Unity_28: -457022001
+      Tileset 2.0 Unity_79: 1180030753
       Tileset 2.0 Unity_96: 747470602
       Tileset 2.0 Unity_133: 1796005021
       Tileset 2.0 Unity_141: 1782053396
@@ -1406,8 +1406,8 @@ TextureImporter:
       Tileset 2.0 Unity_120: -1277606659
       Tileset 2.0 Unity_142: -34978913
       Tileset 2.0 Unity_105: 1972582125
-      Tileset 2.0 Unity_34: -1690699397
       Tileset 2.0 Unity_84: 1506700624
+      Tileset 2.0 Unity_34: -1690699397
       Tileset 2.0 Unity_134: -40293343
       Tileset 2.0 Unity_0: -2099399063
       Tileset 2.0 Unity_9: 1713032308
