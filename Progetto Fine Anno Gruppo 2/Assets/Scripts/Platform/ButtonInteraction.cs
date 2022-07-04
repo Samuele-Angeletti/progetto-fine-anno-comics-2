@@ -10,7 +10,7 @@ public class ButtonInteraction : Interactable, ISubscriber
     [Header("Button Interaction Settings")]
     [SerializeField] bool m_Active = true;
     [SerializeField] bool m_OneShot;
-    [SerializeField] AudioHolder m_audioHolder;
+    //[SerializeField] AudioHolder m_audioHolder;
     private void Awake()
     {
         m_soundSource = GetComponent<AudioSource>();

@@ -50,45 +50,42 @@ public class AudioManager : MonoBehaviour, ISubscriber
     }
 
 
-
-
-
     #endregion
 
     [Header("MENU AUDIO")]
-    [SerializeField] AudioHolder m_menuAudioHolder;
+    [SerializeField] AudioClip m_musicaMenùPrincipale;
     [Header("AUDIO REFERENCE")]
     [SerializeField] AudioSource m_AudioSource;
     [SerializeField] AudioMixer m_audioMixer;
     [Header("FADING SETTINGS")]
     [SerializeField] float fadeInTime;
     [SerializeField] float fadeOutTime;
-
+    
 
     private void Start()
     {
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
         PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
-        
+        PubSub.PubSub.Publish(new SendAudioMessage(m_musicaMenùPrincipale));
+
         PubSub.PubSub.Publish(new SendAudioSettingsMessage(true,true));
-        PubSub.PubSub.Publish(new SendAudioMessage(m_menuAudioHolder));
-        
+        if (m_musicaMenùPrincipale == null) return;
     }
 
 
     public void ChangeVolumeSFX(float value)
     {
-        m_audioMixer.SetFloat("SFX", value);
+        m_audioMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
     }
     public void ChangeVolumeMusic(float value)
     {
-        m_audioMixer.SetFloat("BackGroundMusic", value);
+        m_audioMixer.SetFloat("BackGroundMusic", Mathf.Log10(value) * 20);
 
     }
     public void ChangeVolumeAmbience(float value)
     {
-        m_audioMixer.SetFloat("AmbientSound", value);
+        m_audioMixer.SetFloat("AmbientSound", Mathf.Log10(value) * 20);
 
     }
     public void ChangeMasterVolume(float value)
@@ -105,15 +102,16 @@ public class AudioManager : MonoBehaviour, ISubscriber
             SendAudioMessage audio = (SendAudioMessage)message;
             if (m_AudioSource.clip != null)
             {
-                StartCoroutine(StartFade(m_AudioSource, fadeOutTime, 0));
-                m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
-                StartCoroutine(StartFade(m_AudioSource, fadeInTime, 1));
+                PubSub.PubSub.Publish(new GetAudioBeforeChangingMessage(m_AudioSource.clip));
+                StartCoroutine(WaitForFade(m_AudioSource, fadeOutTime, 0));
+                m_AudioSource.clip = audio.audioClipToSend;
+                StartCoroutine(WaitForFade(m_AudioSource, fadeInTime, 1));
 
             }
             else if (m_AudioSource.clip == null)
             {
-                m_AudioSource.clip = audio.audioHolderToSend.audioToSend.musicToPlay;
-                StartCoroutine(StartFade(m_AudioSource, fadeInTime, 1));
+                m_AudioSource.clip = audio.audioClipToSend;
+                StartCoroutine(WaitForFade(m_AudioSource, fadeInTime, 1));
 
             }
 
@@ -169,7 +167,11 @@ public class AudioManager : MonoBehaviour, ISubscriber
     //            yield return null;
     //        }
     //    }
-
+    public IEnumerator WaitForFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+        yield return new WaitUntil(() =>StartFade(audioSource, duration, targetVolume).MoveNext() == false);
+    }
+   
     public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
         float currentTime = 0;
