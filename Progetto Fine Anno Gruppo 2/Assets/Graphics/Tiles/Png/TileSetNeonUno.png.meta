@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,6 +69,30 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +102,2212 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TileSetNeonUno_14
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33be209e8a421e488d5ce10f977f77a
+      internalID: 1017198495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_15
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67359ee428f1ba345a986ab833f9b844
+      internalID: 1640599398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_16
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b45de68d5276b54197bd9d2553472f7
+      internalID: -545778008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_17
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17b7ded21f236040932ed98383aa2b9
+      internalID: 1359313274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_18
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2b4f52f1dc14b4e8b33b7039656b2f
+      internalID: 98330265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_19
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5934ca8cb709104fb08732b8f322e6e
+      internalID: 454881172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_20
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fc1fafa90119245a0631a4ed64d19f
+      internalID: -328965278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_21
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28cc002eec62ba4bbde0415037552d4
+      internalID: -2087952690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_23
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e47152b5a648094fa1ae5f1995861e3
+      internalID: -272649293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_24
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc655ec0bd372f419a0bd663c1203f2
+      internalID: 20569370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_25
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d84005c013e50547a11dac00df1789a
+      internalID: -1085312937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_28
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc434edac354fa45b16e94bc18205e0
+      internalID: -1280716092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_29
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517f7d9376ea2a9458c4803297ca4686
+      internalID: 990864198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_30
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199590eef466d874c907ad022ed16c1b
+      internalID: -1579204708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_31
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be18219362ceb642804a80b6854fef8
+      internalID: 461753178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_32
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f257c5787a9ede540985cb47cf41e5e5
+      internalID: -1101620632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_33
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b87d1c23123ebe4da3db0c8e75749b9
+      internalID: -1029952255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_34
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de830809a8eebc644ad159b4d4a0df0d
+      internalID: -667733270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_35
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad7606bcb54bcb458d4268eeb3faab8
+      internalID: 1011080160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_38
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c08a6cf274c8c42a7116c6c2f11f37
+      internalID: -676752771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_54
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b22fb02a4ee444bbb84d0df967e707
+      internalID: -1429247423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_55
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fb24214d3ddb642b31450b610508fc
+      internalID: -2133393852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_56
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aab792a6f6d46a44afc9757af1c8ff4
+      internalID: 654452307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_57
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3127370fad0f4a949be1570bd3920c20
+      internalID: 1322098701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_58
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36da6338ba7c27042b1d022ae6958da0
+      internalID: 870947160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_59
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3934ed495b99b034f87c63f17b5d5988
+      internalID: 386042342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_61
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2faa31b657fd5d4fbe6d359a78c69e3
+      internalID: 1914437800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_62
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa2369db6bff4742947414b305c3e2d
+      internalID: 882253769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_63
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761660c3ad8482d48b053bf43a44024a
+      internalID: 617388274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_64
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff6315254486e74f8ea2371db76772a
+      internalID: -1790590062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_65
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81cab11832746f6419bd53176e314816
+      internalID: 656885520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_66
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5851b669f754951468a6ded127074847
+      internalID: -2118418350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_68
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8ae9118f11a2c4295dec0b47f141b6
+      internalID: 1089030897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_69
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707fa9640fcdf22498e858dc28dce14c
+      internalID: -621997460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_70
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4d617c98c459941825cbf25863529e
+      internalID: -229257747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_71
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc354e04036a43a4f8a525a7c7bf8a19
+      internalID: -324233788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_72
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b464dd031468d41985efc6deb24188
+      internalID: 1929204787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_73
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af61b05223d4a2a4e994cbfa84b6db0a
+      internalID: 1721030350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_74
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3eec2c925ac8243b5d3759d97a48c4
+      internalID: 2018046803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_75
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143a3524db258ef41a86159cb2787fb9
+      internalID: -246903946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_76
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a174569b784a1643909fb06f9d45263
+      internalID: 1758646622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_78
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d251049ef8fbe4fb86260033ba54f8
+      internalID: 1688423891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_79
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdc3d8bb96d51947a34abebc01b2af9
+      internalID: -660393686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_80
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798ae6ff297e61540b5a299e41b222be
+      internalID: -1755337019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_81
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b779d05aa4eb564b82d023e3702418c
+      internalID: -1298737360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_82
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5803d0dbb3f1243b34f44a7e27b090
+      internalID: -1322592183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_83
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767d6a63636a18c42bec38b9a3fb73bc
+      internalID: 1446256357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_84
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a9b9e5d13d3a14c8975b03d0467040
+      internalID: 1790600461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_85
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5707fedf0a679ed4899c663439bf9abf
+      internalID: 354968530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_86
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac939f51f08a9864c817eb62f4e1847c
+      internalID: -1675638418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_88
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c361870a753522243b3d83c774860a07
+      internalID: 1455681787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_89
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01cb0f17f39f2de48b854ee3b4f36335
+      internalID: 865943444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_90
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b990e4780a98044b2aef6af50351b1
+      internalID: -1294562337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_91
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a2e50628e449646a86d84a6299bf88
+      internalID: -1808968065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_92
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58edc0064f7110c44a53489fafd08d13
+      internalID: -2054738069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_93
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2cc79d21fb79b4ab2c2ec3fe30240a
+      internalID: 499864221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_94
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6addef73e7f63784eb06e875e0632784
+      internalID: -487151208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_95
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ac8b2ef54d58d4f8023051a3d316c0
+      internalID: 1125199575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_96
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c786111ebdc5a140856df3d46df0a7d
+      internalID: 274349455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_98
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe8900f8a2059b4e9c722ad335cfa5b
+      internalID: 552291966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_99
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a34a8bdb02f6ae49bfef25b95fe944b
+      internalID: 127719658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_100
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9519a34100c2548b8e618197b04780
+      internalID: 23303984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_101
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f542359bda1175b4f820c63193cf5ae5
+      internalID: 582950892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_102
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb82259cd1dd544ab5876cc0f2c45ed
+      internalID: -2098313931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_103
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e81a65817df8054fb3ab8c64d3880c2
+      internalID: -1384002648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_104
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15d65e455d787549be11d6c755927b4
+      internalID: -1874877779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_105
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64c14f506742b74ebdb147078b48c03
+      internalID: 173724008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_106
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286f5c04f3836d844b8aa2556854498f
+      internalID: -1851240361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_108
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f0d24256ba73f448b00a01dbfc229f
+      internalID: 378205836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_109
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c4a630b2f89bc439713d01a527b57a
+      internalID: 1087847895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_110
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccf52907180ba645a4aa33eb5bb93ea
+      internalID: 922143420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_111
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c8622771309c047bedd5dae04f6dfb
+      internalID: 386211400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_112
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c54ea1e76ef0f34d92490962634cc57
+      internalID: -55971543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_113
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666c1f04a16cd2540afbd08cf7162176
+      internalID: 1295404619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_114
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4efcacb050857c4e8273781ddf42a4f
+      internalID: 1026669746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_115
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015571a4bbe89134aacc84530d9cdff7
+      internalID: -617615663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_116
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83183b21aae2bd74c8d4f83126153cb2
+      internalID: 394977772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_117
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c2ac54752dfba43b56f895f80b5361
+      internalID: 1020379813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_118
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f147e6e73180944a1f7de0589fb6ec
+      internalID: -1142447371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_119
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31fb2afb2905ee469cc3188b40a3914
+      internalID: 889551133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_121
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccdde583dba0f6d4a81b7e459c6a77b2
+      internalID: 1547084658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_122
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93833ecec31e8d4b9c59f1c55ad4d92
+      internalID: 1434270302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_123
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8415ef992c1cf409b60cbb5fb5d8d7
+      internalID: -1106608154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_124
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c12c8a8b52034408954b4a87e78661
+      internalID: 1820082463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_125
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3252a8873b8b244bbc65c0cf779596
+      internalID: 1532894322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_126
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef104f318100d849ae3441287f2b89a
+      internalID: -361597470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_127
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d588273a0739c6644952661a507af705
+      internalID: -674570840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_128
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d446f38f05d039043a48dc66801d139e
+      internalID: 608287750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_129
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c24f7bc7325b7d47ae3c5f713899726
+      internalID: 686267680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_130
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2882fa42c4c24428da8940cbd5240b
+      internalID: -2005544863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_131
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e30c05c17f34646a286464788c3125
+      internalID: -1652809700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_132
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbccadc17ff9264eb54272dd2274bd5
+      internalID: 2063123530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_134
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8985863958874304391eb4e2bba77967
+      internalID: 79839545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_135
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1831608dc68694a80e8f22b49454d7
+      internalID: -284689606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_136
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fed85b46c59e474f9fd1fb63b79210e
+      internalID: 1601640542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_137
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a622f30e55610d47ae504546ff096bf
+      internalID: 2100705437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_138
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a6013d5338ad345a92764c6279499f
+      internalID: -139642307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_139
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ba73dfa5d301d4089aad41b348527d
+      internalID: -2120990448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_140
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3652b499abd42a048b4ec7bb69efecd2
+      internalID: -1101602117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_141
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162d48df5c665b044bc876164b00e5bf
+      internalID: -48839752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_142
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f310ed35271ace342bb9450bac697181
+      internalID: 1127099065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_143
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663a281472cec044391006da05f9f2f5
+      internalID: -1649583490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_144
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1d2229ab095ed4aaa397c2a37547ec
+      internalID: -894625427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_145
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec987231ce19b844c952d79c9781fd14
+      internalID: -2128100721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonUno_158
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea5b8b29bd22474192f01e6579a422a
+      internalID: -1893197806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -88,8 +2317,169 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
-    nameFileIdTable: {}
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 006d5f907dc6cf644ab5fae60f135c15, type: 3}
+      name: unity_Lightmaps
+    nameFileIdTable:
+      TileSetNeonUno_24: 20569370
+      TileSetNeonUno_132: 2063123530
+      TileSetNeonUno_37: 1692320053
+      TileSetNeonUno_127: -674570840
+      TileSetNeonUno_96: 274349455
+      TileSetNeonUno_20: -328965278
+      TileSetNeonUno_25: -1085312937
+      TileSetNeonUno_60: 500472114
+      TileSetNeonUno_61: 1914437800
+      TileSetNeonUno_33: -1029952255
+      TileSetNeonUno_88: 1455681787
+      TileSetNeonUno_134: 79839545
+      TileSetNeonUno_154: -970592445
+      TileSetNeonUno_17: 1359313274
+      TileSetNeonUno_40: 381333109
+      TileSetNeonUno_121: 1547084658
+      TileSetNeonUno_16: -545778008
+      TileSetNeonUno_8: -2068283574
+      TileSetNeonUno_43: 835463456
+      TileSetNeonUno_80: -1755337019
+      TileSetNeonUno_98: 552291966
+      TileSetNeonUno_15: 1640599398
+      TileSetNeonUno_113: 1295404619
+      TileSetNeonUno_136: 1601640542
+      TileSetNeonUno_135: -284689606
+      TileSetNeonUno_104: -1874877779
+      TileSetNeonUno_57: 1322098701
+      TileSetNeonUno_71: -324233788
+      TileSetNeonUno_5: -1247566516
+      TileSetNeonUno_35: 1011080160
+      TileSetNeonUno_3: 1801618073
+      TileSetNeonUno_1: -1228732903
+      TileSetNeonUno_91: -1808968065
+      TileSetNeonUno_30: -1579204708
+      TileSetNeonUno_129: 686267680
+      TileSetNeonUno_74: 2018046803
+      TileSetNeonUno_6: -580860433
+      TileSetNeonUno_85: 354968530
+      TileSetNeonUno_18: 98330265
+      TileSetNeonUno_109: 1087847895
+      TileSetNeonUno_51: 328861322
+      TileSetNeonUno_156: 1485147344
+      TileSetNeonUno_41: 1471327817
+      TileSetNeonUno_73: 1721030350
+      TileSetNeonUno_116: 394977772
+      TileSetNeonUno_42: -646744042
+      TileSetNeonUno_124: 1820082463
+      TileSetNeonUno_152: -1407047854
+      TileSetNeonUno_38: -676752771
+      TileSetNeonUno_112: -55971543
+      TileSetNeonUno_70: -229257747
+      TileSetNeonUno_100: 23303984
+      TileSetNeonUno_65: 656885520
+      TileSetNeonUno_82: -1322592183
+      TileSetNeonUno_106: -1851240361
+      TileSetNeonUno_89: 865943444
+      TileSetNeonUno_59: 386042342
+      TileSetNeonUno_125: 1532894322
+      TileSetNeonUno_131: -1652809700
+      TileSetNeonUno_64: -1790590062
+      TileSetNeonUno_67: 1229908727
+      TileSetNeonUno_115: -617615663
+      TileSetNeonUno_54: -1429247423
+      TileSetNeonUno_4: -660190561
+      TileSetNeonUno_99: 127719658
+      TileSetNeonUno_150: -1030522518
+      TileSetNeonUno_158: -1893197806
+      TileSetNeonUno_0: -1644917744
+      TileSetNeonUno_76: 1758646622
+      TileSetNeonUno_110: 922143420
+      TileSetNeonUno_148: -1999959816
+      TileSetNeonUno_52: -159195006
+      TileSetNeonUno_62: 882253769
+      TileSetNeonUno_81: -1298737360
+      TileSetNeonUno_7: 1019264448
+      TileSetNeonUno_63: 617388274
+      TileSetNeonUno_28: -1280716092
+      TileSetNeonUno_108: 378205836
+      TileSetNeonUno_101: 582950892
+      TileSetNeonUno_79: -660393686
+      TileSetNeonUno_93: 499864221
+      TileSetNeonUno_147: -2093306870
+      TileSetNeonUno_26: 934313637
+      TileSetNeonUno_107: -1390777692
+      TileSetNeonUno_66: -2118418350
+      TileSetNeonUno_32: -1101620632
+      TileSetNeonUno_50: -1459556927
+      TileSetNeonUno_77: 447023078
+      TileSetNeonUno_103: -1384002648
+      TileSetNeonUno_123: -1106608154
+      TileSetNeonUno_133: 1909700922
+      TileSetNeonUno_111: 386211400
+      TileSetNeonUno_75: -246903946
+      TileSetNeonUno_53: 217822984
+      TileSetNeonUno_155: -140681080
+      TileSetNeonUno_45: 1377749910
+      TileSetNeonUno_78: 1688423891
+      TileSetNeonUno_97: 1874352873
+      TileSetNeonUno_21: -2087952690
+      TileSetNeonUno_122: 1434270302
+      TileSetNeonUno_11: 381767606
+      TileSetNeonUno_23: -272649293
+      TileSetNeonUno_27: 2054599978
+      TileSetNeonUno_56: 654452307
+      TileSetNeonUno_105: 173724008
+      TileSetNeonUno_69: -621997460
+      TileSetNeonUno_102: -2098313931
+      TileSetNeonUno_29: 990864198
+      TileSetNeonUno_137: 2100705437
+      TileSetNeonUno_139: -2120990448
+      TileSetNeonUno_128: 608287750
+      TileSetNeonUno_87: 1015466272
+      TileSetNeonUno_47: 1631264363
+      TileSetNeonUno_12: -721009579
+      TileSetNeonUno_94: -487151208
+      TileSetNeonUno_55: -2133393852
+      TileSetNeonUno_138: -139642307
+      TileSetNeonUno_142: 1127099065
+      TileSetNeonUno_19: 454881172
+      TileSetNeonUno_157: -1658470754
+      TileSetNeonUno_39: 1013904627
+      TileSetNeonUno_10: -874286136
+      TileSetNeonUno_141: -48839752
+      TileSetNeonUno_86: -1675638418
+      TileSetNeonUno_34: -667733270
+      TileSetNeonUno_44: 1163432778
+      TileSetNeonUno_120: -867770128
+      TileSetNeonUno_149: -876625283
+      TileSetNeonUno_58: 870947160
+      TileSetNeonUno_119: 889551133
+      TileSetNeonUno_48: -1391433192
+      TileSetNeonUno_153: -1736542134
+      TileSetNeonUno_14: 1017198495
+      TileSetNeonUno_145: -2128100721
+      TileSetNeonUno_9: -473507267
+      TileSetNeonUno_146: -705684499
+      TileSetNeonUno_68: 1089030897
+      TileSetNeonUno_130: -2005544863
+      TileSetNeonUno_46: -1056229167
+      TileSetNeonUno_49: -2018167244
+      TileSetNeonUno_126: -361597470
+      TileSetNeonUno_92: -2054738069
+      TileSetNeonUno_151: 79869071
+      TileSetNeonUno_2: -1986558580
+      TileSetNeonUno_22: 2108506036
+      TileSetNeonUno_144: -894625427
+      TileSetNeonUno_31: 461753178
+      TileSetNeonUno_13: -1403852141
+      TileSetNeonUno_95: 1125199575
+      TileSetNeonUno_143: -1649583490
+      TileSetNeonUno_72: 1929204787
+      TileSetNeonUno_140: -1101602117
+      TileSetNeonUno_118: -1142447371
+      TileSetNeonUno_114: 1026669746
+      TileSetNeonUno_117: 1020379813
+      TileSetNeonUno_83: 1446256357
+      TileSetNeonUno_84: 1790600461
+      TileSetNeonUno_36: -2068064956
+      TileSetNeonUno_90: -1294562337
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

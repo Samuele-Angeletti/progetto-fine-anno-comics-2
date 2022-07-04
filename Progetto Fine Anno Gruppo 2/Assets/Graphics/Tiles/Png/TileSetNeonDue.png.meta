@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,6 +69,30 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +102,6076 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TileSetNeonDue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88e88322e5f1984894d1748541b5892
+      internalID: 1731934953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1aba781a993e504eb5e963bf3528773
+      internalID: 858934540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4f7caaa670c2d42b9810da83abf058
+      internalID: -551477147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf6f73c4b2d3864eba9daf253082c66
+      internalID: 961662966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a2de41910506342844ae9072033570
+      internalID: -1523777088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2991c9a1bb9812a40aca2e3ecdac4252
+      internalID: -1881134651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_6
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92de99ee41f395c43ae52653eab3378b
+      internalID: 1498320248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_7
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ded9318bd81c545bfa73cbbc0da16d
+      internalID: -1104925420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_8
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d841ac65ab4b34dafd072744652dc6
+      internalID: -188049594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_9
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7aac85c75fcd5940b0dbb05f695628b
+      internalID: 928591521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_10
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f9416cc3574204c86fc556955185ef
+      internalID: 1487994914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_11
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c474828cafc5846a78e4718f65e117
+      internalID: 1296368548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_12
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1edbfc3a2028448aac917ac476d2c9
+      internalID: -1740578908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_13
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b22342ae354b5458f035012890981a
+      internalID: -2058216164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_14
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941c848e1b36b8c4eaf8d0ef1ea4044b
+      internalID: -1750474573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_15
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2ca67304a49714b8d9064ec2438491
+      internalID: 440060244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_16
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 8004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3a8dbced880c141bd5b89421fc88c7
+      internalID: -1067133241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f63cc24303795548934c5496e3ee63d
+      internalID: 1841287973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_18
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f5bd2b4e0200c4e8e46bf5a5d707f8
+      internalID: -838642839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_19
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c552594d5cee64eac26177c9a3c814
+      internalID: -157435040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_20
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e8bd47c4d213041899d21098f40385
+      internalID: 1242316113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_21
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f895185512555a46becea7e77d1a52e
+      internalID: 882998642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_22
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f677fdffeddc24e46938c2c3f73f03a0
+      internalID: 1740363132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_23
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4011b0d96f76848b87b2713771e7e0
+      internalID: 714326509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_24
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e974cb47e5257940a910b7cd5965890
+      internalID: 1758606010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_25
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6a55c8e9c9fb2d44af82b8f975d54e5
+      internalID: -538287507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_26
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0012041073a4ca64ea8da74b1b040377
+      internalID: 1008520080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_27
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd8f983c1a58c548b87e0d38d2cbb36
+      internalID: -1645992208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_28
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2950d088c493a4eb1d31b6784c6f3a
+      internalID: -1483042510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_29
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a7001c7b39a524d98f376ac389e49e
+      internalID: 1476530218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_30
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f955ef9d3c4cd489489a239bf0e378
+      internalID: 1513658025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_31
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f376ec2c757ffc418bac0112b4e6b86
+      internalID: -1394626298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_32
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483c61ae610b5674f994b34a1b832d6a
+      internalID: -644098480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_33
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 7504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31623d32d70c0904196676dd8cddb255
+      internalID: -444618561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0318ae920a9bf74098183fbae3fb4ab
+      internalID: -500386861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_35
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4584a4ce96e4f498bfc5af68b92f90
+      internalID: -282923672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_36
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69b29efe10a9684784bd359c2110232
+      internalID: 497428495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_37
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee975282afa11441922dc3245e9ef6a
+      internalID: 969266761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_38
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc53dc12861775e4d8a7164a9e64a0a9
+      internalID: 486017916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_39
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9c06cc403b83c4da6f0f60978df2af
+      internalID: 1967626885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_40
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e4250ceafea1a4a8b2274ce167d7db
+      internalID: -1872536879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_41
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367529ea5087cbf4f998a0ff45f8ee2f
+      internalID: 1026817173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_42
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad075f08fe1dc943832c05f0810316e
+      internalID: 2109081102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_43
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d23b41cb2d25434f827420a59e8ee6b
+      internalID: 233103785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_44
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4050a391f424d47be9e2f1924e1899
+      internalID: -1892115747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_45
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3baf0a6ac3bd17541b1cd9b62f675dbb
+      internalID: -995266572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_46
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d785eeb208480a949bf87fd4e8bbc796
+      internalID: 307553282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_47
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0929f903535351c4797d8175e2f3330f
+      internalID: -377079408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_48
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3133f942d45a04897a8e297e257a1f
+      internalID: 236912646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_49
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd88217a9515a5247b3b60948e601aea
+      internalID: 268120195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_50
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 7004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9fcf742189fd3840b7eac9260489f56
+      internalID: 4248937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0729d4a0183df7458632c30dd8e2541
+      internalID: -1613297085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_52
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e85f6f920703a048846649ec9baa9be
+      internalID: 648264873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_53
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a13c54e13290df4db44aa7ee399cf1c
+      internalID: -534526638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_54
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32dfe6b8c6e96549bf015fc0a040cb9
+      internalID: 382886772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_55
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd17ad527c847b4d9bc2e458f03252a
+      internalID: 1294517221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_56
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095e5b023f3e3cf449cadf4e63ac62e2
+      internalID: 298789249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_57
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea5006ebf9d4d841a95c0e39057d791
+      internalID: 2078264194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_58
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7051913f20b24d4c8cbb8997ed91ffa
+      internalID: 947578827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_59
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beee62acde8b52e4dafe2b40cf63331e
+      internalID: -572215369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_60
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685aba28cc8305147abeb4597f89e9e0
+      internalID: 1034534382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_61
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183dd586db9b6b642adccc02fdc30a28
+      internalID: -2095314187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_62
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfee10d3df103f4982267102a2f1f84
+      internalID: 1544938747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_63
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acdbf8c4b7be164abc01949a3979ef3
+      internalID: 1012238620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_64
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69869d8d13a129c4f8e59366ca036084
+      internalID: 619290704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_65
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34820be5395e74e4b8bfd00428cbbd03
+      internalID: -1187242335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_66
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb1410616f32f44cac3f78fdae5f885
+      internalID: 50108306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_67
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 6504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fdd3a1298aa8ad42857cb75c067474a
+      internalID: -1323121356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3823c168a42a82943a729a83e6ee9e2a
+      internalID: 1909264588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_69
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b86b9f21b6fd134797f81b865ca7409
+      internalID: 1133177118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_70
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6606e0da6ab5845ad225c742327155
+      internalID: -414733071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_71
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103a25fe0e7432b40975efcbec59eb82
+      internalID: -1166542453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_72
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84493fa4dd0b2e74284376fce9659bb8
+      internalID: 1149392457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_73
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6434c062b1c304b8f88b36b67b8e74
+      internalID: -2036997155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_74
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e327ea533668c474785186a7f9a42967
+      internalID: -540404911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_75
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1558ffd6cf2c41d4382e50a89b991af1
+      internalID: 2082793647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_76
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532d857f6969abd409275f4fbb3a334f
+      internalID: 1033920596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_77
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa11d850d10073418d4b4695e28e251
+      internalID: 785407578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_78
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784e6ffe6b9934048bddedec4cbcc8e2
+      internalID: -305319367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_79
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8340426966443e44cb84808e578f47a5
+      internalID: 166007847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_80
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b87e5c2f0325be4c81f84620a7e706a
+      internalID: -223454590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_81
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39055e55460e9cf48869ac1256236e67
+      internalID: -1826418026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_82
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30087d4c77ce2e4fb92150809cd7ed0
+      internalID: -1799850919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_83
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f3e03e6a0c93a45865373ac7747ecf
+      internalID: 810661348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_84
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 6004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f13c08584ea3d54cbf0de906fbb5bb1
+      internalID: -359929704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7def7f898a6ea4ea5dcfac64e41006
+      internalID: -1559599782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_86
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e2b4fa42e0aaf42b1d988de5ec3931
+      internalID: -1907445923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_87
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43f0dcb8d425df4aa92d6eb89851d9a
+      internalID: 734846707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_88
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdfdb3716984c847b679ffca21973bc
+      internalID: 1286138302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_89
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4132dd784eee734287c665e2625977d
+      internalID: -1334534901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_90
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca096e4ab84c464593df5d77e0bfd6d
+      internalID: 1251305882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_91
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb8d102269fcff4983f1ef1942351eb
+      internalID: 743274266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_92
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53ea817244ba424eacb5c577de97237
+      internalID: -1838507780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_93
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698858603e00c484f9176db4629ec17c
+      internalID: -1054349912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_94
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8a1adc77fe64b4f8a9581cc35cb159
+      internalID: 828888596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_95
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23de38875afebc498ae2901e8448386
+      internalID: -999737779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_96
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc56bb0d0642004ebfc72e02a62b1c4
+      internalID: 1496497736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_97
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3669a83086ca1dd4ea5b83d3d67c2fad
+      internalID: -2050429116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_98
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11897fd5ac95d414d980849eb5ce814e
+      internalID: 693877605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_99
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1a3e95fd9e2c045a229c13de89c2ab
+      internalID: 1666105794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_100
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569459f0debc45b438593ffd6bebff10
+      internalID: -1416690715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_101
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 5504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2951cf464b5d267459b99d9bce09e45e
+      internalID: 1689456859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e8660d5e2de2847a44082c227f07f6
+      internalID: 1901377128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_103
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472b02a5e7c97ef4ab73761677c4b37d
+      internalID: -1201958593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_104
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5fe4b2c0b320af4a86a186d5fbbeaa7
+      internalID: -984239456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_105
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255093be8d03e06488c893b85fcec152
+      internalID: 1901180719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_106
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d565baeee37814f9da581d38db4a8d
+      internalID: -1361908481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_107
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d14bf7717b2e824393b4e960d301b16
+      internalID: -1971943712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_108
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7e6041ff7240d49adeefdf1cc8fa03
+      internalID: 494492707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_109
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca805a0845a08114c8df1f64e28291ff
+      internalID: 1340812122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_110
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4098c1f3ebc7634f8df53c02f50c743
+      internalID: 1066813896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_111
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405d64b7f7c91154dadd2607c599d837
+      internalID: -806486746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_112
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940a7d7e9da08e54b94560191617f541
+      internalID: -1511708966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_113
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8c3966af24b024b90d81f90357fb36
+      internalID: 1128967242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_114
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4c871a8d4972e42a9b26400a5d0bfe
+      internalID: 1664509964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_115
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ae2051d687bae4aafafebbbab57d1d
+      internalID: -730609444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_116
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0d04237df5fa44fb22d623cb153d40
+      internalID: -2112356926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_117
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcb7ecea5295704ba89f525271cd45e
+      internalID: -686037029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_118
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 5004.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072576568c86a514ca73a0b58a1747d9
+      internalID: 1880709260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a36f8d762a79644c824242e296faeda
+      internalID: -736720071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_120
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf1c03f8ef20b24eb17df4a9da503f0
+      internalID: 1830212132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_121
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd70788848700c459b052a05fe89c34
+      internalID: -973824257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_122
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2132cc4d88d2294bafd9a134d5a5b8d
+      internalID: 522293069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_123
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c294bc821e38ed4aac9820f4ce7290e
+      internalID: 1976907489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_124
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35514f19cb7a7454c98872efd8029939
+      internalID: 250961530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_125
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb36c5477304fc94b852105fccb14060
+      internalID: -368149870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_126
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4f694ef473e344f99d27973e2a5bb9
+      internalID: 204923355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_127
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6c2db2528bfed4dba5c21d6fc26aae
+      internalID: 2004026609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_128
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edaccf0432f30b94e92d9bba96120a89
+      internalID: 1640687066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_129
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c13cbce3562064d8fec2c1f63044ab
+      internalID: 531530061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_130
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39108a052f35e745bdb3c1f76cd4bb5
+      internalID: -1423298783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_131
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9395abdcb636f48469e43aed4ad12b42
+      internalID: -1437876476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_132
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3edc9bc45b589b418e428e3560e4607
+      internalID: 1256978496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_133
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a146b64d9dddf4eba619d2bbd688a2
+      internalID: -380332130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_134
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4416d266b51d254f9a7bbf199a4a346
+      internalID: -377834458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_135
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 4504.706
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd0bfaa449c73c468af0ee94d5f81a2
+      internalID: -1271346023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_136
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71743518135d9bf45821122e87b31d80
+      internalID: -62770541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_137
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9daf5852e3ae0b34683dab4f7b07750d
+      internalID: 1154604306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_138
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de76b2399d41f442ad31f725fa8721c
+      internalID: -1152691644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_139
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c5d65d1def53f4da971003158b1797
+      internalID: 1975432668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_140
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d4e4beae1a2be499ab8e2b9153b162
+      internalID: 1552358328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_141
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4a64a1d7653eb44ab745c7869552f9
+      internalID: -1688240704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_142
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562038ef3d712234e831b99a87198c00
+      internalID: 1750519308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_143
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca7c7a83f332974ea70d0d162ad47a1
+      internalID: -629013415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_144
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c42659589244b64582196d2e9dc9194
+      internalID: 757255757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_145
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14dc818e6b5f584486cf3575b2330d7
+      internalID: 520541545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_146
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1fe9d0086e37d42b8b6a821252a3f5
+      internalID: -514664779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_147
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0a6072005b82c45b701e28e4538d21
+      internalID: 1699551018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_148
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec911a43d1ac7b346995c9ff40741ce3
+      internalID: -1626058079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_149
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385f217fe8ccbc24bb610b79c80bc9dc
+      internalID: 1502125402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_150
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84014e6cfc2c42649b2a4e1df98ff78a
+      internalID: -1909494395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_151
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4f71bf2be35bb4b8ef7eff2dbbac82
+      internalID: 1370795327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_152
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 4004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd36e7b087d576d469e614cc72956cda
+      internalID: 850015854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_153
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3907697556a234a8d00ec880c52c49
+      internalID: -529400672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_154
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e5fc0b3070d4b4e85903a9403294b8
+      internalID: -901037849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_155
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a8bd7e94fe79644885a52aa808bdda
+      internalID: 951322689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_156
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7916c1313e2cb50499c0c1051a8930c2
+      internalID: -1396508196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_157
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56952d19b0d786e42b0b5820d231aed9
+      internalID: -1395905283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_158
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca07d402ce99f84a893df6d0cc38dff
+      internalID: 718318044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_159
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3536b0b8080b56d40947d113d6d82643
+      internalID: -1673127182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_160
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f1e5757a8e22b46a75d0b05e99e95f
+      internalID: -1571338281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_161
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b388f208df0df94987a0e086b35a65c
+      internalID: -221494205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_162
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e525adcd0680e7f44a2204fa1c8a9d8a
+      internalID: -23133309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_163
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbcdac6b1ecf92418ccc6d14e2c811b
+      internalID: 293316580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_164
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc57888618f332649a0457ffe1fd1d4d
+      internalID: -1584724471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_165
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856d82664b5cbad41a57c08eaae22550
+      internalID: -1279022861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_166
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7922a2e293984bc46a7fb50d36d667df
+      internalID: -71401025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_167
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d06f6500516bd841b8432f011ef9a50
+      internalID: -306622829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_168
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b19c0a60d10bb42998a264d08b04db
+      internalID: 1474195355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_169
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 3504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1348b67b11601e4c96769e2c6511d80
+      internalID: 812909901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_170
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0d0f602f9273448b8d257faa12ff05
+      internalID: -807108018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_171
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c7e37e6826187469faeced3b2b97db
+      internalID: 2017174595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_172
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a8c18ef75721e4490ee7e6e1d96c19
+      internalID: 635708745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_173
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1cca7cbbf615541936fff464173afa
+      internalID: -2075598678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_174
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89a1923ff1348f43be6398a3cfce873
+      internalID: -575404560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_175
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc37a4f0a2bf4b4438cfadc27afd8264
+      internalID: 88719261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_176
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755e729bfa7d5df4789cd02a8eacb6fd
+      internalID: -1252015553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_177
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a82eeb678589f4eaf5be6be0aaf344
+      internalID: 1164487597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_178
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252cb2fcb0093834999b24bf9d09e309
+      internalID: -1667750659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_179
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8913207783cead42b61ab547847c887
+      internalID: -1549105271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_180
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93fa6508999cb8418cd43d7a142999c
+      internalID: -1710594563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_181
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa95e818025929e40a6b4a19fa2a161c
+      internalID: 1254822749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_182
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6961d986c71598b42a88ba9509d9505d
+      internalID: 674432616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_183
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44efdd29d90bb71469101370698311a0
+      internalID: -1757814799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_184
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b5d37594ca903419ea837af9ad23f4
+      internalID: -2128826410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_185
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42027de8f763a104f98650b75223c38c
+      internalID: -412080939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_186
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 3004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16a101b66d513d4eba635cc6472c70d
+      internalID: -294709942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_187
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9422d386ab8234e4eb42b083ea685c04
+      internalID: -1843632265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_188
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714f5242764f20c4ba6a570db63f7348
+      internalID: -1299496096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_189
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0207ef9cc1cf84497e19b7c3140215
+      internalID: -297217433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_190
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27393625384ecb14ca89c0d72dd44c3b
+      internalID: -2110136169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_191
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f99cae45ace4af4385d8ca144237996
+      internalID: -60499666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_192
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0947416d2d8452940ba2b8058ac9067c
+      internalID: 1034131338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_193
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4427a2fbe7b6a384191cac2bbb920349
+      internalID: 724009676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_194
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c48e107ca0c964fa7753586db6d1bc
+      internalID: -1245740738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_195
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aae8b22381b7cf43aba13aa64791738
+      internalID: 1260913335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_196
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edccce6098a29e74e98c2fb27198b8e8
+      internalID: 1950957422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_197
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c056ad5c4ecbed44af63866c183c009
+      internalID: -248237549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_198
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5addab96a8722ea4cba07a1f974817cd
+      internalID: -72708402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_199
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334107ce5f7b913459c9fe9d191e7a3a
+      internalID: 766044466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_200
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce1df68abc8cc94e8af615a8176aa57
+      internalID: -1376682413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_201
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fc840960810364ab6e2d5d54e0f747
+      internalID: -498411471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_202
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa4a971c404c7945b2062d3ea25bd1b
+      internalID: -465029278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_203
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 2504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20a0f31786031f409b2d93ddafe2b6e
+      internalID: 423136643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_204
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0643d983ed955a45b4f27e716384c9f
+      internalID: -1107871632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_205
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a23bb52d0431d4c95511ba2627ac0f
+      internalID: 1021876414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_206
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dac3b2ac7a19a04f9b01998a285603e
+      internalID: -399330208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_207
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f57e81b4e41d243b7ba21f4446118c
+      internalID: -1768032146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_208
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8818cbca9f609a4d81b70efaa3d0752
+      internalID: -449304510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_209
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5c2791caa7b0a4eb35250e0d69b6f1
+      internalID: -233880491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_210
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d821bd927c0c7f94dba84bfbd78242c4
+      internalID: -1295733038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_211
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee906d23f0d887f488d4c49653c2c8c3
+      internalID: -1195359396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_212
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b055307a4bf714cbaea26a824e8d71
+      internalID: 1508867067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_213
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272717793e2e60642b97e6e0b97a19ec
+      internalID: 654628320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_214
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fabe658f9b987534ba6e6c0aee489fc2
+      internalID: 138189067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_215
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8480626f446d749a00691d8b018db9
+      internalID: 1342824582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_216
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041dd420d72720b4eaa069e281a19854
+      internalID: 811504979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_217
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57622e617710afa4ca5549a3dd06a84a
+      internalID: -1232135001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_218
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e3a2ec19495fb46a6d943a9e27ceb0
+      internalID: 1440823349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_219
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad687bb84fa4c2a49bd38177ef5628aa
+      internalID: -72612011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_220
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 2004.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5786039987f031b47bbe624e87df31b4
+      internalID: 2096959266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_221
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d8ab284e926d74b831f723b13df59f
+      internalID: 1851708546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_222
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343bfbca0c1e1294e9ef7ab31332907a
+      internalID: -1220230384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_223
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6466951d0f44cb4b921afae3d179d30
+      internalID: -1060068546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_224
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66683cf380b453144966961dc0adff35
+      internalID: 302329406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_225
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8668a8ea0cba64181ce2468e935a86
+      internalID: 1830316211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_226
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe7dbab03c6c4b48a67fd3b7077b2f6
+      internalID: 1708494238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_227
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c55ce77df311f48aa5dbbffe088b5e
+      internalID: 1233105818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_228
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2331bd26b7541af4c8abf384cfa19dbf
+      internalID: 812202241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_229
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4225f047fe75b5b4788420a02b773ed4
+      internalID: 373123626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_230
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20187743b83c6c42a21a023ff58658f
+      internalID: 286398345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_231
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94468dc316e82ef44a3927edbe1bb05e
+      internalID: -2095332213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_232
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22fdb0b2ff32e3d429faf7db6d011c06
+      internalID: 1967989537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_233
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02eca52b74b6ba43b911888b9006196
+      internalID: -850170871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_234
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c79eb3cf125fed4792899d8116544ca
+      internalID: -926245787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_235
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c444f95ef556d4fae17849d3dd9b0a
+      internalID: -540867271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_236
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67fd71aa468e8446949e64768f5b3cd
+      internalID: -1012592709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_237
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 1504.7058
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcfdee44a17337419aec9a4648ad3ed
+      internalID: -1568704315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_238
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a40177a995459f49a9aa003b9511608
+      internalID: -1968238009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_239
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d2ccff2168df34fa0a8216ad4de886
+      internalID: -2088475741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_240
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc47fb5e03b28d4eb968cab69b4c2cb
+      internalID: -1107836524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_241
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d3e4a37aea2e345a1c19f9cd6f6e82
+      internalID: -2041075858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_242
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36ff0e10b8063c4e86b74c90f1d0687
+      internalID: -2026497760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_243
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060d60fd0255b9f47b655f706c9eb3d3
+      internalID: 819839309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_244
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f6b4d508cefc94b94f12cc23429201
+      internalID: -1081411698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_245
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a02ab160948bcb489d6b8ef737735bf
+      internalID: 1599965567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_246
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b90e4519ea01314ba61c3abbb9f69bf
+      internalID: -1305502201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_247
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf7c14dec882694987c33712e8849d9
+      internalID: 1063074533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_248
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9afe2f45050df4ca0af77259bf0e57
+      internalID: -1506912424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_249
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02f8c0b937ebb649bb4c5f9044effab
+      internalID: 1328245966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_250
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f5d8b08b450054d9be41605f2197c8
+      internalID: -303951880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_251
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f414751a3add54a832f7167e3fce17
+      internalID: 1060689415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_252
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69408a8c736b55644b7d4637ef048b4a
+      internalID: 1989389395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_253
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d1be490f6751314d931baa4571fb8e6
+      internalID: 836251220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_254
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 1004.7059
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2974c1d13d23444832ef11facfeb04
+      internalID: -896315419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_255
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4177b271ec6783b4f94dcb7767d9199b
+      internalID: -2110435633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_256
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3bb534ead31864098760a4ef4d67e8
+      internalID: 830518469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_257
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad898fa01c2672f4d89ea8948eaccf70
+      internalID: -1946057574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_258
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39830145bbe9bf8418a3d5816556a468
+      internalID: -1207113361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_259
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3052cedcd2003a34e828686a6c6333ac
+      internalID: -1079575334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_260
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c06e1973b80fd4097eca7e32f2ec38
+      internalID: -2093081802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_261
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad44c2d9e6d8704b9ba8df992d7a4fb
+      internalID: -1974873152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_262
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09db8134dd216cd439fe531d8b4caedb
+      internalID: 1444861002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_263
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474d74ec834f11144b0c4e6287d1063f
+      internalID: 2127129280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_264
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6f9fd480021a5428ebbcad23741c90
+      internalID: 817566404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_265
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d858ac3aa44ba44b930043a648b155
+      internalID: -892671131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_266
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090e0bb66ac7f364bbd6dd464ad686f6
+      internalID: 761285413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_267
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db9721d32bdbd941a2025172ff354ad
+      internalID: 408257053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_268
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe673f1b2e2a64a4e9a7deaded1703c3
+      internalID: -1797122711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_269
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27128730301b6445a6519e9ec8e6af0
+      internalID: 2106795329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_270
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6def1dd34813a2d4ba6f6c640e456b11
+      internalID: 1289250181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_271
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 504.70587
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64207e744ec07c542b3ad9a754497810
+      internalID: 1001428949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_272
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d289f9801c0f3144b4aad4c1f853bc1
+      internalID: 215990869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_273
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f74dac0d6e21f04786d72a357984f2d
+      internalID: 2051690902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_274
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ba84f9ac677694f88b60934b8222d8
+      internalID: 1008218246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_275
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028801abac848d14398fef80fc19c766
+      internalID: 1123797874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_276
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52878b929e135f24193dcd53f856cccd
+      internalID: -302035670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_277
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baecf43e0a0012449d393f3137b0246
+      internalID: 1291524768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_278
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d5aa6d466abf6438db60c819dcc470
+      internalID: -849179219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_279
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1622903a480ba479daf5f11c436518
+      internalID: -1892913258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_280
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b5dacb63c98b147be24a7ce705eb76
+      internalID: 1456905201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_281
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9b032885841ee4ba04b0d2d574c4a8
+      internalID: -671873837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_282
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ba05da58475474a9b06364c91a20f7
+      internalID: 1729265246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_283
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621120ef10b6c704ea42a9be46dc99bb
+      internalID: -1420580019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_284
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28bf3b667074ac04d92517776aa5381d
+      internalID: 1592225586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_285
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414e3917ad76ad34d8a45a4b31331831
+      internalID: -1613583396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_286
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696640c1653adf9418383680d47b6101
+      internalID: 103722328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_287
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9c221214448c54b9b855faddb7dbea
+      internalID: 928863990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSetNeonDue_288
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 4.7058716
+        width: 500.29413
+        height: 500.29413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c2c7d512743524a93dd8e47bdc37f7
+      internalID: 456008166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +6182,296 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TileSetNeonDue_144: 757255757
+      TileSetNeonDue_103: -1201958593
+      TileSetNeonDue_215: 1342824582
+      TileSetNeonDue_256: 830518469
+      TileSetNeonDue_58: 947578827
+      TileSetNeonDue_112: -1511708966
+      TileSetNeonDue_4: -1523777088
+      TileSetNeonDue_155: 951322689
+      TileSetNeonDue_102: 1901377128
+      TileSetNeonDue_231: -2095332213
+      TileSetNeonDue_15: 440060244
+      TileSetNeonDue_96: 1496497736
+      TileSetNeonDue_212: 1508867067
+      TileSetNeonDue_205: 1021876414
+      TileSetNeonDue_222: -1220230384
+      TileSetNeonDue_262: 1444861002
+      TileSetNeonDue_140: 1552358328
+      TileSetNeonDue_48: 236912646
+      TileSetNeonDue_110: 1066813896
+      TileSetNeonDue_237: -1568704315
+      TileSetNeonDue_223: -1060068546
+      TileSetNeonDue_92: -1838507780
+      TileSetNeonDue_178: -1667750659
+      TileSetNeonDue_34: -500386861
+      TileSetNeonDue_150: -1909494395
+      TileSetNeonDue_49: 268120195
+      TileSetNeonDue_54: 382886772
+      TileSetNeonDue_227: 1233105818
+      TileSetNeonDue_277: 1291524768
+      TileSetNeonDue_283: -1420580019
+      TileSetNeonDue_91: 743274266
+      TileSetNeonDue_280: 1456905201
+      TileSetNeonDue_200: -1376682413
+      TileSetNeonDue_154: -901037849
+      TileSetNeonDue_214: 138189067
+      TileSetNeonDue_269: 2106795329
+      TileSetNeonDue_70: -414733071
+      TileSetNeonDue_286: 103722328
+      TileSetNeonDue_16: -1067133241
+      TileSetNeonDue_201: -498411471
+      TileSetNeonDue_76: 1033920596
+      TileSetNeonDue_192: 1034131338
+      TileSetNeonDue_111: -806486746
+      TileSetNeonDue_151: 1370795327
+      TileSetNeonDue_68: 1909264588
+      TileSetNeonDue_145: 520541545
+      TileSetNeonDue_60: 1034534382
+      TileSetNeonDue_263: 2127129280
+      TileSetNeonDue_193: 724009676
+      TileSetNeonDue_133: -380332130
+      TileSetNeonDue_265: -892671131
+      TileSetNeonDue_284: 1592225586
+      TileSetNeonDue_132: 1256978496
+      TileSetNeonDue_8: -188049594
+      TileSetNeonDue_257: -1946057574
+      TileSetNeonDue_33: -444618561
+      TileSetNeonDue_139: 1975432668
+      TileSetNeonDue_3: 961662966
+      TileSetNeonDue_161: -221494205
+      TileSetNeonDue_255: -2110435633
+      TileSetNeonDue_152: 850015854
+      TileSetNeonDue_93: -1054349912
+      TileSetNeonDue_75: 2082793647
+      TileSetNeonDue_274: 1008218246
+      TileSetNeonDue_198: -72708402
+      TileSetNeonDue_245: 1599965567
+      TileSetNeonDue_21: 882998642
+      TileSetNeonDue_124: 250961530
+      TileSetNeonDue_57: 2078264194
+      TileSetNeonDue_147: 1699551018
+      TileSetNeonDue_84: -359929704
+      TileSetNeonDue_1: 858934540
+      TileSetNeonDue_23: 714326509
+      TileSetNeonDue_126: 204923355
+      TileSetNeonDue_288: 456008166
+      TileSetNeonDue_128: 1640687066
+      TileSetNeonDue_203: 423136643
+      TileSetNeonDue_77: 785407578
+      TileSetNeonDue_27: -1645992208
+      TileSetNeonDue_42: 2109081102
+      TileSetNeonDue_142: 1750519308
+      TileSetNeonDue_207: -1768032146
+      TileSetNeonDue_163: 293316580
+      TileSetNeonDue_228: 812202241
+      TileSetNeonDue_264: 817566404
+      TileSetNeonDue_185: -412080939
+      TileSetNeonDue_252: 1989389395
+      TileSetNeonDue_241: -2041075858
+      TileSetNeonDue_88: 1286138302
+      TileSetNeonDue_282: 1729265246
+      TileSetNeonDue_31: -1394626298
+      TileSetNeonDue_122: 522293069
+      TileSetNeonDue_46: 307553282
+      TileSetNeonDue_186: -294709942
+      TileSetNeonDue_123: 1976907489
+      TileSetNeonDue_232: 1967989537
+      TileSetNeonDue_183: -1757814799
+      TileSetNeonDue_131: -1437876476
+      TileSetNeonDue_221: 1851708546
+      TileSetNeonDue_260: -2093081802
+      TileSetNeonDue_268: -1797122711
+      TileSetNeonDue_129: 531530061
+      TileSetNeonDue_266: 761285413
+      TileSetNeonDue_71: -1166542453
+      TileSetNeonDue_148: -1626058079
+      TileSetNeonDue_52: 648264873
+      TileSetNeonDue_174: -575404560
+      TileSetNeonDue_63: 1012238620
+      TileSetNeonDue_182: 674432616
+      TileSetNeonDue_18: -838642839
+      TileSetNeonDue_9: 928591521
+      TileSetNeonDue_146: -514664779
+      TileSetNeonDue_114: 1664509964
+      TileSetNeonDue_194: -1245740738
+      TileSetNeonDue_61: -2095314187
+      TileSetNeonDue_195: 1260913335
+      TileSetNeonDue_109: 1340812122
+      TileSetNeonDue_226: 1708494238
+      TileSetNeonDue_246: -1305502201
+      TileSetNeonDue_251: 1060689415
+      TileSetNeonDue_118: 1880709260
+      TileSetNeonDue_177: 1164487597
+      TileSetNeonDue_164: -1584724471
+      TileSetNeonDue_20: 1242316113
+      TileSetNeonDue_40: -1872536879
+      TileSetNeonDue_218: 1440823349
+      TileSetNeonDue_279: -1892913258
+      TileSetNeonDue_184: -2128826410
+      TileSetNeonDue_108: 494492707
+      TileSetNeonDue_24: 1758606010
+      TileSetNeonDue_229: 373123626
+      TileSetNeonDue_273: 2051690902
+      TileSetNeonDue_173: -2075598678
+      TileSetNeonDue_175: 88719261
+      TileSetNeonDue_188: -1299496096
+      TileSetNeonDue_191: -60499666
+      TileSetNeonDue_248: -1506912424
+      TileSetNeonDue_180: -1710594563
+      TileSetNeonDue_278: -849179219
+      TileSetNeonDue_234: -926245787
+      TileSetNeonDue_287: 928863990
+      TileSetNeonDue_69: 1133177118
+      TileSetNeonDue_236: -1012592709
+      TileSetNeonDue_217: -1232135001
+      TileSetNeonDue_250: -303951880
+      TileSetNeonDue_47: -377079408
+      TileSetNeonDue_276: -302035670
+      TileSetNeonDue_258: -1207113361
+      TileSetNeonDue_167: -306622829
+      TileSetNeonDue_59: -572215369
+      TileSetNeonDue_216: 811504979
+      TileSetNeonDue_209: -233880491
+      TileSetNeonDue_32: -644098480
+      TileSetNeonDue_125: -368149870
+      TileSetNeonDue_14: -1750474573
+      TileSetNeonDue_55: 1294517221
+      TileSetNeonDue_56: 298789249
+      TileSetNeonDue_116: -2112356926
+      TileSetNeonDue_89: -1334534901
+      TileSetNeonDue_134: -377834458
+      TileSetNeonDue_11: 1296368548
+      TileSetNeonDue_141: -1688240704
+      TileSetNeonDue_117: -686037029
+      TileSetNeonDue_19: -157435040
+      TileSetNeonDue_36: 497428495
+      TileSetNeonDue_179: -1549105271
+      TileSetNeonDue_137: 1154604306
+      TileSetNeonDue_160: -1571338281
+      TileSetNeonDue_238: -1968238009
+      TileSetNeonDue_208: -449304510
+      TileSetNeonDue_243: 819839309
+      TileSetNeonDue_176: -1252015553
+      TileSetNeonDue_249: 1328245966
+      TileSetNeonDue_115: -730609444
+      TileSetNeonDue_247: 1063074533
+      TileSetNeonDue_79: 166007847
+      TileSetNeonDue_28: -1483042510
+      TileSetNeonDue_113: 1128967242
+      TileSetNeonDue_10: 1487994914
+      TileSetNeonDue_261: -1974873152
+      TileSetNeonDue_22: 1740363132
+      TileSetNeonDue_2: -551477147
+      TileSetNeonDue_106: -1361908481
+      TileSetNeonDue_204: -1107871632
+      TileSetNeonDue_168: 1474195355
+      TileSetNeonDue_169: 812909901
+      TileSetNeonDue_259: -1079575334
+      TileSetNeonDue_67: -1323121356
+      TileSetNeonDue_130: -1423298783
+      TileSetNeonDue_181: 1254822749
+      TileSetNeonDue_153: -529400672
+      TileSetNeonDue_94: 828888596
+      TileSetNeonDue_242: -2026497760
+      TileSetNeonDue_196: 1950957422
+      TileSetNeonDue_272: 215990869
+      TileSetNeonDue_254: -896315419
+      TileSetNeonDue_187: -1843632265
+      TileSetNeonDue_90: 1251305882
+      TileSetNeonDue_38: 486017916
+      TileSetNeonDue_100: -1416690715
+      TileSetNeonDue_162: -23133309
+      TileSetNeonDue_281: -671873837
+      TileSetNeonDue_170: -807108018
+      TileSetNeonDue_73: -2036997155
+      TileSetNeonDue_211: -1195359396
+      TileSetNeonDue_239: -2088475741
+      TileSetNeonDue_253: 836251220
+      TileSetNeonDue_138: -1152691644
+      TileSetNeonDue_213: 654628320
+      TileSetNeonDue_267: 408257053
+      TileSetNeonDue_197: -248237549
+      TileSetNeonDue_105: 1901180719
+      TileSetNeonDue_230: 286398345
+      TileSetNeonDue_95: -999737779
+      TileSetNeonDue_120: 1830212132
+      TileSetNeonDue_43: 233103785
+      TileSetNeonDue_275: 1123797874
+      TileSetNeonDue_101: 1689456859
+      TileSetNeonDue_74: -540404911
+      TileSetNeonDue_35: -282923672
+      TileSetNeonDue_172: 635708745
+      TileSetNeonDue_135: -1271346023
+      TileSetNeonDue_136: -62770541
+      TileSetNeonDue_50: 4248937
+      TileSetNeonDue_29: 1476530218
+      TileSetNeonDue_6: 1498320248
+      TileSetNeonDue_81: -1826418026
+      TileSetNeonDue_98: 693877605
+      TileSetNeonDue_271: 1001428949
+      TileSetNeonDue_171: 2017174595
+      TileSetNeonDue_66: 50108306
+      TileSetNeonDue_158: 718318044
+      TileSetNeonDue_78: -305319367
+      TileSetNeonDue_62: 1544938747
+      TileSetNeonDue_80: -223454590
+      TileSetNeonDue_240: -1107836524
+      TileSetNeonDue_44: -1892115747
+      TileSetNeonDue_127: 2004026609
+      TileSetNeonDue_285: -1613583396
+      TileSetNeonDue_65: -1187242335
+      TileSetNeonDue_86: -1907445923
+      TileSetNeonDue_53: -534526638
+      TileSetNeonDue_30: 1513658025
+      TileSetNeonDue_13: -2058216164
+      TileSetNeonDue_202: -465029278
+      TileSetNeonDue_5: -1881134651
+      TileSetNeonDue_72: 1149392457
+      TileSetNeonDue_7: -1104925420
+      TileSetNeonDue_104: -984239456
+      TileSetNeonDue_157: -1395905283
+      TileSetNeonDue_156: -1396508196
+      TileSetNeonDue_235: -540867271
+      TileSetNeonDue_225: 1830316211
+      TileSetNeonDue_166: -71401025
+      TileSetNeonDue_121: -973824257
+      TileSetNeonDue_39: 1967626885
+      TileSetNeonDue_224: 302329406
+      TileSetNeonDue_206: -399330208
+      TileSetNeonDue_25: -538287507
+      TileSetNeonDue_64: 619290704
+      TileSetNeonDue_270: 1289250181
+      TileSetNeonDue_233: -850170871
+      TileSetNeonDue_149: 1502125402
+      TileSetNeonDue_159: -1673127182
+      TileSetNeonDue_107: -1971943712
+      TileSetNeonDue_210: -1295733038
+      TileSetNeonDue_244: -1081411698
+      TileSetNeonDue_26: 1008520080
+      TileSetNeonDue_41: 1026817173
+      TileSetNeonDue_219: -72612011
+      TileSetNeonDue_17: 1841287973
+      TileSetNeonDue_83: 810661348
+      TileSetNeonDue_189: -297217433
+      TileSetNeonDue_87: 734846707
+      TileSetNeonDue_165: -1279022861
+      TileSetNeonDue_0: 1731934953
+      TileSetNeonDue_51: -1613297085
+      TileSetNeonDue_97: -2050429116
+      TileSetNeonDue_45: -995266572
+      TileSetNeonDue_37: 969266761
+      TileSetNeonDue_85: -1559599782
+      TileSetNeonDue_119: -736720071
+      TileSetNeonDue_99: 1666105794
+      TileSetNeonDue_190: -2110136169
+      TileSetNeonDue_220: 2096959266
+      TileSetNeonDue_12: -1740578908
+      TileSetNeonDue_199: 766044466
+      TileSetNeonDue_82: -1799850919
+      TileSetNeonDue_143: -629013415
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

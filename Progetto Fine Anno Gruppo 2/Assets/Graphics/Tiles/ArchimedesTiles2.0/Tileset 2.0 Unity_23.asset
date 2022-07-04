@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Tileset 2.0 Unity_23
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 63648423, guid: eec6d2927abda0f419cfa62a8395b136, type: 3}
+  m_Sprite: {fileID: -272649293, guid: e79753e66e145da44a90b6b2581f4a3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

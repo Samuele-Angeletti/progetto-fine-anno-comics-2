@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -390,7 +390,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesetBase4.0_16: -455720194
+      TilesetBase4.0_26: 730377208
       TilesetBase4.0_10: -528530960
       TilesetBase4.0_20: -136645578
       TilesetBase4.0_7: -1849442372
@@ -425,8 +425,8 @@ TextureImporter:
       TilesetBase4.0_3: -860961434
       TilesetBase4.0_30: -1388797442
       TilesetBase4.0_37: 189685076
-      TilesetBase4.0_26: 730377208
       TilesetBase4.0_36: -1154781778
+      TilesetBase4.0_16: -455720194
       TilesetBase4.0_21: -387345279
   spritePackingTag: 
   pSDRemoveMatte: 0
