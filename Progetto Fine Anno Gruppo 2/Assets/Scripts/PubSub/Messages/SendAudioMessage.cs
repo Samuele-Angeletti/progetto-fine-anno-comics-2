@@ -6,9 +6,9 @@ using PubSub;
 public class SendAudioMessage : IMessage
 {
 
-    public AudioHolder audioHolderToSend;
-    public SendAudioMessage(AudioHolder audioToSend)
+    public AudioClip audioClipToSend;
+    public SendAudioMessage(AudioClip audioToSend)
     {
-     this.audioHolderToSend = audioToSend;
+        audioClipToSend = audioToSend;
     }
 }

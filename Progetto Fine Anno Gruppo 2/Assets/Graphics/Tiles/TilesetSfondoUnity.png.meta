@@ -1,0 +1,1179 @@
+fileFormatVersion: 2
+guid: 5c42fe3ac04849346b3dd1e23cc0864c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d5c98202cb2444eadd23d4339dfa78
+      internalID: 965470771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c1875eb58632649a5955b1d30cc6c2
+      internalID: 1850793641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006c0b919e1d59c4482430d9f4f824db
+      internalID: -1747704494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e1f585f049b7c40893911e8b1ba7bb
+      internalID: -11433444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30dee9bf1cde0974b8df656f36ec6c59
+      internalID: 1860888706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_6
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ac0c2abe20dc741be94fd65d8eb3fb
+      internalID: -19135926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_10
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7f5446889aebe41908f00f531c229d
+      internalID: -1382677140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_11
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1743292884f7d14bad26f1df296fb0d
+      internalID: -813176886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_12
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3ccda7cb324d346beddcd50fd5419e
+      internalID: 1974792197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_13
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8ed28a0fd261f4fbafce489145b834
+      internalID: -13464969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_14
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675d18f044df1af449430ae9a0694185
+      internalID: 726631588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_15
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30eee8615b648a49bffe411fbcae6e7
+      internalID: 813094428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_16
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf591161136d0ae4ca4c81b62b64b16c
+      internalID: -170507296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_17
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f10328af492ea459591b419b924a6f
+      internalID: -1707761864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_18
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661fc5241d1186642a2cc82de01d936f
+      internalID: -1939286509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_19
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee592f29b2bd176459c4cf3f3f6293c7
+      internalID: 566809455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_20
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daff03a5f856bc0409ed10f0cc72250c
+      internalID: -1028836406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_21
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b625783497392ae44b46c2f73df13562
+      internalID: -766480655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_22
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf6caac03d021b46814e74fdcc80987
+      internalID: -1507085635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_23
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72150de9fe9860b4392fb166ca2fc1c6
+      internalID: 608570375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_24
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87932efeb64704944b2db5f767bf3075
+      internalID: 1573014641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_25
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e232266cdd54424bb2ca566a8327ef8
+      internalID: 413658122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_26
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661ad3ac247505842890f9f9fb5269c0
+      internalID: 1918107225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_28
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26327cd7403aee4391225654dc95a88
+      internalID: 1368798517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_29
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80838ab8e53606b4db3a96ddf7f04c4e
+      internalID: -329375016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_30
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a7a3fe2d44082489694650b7fcc881
+      internalID: 1630348259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_31
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13270296645ba245b9c34a04c61ac18
+      internalID: -923435367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_32
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610f4127c8e762548bdec33d6c3e0434
+      internalID: 126222188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_33
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c0315b98eac8d47abb06f5ab19e983
+      internalID: -861644132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_34
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ee260a6d99fb54d9b732b2ef3a392d
+      internalID: 67712898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_35
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa71660654a0b2448ee8dabb4e07434
+      internalID: 126350437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_46
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4622d57fcf0ac7841b13f94cc9182584
+      internalID: -1721167559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_47
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5549c9f7a489847ac44863d17f597d
+      internalID: 1436853117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_48
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4874b6daaa5b603488a3c1c2c8b499ce
+      internalID: -2018819014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_49
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddde0966c611cec408f4f1efd881a57e
+      internalID: -532930672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_50
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d2eba6bef174a49bd33406a97f0a6c
+      internalID: -1763982537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_51
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7373e9cb0d83b749a34ee3a7649365a
+      internalID: -678029765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_54
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782257292ab3bc242b7fff5d3f7ac6e1
+      internalID: 1041206488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_55
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f50595d26f549d4188f789e3583e3a1
+      internalID: -1470286780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_56
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff24a5c1b59541c4e9898d64c120b9ac
+      internalID: -2080436094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_57
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358d6b6bd46be3c4890a7cba0e969e2f
+      internalID: 1202925506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_58
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6384f477d465b4248a060faf7ab5d6e9
+      internalID: 1517890132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_59
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 996
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d61b4e8ab14974c92370127f5ca6cb
+      internalID: 913703927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_61
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9858194c62f77f441bd995db9c4cf369
+      internalID: -861325177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_62
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64da8ece51e2c844894954f8306e3b80
+      internalID: -1155320424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetSfondoUnity_63
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 496
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34b735c972517d43900f657d98c6c23
+      internalID: 683198500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TilesetSfondoUnity_29: -329375016
+      TilesetSfondoUnity_38: 1546581225
+      TilesetSfondoUnity_22: -1507085635
+      TilesetSfondoUnity_23: 608570375
+      TilesetSfondoUnity_5: 1860888706
+      TilesetSfondoUnity_6: -19135926
+      TilesetSfondoUnity_15: 813094428
+      TilesetSfondoUnity_34: 67712898
+      TilesetSfondoUnity_55: -1470286780
+      TilesetSfondoUnity_40: -1884910460
+      TilesetSfondoUnity_44: 732091994
+      TilesetSfondoUnity_66: 1524435947
+      TilesetSfondoUnity_13: -13464969
+      TilesetSfondoUnity_30: 1630348259
+      TilesetSfondoUnity_33: -861644132
+      TilesetSfondoUnity_63: 683198500
+      TilesetSfondoUnity_3: -1747704494
+      TilesetSfondoUnity_17: -1707761864
+      TilesetSfondoUnity_8: 182436915
+      TilesetSfondoUnity_19: 566809455
+      TilesetSfondoUnity_62: -1155320424
+      TilesetSfondoUnity_43: 295643874
+      TilesetSfondoUnity_37: -544479278
+      TilesetSfondoUnity_14: 726631588
+      TilesetSfondoUnity_11: -813176886
+      TilesetSfondoUnity_31: -923435367
+      TilesetSfondoUnity_21: -766480655
+      TilesetSfondoUnity_47: 1436853117
+      TilesetSfondoUnity_51: -678029765
+      TilesetSfondoUnity_52: 1235379924
+      TilesetSfondoUnity_35: 126350437
+      TilesetSfondoUnity_42: 1152171607
+      TilesetSfondoUnity_16: -170507296
+      TilesetSfondoUnity_48: -2018819014
+      TilesetSfondoUnity_24: 1573014641
+      TilesetSfondoUnity_9: 1583540810
+      TilesetSfondoUnity_49: -532930672
+      TilesetSfondoUnity_54: 1041206488
+      TilesetSfondoUnity_56: -2080436094
+      TilesetSfondoUnity_10: -1382677140
+      TilesetSfondoUnity_41: 1902310107
+      TilesetSfondoUnity_57: 1202925506
+      TilesetSfondoUnity_46: -1721167559
+      TilesetSfondoUnity_18: -1939286509
+      TilesetSfondoUnity_2: 1850793641
+      TilesetSfondoUnity_27: -707461299
+      TilesetSfondoUnity_7: -1426875268
+      TilesetSfondoUnity_64: 2042247862
+      TilesetSfondoUnity_20: -1028836406
+      TilesetSfondoUnity_25: 413658122
+      TilesetSfondoUnity_39: -1739256899
+      TilesetSfondoUnity_45: 1170844475
+      TilesetSfondoUnity_65: 886711152
+      TilesetSfondoUnity_12: 1974792197
+      TilesetSfondoUnity_0: 1388721812
+      TilesetSfondoUnity_28: 1368798517
+      TilesetSfondoUnity_60: -816509605
+      TilesetSfondoUnity_58: 1517890132
+      TilesetSfondoUnity_32: 126222188
+      TilesetSfondoUnity_53: -466331503
+      TilesetSfondoUnity_1: 965470771
+      TilesetSfondoUnity_61: -861325177
+      TilesetSfondoUnity_50: -1763982537
+      TilesetSfondoUnity_4: -11433444
+      TilesetSfondoUnity_26: 1918107225
+      TilesetSfondoUnity_36: 1991561962
+      TilesetSfondoUnity_59: 913703927
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
