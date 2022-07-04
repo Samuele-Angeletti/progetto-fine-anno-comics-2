@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 375903371168155448, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.077
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183978265520174134, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183978265520174134, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183978265520174134, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183978265520174134, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183978265520174134, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183978265520174134, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2833512725853800144, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: DopplerLevel
       value: 0

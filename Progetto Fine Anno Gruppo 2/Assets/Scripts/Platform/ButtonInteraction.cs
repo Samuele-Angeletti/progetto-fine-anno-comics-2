@@ -4,12 +4,15 @@ using UnityEngine;
 using Commons;
 using PubSub;
 using MainGame;
+using UnityEngine.Rendering.Universal;
+
 public class ButtonInteraction : Interactable, ISubscriber
 {
     private AudioSource m_soundSource;
     [Header("Button Interaction Settings")]
     [SerializeField] bool m_Active = true;
     [SerializeField] bool m_OneShot;
+    [SerializeField] Light2D m_Activationlight;
     //[SerializeField] AudioHolder m_audioHolder;
     private void Awake()
     {
@@ -70,6 +73,6 @@ public class ButtonInteraction : Interactable, ISubscriber
 
     public void ActiveLight(bool active)
     {
-        Debug.Log($"LUCE {active}");
+        m_Activationlight.enabled = active;
     }
 }
