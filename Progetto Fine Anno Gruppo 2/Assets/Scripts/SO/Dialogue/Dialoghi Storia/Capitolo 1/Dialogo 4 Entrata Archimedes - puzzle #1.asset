@@ -59,10 +59,10 @@ MonoBehaviour:
       di bordo.'
   - WhoIsSpeaking: 1
     DialougueString: 'SPIEGAZIONE: integrazione sistemi mezzo impossibile altrimenti.'
-  - WhoIsSpeaking: 0
-    DialougueString: "AVVERTIMENTO: sistemi di difesa anti-intrusione attivi nel
-      percorso nel percorso sono presenti dei sistemi di difesa, per prevenire l\u2019ingresso
-      di intrusi."
+  - WhoIsSpeaking: 1
+    DialougueString: 'AVVERTIMENTO: nel percorso sono presenti dei sistemi di difesa
+      anti-intrusione attivi. Calibrazione sistemi IFF (Identificazione Amico/Nemico)
+      assenti nella loro programmazione.'
   - WhoIsSpeaking: 0
     DialougueString: Scusami, avete abbastanza energia per delle trappole mortali
       ma non per permetterci di camminare normalmente?!
