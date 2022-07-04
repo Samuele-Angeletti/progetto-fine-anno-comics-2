@@ -171,7 +171,6 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         }
         if (m_dialogueLine.Count == 0)
         {
-
             PubSub.PubSub.Publish(new CurrentDialogueFinishedMessage());
             standardMessageIsPlaying = false;
             yield return new WaitForSeconds(1);
@@ -185,7 +184,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         ESpeaker whoIsSpeakingRightNow = m_whoIsSpeakingRightNow.Dequeue();
         if (whoIsSpeakingRightNow == ESpeaker.Vuoto)
         {
-
+            spriteToChange.sprite = null;
         }
         else if (whoIsSpeakingRightNow == ESpeaker.Riemann)
         {
@@ -211,13 +210,13 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     }
     private string ESpeakerTostring(ESpeaker whoIsSpeaking)
     {
-        string currentSpeaker = string.Empty;
+        string currentSpeaker = "";
         if (whoIsSpeaking == ESpeaker.Riemann)
         {
             currentSpeaker = "Reimann";
 
         }
-        if (whoIsSpeaking != ESpeaker.Riemann)
+        else if (whoIsSpeaking != ESpeaker.Riemann)
         {
             currentSpeaker = "Ada";
         }
@@ -266,9 +265,6 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         temp.Add(dialogueHolderSO[indiceRandomico]);
         return temp;
     }
-    private void Update()
-    {
-        m_controllable = GameManager.Instance.m_Controllable;
-    }
+
 }
 

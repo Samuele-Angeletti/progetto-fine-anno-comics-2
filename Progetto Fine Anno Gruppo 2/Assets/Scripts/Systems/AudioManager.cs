@@ -169,7 +169,8 @@ public class AudioManager : MonoBehaviour, ISubscriber
     //    }
     public IEnumerator WaitForFade(AudioSource audioSource, float duration, float targetVolume)
     {
-        yield return new WaitUntil(() =>StartFade(audioSource, duration, targetVolume).MoveNext() == false);
+        var courutine = this.RunCoroutine(StartFade(audioSource, duration, targetVolume));
+        yield return new WaitWhile(() => m_AudioSource.volume != targetVolume);
     }
    
     public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
