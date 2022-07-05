@@ -18,7 +18,7 @@ public class CourutineHandle
     }
     public CourutineHandle(MonoBehaviour owner, IEnumerator courotine)
     {
-        Current = owner.StartCoroutine(courotine);
+        Current = owner.StartCoroutine(Wrap(courotine));
     }
     private IEnumerator Wrap(IEnumerator courutine)
     {
