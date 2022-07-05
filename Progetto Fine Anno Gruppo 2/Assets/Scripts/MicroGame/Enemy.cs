@@ -14,7 +14,7 @@ namespace MicroGame
         private Color m_BaseColor;
         private bool m_Catchable;
         private float m_TimePassed;
-
+        public SpriteRenderer SpriteRenderer => m_SpriteRenderer;
         private void Awake()
         {
             m_BaseColor = m_SpriteRenderer.color;

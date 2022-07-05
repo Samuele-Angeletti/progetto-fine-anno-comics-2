@@ -26,28 +26,28 @@ namespace MicroGame
 
         private void FixedUpdate()
         {
-            if (controller == EController.Human)
-            {
-                Vector3 direction = m_Destination - transform.position;
-                m_Rigidbody.velocity = direction.normalized * m_Speed * Time.fixedDeltaTime;
-                if (Vector3.Distance(transform.position, m_Destination) < 0.05f)
-                {
-                    transform.position = m_Destination;
-                    if (m_Direction.magnitude != 0)
-                    {
-                        MoveDirection(m_Direction);
-                    }
-                    else
-                    {
-                        m_Rigidbody.velocity = Vector3.zero;
-                        m_OnGoing = false;
-                    }
-                }
-            }
-            else
-            {
+            //if (controller == EController.Human)
+            //{
+            //    Vector3 direction = m_Destination - transform.position;
+            //    m_Rigidbody.velocity = direction.normalized * m_Speed * Time.fixedDeltaTime;
+            //    if (Vector3.Distance(transform.position, m_Destination) < 0.05f)
+            //    {
+            //        transform.position = m_Destination;
+            //        if (m_Direction.magnitude != 0)
+            //        {
+            //            MoveDirection(m_Direction);
+            //        }
+            //        else
+            //        {
+            //            m_Rigidbody.velocity = Vector3.zero;
+            //            m_OnGoing = false;
+            //        }
+            //    }
+            //}
+            //else
+            //{
                 m_Rigidbody.velocity = m_Direction * m_Speed * Time.fixedDeltaTime;
-            }
+            //}
         }
 
         public override void MoveDirection(Vector2 newDirection)
@@ -56,10 +56,10 @@ namespace MicroGame
             {
                 m_Direction = newDirection.normalized;
 
-                if (!m_OnGoing || newDirection.magnitude > 0)
-                    m_Destination = new Vector3(m_Direction.x, m_Direction.y) + transform.position;
+                //if (!m_OnGoing || newDirection.magnitude > 0)
+                //    m_Destination = new Vector3(m_Direction.x, m_Direction.y) + transform.position;
 
-                if (newDirection.magnitude > 0) m_OnGoing = true;
+                //if (newDirection.magnitude > 0) m_OnGoing = true;
             }
         }
 
@@ -70,6 +70,7 @@ namespace MicroGame
                 if (m_Direction == Vector2.zero)
                 {
                     m_Direction = RandomDirection();
+                    transform.rotation = Quaternion.LookRotation(Vector3.forward, m_Direction);
                 }
             }
 
@@ -82,7 +83,7 @@ namespace MicroGame
 
         private Vector2 RandomDirection()
         {
-            switch (UnityEngine.Random.Range(0, 4))
+            switch (Random.Range(0, 4))
             {
                 case 0:
                     return Vector2.up;
@@ -95,6 +96,7 @@ namespace MicroGame
                 default:
                     return Vector2.zero;
             }
+            
         }
 
 
@@ -102,8 +104,9 @@ namespace MicroGame
         {
             while (true)
             {
-                yield return new WaitForSeconds(UnityEngine.Random.Range(0, m_MaxRandomTime));
+                yield return new WaitForSeconds(Random.Range(0, m_MaxRandomTime));
                 m_Direction = RandomDirection();
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, m_Direction);
             }
         }
 
