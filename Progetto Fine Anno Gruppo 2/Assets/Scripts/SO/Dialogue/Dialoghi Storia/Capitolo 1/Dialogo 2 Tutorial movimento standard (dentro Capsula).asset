@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogo 2 Tutorial movimento standard (dentro Capsula)
   m_EditorClassIdentifier: 
   Dialogo:
-  - WhoIsSpeaking: 1
+  - WhoIsSpeaking: 5
     DialougueString: 'CONFERMAZIONE: attracco riuscito.'
   - WhoIsSpeaking: 0
     DialougueString: Ok, va bene...

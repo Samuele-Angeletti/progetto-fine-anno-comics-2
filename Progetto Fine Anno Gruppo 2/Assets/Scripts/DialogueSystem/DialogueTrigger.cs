@@ -54,13 +54,14 @@ public class DialogueTrigger : Interactable, ISubscriber
         if (message is EndDialogueMessage)
         {
             Destroy(gameObject);
+
         }
 
         else if (message is CurrentDialogueFinishedMessage)
         {
-            if (CanRepeatLastDialogue && m_dialogueToShow.Count == 1) return;
-            if (m_dialogueToShow.Count > 0 && !DialoguePlayer.Instance.standardMessageIsPlaying) m_dialogueToShow.RemoveAt(0);
-            if (m_dialogueToShow.Count == 0)PubSub.PubSub.Publish(new EndDialogueMessage());
+            if (CanRepeatLastDialogue && m_dialogueToShow.Count == 1 && DialoguePlayer.Instance.standardMessageIsPlaying) return;
+            else if (m_dialogueToShow.Count > 0 && !DialoguePlayer.Instance.standardMessageIsPlaying) m_dialogueToShow.RemoveAt(0);
+            else if (m_dialogueToShow.Count == 0 && !DialoguePlayer.Instance.standardMessageIsPlaying)PubSub.PubSub.Publish(new EndDialogueMessage());
 
         }
         else if (message is OnTriggerEnterDialogueMessage)
