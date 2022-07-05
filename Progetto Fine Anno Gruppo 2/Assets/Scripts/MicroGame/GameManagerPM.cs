@@ -41,6 +41,7 @@ namespace MicroGame
         [Header("Enemies Settings")]
         [SerializeField] Enemy m_EnemyPrefab;
         [SerializeField] Transform[] m_EnemiesSpawnPoints;
+        [SerializeField] List<Sprite> m_EnemiesSprites;
 
         [Header("Scene references")]
         [SerializeField] List<GameObject> m_AllSceneObjects;
@@ -94,12 +95,6 @@ namespace MicroGame
         {
             m_CurrentModuleInfos = GameManagerES.Instance.GetCurrentModuleInfos();
 
-            //databaseLoaded = SaveAndLoadSystem.Load<Dictionary<string, SavableInfos>>();
-            //if(databaseLoaded.ContainsKey(m_CurrentModuleID))
-            //{
-            //    m_CurrentModuleInfos = databaseLoaded[m_CurrentModuleID];
-            //}
-
             float damagePercentage = m_CurrentModuleInfos.DamagePercentage();
 
             if (damagePercentage == 0)
@@ -136,7 +131,9 @@ namespace MicroGame
         {
             for (int i = 0; i < enemiesQuantity; i++)
             {
-                m_Enemies.Add(Instantiate(m_EnemyPrefab, ChooseFreeSpawnPoint(), Quaternion.identity));
+                Enemy e = Instantiate(m_EnemyPrefab, ChooseFreeSpawnPoint(), Quaternion.identity);
+                m_Enemies.Add(e);
+                e.SpriteRenderer.sprite = m_EnemiesSprites[UnityEngine.Random.Range(0, m_EnemiesSprites.Count)];
             }
             m_EnemiesQuantity = enemiesQuantity;
         }

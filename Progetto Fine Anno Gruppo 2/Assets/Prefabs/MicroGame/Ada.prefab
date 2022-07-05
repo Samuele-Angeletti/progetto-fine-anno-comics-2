@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 301321997393125194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 301321998933504463}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.9120099, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c3197f23470bf934b903ceaa5b28e462, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 301321998933504462}
   - component: {fileID: 301321998933504457}
   - component: {fileID: 301321998933504460}
-  - component: {fileID: 301321998933504456}
   - component: {fileID: 301321998933504459}
   - component: {fileID: 301321998933504461}
+  - component: {fileID: 663732273771358703}
   m_Layer: 9
   m_Name: Ada
   m_TagString: Untagged
@@ -152,10 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55d66985cf65e742a3c299ada9b5f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StoppingDistance: {x: 1, y: 0.2}
+  m_StoppingDistance: {x: 0.2, y: 0.2}
   m_ContinousMovement: 1
   m_Rigidbody: {fileID: 301321998933504459}
-  m_Speed: 200
+  m_Speed: 250
   controller: 0
   m_MaxRandomTime: 0
 --- !u!114 &301321998933504460
@@ -170,32 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c054cc773593bb49a5bde37eeb8b1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &301321998933504456
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301321998933504458}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &301321998933504459
 Rigidbody2D:
   serializedVersion: 4
@@ -237,3 +211,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &663732273771358703
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301321998933504458}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
