@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
-  m_Name: Dialogo 1 Attracco
+  m_Name: Dialogo 1-1 Attracco
   m_EditorClassIdentifier: 
   Dialogo:
   - WhoIsSpeaking: 0
