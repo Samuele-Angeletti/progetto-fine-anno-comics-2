@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
+  m_Name: Dialogo 3-2 Integrazione Modulo 2
+  m_EditorClassIdentifier: 
+  Dialogo:
+  - WhoIsSpeaking: 0
+    DialougueString: Bene, ora di ripetere questo lavoro per la terza volta.
+  - WhoIsSpeaking: 3
+    DialougueString: In un esperimento, dopotutto, due ripetizioni non stabiliscono
+      una regola, ma con tre si vede un pattern.
+  - WhoIsSpeaking: 0
+    DialougueString: Continuo a non capire cosa intendi ma facciamolo.
+  - WhoIsSpeaking: 5
+    DialougueString: <i>Riemann preme il bottone</i>
+  - WhoIsSpeaking: 5
+    DialougueString: <i>Calo di tensione</i>
+  - WhoIsSpeaking: 0
+    DialougueString: Ada? Mi ricevi?
+  - WhoIsSpeaking: 4
+    DialougueString: "Forte e chiaro, Ludwig! Il segnale \xE8 cristallino!"
+  - WhoIsSpeaking: 0
+    DialougueString: "Da quando in qua parli in modo cos\xEC amichevole e mi chiami
+      per nome?"
+  - WhoIsSpeaking: 4
+    DialougueString: <i>(ride)</i> Da ora, la risposta mi pare ovvia, caro il mio
+      stupidello!
+  - WhoIsSpeaking: 0
+    DialougueString: Pure gli insulti ora?!
+  - WhoIsSpeaking: 4
+    DialougueString: Il vocabolario e i moduli di espressione sono stati ristabiliti
+      completamente, grazie al tuo lavoro. Diciamo che un pochetto me lo merito,
+      dai, dopo averti visto fluttuare e zompicare a giro senza meta per ore!
+  - WhoIsSpeaking: 0
+    DialougueString: "...mi avvalgo della facolt\xE0 di non rispondere."
+  - WhoIsSpeaking: 4
+    DialougueString: "Suvvia, questa nave mica \xE8 un tribunale, rilassati!"
+  - WhoIsSpeaking: 4
+    DialougueString: "Almeno, non lo \xE8 fino a prova contraria."
+  - WhoIsSpeaking: 0
+    DialougueString: "Dimmi solo cosa devo fare ora e basta! E\u2019 finita? Posso
+      sedermi un attimo?!"
+  - WhoIsSpeaking: 4
+    DialougueString: "Allora\u2026no."
+  - WhoIsSpeaking: 0
+    DialougueString: "Ti prego, dimmi che stai scherzando\u2026"
+  - WhoIsSpeaking: 4
+    DialougueString: Per quanto sarebbe divertente, no. Osserva i dati che ti sto
+      mandando.
+  - WhoIsSpeaking: 0
+    DialougueString: "<i>(pensoso)</i> Cosa c\u2019\xE8 di strano nella planimetria
+      dei moduli 1 e 2?"
+  - WhoIsSpeaking: 4
+    DialougueString: Non noti che certi corridoi sembrano fatti apposta per combaciare?
+  - WhoIsSpeaking: 0
+    DialougueString: No, non lo noto.
+  - WhoIsSpeaking: 4
+    DialougueString: "Ok, visita oculistica programmata a parte, vieni all\u2019entrata
+      del modulo. Ho capito che c\u2019\xE8 da fare. C\u2019\xE8 un\u2019ultima integrazione
+      da effettuare."
+  - WhoIsSpeaking: 0
+    DialougueString: Visita cosascusa-
+  - WhoIsSpeaking: 0
+    DialougueString: <i>Musichetta fastidiosa</i>
+  - WhoIsSpeaking: 0
+    DialougueString: MI HA DI NUOVO IN ATTESA QUESTA CORNU-?!
