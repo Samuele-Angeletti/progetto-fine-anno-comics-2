@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalAscendenza2
+  m_EditorClassIdentifier: 
+  Title: Preludio alla Guerra di Andromeda
+  ProgressiveNumber: 2
+  Content: ",,,Estratto del Libro della Guerra Andromedana di Bordeaux, Carro del
+    pianeta Yggdrasil\u2019\u2019\u2019\r\nLa notte scorsa, numerose Giunchiglie
+    Rigeliane sono appassite, e ho sentito come un urlo scuotermi il cuore. Ho chiesto
+    ai nostri Eremiti astrografi e, guardando nella notte celeste davanti a noi,
+    non abbiamo trovato il bel mondo di Pax Astralis, e la luna smeralda di Utopia,
+    ma bens\xEC il vuoto, come quello che \xE8 apparso nei nostri cuori immediatamente
+    dopo. Le anime degli innocenti avevano cercato di raggiungermi via il Verde,
+    ma non avevo potuto comprendere una tale carneficina. Ponderando nel tempio,
+    assieme agli accoliti e interrogando Madre Natura per delle risposte, abbiamo
+    rimembrato che le Giunchiglie Rigeliane sono creature delicate, sensibili all\u2019uso
+    di nefande tecno-eresie come le nanomacchine, specialmente quelle a positroni
+    della Triarchia. Dopo ventidue minuti di silenzio, come ventidue furono le bombe
+    che colpirono il Giardino eoni orsono, ci siamo messi a porre ulteriori domande
+    al cosmo attorno a noi, e al Verde. Una opera di tale portata avrebbe richiesto
+    una Melma Grigia di proporzioni mai viste prima da noi e dai Primi Seminatori,
+    quindi dietro tutto questo non pu\xF2 non esserci anche l\u2019aiuto dei vili
+    Imperiali e delle loro tecnologie a base di anti-materia, come le bombe che uccisero
+    per la prima volta la Terra Primordiale. Sento tutt\u2019ora la sete di vendetta
+    di Pax Astralis, che sempre stette dalla nostra parte pi\xF9 che dalle altre
+    e io, chi sono io, Tokunbo, se non risponder\xF2 alla voglia di giustizia degli
+    innocenti? Tradirei anche la volont\xE0 della Verde Terra, uccisa gi\xE0 una
+    volta tramite bombe ad anti-materia! Avevamo fatto bene a seguire la profezia
+    di Faraday, e di prepararci gi\xE0 con dei semi bomba sui mondi triarchici vicini!
+    Al\u2019faret \xE8 sempre stato nostro, e torner\xE0 ad esserlo!\u2019\u2019\u2019\r\n,,,Nel
+    Verde noi crediamo, nel Verde noi moriamo, nel Verde noi rinasciamo.\u2019\u2019\u2019\r\n,,,Che
+    gli infedeli capiscano la nostra causa, o diventino fertilizzante per essa.\u2019\u2019\u2019\r"
+  Author: Adrienne Bordeaux, Carro (7) di Yggdrasil

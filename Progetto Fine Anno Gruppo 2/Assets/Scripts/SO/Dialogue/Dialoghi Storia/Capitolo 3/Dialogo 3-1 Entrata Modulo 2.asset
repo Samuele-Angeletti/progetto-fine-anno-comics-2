@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
+  m_Name: Dialogo 3-1 Entrata Modulo 2
+  m_EditorClassIdentifier: 
+  Dialogo:
+  - WhoIsSpeaking: 0
+    DialougueString: "Whoa\u2026"
+  - WhoIsSpeaking: 3
+    DialougueString: "Cosa \xE8 successo, Riemann?"
+  - WhoIsSpeaking: 0
+    DialougueString: "Non mi aspettavo che l\u2019interno del modulo sarebbe stato
+      cos\xEC\u2026cos\xEC\u2026"
+  - WhoIsSpeaking: 3
+    DialougueString: "A giudicare dai suoi parametri vitali, lei sembra quasi in
+      timore reverenziale. Una rapida ricerca nei miei database linguistici suggeriscono
+      \u2018sublime\u2019, come termine, originato dal movimento romantico della
+      Terra pri-"
+  - WhoIsSpeaking: 0
+    DialougueString: <i>(triste)</i>...Ada, usi tutti questi paroloni soltanto per
+      farmi sentire tonto?
+  - WhoIsSpeaking: 3
+    DialougueString: "Il commento verr\xE0 ritirato, allora."
+  - WhoIsSpeaking: 0
+    DialougueString: "<i>(confuso)</i>O\u2026.ok\u2026?"
+  - WhoIsSpeaking: 0
+    DialougueString: Comunque, guarda tutta questa roba! Sembra quasi un giardino
+      spaziale!
+  - WhoIsSpeaking: 3
+    DialougueString: "Sta venendo effettuata un\u2019analisi approfondita della struttura
+      del modulo, ed \xE8 possibile confermare al momento che la composizione stessa
+      del modulo non \xE8 del tutto inorganica: varie pareti e dispositivi all\u2019interno
+      presentano molecole organiche anche in grado di fotosintetizzare."
+  - WhoIsSpeaking: 0
+    DialougueString: "Mi stai dicendo che tutto \xE8 fatto di piante?"
+  - WhoIsSpeaking: 3
+    DialougueString: "In parole che utilizzerebbe lei, s\xEC."
+  - WhoIsSpeaking: 0
+    DialougueString: Devo quindi stare attento a cosa tocco o calpesto?!
+  - WhoIsSpeaking: 3
+    DialougueString: "La sua tuta ambientale dovrebbe proteggerla da fumi tossici
+      e pollini vari, se \xE8 quello che chiede. Lei non \xE8 allergico al polline,
+      giusto? Il suo dossier non menziona allergie, ma la veridicit\xE0 di esso \xE8
+      gi\xE0 stata messa in discussione."
+  - WhoIsSpeaking: 0
+    DialougueString: "No, perch\xE9?"
+  - WhoIsSpeaking: 3
+    DialougueString: "Perch\xE9 alcune di queste piante sono potenzialmente mortali
+      a chi \xE8 affetto da allergie quando entrano nel processo di impollinazione."
+  - WhoIsSpeaking: 0
+    DialougueString: MA COSA HANNO NEL CERVELLO LORO?!
+  - WhoIsSpeaking: 3
+    DialougueString: Neuroni, materia grigia-
+  - WhoIsSpeaking: 0
+    DialougueString: E TE, ADA, NON RISPONDERE SEMPRE IN MODO LETTERALE!
+  - WhoIsSpeaking: 0
+    DialougueString: Ricevuto.

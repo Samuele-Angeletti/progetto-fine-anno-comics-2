@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
+  m_Name: Dialogo 1-1 Attracco
+  m_EditorClassIdentifier: 
+  Dialogo:
+  - WhoIsSpeaking: 0
+    DialougueString: ...
+  - WhoIsSpeaking: 0
+    DialougueString: ...
+  - WhoIsSpeaking: 0
+    DialougueString: ...
+  - WhoIsSpeaking: 0
+    DialougueString: "<i>(sconsolato)</i> Finalmente arrivato alla Stazione Archimedes\u2026il
+      mio primo giorno di lavoro sta per iniziare\u2026"
+  - WhoIsSpeaking: 0
+    DialougueString: "Se solo l\u2019Impero fosse stato un attimo pi\xF9 intransigente
+      su quell\u2019incidente\u2026"
+  - WhoIsSpeaking: 0
+    DialougueString: "<i>(sospira)</i> \u201CInutile rimuginare sul passato ora.
+      Apriamo le comunicazioni."
+  - WhoIsSpeaking: 0
+    DialougueString: "<i>Burp!</i> Ho anche bisogno di un bagno\u2026quel salto da
+      7 parsec mi ha scombussolato lo stomaco."
+  - WhoIsSpeaking: 1
+    DialougueString: 'TRASMISSIONE: ricevente: Stazione di Osservazione Spaziale
+      Archimedes.'
+  - WhoIsSpeaking: 1
+    DialougueString: 'ORDINE: Astro-mezzo non identificato: ID, codici di accesso.'
+  - WhoIsSpeaking: 0
+    DialougueString: "<i>(tra s\xE9 e s\xE9)</i> Una IA? Non c\u2019\xE8 nessun equipaggio
+      per rispondere?"
+  - WhoIsSpeaking: 0
+    DialougueString: "<i>(digita)</i> \u201CUhh\u2026buongiorno, SOS Archimedes.
+      Vi ricevo forte e chiaro. Qui \xE8 il Mezzo di Manutenzione Imperiale\u20262718-EN
+      1828"
+  - WhoIsSpeaking: 0
+    DialougueString: Mi chiamo Ludwig Riemann. Vengo dal pianeta Huygens, nel sistema
+      Hawking.
+  - WhoIsSpeaking: 0
+    DialougueString: "Sono stato assegnato come vostro nuovo ingegnere da oggi. Vi
+      sto trasmettendo i codici di attracco\u2026ora."
+  - WhoIsSpeaking: 0
+    DialougueString: <i>Riemann digita con calma)</i>
+  - WhoIsSpeaking: 1
+    DialougueString: 'CONFERMA: Permesso accordato, 2718-EN 1828. Attraccare modulo
+      nel luogo predesignato'
+  - WhoIsSpeaking: 1
+    DialougueString: 'ADDENDO: luci presenti per indicare percorso consigliato.'
