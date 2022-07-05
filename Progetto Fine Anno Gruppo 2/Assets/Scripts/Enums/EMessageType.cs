@@ -10,5 +10,6 @@ public enum EMessageType
     ModuleDocked,
     ModuleDestroyed,
     NoBattery,
-    PlayerDeath
+    PlayerDeath,
+    ButtonPressed
 }

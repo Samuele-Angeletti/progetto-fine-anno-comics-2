@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PubSub;
+using System;
 
 public class UIManager : MonoBehaviour, ISubscriber
 {
@@ -96,6 +97,11 @@ public class UIManager : MonoBehaviour, ISubscriber
             }
         }
 	}
+
+    internal void SetQuest(string messageOnScreen)
+    {
+		m_PauseMenu.SetQuestText($"OBIETTIVO: {messageOnScreen}");
+    }
 
     private void CloseTerminalView()
     {
