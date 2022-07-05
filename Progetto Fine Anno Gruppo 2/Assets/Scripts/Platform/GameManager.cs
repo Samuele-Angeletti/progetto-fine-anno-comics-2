@@ -42,8 +42,6 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnTransition;
         [SerializeField] BackgroundAxe m_Background;
 
-
-
         [Header("Player Settings")]
         public Controllable m_Controllable;
 
@@ -56,7 +54,7 @@ namespace MainGame
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
 
-
+        private QuestSystem m_QuestSystem;
         private PlayerInputSystem m_PlayerInputs;
         private bool m_ZeroGActive;
         private PlayerMovementManager m_Player;
@@ -77,7 +75,8 @@ namespace MainGame
             else
                 Destroy(gameObject);
             m_PlayerInputs = GetComponent<PlayerInputSystem>();
-
+            m_QuestSystem = GetComponent<QuestSystem>();
+            
         }
 
         private void Start()
@@ -97,6 +96,7 @@ namespace MainGame
 
             m_Player = m_Controllable.GetComponent<PlayerMovementManager>();
             SetNewControllable(m_Controllable);
+            m_QuestSystem.SetNextQuest(0);
         }
 
         public void SetContinousMovement(bool active)
@@ -278,6 +278,11 @@ namespace MainGame
                 m_CameraOnPlayer.Follow = m_Player.transform;
                 m_CameraOnTransition.Follow = m_Player.transform;
             }
+        }
+
+        internal void GameOver()
+        {
+            Debug.Log("GAME OVER");
         }
     }
 }

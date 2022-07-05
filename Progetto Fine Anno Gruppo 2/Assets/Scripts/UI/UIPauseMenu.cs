@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PubSub;
+using TMPro;
 
 public class UIPauseMenu : Menu
 {
+	[SerializeField] TextMeshProUGUI m_QuestText;
+
 	public override void Open()
 	{
 		base.Open();
@@ -26,4 +29,9 @@ public class UIPauseMenu : Menu
     {
 		base.Open();
 	}
+	public void SetQuestText(string text)
+    {
+		m_QuestText.text = text;
+    }
+	
 }
