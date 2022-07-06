@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogo:
   - WhoIsSpeaking: 5
-    DialougueString: 'CONFERMAZIONE: attracco riuscito.'
+    DialougueString: 'CONFERMA: attracco riuscito.'
   - WhoIsSpeaking: 0
     DialougueString: Ok, va bene...
   - WhoIsSpeaking: 0
-    DialougueString: "CONTINUAZIONE: La attender\xF2 ora all\u2019uscita del modulo
-      per le procedure di entrata nella stazione."
+    DialougueString: "PROSEGUO: La attender\xF2 ora all\u2019uscita del modulo per
+      le procedure di entrata nella stazione."
   - WhoIsSpeaking: 0
     DialougueString: "<i>(si preme la mano sul volto)</i> Oh no, \xE8 vero, ora devo
       fare quel percorsaccio fino all\u2019uscita del modulo! Maledetto me!"
@@ -33,7 +33,7 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: "A tal proposito, posso sapere qualcosa su questo posto? Dovr\xF2
       lavorarci, quindi se possibile..."
-  - WhoIsSpeaking: 0
+  - WhoIsSpeaking: 1
     DialougueString: "RISPOSTA: Stazione di Osservazione Spaziale Archimedes. Manifatturiero:
       Impero Raniano. Scopo: osservazione, elaborazione, catalogazione dati di rilevazione
       astronomica della regione conosciuta come \u2018Deserto Astrale\u2019 per fenomeni
@@ -54,9 +54,10 @@ MonoBehaviour:
     DialougueString: <i>(fischia)</i> Addirittura una SOL?
   - WhoIsSpeaking: 1
     DialougueString: "AFFERMAZIONE: questa stazione \xE8 stata prevista di essere
-      provveduta del meglio che le tre nazioni stellari possono offrire"
+      provveduta del meglio che le tre nazioni stellari possono offrire lavorando
+      assieme in cooperazione."
   - WhoIsSpeaking: 0
     DialougueString: "Vedr\xF2 soltanto vivendo, che posso dire..."
-  - WhoIsSpeaking: 0
+  - WhoIsSpeaking: 1
     DialougueString: "AFFERMAZIONE: ricevuto, la aspetter\xF2 all\u2019entrata della
       stazione."
