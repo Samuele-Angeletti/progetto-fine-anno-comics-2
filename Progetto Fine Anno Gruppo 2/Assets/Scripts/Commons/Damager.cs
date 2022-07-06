@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Commons
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     public class Damager : MonoBehaviour
     {
         [SerializeField] float m_DamageAmount;

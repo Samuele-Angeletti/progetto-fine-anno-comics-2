@@ -14,6 +14,8 @@ namespace MainGame
         [SerializeField] List<QuestSO> m_QuestsList;
         QuestSO m_CurrentQuest;
 
+        
+
         public void OnDisableSubscribe()
         {
             PubSub.PubSub.Unsubscribe(this, typeof(QuestCompleteMessage));
@@ -58,7 +60,13 @@ namespace MainGame
 
         public void SetNextQuest(int index)
         {
-            m_CurrentQuest = m_QuestsList[index];
+            if(m_QuestsList[index].QuestAccomplished)
+            {
+                m_CurrentQuest = m_QuestsList.Find(x => !x.QuestAccomplished);
+            }
+            else
+                m_CurrentQuest = m_QuestsList[index];
+
             m_CurrentQuest.QuestAccomplished = false;
             UIManager.Instance.SetQuest(m_CurrentQuest.MessageOnScreen);
         }
@@ -66,6 +74,7 @@ namespace MainGame
         private void Start()
         {
             PubSub.PubSub.Subscribe(this, typeof(QuestCompleteMessage));
+            m_QuestsList.ForEach(x => x.QuestAccomplished = false);
         }
 
 

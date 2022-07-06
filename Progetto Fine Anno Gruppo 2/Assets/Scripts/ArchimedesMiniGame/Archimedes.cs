@@ -5,6 +5,7 @@ using PubSub;
 using Commons;
 using Cinemachine;
 using MainGame;
+using UnityEngine.Tilemaps;
 
 namespace ArchimedesMiniGame
 {
@@ -12,10 +13,14 @@ namespace ArchimedesMiniGame
     {
         [SerializeField] SpriteRenderer m_ExternalSpriteRenderer;
         [SerializeField] CinemachineVirtualCamera m_MyCameraOnPlayer;
+        [SerializeField] GameObject m_Terrain;
+
+        private PolygonCollider2D m_PolygonCollider;
         private SpriteTransition m_SpriteTransition;
         private void Awake()
         {
             m_SpriteTransition = GetComponent<SpriteTransition>();
+            m_PolygonCollider = GetComponent<PolygonCollider2D>();
         }
         private void Start()
         {
@@ -38,10 +43,14 @@ namespace ArchimedesMiniGame
         {
             if(message is StartEngineModuleMessage)
             {
+                m_Terrain.SetActive(false);
+                m_PolygonCollider.enabled = true;
                 m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSpriteRenderer, EDirection.Up);
             }
             else if(message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {
+                m_Terrain.SetActive(true);
+                m_PolygonCollider.enabled = false;
                 m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSpriteRenderer, EDirection.Down);
             }
         }
