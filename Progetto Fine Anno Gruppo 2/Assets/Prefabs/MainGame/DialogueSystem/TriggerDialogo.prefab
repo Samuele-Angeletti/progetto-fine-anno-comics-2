@@ -55,8 +55,6 @@ MonoBehaviour:
   CanRepeatLastDialogue: 0
   m_dialogueToShow:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!61 &4069866627943937615
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -100,6 +100,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         }
         else if (message is CurrentDialogueFinishedMessage)
         {
+            standardMessageIsPlaying = false;
             StopAllCoroutines();
             dialogueBox.SetActive(false);
         }
@@ -125,6 +126,11 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         {
             standardMessageIsPlaying = true;
             PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgStartEngine.Dialogo)));
+        }
+        else if (message is EndDialogueMessage)
+        {   
+            EndDialogueMessage objectToDestroy =(EndDialogueMessage)message;
+            objectToDestroy.gameObject.SetActive(false);
         }
     }
 
@@ -210,15 +216,18 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     }
     private string ESpeakerTostring(ESpeaker whoIsSpeaking)
     {
-        string currentSpeaker = "";
+        string currentSpeaker = string.Empty;
         if (whoIsSpeaking == ESpeaker.Riemann)
         {
             currentSpeaker = "Reimann";
-
         }
         else if (whoIsSpeaking != ESpeaker.Riemann)
         {
             currentSpeaker = "Ada";
+        }
+        else if (whoIsSpeaking == ESpeaker.Vuoto)
+        {
+            currentSpeaker = string.Empty;
         }
         return currentSpeaker;
 
@@ -249,7 +258,8 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(EndDialogueMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(CurrentDialogueFinishedMessage));
-           // mod
+
+        // mod
         PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
