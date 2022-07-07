@@ -49,7 +49,7 @@ namespace MainGame
         public void InvokeDialogue()
         {
             if (m_DialogueHolderSOs != null)
-                PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueHolderSOs.Dialogo));
+                PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueHolderSOs.Dialogo,false));
         }
 
         /// <summary>

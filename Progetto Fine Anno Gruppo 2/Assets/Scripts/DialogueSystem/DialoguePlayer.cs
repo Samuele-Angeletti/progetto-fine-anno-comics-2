@@ -44,7 +44,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgDockingComplete;
     [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgStartEngine;
     [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgModuleDestroyed;
-
+    [ShowScriptableObject, SerializeField] DialogueHolderSO m_StandardMsgZeroGravityActivated;
     #region SINGLETONE PATTERN
     private static DialoguePlayer m_instance;
 
@@ -70,7 +70,6 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
     {
         DontDestroyOnLoad(gameObject);
         m_whoIsSpeakingRightNow = new Queue<ESpeaker>();
-
     }
 
 
@@ -85,6 +84,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
         PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
         PubSub.PubSub.Subscribe(this, typeof(StartEngineModuleMessage));
+        PubSub.PubSub.Subscribe(this,typeof(ZeroGMessage));
 
         m_dialogueLine = new Queue<string>();
 
@@ -92,40 +92,47 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
     public void OnPublish(IMessage message)
     {
+       
         if (message is StartDialogueMessage)
         {
             StartDialogueMessage dialogueMessage = (StartDialogueMessage)message;
             StartCoroutine(Startdialogue(dialogueMessage.dialogue));
 
         }
+        
         else if (message is CurrentDialogueFinishedMessage)
         {
             standardMessageIsPlaying = false;
             StopAllCoroutines();
             dialogueBox.SetActive(false);
         }
+        else if (message is ZeroGMessage)
+        {
+            standardMessageIsPlaying = true;
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgZeroGravityActivated.Dialogo), false));
+        }
         else if (message is ModuleDestroyedMessage)
         {
             standardMessageIsPlaying = true;
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgModuleDestroyed.Dialogo),false));
 
         }
         else if (message is NoBatteryMessage)
         {
             standardMessageIsPlaying = true;
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgNoBattery.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgNoBattery.Dialogo),false));
 
         }
         else if (message is DockingCompleteMessage)
         {
             standardMessageIsPlaying = true;
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgDockingComplete.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgDockingComplete.Dialogo),false));
 
         }
         else if (message is StartEngineModuleMessage)
         {
             standardMessageIsPlaying = true;
-            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgStartEngine.Dialogo)));
+            PubSub.PubSub.Publish(new StartDialogueMessage(GetRandomMessage(m_StandardMsgStartEngine.Dialogo),false));
         }
         else if (message is EndDialogueMessage)
         {   
@@ -264,6 +271,8 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
+
 
     }
 

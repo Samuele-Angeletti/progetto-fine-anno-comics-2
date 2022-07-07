@@ -58,8 +58,8 @@ public class AudioManager : MonoBehaviour, ISubscriber
     [SerializeField] AudioSource m_AudioSource;
     [SerializeField] AudioMixer m_audioMixer;
     [Header("FADING SETTINGS")]
-    [SerializeField] float fadeInTime;
-    [SerializeField] float fadeOutTime;
+    public float fadeInTime;
+    public float fadeOutTime;
     
 
     private void Start()
@@ -173,6 +173,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
         yield return new WaitWhile(() => m_AudioSource.volume != targetVolume);
     }
    
+
     public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
         float currentTime = 0;

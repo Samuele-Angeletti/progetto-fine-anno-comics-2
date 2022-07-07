@@ -209,8 +209,8 @@ GameObject:
   m_Component:
   - component: {fileID: 890752263}
   - component: {fileID: 890752262}
-  - component: {fileID: 890752261}
   - component: {fileID: 890752264}
+  - component: {fileID: 890752265}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -218,14 +218,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &890752261
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890752260}
-  m_Enabled: 1
 --- !u!20 &890752262
 Camera:
   m_ObjectHideFlags: 0
@@ -317,6 +309,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &890752265
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890752260}
+  m_Enabled: 1
 --- !u!4 &1558285935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8775931993629476770, guid: 18ec53269fa210a4883f91ebda400325, type: 3}
@@ -4741,6 +4741,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6926274466939112816, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: fadeInTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926274466939112816, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: fadeOutTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6926274466939112817, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4783,6 +4791,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926274466939112817, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926274466939112818, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926274466939112818, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926274466939112818, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926274466939112818, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926274466939112818, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926274466939112818, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6926274466939112823, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}

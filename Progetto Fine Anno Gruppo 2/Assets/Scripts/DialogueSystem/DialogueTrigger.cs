@@ -16,11 +16,14 @@ public class DialogueTrigger : Interactable, ISubscriber
 {
 
     public EDialogueInteraction modalitaDiInterazione;
-    public bool CanRepeatLastDialogue;
+    public bool canRepeatLastDialogue;
     [ShowScriptableObject]
     public List<DialogueHolderSO> m_dialogueToShow;
 
-
+    private void Awake()
+    {
+        gameObject.GetComponent<DialogueTrigger>().enabled = false;
+    }
 
     private void Start()
     {
@@ -34,7 +37,8 @@ public class DialogueTrigger : Interactable, ISubscriber
         {
             if (m_dialogueToShow.Count >= 1)
             {
-                PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo));
+                PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueToShow[0].Dialogo,canRepeatLastDialogue));
+                
             }
         }
     }
@@ -48,7 +52,8 @@ public class DialogueTrigger : Interactable, ISubscriber
     {
         if (message is CurrentDialogueFinishedMessage)
         {
-            if (CanRepeatLastDialogue && m_dialogueToShow.Count == 1 && !DialoguePlayer.Instance.standardMessageIsPlaying) return;
+
+            if (canRepeatLastDialogue && m_dialogueToShow.Count == 1 && !DialoguePlayer.Instance.standardMessageIsPlaying) return;
             if (m_dialogueToShow.Count > 0 && !DialoguePlayer.Instance.standardMessageIsPlaying) m_dialogueToShow.RemoveAt(0);
             if (m_dialogueToShow.Count == 0 && !DialoguePlayer.Instance.standardMessageIsPlaying) return;
 

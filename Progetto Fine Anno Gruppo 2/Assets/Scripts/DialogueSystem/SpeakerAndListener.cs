@@ -16,7 +16,8 @@ public class SpeakerAndListener : MonoBehaviour
         m_audioTrigger = collision.GetComponent<AudioTrigger>();
         if (m_dialogueTrigger != null && m_dialogueTrigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter && m_dialogueTrigger.m_dialogueToShow.Count >0)
         {
-            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueTrigger.m_dialogueToShow[0].Dialogo));
+            m_dialogueTrigger.enabled = true;
+            PubSub.PubSub.Publish(new StartDialogueMessage(m_dialogueTrigger.m_dialogueToShow[0].Dialogo,false));
         }
         if (m_audioTrigger != null)
         {
@@ -24,7 +25,7 @@ public class SpeakerAndListener : MonoBehaviour
         }
 
        
-            return;
+            
        
       
         
@@ -32,8 +33,13 @@ public class SpeakerAndListener : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+
         m_dialogueTrigger = collision.GetComponent<DialogueTrigger>();
         m_audioTrigger = collision.GetComponent<AudioTrigger>();
+        if (m_dialogueTrigger != null && m_dialogueTrigger.modalitaDiInterazione == EDialogueInteraction.OnTriggerEnter)
+        {
+            m_dialogueTrigger.enabled =false;
+        }
         if (m_audioTrigger != null)
         {
             PubSub.PubSub.Publish(new OnTriggerExitAudio());
