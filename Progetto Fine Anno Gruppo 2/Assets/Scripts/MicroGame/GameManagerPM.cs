@@ -46,6 +46,9 @@ namespace MicroGame
         [Header("Scene references")]
         [SerializeField] List<GameObject> m_AllSceneObjects;
 
+        [Header("Prefabs")]
+        [SerializeField] GameObject m_AdaLifeSprite;
+
         [HideInInspector]
         public UIPacManInterface UIPacManInterface;
 
@@ -57,7 +60,7 @@ namespace MicroGame
         private SavableInfos m_CurrentModuleInfos;
         private int m_EnemiesQuantity;
         Dictionary<string, SavableInfos> databaseLoaded;
-
+        Queue<GameObject> m_AdaLifeSpritesSpawned = new Queue<GameObject>();
         private void Awake()
         {
             if (m_instance == null)
@@ -167,9 +170,19 @@ namespace MicroGame
             }
         }
 
-        internal void UIUpdateLife(int m_CurrentLifes)
+        internal void LoseLife()
         {
-            UIPacManInterface.LifeText.text = "VITE: " + m_CurrentLifes;
+            GameObject g = m_AdaLifeSpritesSpawned.Dequeue();
+            Destroy(g);
+        }
+
+        public void UISpawnInitialLifes(int initialLifes)
+        {
+            for (int i = 0; i < initialLifes; i++)
+            {
+                GameObject g = Instantiate(m_AdaLifeSprite, UIPacManInterface.LifePanelContainer.transform);
+                m_AdaLifeSpritesSpawned.Enqueue(g);
+            }
         }
 
         public void OnPublish(IMessage message)
@@ -261,9 +274,13 @@ namespace MicroGame
                 gameObject.SetActive(false);
                 Destroy(gameObject, 3f);
             }
+            foreach(GameObject g in m_AdaLifeSpritesSpawned)
+            {
+                Destroy(g, 3);
+            }
             m_Enemies.ForEach(x => x.gameObject.SetActive(false));
             m_Enemies.ForEach(x => Destroy(x.gameObject, 3f));
-
+            m_AdaLifeSpritesSpawned.Clear();
             Destroy(gameObject, 3f);
         }
 

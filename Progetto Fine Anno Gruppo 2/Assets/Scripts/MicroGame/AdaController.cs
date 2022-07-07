@@ -26,9 +26,8 @@ namespace MicroGame
 
         private void InitialSettings()
         {
-
-            GameManagerPM.Instance.UIUpdateLife(m_CurrentLifes);
-	    m_AdaLogic.ContinousMovement = true;
+            GameManagerPM.Instance.UISpawnInitialLifes(m_MaxLifes);
+	        m_AdaLogic.ContinousMovement = true;
         }
 
         internal void LoseLife()
@@ -46,14 +45,14 @@ namespace MicroGame
             }
 
             m_AdaLogic.MoveDirection(Vector2.zero);
-            GameManagerPM.Instance.UIUpdateLife(m_CurrentLifes);
+            GameManagerPM.Instance.LoseLife();
 
         }
 
         public void PlaceOnSpawnPoint()
         {
             transform.position = m_SpawnPoint.position;
-            GetComponent<BoxCollider2D>().enabled = true;
+            GetComponent<CircleCollider2D>().enabled = true;
             m_Graphics.SetActive(true);
 
         }

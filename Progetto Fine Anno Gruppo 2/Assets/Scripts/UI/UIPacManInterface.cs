@@ -8,4 +8,5 @@ public class UIPacManInterface : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI LifeText;
     [SerializeField] public Slider BatterySlider;
+    [SerializeField] public GameObject LifePanelContainer;
 }

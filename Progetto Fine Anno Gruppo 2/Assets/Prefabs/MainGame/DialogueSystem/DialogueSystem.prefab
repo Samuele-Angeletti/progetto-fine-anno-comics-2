@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3613587828142096203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3613587828142096309}
+  - component: {fileID: 3613587828142096308}
+  m_Layer: 0
+  m_Name: DialogueSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3613587828142096309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613587828142096203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 45.46441, y: -7.193567, z: -0.24630705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3613587828142096308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613587828142096203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2705e98f935634792430cd3655487e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 0}
+  textToWrite: {fileID: 0}
+  spriteToChange: {fileID: 0}
+  ContinueMessage: {fileID: 0}
+  m_PlayerInputs: {fileID: 0}
+  spritePlayer: {fileID: 21300000, guid: dbb91eb5aa0951c41b0ca2102918ce7d, type: 3}
+  spriteAdaPreIntegrazione: {fileID: 21300000, guid: 2333bc8b213b26d4f8cda78909b5316b, type: 3}
+  spriteAdaPrimaIntegrazione: {fileID: 21300000, guid: 18a4b8cb9646b1b45b1b1c4748174661, type: 3}
+  spriteAdaSecondaIntegrazione: {fileID: 21300000, guid: 70d263997d14c354c9d3f9c35f60b200, type: 3}
+  spriteAdaFormaFinale: {fileID: 21300000, guid: 45837aa9ae15105469180c60f2ad0839, type: 3}
+  vuotoSprite: {fileID: 0}
+  standardMessageIsPlaying: 0
+  m_typeWriterSpeed: 100
+  dialogueIsPlaying: 0
+  m_StandardMsgNoBattery: {fileID: 11400000, guid: 23a057f3666f02a4c935c2c2d11c650d, type: 2}
+  m_StandardMsgDockingComplete: {fileID: 11400000, guid: e8ad5b5e78eff0a45b2ec3e099794243, type: 2}
+  m_StandardMsgStartEngine: {fileID: 11400000, guid: 2821d6803e25fdb4e9cd0e9de1bd6760, type: 2}
+  m_StandardMsgModuleDestroyed: {fileID: 11400000, guid: 3b28fff3c0671704b91128a8d87cf061, type: 2}
+  m_StandardMsgZeroGravityActivated: {fileID: 11400000, guid: 36c88512425cc364db635eb63d969064, type: 2}
