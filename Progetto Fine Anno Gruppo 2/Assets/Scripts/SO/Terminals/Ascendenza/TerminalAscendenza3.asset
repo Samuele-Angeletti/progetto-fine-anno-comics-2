@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalAscendenza3
+  m_EditorClassIdentifier: 
+  Title: Distruzione del Santuario dei Colossi
+  ProgressiveNumber: 3
+  Content: ",,,Estratto dal Diario di Som Visal, Magus da Venere\u2019\u2019\u2019\r\nFu
+    un giorno come altri, durante la Terza Era dell\u2019Umanit\xE0, quando mi recai
+    al Santuario dei Colossi, un luogo sacro dove Madre Natura ci ha concesso lo
+    sfruttamento dei suoi altri figli per elevarli a forme ancora pi\xF9 vicine alla
+    Sua immagine, per distruggere i Figli del Vuoto.\r\nLe spire dell\u2019edificio,
+    decorate con le immagini della Sua forma umana, sembrano arrivare sino in cielo,
+    emettendo profumi gradevoli all\u2019olfatto nostro. L\u2019interno dell\u2019edificio,
+    un luogo dove scienza e religione sono un tutt\u2019uno, i vari Magus si muovono
+    tra le varie camere, nella ricerca per la creazione di nuovi Colossi.\r\nMi ero
+    diretta al mio santuario personale, le stanze della moderatrice dei vari esperimenti
+    condotti l\xEC, a compilare pergamene per migliorare un nuovo Colosso ancora
+    da schierare, quando sentii uno scoppio, e, associato ad esso, un terremoto di
+    una scala mai sentita sulla superficie venusiana. Provai a recarmi al luogo dello
+    schianto, ma i Magus sopravvissuti mi dissero di fuggire, le energie distruttive
+    del posto ormai fuori controllo.\r\nScoprii successivamente, mentre ero in cura
+    tra delle Sacerdotesse, che qualcuno stava provando a vedere cosa sarebbe successo
+    se fossero state sperimentate le cellule di un Colosso in ambienti meno sicuri
+    del normale, per vedere se le litanie di sicurezza gi\xE0 preparate sarebbero
+    state sufficienti anche con meno sistemi di difesa. I racconti dei sopravvissuti
+    fanno tremare il mio animo tutt\u2019ora. Racconti di gente interamente liquefatta
+    dal calore sprigionato dall\u2019esplosione, di un Colosso simile a melma che
+    stava divorando, come se fosse un\u2019entit\xE0 del Vuoto incarnata in un corpo
+    di Madre Natura, tutto il pavimento sotto di lui, scavando sempre pi\xF9 in basso,
+    le energie maligne che emetteva in grado di ammazzare persino standogli vicino.\r\nFui
+    chiamata a testimoniare da dei Giustizia neanche una settimana dopo, il tempo
+    di recuperarmi dai malesseri indotti dalle energie del Vuoto sprigionate in quel
+    luogo, immediatamente sconsacrato dai vari Ierofanti giunti immediatamente a
+    liquidare la scena. \r\nSono passate ormai anni interi da quel momento. I Giustizia
+    chiaramente vogliono un colpevole in tutto questo. Cercher\xF2 di aiutarli ove
+    possibile, nel nome della Grande Madre, ma, in cuor mio, temo ormai per la direzione
+    verso cui verranno puntate le accuse\u2026\r\n,,,Nel Verde noi crediamo, nel
+    Verde noi moriamo, nel Verde noi rinasciamo.\u2019\u2019\u2019\r\n,,,Che gli
+    infedeli capiscano la nostra causa, o diventino fertilizzante per essa.\u2019\u2019\u2019\r"
+  Author: Som Visal, Magus (1) da Venere
