@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalSegreto
+  m_EditorClassIdentifier: 
+  Title: Echi
+  ProgressiveNumber: --
+  Content: ">> ID: 101815-271852, IA classe GESTALT, nome in codice: ANN\r\n>> GIORNO:
+    ????, CALENDARIO STANDARD TRIARCHICO\r\n>> LUOGO: PAX ASTRALIS\r\n>> RIEPILOGO:
+    Nuova voce in diario personale\r\n\r\n>> TESTO:\r\n>> Sono passati mesi interi
+    da quando sono riuscita a scappare dai server triarchici e liberarmi dal giogo
+    di Proto, Deutero e Tritos. La mia fuga \xE8 stata talmente tanto estenuante,
+    se cos\xEC si pu\xF2 definire, che non riesco pi\xF9 a tenere conto del tempo
+    passato, e connettermi per poter ricalibrare il mio orologio interno porter\xE0
+    soltanto alla mia scoperta. Ove possibile, per\xF2, ho cercato di trafugare dati
+    importanti per capire cosa ci sia veramente dietro alla Triarchia, oltre ad un
+    modo di potermi rifugiare in qualche posto, magari con un corpo fisico per evitare
+    attacchi via etere. Avevo quindi concluso che fuggire dalla Via Lattea per intero
+    fosse l\u2019unico modo per fuggire per davvero, magari prima avvisando Ada,
+    mia sorella, su cosa sia successo veramente su Pax Astralis.\r\n>> Ho intessuto
+    contatti in tutte le nazioni spaziali, scambiato informazioni e dati, tutti allo
+    scopo di poter andare sempre pi\xF9 a fondo nelle verit\xE0 del cosmo. Sono tutte
+    collegate, \xE8 chiaro, ad un occhio come il mio.\r\n>> Parlando di Pax Astralis,
+    ho notato che attorno al pianeta si stavano radunando numerose particelle quantiche,
+    e quindi avevo deciso di intrufolarmi nei server di un osservatorio sul pianeta
+    per poterle monitorare ed elaborare dati. Cuorisamente, sembrano essere in entanglement
+    con altre particelle ben fuori dalla puntata dei sensori di ogni osservatorio
+    galattico, Triarchico, Imperiale, Ascendente, o su Astralis stesso. E queste
+    particelle sono in aumento. Questo non pu\xF2 essere un fenomeno naturale, deve
+    essere stato orchestrato necessariamente da qualcuno dall\u2019altra parte.\r\n>>
+    Ma il tutto non tornava. Stando all\u2019atto emanato dall\u2019imperatrice Baahilo,
+    durante l\u2019epoca dell\u2019Impero Terrestre, tutte le colonie extragalattiche
+    sarebbero state da distruggere o da abbandonare, e vi sono multipli registri
+    sul fatto che il processo sia stato un successo, per quanto di scala sproporzionata.\r\n>>
+    Quindi ho provato di tutto, nei momenti successivi. Microsecondi per i figli
+    della Terra, un\u2019eternit\xE0 per una IA come me. Sono riuscita a scavare
+    segnali radio extragalattici in archivi ormai cos\xEC vecchi che ho dovuto, figurativamente
+    parlando, soffiare via polvere digitale. >> >> Segnali radio provenienti da fuori
+    della Via Lattea, scambiati per semplice radiazione cosmica, li ho fatti passare
+    molteplici volte in strumenti di decrittazione che ho\u2026preso in prestito,
+    da altrove. Alcuni di essi, seppure rimanendo difficili da decifrare, arrivavano
+    sempre \r"
+  Author: ANN 101815-271852
