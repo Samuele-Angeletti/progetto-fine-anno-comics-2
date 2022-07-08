@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
         else
             Destroy(gameObject);
         m_AudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
-
+        
 
     }
 
@@ -61,7 +61,6 @@ public class AudioManager : MonoBehaviour, ISubscriber
     public float fadeInTime;
     public float fadeOutTime;
     
-
     private void Start()
     {
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
@@ -71,6 +70,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
 
         PubSub.PubSub.Publish(new SendAudioSettingsMessage(true,true));
         if (m_musicaMenùPrincipale == null) return;
+        
     }
 
 
@@ -90,7 +90,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
     }
     public void ChangeMasterVolume(float value)
     {
-        m_audioMixer.SetFloat("Master", Mathf.Log10(value) * 20);
+        m_audioMixer.SetFloat("Master_Volume", Mathf.Log10(value) * 20);
     }
    
     
@@ -123,7 +123,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
             m_AudioSource.loop = settings.m_CanLoop;
         }
     }
-    
+
     public void OnDisableSubscribe()
     {
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
@@ -131,48 +131,13 @@ public class AudioManager : MonoBehaviour, ISubscriber
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
     }
 
-    //public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
-    //{
-    //    float startVolume = audioSource.volume;
 
-    //    while (audioSource.volume > 0)
-    //    {
-    //        audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-    //        if (audioSource.volume == 0)
-    //        {
-    //            yield return null ;
-
-    //        }
-
-    //    }
-
-    //    audioSource.Stop();
-    //    audioSource.volume = startVolume;
-
-    //}
-
-    //public IEnumerator FadeIn(AudioSource audioSource,AudioMixer mixer, float FadeTime)
-    //{
-    //    float startVolume = 0.2f;
-
-
-    //    audioSource.volume = 0;
-    //    audioSource.Play();
-
-    //    while (audioSource.volume < 1.0f)
-    //    {
-    //        audioSource.volume += startVolume * Time.deltaTime / FadeTime;
-    //        if (audioSource.volume == 1)
-    //        {
-    //            yield return null;
-    //        }
-    //    }
     public IEnumerator WaitForFade(AudioSource audioSource, float duration, float targetVolume)
     {
         var courutine = this.RunCoroutine(StartFade(audioSource, duration, targetVolume));
         yield return new WaitWhile(() => m_AudioSource.volume != targetVolume);
     }
-   
+
 
     public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
@@ -186,6 +151,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
         }
         yield break;
     }
+
 
 
 }
