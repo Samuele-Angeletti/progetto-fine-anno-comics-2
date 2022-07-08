@@ -28,7 +28,7 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Subscribe(this, typeof(DockingCompleteMessage));
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
-
+            m_ExternalSpriteRenderer.gameObject.SetActive(true);
         }
 
         public void OnDisableSubscribe()

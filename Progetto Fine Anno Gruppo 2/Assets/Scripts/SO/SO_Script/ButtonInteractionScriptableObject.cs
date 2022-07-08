@@ -65,8 +65,8 @@ public class ButtonInteractionScriptableObject : ScriptableObject
 
     private void OpenDoor(GameObject interestedObject, Interacter interacter, ButtonInteraction buttonInteractionHolder)
     {
-        interestedObject.GetComponentInChildren<Interactable>().Interact(interacter);
         interestedObject.GetComponentInChildren<MovableObject>().SetButtonActivator(buttonInteractionHolder);
+        interestedObject.GetComponentInChildren<Interactable>().Interact(interacter);
     }
     
     private void ActiveModule(GameObject interestedObject)
