@@ -14,10 +14,22 @@ public class ButtonInteraction : Interactable, ISubscriber
     [SerializeField] bool m_OneShot;
     [SerializeField] Light2D m_Activationlight;
     //[SerializeField] AudioHolder m_audioHolder;
+
+    BoxCollider2D m_TriggerCollider;
+
     private void Awake()
     {
         m_soundSource = GetComponent<AudioSource>();
+        BoxCollider2D[] colliders = GetComponents<BoxCollider2D>();
+        for(int i = 0; i < colliders.Length; i++)
+        {
+            if(colliders[i].isTrigger)
+            {
+                m_TriggerCollider = colliders[i];
+            }
+        }
     }
+
     private void Start()
     {
         if (InteractionType == EInteractionType.PlayPacMan || InteractionType == EInteractionType.ActiveModule)
@@ -71,8 +83,13 @@ public class ButtonInteraction : Interactable, ISubscriber
         OnDisableSubscribe();
     }
 
-    public void ActiveLight(bool active)
+    public void ActiveTrigger(bool active)
     {
-        m_Activationlight.enabled = active;
+        m_TriggerCollider.enabled = active;
+    }
+
+    public void ActiveLight()
+    {
+        m_Activationlight.enabled = !m_Activationlight.enabled;
     }
 }
