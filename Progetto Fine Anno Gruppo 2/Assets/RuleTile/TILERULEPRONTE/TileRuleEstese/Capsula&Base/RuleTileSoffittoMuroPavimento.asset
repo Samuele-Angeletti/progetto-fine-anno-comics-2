@@ -215,4 +215,4 @@ MonoBehaviour:
     - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 2
-  type: Modulo1
+  type: Capsula

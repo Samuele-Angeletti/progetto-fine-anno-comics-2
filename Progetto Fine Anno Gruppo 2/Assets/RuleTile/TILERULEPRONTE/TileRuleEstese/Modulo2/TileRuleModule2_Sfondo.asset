@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ef3641275a2aa4ca6d896f55e587ff, type: 3}
+  m_Name: TileRuleModule2_Sfondo
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: -871184651, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: -871184651, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: 559740131, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: -1236895548, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: 1805737997, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: -1111206838, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: 591392210, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: -1020369224, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: 1393052879, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    - {fileID: -1401550843, guid: 08b14858cb385f949b3a03b9803da489, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 1
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 0100000001000000010000000100000001000000010000000100000001000000
+    m_NeighborPositions:
+    - {x: -1, y: -1, z: 0}
+    - {x: 1, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: 1, y: 1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: -1, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+    m_RuleTransform: 0
+  type: 

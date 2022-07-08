@@ -1,0 +1,2080 @@
+fileFormatVersion: 2
+guid: 08b14858cb385f949b3a03b9803da489
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TilesetModuloDue_15
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374d585c18260ee4892300ce9811d400
+      internalID: -669953017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_16
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0d284801e6fa447bac13bec2482e41
+      internalID: -1129317888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_17
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fccceb007f9b24bb390a3091f59594
+      internalID: -947660852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_18
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afae8b8e96523ea41b4ced17d1ff4a2e
+      internalID: -1783575221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_19
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2661f4b71c30e1646b423e3b2001585d
+      internalID: -1336065865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_21
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9084bb13e563346b75233b5e270730
+      internalID: 1076327373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_22
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c993616bb8c60d24a8b5e60f31b05633
+      internalID: -153254162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_25
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c655b9537462274492e6e5996292754
+      internalID: 733131107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_26
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee1704d1eb6f224f8e639488eab84e3
+      internalID: -111459976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_27
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ae9d510603c1546bfff7914de9214d
+      internalID: 518563858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_45
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5ff6e147afaa448a116d8ef90431cc
+      internalID: 337291540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_46
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539710acb82f5ce42a299f973e9de3f6
+      internalID: -1100660621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_47
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570fa0aaf5e96a14fa2b1facc01a7af3
+      internalID: -1718024407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_48
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95974caf4f0b1c4ab7a7fd0c6ac7023
+      internalID: -1364270929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_49
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a81f9d185ee0242a7562200e5ed43b
+      internalID: 152181754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_50
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ef168be385ddb4fa3383fc84ebd9cf
+      internalID: 1174398074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_51
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91dc8596ed55709428ab075056041114
+      internalID: -133472932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_54
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ec61e7a9dfbce49bc252bb6a8eebce
+      internalID: 1026996899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_55
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a8e5f89aeb4744793e07e237c052c8
+      internalID: -1471450124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_56
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 8003
+        width: 500
+        height: 497
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a1a6a247b33f64a8d86788101d7777
+      internalID: 2110411403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_73
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60c1d0a3ba84cd41aa70c22a6d0a66d
+      internalID: -564277530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_74
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5234ef9ce9f3948a87a647200aa18e
+      internalID: 1392070571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_75
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca64a31918785b46b278acf519ee6e4
+      internalID: -77153897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_76
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19103976ea6277e46a1cde4ba4be9d02
+      internalID: 1163976439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_77
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101bc60b2cb548d43a0e5c07a637b053
+      internalID: -1496661046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_78
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76436d807b2fbbd4aa9455cf638096c9
+      internalID: -1493997176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_81
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 7000
+        width: 1000
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a94c8179cbf6d8478d9046e446ea2a3
+      internalID: -1457563640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_83
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 7000
+        width: 500
+        height: 1003
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054f2a683e1debf43b6fabfa2b8847f1
+      internalID: 910707366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_85
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 7000
+        width: 1000
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3030683a13130fd4da3811ada79a8568
+      internalID: 1441275245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_88
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311faf519bdd67349893eb43a84c396a
+      internalID: -210692359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_89
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17f6e4732ae4c344a065b1d5fe89980
+      internalID: 1752421309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_90
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb1ef071c6ecb54c8318f4c99169e1e
+      internalID: 1988685875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_91
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e6ae7963199b74c8ab5494030f3e9b
+      internalID: -937326628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_92
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f025f37bef0e388459a2784065fdcaf2
+      internalID: 1243459146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_93
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccfb5abc12437e4093c5586162c8f6c
+      internalID: 189434137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_100
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52d44b56f0727a46ad14e24c54722ac
+      internalID: -150230201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_101
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2600a51946513043ab17e61396ebfa1
+      internalID: -584865479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_102
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622a7a402bc5e634ca0af1a378635f92
+      internalID: 1935509639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_103
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6002
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f435fd777562aa428c4b3ee4fa7c6bc
+      internalID: 2075417724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_107
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a285997afb2bb043b77ee628383ef75
+      internalID: -650911331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_108
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87aa4ff3a2ee5884fb958e024f53c953
+      internalID: 364854725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_109
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3607806173596d439cffd9c9eb99d5d
+      internalID: 1729403633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_116
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e37260cf92188459abf4bd5969665b
+      internalID: -848718530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_121
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89c3ea1d780810429963f9c76ac0ebd
+      internalID: 993987897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_123
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2713904cfa54bf4ab105c2c0fd4f882
+      internalID: 738262076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_126
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743ec2102773e634a8dc67b776d432a0
+      internalID: 477748532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_127
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135c026022858cb4ba9854f6c36b81fa
+      internalID: 427837476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_131
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263731ae9c031b541a6600b71ee92324
+      internalID: 1769697247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_148
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d075690809885ba48b89efb947119619
+      internalID: -1442997171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_149
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6fe81881ba9fe44ba128c01b1e38d8
+      internalID: 527959413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_150
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67ac28a7efdf3548b7ec9e94d458334
+      internalID: 1913604245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_151
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a225662aa5689c4bab5496bd11ca4ae
+      internalID: 1796432265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_152
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052bd228ebd125d49bdb3d92415f6f39
+      internalID: -989250505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_153
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fec4894b9207241ba3aaa0d025e446
+      internalID: 1090938429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_154
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffca53e430b5bdd4f97ce3416f2bf9eb
+      internalID: -1066189803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_157
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3500
+        width: 500
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c7ba43e7b60464cb2525c8e7f68410
+      internalID: 1302503006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_158
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3500
+        width: 500
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f83dd76b4d9b7244a8646b4b1936ae8
+      internalID: -498145270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_159
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3500
+        width: 500
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2185bd1e2af36514e9ad2628acd17ea6
+      internalID: -1501622924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_160
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3500
+        width: 500
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5938135cf14b4c14580cd7b89526ddf4
+      internalID: -1932588978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_161
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3500
+        width: 500
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a32b9c0bfeb9fb42b169405ea3aeb39
+      internalID: 169495634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_162
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3500
+        width: 500
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3942d280608ea43be7a5a804b2e094
+      internalID: 2080852548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_165
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cff7be5c0f379d4c8d0261f4c177120
+      internalID: -59140006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_166
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37b16eafe5c9dc4f82c636f7efb5f5f
+      internalID: -750527328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_167
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543779e0306288a4c8785d97d308b658
+      internalID: 1765750947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_168
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471e3f1746fb4914da36bb5f15948472
+      internalID: -1278738792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_169
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39365d293cdb02499d91c87baeb8ff0
+      internalID: -1135306240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_170
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35bfe87e9dbc304580909bac6d0c962
+      internalID: -2036512598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_171
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3353992b136a734cb9957e8d1754e24
+      internalID: -2002537031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_187
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7252ab59c11136b4496877fc0feb74c9
+      internalID: -1189388525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_188
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28578da4e631bb846ac179993c5286e2
+      internalID: -646478311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_189
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa83380b1ad2a34ab009beb13d34b34
+      internalID: 357683795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_190
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de076a5e18f8bf498ceba6daa2c1e4d
+      internalID: 559740131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_191
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b379d66743d44544fbd0ed015cca05b8
+      internalID: -871184651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_192
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497bbfc30654c5e4a89bf269245e1b93
+      internalID: -1236895548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_194
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0eda064715acfe4b938abad98d990b7
+      internalID: 670509965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_196
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5036d4a4bd380049a4e1d5afce39f0a
+      internalID: -270789420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_197
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd36d76bc9710194fbb44f1d103b82e6
+      internalID: 1805737997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_198
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db43d953bd6d13b45b1346fc9663ed76
+      internalID: -1111206838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_199
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3818580a89b934f8aeb3a57bb65436
+      internalID: 591392210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_203
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4596531b19df041accfbfe8324a088
+      internalID: -1020369224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_204
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aaf5570421c25b42bc2df3ff713e57b
+      internalID: 1393052879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetModuloDue_205
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0852843051a8cf4380dc14b59997f53
+      internalID: -1401550843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TilesetModuloDue_95: -278471770
+      TilesetModuloDue_5: 1440523565
+      TilesetModuloDue_62: -1709971583
+      TilesetModuloDue_158: -498145270
+      TilesetModuloDue_201: 68447736
+      TilesetModuloDue_177: 534626011
+      TilesetModuloDue_179: -534246655
+      TilesetModuloDue_83: 910707366
+      TilesetModuloDue_108: 364854725
+      TilesetModuloDue_30: 1798497447
+      TilesetModuloDue_41: 1649260037
+      TilesetModuloDue_147: -50334092
+      TilesetModuloDue_176: 1009209705
+      TilesetModuloDue_150: 1913604245
+      TilesetModuloDue_162: 2080852548
+      TilesetModuloDue_193: -1009316502
+      TilesetModuloDue_20: -1275301920
+      TilesetModuloDue_165: -59140006
+      TilesetModuloDue_148: -1442997171
+      TilesetModuloDue_69: 686128910
+      TilesetModuloDue_183: -737393184
+      TilesetModuloDue_76: 1163976439
+      TilesetModuloDue_87: 1899539777
+      TilesetModuloDue_45: 337291540
+      TilesetModuloDue_58: -1671006901
+      TilesetModuloDue_80: -51572520
+      TilesetModuloDue_42: 268282479
+      TilesetModuloDue_93: 189434137
+      TilesetModuloDue_24: 1027486247
+      TilesetModuloDue_35: 447533628
+      TilesetModuloDue_125: 364213954
+      TilesetModuloDue_174: 105850586
+      TilesetModuloDue_208: -467626709
+      TilesetModuloDue_38: 806677697
+      TilesetModuloDue_84: 1428984302
+      TilesetModuloDue_187: -1189388525
+      TilesetModuloDue_180: -1759800807
+      TilesetModuloDue_173: -981742602
+      TilesetModuloDue_29: 1375814053
+      TilesetModuloDue_79: 598965781
+      TilesetModuloDue_91: -937326628
+      TilesetModuloDue_184: -2024530875
+      TilesetModuloDue_104: 1467964659
+      TilesetModuloDue_61: 1201434443
+      TilesetModuloDue_142: 560822526
+      TilesetModuloDue_4: 1168327881
+      TilesetModuloDue_64: 1570315873
+      TilesetModuloDue_34: 69126445
+      TilesetModuloDue_60: -537909321
+      TilesetModuloDue_56: 2110411403
+      TilesetModuloDue_122: -1426219973
+      TilesetModuloDue_151: 1796432265
+      TilesetModuloDue_103: 2075417724
+      TilesetModuloDue_59: 1509776045
+      TilesetModuloDue_145: 1760729146
+      TilesetModuloDue_27: 518563858
+      TilesetModuloDue_82: -1069210010
+      TilesetModuloDue_115: 1621983553
+      TilesetModuloDue_12: 1814465372
+      TilesetModuloDue_111: 1563288536
+      TilesetModuloDue_72: 1225721349
+      TilesetModuloDue_200: 1606763082
+      TilesetModuloDue_70: -227852238
+      TilesetModuloDue_55: -1471450124
+      TilesetModuloDue_194: 670509965
+      TilesetModuloDue_144: -303619898
+      TilesetModuloDue_209: -1008469840
+      TilesetModuloDue_127: 427837476
+      TilesetModuloDue_186: 1137468152
+      TilesetModuloDue_113: 1832806811
+      TilesetModuloDue_66: 5522812
+      TilesetModuloDue_143: 307809681
+      TilesetModuloDue_163: 1641559796
+      TilesetModuloDue_204: 1393052879
+      TilesetModuloDue_139: -515796554
+      TilesetModuloDue_188: -646478311
+      TilesetModuloDue_78: -1493997176
+      TilesetModuloDue_152: -989250505
+      TilesetModuloDue_124: -409865452
+      TilesetModuloDue_49: 152181754
+      TilesetModuloDue_114: 1580799320
+      TilesetModuloDue_130: -1191350839
+      TilesetModuloDue_160: -1932588978
+      TilesetModuloDue_46: -1100660621
+      TilesetModuloDue_54: 1026996899
+      TilesetModuloDue_185: 295989133
+      TilesetModuloDue_133: 1958583556
+      TilesetModuloDue_9: -1422893689
+      TilesetModuloDue_121: 993987897
+      TilesetModuloDue_99: -1395323630
+      TilesetModuloDue_159: -1501622924
+      TilesetModuloDue_207: -2114040507
+      TilesetModuloDue_73: -564277530
+      TilesetModuloDue_13: 1782140393
+      TilesetModuloDue_18: -1783575221
+      TilesetModuloDue_25: 733131107
+      TilesetModuloDue_206: 1936925475
+      TilesetModuloDue_153: 1090938429
+      TilesetModuloDue_117: 483522767
+      TilesetModuloDue_118: 993580606
+      TilesetModuloDue_134: 316508153
+      TilesetModuloDue_156: -58591004
+      TilesetModuloDue_157: 1302503006
+      TilesetModuloDue_196: -270789420
+      TilesetModuloDue_126: 477748532
+      TilesetModuloDue_44: 715524585
+      TilesetModuloDue_107: -650911331
+      TilesetModuloDue_123: 738262076
+      TilesetModuloDue_57: -575409904
+      TilesetModuloDue_119: 732733084
+      TilesetModuloDue_43: -954003969
+      TilesetModuloDue_16: -1129317888
+      TilesetModuloDue_120: -1653644669
+      TilesetModuloDue_178: 1434748585
+      TilesetModuloDue_181: -249308466
+      TilesetModuloDue_112: 2066412120
+      TilesetModuloDue_96: 1598309469
+      TilesetModuloDue_32: 1552948207
+      TilesetModuloDue_189: 357683795
+      TilesetModuloDue_149: 527959413
+      TilesetModuloDue_2: 1408906712
+      TilesetModuloDue_110: 502652520
+      TilesetModuloDue_81: -1457563640
+      TilesetModuloDue_85: 1441275245
+      TilesetModuloDue_138: 1165501030
+      TilesetModuloDue_164: -1409624506
+      TilesetModuloDue_86: -1533637647
+      TilesetModuloDue_171: -2002537031
+      TilesetModuloDue_11: -1866397240
+      TilesetModuloDue_168: -1278738792
+      TilesetModuloDue_202: 757994999
+      TilesetModuloDue_172: -1461822155
+      TilesetModuloDue_106: -1145647123
+      TilesetModuloDue_195: -644818933
+      TilesetModuloDue_37: 1877361420
+      TilesetModuloDue_39: -1177543791
+      TilesetModuloDue_90: 1988685875
+      TilesetModuloDue_109: 1729403633
+      TilesetModuloDue_136: -1864567283
+      TilesetModuloDue_98: -638479517
+      TilesetModuloDue_77: -1496661046
+      TilesetModuloDue_6: 1745368508
+      TilesetModuloDue_146: -1244614881
+      TilesetModuloDue_190: 559740131
+      TilesetModuloDue_1: -323661160
+      TilesetModuloDue_92: 1243459146
+      TilesetModuloDue_211: 702294403
+      TilesetModuloDue_67: 349371392
+      TilesetModuloDue_102: 1935509639
+      TilesetModuloDue_203: -1020369224
+      TilesetModuloDue_175: 5056879
+      TilesetModuloDue_75: -77153897
+      TilesetModuloDue_105: 1218781186
+      TilesetModuloDue_48: -1364270929
+      TilesetModuloDue_52: -2014690943
+      TilesetModuloDue_199: 591392210
+      TilesetModuloDue_23: -1495818070
+      TilesetModuloDue_26: -111459976
+      TilesetModuloDue_161: 169495634
+      TilesetModuloDue_7: -1479326550
+      TilesetModuloDue_132: -46261517
+      TilesetModuloDue_166: -750527328
+      TilesetModuloDue_65: 1762144334
+      TilesetModuloDue_141: -1842210648
+      TilesetModuloDue_94: -576865294
+      TilesetModuloDue_191: -871184651
+      TilesetModuloDue_47: -1718024407
+      TilesetModuloDue_135: 1157561432
+      TilesetModuloDue_140: 935544335
+      TilesetModuloDue_170: -2036512598
+      TilesetModuloDue_15: -669953017
+      TilesetModuloDue_101: -584865479
+      TilesetModuloDue_40: -1282812288
+      TilesetModuloDue_10: -1791867582
+      TilesetModuloDue_116: -848718530
+      TilesetModuloDue_50: 1174398074
+      TilesetModuloDue_197: 1805737997
+      TilesetModuloDue_167: 1765750947
+      TilesetModuloDue_100: -150230201
+      TilesetModuloDue_33: 1951980664
+      TilesetModuloDue_21: 1076327373
+      TilesetModuloDue_97: 1510633693
+      TilesetModuloDue_36: 1316350788
+      TilesetModuloDue_53: 35239093
+      TilesetModuloDue_155: -1509219808
+      TilesetModuloDue_19: -1336065865
+      TilesetModuloDue_169: -1135306240
+      TilesetModuloDue_68: 1744370517
+      TilesetModuloDue_137: 1245930852
+      TilesetModuloDue_205: -1401550843
+      TilesetModuloDue_71: -203966028
+      TilesetModuloDue_0: 246284018
+      TilesetModuloDue_17: -947660852
+      TilesetModuloDue_131: 1769697247
+      TilesetModuloDue_74: 1392070571
+      TilesetModuloDue_8: 90316723
+      TilesetModuloDue_89: 1752421309
+      TilesetModuloDue_198: -1111206838
+      TilesetModuloDue_3: -710480519
+      TilesetModuloDue_14: -1293704619
+      TilesetModuloDue_128: 455182218
+      TilesetModuloDue_28: 485432725
+      TilesetModuloDue_192: -1236895548
+      TilesetModuloDue_22: -153254162
+      TilesetModuloDue_129: -1896390053
+      TilesetModuloDue_182: -1746417286
+      TilesetModuloDue_51: -133472932
+      TilesetModuloDue_210: -233784081
+      TilesetModuloDue_31: 1136687049
+      TilesetModuloDue_154: -1066189803
+      TilesetModuloDue_88: -210692359
+      TilesetModuloDue_63: -998096987
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
