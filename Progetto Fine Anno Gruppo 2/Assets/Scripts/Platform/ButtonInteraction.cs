@@ -5,6 +5,7 @@ using Commons;
 using PubSub;
 using MainGame;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Events;
 
 public class ButtonInteraction : Interactable, ISubscriber
 {
@@ -13,6 +14,7 @@ public class ButtonInteraction : Interactable, ISubscriber
     [SerializeField] bool m_Active = true;
     [SerializeField] bool m_OneShot;
     [SerializeField] Light2D m_Activationlight;
+    [SerializeField] UnityEvent m_SceneEvent;
     //[SerializeField] AudioHolder m_audioHolder;
 
     BoxCollider2D m_TriggerCollider;
@@ -44,7 +46,9 @@ public class ButtonInteraction : Interactable, ISubscriber
         {
             //if(m_soundSource != null) m_soundSource.PlayOneShot(m_audioHolder.audioToSend.musicToPlay);
             GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter, this);
+            m_SceneEvent.Invoke();
             if (m_OneShot) m_Active = false;
+
         }
     }
 
