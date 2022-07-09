@@ -67,7 +67,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -1349,13 +1349,13 @@ TextureImporter:
       TileSetModulo1_59: 1143848009
       TileSetModulo1_4: 667702053
       TileSetModulo1_141: -795465909
+      TileSetModulo1_12: 120037742
       TileSetModulo1_19: 1085919308
-      TileSetModulo1_64: -512344984
       TileSetModulo1_39: 1369838682
       TileSetModulo1_100: 1682418300
       TileSetModulo1_73: 1419566552
       TileSetModulo1_129: -1590200595
-      TileSetModulo1_12: 120037742
+      TileSetModulo1_64: -512344984
       TileSetModulo1_42: -863826446
       TileSetModulo1_137: 1489142058
       TileSetModulo1_84: 1366700572

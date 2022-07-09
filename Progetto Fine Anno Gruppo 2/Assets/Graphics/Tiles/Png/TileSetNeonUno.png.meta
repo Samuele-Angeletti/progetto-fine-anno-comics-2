@@ -67,7 +67,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -2357,10 +2357,10 @@ TextureImporter:
       TileSetNeonUno_30: -1579204708
       TileSetNeonUno_129: 686267680
       TileSetNeonUno_74: 2018046803
-      TileSetNeonUno_6: -580860433
       TileSetNeonUno_85: 354968530
-      TileSetNeonUno_18: 98330265
       TileSetNeonUno_109: 1087847895
+      TileSetNeonUno_18: 98330265
+      TileSetNeonUno_6: -580860433
       TileSetNeonUno_51: 328861322
       TileSetNeonUno_156: 1485147344
       TileSetNeonUno_41: 1471327817
@@ -2393,9 +2393,9 @@ TextureImporter:
       TileSetNeonUno_110: 922143420
       TileSetNeonUno_148: -1999959816
       TileSetNeonUno_52: -159195006
-      TileSetNeonUno_62: 882253769
       TileSetNeonUno_81: -1298737360
       TileSetNeonUno_7: 1019264448
+      TileSetNeonUno_62: 882253769
       TileSetNeonUno_63: 617388274
       TileSetNeonUno_28: -1280716092
       TileSetNeonUno_108: 378205836
@@ -2478,8 +2478,8 @@ TextureImporter:
       TileSetNeonUno_117: 1020379813
       TileSetNeonUno_83: 1446256357
       TileSetNeonUno_84: 1790600461
-      TileSetNeonUno_36: -2068064956
       TileSetNeonUno_90: -1294562337
+      TileSetNeonUno_36: -2068064956
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

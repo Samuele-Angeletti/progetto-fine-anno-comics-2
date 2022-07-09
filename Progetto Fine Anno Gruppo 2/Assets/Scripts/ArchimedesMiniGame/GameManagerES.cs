@@ -43,7 +43,8 @@ namespace ArchimedesMiniGame
         [SerializeField] Slider m_AccelerationSlider;
         [SerializeField] Button m_DockingAttemptButton;
         [SerializeField] LogMessageHandler m_LogMessageHandler;
-
+        [SerializeField] Transform m_AnchorIndicator;
+        
         [Header("Modules")]
         [SerializeField] List<Module> m_Modules;
 
@@ -104,7 +105,6 @@ namespace ArchimedesMiniGame
             }
             else if(message is DockingCompleteMessage)
             {
-                SetNextModuleToCommandPlat();
                 m_Asteroids.ForEach(x => x.gameObject.SetActive(false));
             }
             else if(message is ModuleDestroyedMessage || message is NoBatteryMessage)
@@ -124,7 +124,10 @@ namespace ArchimedesMiniGame
 
         public void UpdateSpeed(float current, float maxValue)
         {
-            m_MaxSpeedSlider.value = current / maxValue;
+            //m_MaxSpeedSlider.value = current / maxValue;
+            float percentage = current / maxValue;
+
+            m_AnchorIndicator.eulerAngles = new Vector3(0, 0, -360 * Mathf.Abs(percentage));
         }
 
         internal void UpdateAcceleration(float magnitude, float acceleration)
@@ -135,6 +138,7 @@ namespace ArchimedesMiniGame
         public void UpdateBatterySlider(float current, float maxValue)
         {
             m_BatterySlider.value = current / maxValue;
+
         }
 
         public void UpdateLifeSlider(float current, float maxValue)

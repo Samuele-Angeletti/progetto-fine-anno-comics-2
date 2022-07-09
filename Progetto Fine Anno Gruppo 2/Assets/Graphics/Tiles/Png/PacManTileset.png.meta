@@ -67,9 +67,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -414,6 +414,7 @@ TextureImporter:
       PacManTileset_7: 1518841459
       PacManTileset_36: -1026155693
       PacManTileset_18: 1179183181
+      PacManTileset_1: 523796467
       PacManTileset_19: 1523207109
       PacManTileset_0: -656944713
       PacManTileset_3: 400982273
@@ -428,7 +429,6 @@ TextureImporter:
       PacManTileset_2: -187117928
       PacManTileset_20: 1910704588
       PacManTileset_35: 899148787
-      PacManTileset_39: 1637081924
       PacManTileset_4: -1850628911
       PacManTileset_21: 1399858082
       PacManTileset_25: -1571956274
@@ -443,14 +443,14 @@ TextureImporter:
       PacManTileset_24: -1748219510
       PacManTileset_32: -166714411
       PacManTileset_17: -309160145
-      PacManTileset_23: -545390125
-      PacManTileset_5: -46180392
+      PacManTileset_39: 1637081924
       PacManTileset_27: 747304411
       PacManTileset_33: -201081357
+      PacManTileset_23: -545390125
       PacManTileset_22: 753683166
       PacManTileset_28: -1847532322
-      PacManTileset_1: 523796467
       PacManTileset_9: -396779428
+      PacManTileset_5: -46180392
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

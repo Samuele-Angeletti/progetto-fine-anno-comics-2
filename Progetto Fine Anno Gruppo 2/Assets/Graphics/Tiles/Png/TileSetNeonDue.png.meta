@@ -67,7 +67,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -6328,10 +6328,10 @@ TextureImporter:
       TileSetNeonDue_236: -1012592709
       TileSetNeonDue_217: -1232135001
       TileSetNeonDue_250: -303951880
-      TileSetNeonDue_47: -377079408
+      TileSetNeonDue_167: -306622829
       TileSetNeonDue_276: -302035670
       TileSetNeonDue_258: -1207113361
-      TileSetNeonDue_167: -306622829
+      TileSetNeonDue_47: -377079408
       TileSetNeonDue_59: -572215369
       TileSetNeonDue_216: 811504979
       TileSetNeonDue_209: -233880491
