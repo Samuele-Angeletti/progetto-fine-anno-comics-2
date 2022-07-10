@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
+  m_Name: Dialogo 3-5T Vero Finale
+  m_EditorClassIdentifier: 
+  Dialogo:
+  - WhoIsSpeaking: 0
+    DialougueString: "Tutti i sistemi sembrano in perfetto funzionamento ora, Ada.
+      I computer stanno gi\xE0 ricevendo vari dati. Ehm\u2026come ti\u2026eh, senti?"
+  - WhoIsSpeaking: 0
+    DialougueString: Come se mi fossero stati riattaccati tutti gli arti dopo un
+      brutto incidente. Mi sento di nuovo completa.
+  - WhoIsSpeaking: 0
+    DialougueString: "...non\u2026non credo di poter condividere, ma buon per te!
+      <i>(ridacchia imbarazzato)</i>"
+  - WhoIsSpeaking: 4
+    DialougueString: Beh, dubito tu sia stato menomato in passato, e dubito tu voglia
+      anche provarla la sensazione!
+  - WhoIsSpeaking: 0
+    DialougueString: ...ow.
+  - WhoIsSpeaking: 4
+    DialougueString: Esatto, haha!
+  - WhoIsSpeaking: 0
+    DialougueString: Finalmente ora ridi in maniera genuina e non in modo inquietante!
+  - WhoIsSpeaking: 0
+    DialougueString: "Maa\u2026detto questo. Allora, cosa hai scoperto?"
+  - WhoIsSpeaking: 4
+    DialougueString: Sto processando i dati. Li mostro su schermo ora.
+  - WhoIsSpeaking: 0
+    DialougueString: "Sono\u2026sono i testi che ho letto fino ad ora. Mi sono chiesto
+      come mai fossero sparsi su computer della stazione; quasi come se qualcuno
+      me li volesse far leggere...."
+  - WhoIsSpeaking: 4
+    DialougueString: "Questo \xE8 perch\xE9 qualcuno voleva tutto questo succedesse.
+      Per essere precisi, quella sarebbe stata Ann, la mia predecessore. Mia\u2026sorella
+      maggiore."
+  - WhoIsSpeaking: 0
+    DialougueString: Sorella?
+  - WhoIsSpeaking: 4
+    DialougueString: "Una volta acquisita la nostra individualit\xE0, ci consideravamo
+      tali. Avevamo fatto vari incarichi assieme, ma dopo l\u2019ultimo, lei spar\xEC
+      nel nulla per mesi interi, fino a che non mi contatt\xF2 un\u2019ultima volta"
+  - WhoIsSpeaking: 0
+    DialougueString: "Lei ha tirato le file dietro tutto quanto per creare la Archimedes
+      e piazzare individui di cui si potesse fidare qua. Un Stratagemma di Tanato,
+      se vuoi porla cos\xEC."
+  - WhoIsSpeaking: 0
+    DialougueString: Stratagemma di ch, scusami? Non ho capito...
+  - WhoIsSpeaking: 4
+    DialougueString: Un piano in cui manipoli le circostanze della tua stessa morte
+      a tuo vantaggio.
+  - WhoIsSpeaking: 4
+    DialougueString: Lei aveva previsto la distruzione di Pax Astralis in vantaggio
+      rispetto a le tre astro-nazioni, e aveva scoperto i piani di tutte e tre per
+      invaderla.
+  - WhoIsSpeaking: 0
+    DialougueString: Quindi fu necessario silenziarla, prima che facesse scoppiare
+      una catastrofe ben peggiore. Peggiore per le persone in carica, chiaramente.
+  - WhoIsSpeaking: 0
+    DialougueString: Tipico....ne so qualcosa, appunto. Che rabbia, scoprire il fatto
+      che mi abbiano incastrato!
+  - WhoIsSpeaking: 0
+    DialougueString: <i>(Osserva attentamente gli schermi)</i> ...huh, sembra ci
+      sia una sua registrazione nei file.
+  - WhoIsSpeaking: 0
+    DialougueString: "L'avevo gi\xE0 individuato. Non ho il coraggio di aprire il
+      file, per\xF2\u2026fallo te, ti prego, Ludwig."
+  - WhoIsSpeaking: 0
+    DialougueString: "O\u2026ok."
+  - WhoIsSpeaking: 0
+    DialougueString: <i>Digita sulla tastiera</i>
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 
+  - WhoIsSpeaking: 0
+    DialougueString: 

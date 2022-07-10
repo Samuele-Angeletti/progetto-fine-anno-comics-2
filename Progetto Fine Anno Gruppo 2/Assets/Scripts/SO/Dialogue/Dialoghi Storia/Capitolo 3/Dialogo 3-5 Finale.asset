@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
+  m_Name: Dialogo 3-5 Finale
+  m_EditorClassIdentifier: 
+  Dialogo:
+  - WhoIsSpeaking: 0
+    DialougueString: "Tutti i sistemi sembrano in perfetto funzionamento ora, Ada.
+      I computer stanno gi\xE0 ricevendo vari dati. Ehm\u2026come ti\u2026eh, senti?"
+  - WhoIsSpeaking: 4
+    DialougueString: Come se mi fossero stati riattaccati tutti gli arti dopo un
+      brutto incidente. Mi sento di nuovo completa.
+  - WhoIsSpeaking: 0
+    DialougueString: "...non\u2026non credo di poter condividere, ma buon per te!
+      <i>(ridacchia imbarazzato)</i>"
+  - WhoIsSpeaking: 4
+    DialougueString: Beh, dubito tu sia stato menomato in passato, e dubito tu voglia
+      anche provarla la sensazione!
+  - WhoIsSpeaking: 0
+    DialougueString: ...ow.
+  - WhoIsSpeaking: 4
+    DialougueString: Esatto, haha!
+  - WhoIsSpeaking: 0
+    DialougueString: Finalmente ora ridi in maniera genuina e non in modo inquietante!
+  - WhoIsSpeaking: 0
+    DialougueString: "Maa\u2026detto questo. Allora, cosa hai scoperto?"
+  - WhoIsSpeaking: 4
+    DialougueString: Sto processando i dati...aspetta. Qualcosa non torna. Aspetta,
+      cosa?!
+  - WhoIsSpeaking: 0
+    DialougueString: Co-cosa?
+  - WhoIsSpeaking: 4
+    DialougueString: "Questo non \xE8 il Deserto Astrale\u2026qua ci doveva essere
+      un pianeta!"
+  - WhoIsSpeaking: 4
+    DialougueString: "Riconosco questo posto\u2026il sole attorno a cui stiamo orbitando\u2026qui
+      \xE8 dove \xE8 partita la Guerra di Andromeda!"
+  - WhoIsSpeaking: 0
+    DialougueString: "Cosa?! Ma non \xE8 possibile!"
+  - WhoIsSpeaking: 0
+    DialougueString: "E quello che ci ha portati qui\u2026non \xE8 possibile!"
+  - WhoIsSpeaking: 5
+    DialougueString: <i>Partono degli allarmi</i>
+  - WhoIsSpeaking: 0
+    DialougueString: "Ada, mi sa che c\u2019\xE8 un problema pi\xF9 urgente."
+  - WhoIsSpeaking: 4
+    DialougueString: Come mai sono partiti gli allarmi della stazione? Io non ho
+      ordinato nessuna emergenza!
+  - WhoIsSpeaking: 0
+    DialougueString: Molteplici segnali in arrivo! Cosa sta succedendo?! Siamo sotto
+      attacco?!
+  - WhoIsSpeaking: 0
+    DialougueString: "Sono astronavi! Stanno emergendo dall\u2019iperspazio, Ludwig!"
+  - WhoIsSpeaking: 0
+    DialougueString: "Un attacco? Qua? Come? Dove? Perch\xE9?!"
+  - WhoIsSpeaking: 0
+    DialougueString: Non lo so, ma so solo una cosa!
+  - WhoIsSpeaking: 0
+    DialougueString: Ossia?!
+  - WhoIsSpeaking: 4
+    DialougueString: "Quelle navi\u2026non posseggono nessuna traccia di dati Imperiali,
+      Triarchici o Ascendenti\u2026"
+  - WhoIsSpeaking: 0
+    DialougueString: "Mi stai dicendo che\u2026"
+  - WhoIsSpeaking: 4
+    DialougueString: Siamo sotto attacco alieno.
+  - WhoIsSpeaking: 0
+    DialougueString: E ora?!
+  - WhoIsSpeaking: 4
+    DialougueString: "E ora\u2026potremmo stare solo ad osservare."

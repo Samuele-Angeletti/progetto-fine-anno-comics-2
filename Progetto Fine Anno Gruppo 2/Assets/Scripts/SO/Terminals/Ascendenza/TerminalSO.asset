@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
+  m_Name: TerminalSO
+  m_EditorClassIdentifier: 
+  Title: Speranze e Condanne
+  ProgressiveNumber: 4
+  Content: ",,,Estratto dal Diario di Som Visal, Magus da Venere\u2019\u2019\u2019\r\nSono
+    passate ormai numerose Lune da quando i Giustizia mi misero sotto processo per
+    la mia negligenza al Santuario dei Colossi. I Giudizio promulgarono un ordine
+    nei miei confronti, di non abbandonare mai la mia dimora fino alla conclusione
+    dei processi. Madre Natura stessa per\xF2 sa che la mia persona non \xE8 da imputare
+    come la peccatrice che ha permesso al Vuoto di corrompere il Colosso, per\xF2,
+    eppure vogliono in me la colpevole di questo peccato mortale. Sarebbe eresia
+    pensare che magari i Giudizio e i Giustizia stessi del mio processo siano stati
+    corrotti dalla volont\xE0 del Vuoto?\r\nHo voluto usare i miei strumenti a casa,
+    come il Tomo Elettronico a casa mia. Ho voluto controllare le pergamene del progetto,
+    vedere cosa \xE8 successo davvero. Il desiderio dei Giustizia di trovare un colpevole
+    era il mio desiderio.\r\nForse quasi a rispondere alle mie preghiere, Madre Natura
+    spinse un Giustizia appena coinvolto nel progetto, tale Ann, a mettersi in contatto
+    con me via telepreghiera. Vedendola interessata al mio caso, le confidai ogni
+    cosa che potevo, nella speranza che quantomeno lei trovasse il colpevole. Lei
+    insisteva, per\xF2, che quel Colosso che stavamo producendo sarebbe stato destinato
+    per essere schierato su Pax Astralis.\r\nMa \xE8 impossibile, un attacco ad un
+    pianeta pacifico come Pax Astralis sarebbe stato un affronto a Madre Natura stessa!
+    Quel pianeta gi\xE0 \xE8 un baluardo contro al Vuoto, attaccarlo sarebbe eresia
+    di massimo grado!\r\nAnn mi racconta quindi di lei. Era afflitta da un morbo
+    che la avrebbe uccisa entro poco, e quindi mi propose un suo piano, di una stazione
+    in cui le tre nazioni avrebbero collaborato assieme. Era convinta che mi avrebbero
+    messo in carcere, ma lei mi promise che avrebbe fatto in modo di fare in modo
+    che le mie preghiere sarebbero state accolte, per paradosso, dai figli del Vuoto,
+    e che loro mi avrebbero aiutato a salvare l\u2019universo dal Vuoto.\r\nPrego
+    che Ann sia davvero cos\xEC genuina come si propone. Ormai ho paura che l\u2019Ascendenza
+    sia tanto corrotta, se non peggio, quanto le altre nazioni. Non mi posso fidare
+    di nessuno se non di lei. Pregher\xF2 Madre Natura ogni giorno. Non voglio morire
+    n\xE9 rimanere in carcere ingiustamente.\r\n,,,Nel Verde noi crediamo, nel Verde
+    noi moriamo, nel Verde noi rinasciamo.\u2019\u2019\u2019\r\n,,,Che gli infedeli
+    capiscano la nostra causa, o diventino fertilizzante per essa.\u2019\u2019\u2019\r"
+  Author: Som Visal, Magus (1) da Venere
