@@ -51,6 +51,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2118436624229661633, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}
+      propertyPath: m_SceneEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118436624229661633, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}
+      propertyPath: m_SceneEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118436624229661633, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}
+      propertyPath: m_SceneEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2118436624229661647, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}
       propertyPath: m_Name
       value: ButtonInteraction
