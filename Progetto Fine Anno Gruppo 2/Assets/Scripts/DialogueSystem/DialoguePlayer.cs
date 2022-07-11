@@ -203,15 +203,15 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         {
             spriteToChange.sprite = spritePlayer;
         }
-        else if (whoIsSpeakingRightNow == ESpeaker.Ada_Pre_Integrazione)
+        else if (whoIsSpeakingRightNow == ESpeaker.AdaPreIntegrazione)
         {
             spriteToChange.sprite = spriteAdaPreIntegrazione;
         }
-        else if (whoIsSpeakingRightNow == ESpeaker.Ada_Prima_Integrazione)
+        else if (whoIsSpeakingRightNow == ESpeaker.AdaPrimaIntegrazione)
         {
             spriteToChange.sprite = spriteAdaPrimaIntegrazione;
         }
-        else if (whoIsSpeakingRightNow == ESpeaker.Ada_Seconda_Integrazione)
+        else if (whoIsSpeakingRightNow == ESpeaker.AdaSecondaIntegrazione)
         {
             spriteToChange.sprite = spriteAdaSecondaIntegrazione;
         }

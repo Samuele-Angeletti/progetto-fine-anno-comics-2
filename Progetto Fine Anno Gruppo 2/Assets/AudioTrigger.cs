@@ -7,9 +7,7 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(Collider2D))]
 public class AudioTrigger : MonoBehaviour, ISubscriber
 {
-    [Header("AUDIO SETTINGS")]
-    [SerializeField] bool m_canLoop;
-    [SerializeField] bool m_canPlayOnAwake;
+
     private Collider2D m_collider;
     [Header("AUDIO CLIP")]
     public AudioClip musicToSend;

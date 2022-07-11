@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static class Extensions
 {
-    public static CourutineHandle RunCoroutine(this MonoBehaviour owner, IEnumerator coroutine)
+    public static CoroutineHandle RunCoroutine(this MonoBehaviour owner, IEnumerator coroutine)
     {
-        return new CourutineHandle(owner, coroutine);
+        return new CoroutineHandle(owner, coroutine);
     }
 }
