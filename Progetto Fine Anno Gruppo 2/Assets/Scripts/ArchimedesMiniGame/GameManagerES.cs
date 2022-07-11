@@ -38,13 +38,12 @@ namespace ArchimedesMiniGame
 
         [Header("UI References")]
         [SerializeField] Slider m_BatterySlider;
-        [SerializeField] Slider m_DamageSlider;
-        [SerializeField] Slider m_MaxSpeedSlider;
-        [SerializeField] Slider m_AccelerationSlider;
         [SerializeField] Button m_DockingAttemptButton;
+        [SerializeField] Image m_DamagedScreen;
         [SerializeField] LogMessageHandler m_LogMessageHandler;
         [SerializeField] Transform m_AnchorIndicator;
-        
+        [SerializeField] List<Sprite> m_ImageOnDamage;
+
         [Header("Modules")]
         [SerializeField] List<Module> m_Modules;
 
@@ -130,10 +129,6 @@ namespace ArchimedesMiniGame
             m_AnchorIndicator.eulerAngles = new Vector3(0, 0, -360 * Mathf.Abs(percentage));
         }
 
-        internal void UpdateAcceleration(float magnitude, float acceleration)
-        {
-            m_AccelerationSlider.value = magnitude / acceleration;
-        }
 
         public void UpdateBatterySlider(float current, float maxValue)
         {
@@ -143,7 +138,24 @@ namespace ArchimedesMiniGame
 
         public void UpdateLifeSlider(float current, float maxValue)
         {
-            m_DamageSlider.value = current / maxValue;
+            float percent = current / maxValue;
+
+            if(percent < 0.25f)
+            {
+                m_DamagedScreen.sprite = m_ImageOnDamage[3];
+            }
+            else if(percent < 0.5f)
+            {
+                m_DamagedScreen.sprite = m_ImageOnDamage[2];
+            }
+            else if(percent < 0.75f)
+            {
+                m_DamagedScreen.sprite = m_ImageOnDamage[1];
+            }
+            else
+            {
+                m_DamagedScreen.sprite = m_ImageOnDamage[0];
+            }
         }
 
         public void ActiveDockingAttemptButton(bool active)
@@ -193,7 +205,7 @@ namespace ArchimedesMiniGame
 
         internal void SendLogMessage(string text, float timeDisplay)
         {
-            m_LogMessageHandler.SpawnMessage(text, timeDisplay);
+            //m_LogMessageHandler.SpawnMessage(text, timeDisplay);
         }
     }
 }

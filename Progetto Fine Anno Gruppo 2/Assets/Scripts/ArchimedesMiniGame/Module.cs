@@ -223,7 +223,6 @@ namespace ArchimedesMiniGame
             if (m_EngineOn)
             {
                 GameManagerES.Instance.UpdateSpeed(m_Rigidbody.velocity.magnitude, m_MaxSpeedVector.magnitude);
-                GameManagerES.Instance.UpdateAcceleration(m_CurrentAcceleration.magnitude, m_MaxSpeed);
             }
         }
 
