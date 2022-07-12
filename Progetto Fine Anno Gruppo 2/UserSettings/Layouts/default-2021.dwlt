@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 9025
+  controlID: 73
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 9098
+  controlID: 78
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 9099
+  controlID: 79
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -429,10 +429,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 137}
-      m_SelectedIDs: dce9ffff
-      m_LastClickedID: -5668
-      m_ExpandedIDs: 0a26ffff92d9ffff7edaffff40ddffff56ddfffff2e5ffff24e6ffff2ee6ffffc2e9fffff8e9ffff60840000ca840000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: ecfaffff
+      m_LastClickedID: -1300
+      m_ExpandedIDs: a8f5ffffd2faffffecfaffff08fbffff0e750000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -703,9 +703,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -52.976665, y: 284.03738, z: 0.6476364}
+    m_Target: {x: 174.78035, y: -24.830128, z: 0.36953673}
     speed: 2
-    m_Value: {x: -52.976665, y: 284.03738, z: 0.6476364}
+    m_Value: {x: 174.78035, y: -24.830128, z: 0.36953673}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -756,9 +756,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 25.957495
+    m_Target: 13.2967615
     speed: 2
-    m_Value: 25.957495
+    m_Value: 13.2967615
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -824,23 +824,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/SO/Dialogue/Dialoghi Storia/Capitolo 3
+    - Assets/Prefabs/MainGame/ModuliPrefab
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/SO/Dialogue/Dialoghi Storia/Capitolo 3
+  - Assets/Prefabs/MainGame/ModuliPrefab
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\danie\OneDrive\Desktop\Corso Game Design\Secondo Anno\Progetto
     Finale\progetto-fine-anno-comics-2\Progetto Fine Anno Gruppo 2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 563}
-    m_SelectedIDs: 1ab10000
-    m_LastClickedID: 45338
-    m_ExpandedIDs: 00000000de980000e0980000e2980000e4980000e6980000e8980000ea980000e89900000cb1000000ca9a3b
+    scrollPos: {x: 0, y: 255}
+    m_SelectedIDs: b6900000
+    m_LastClickedID: 37046
+    m_ExpandedIDs: 000000006a9000006c9000006e90000070900000729000007490000076900000789000007a90000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -868,7 +868,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de980000e0980000e2980000e4980000e6980000e8980000ea980000e89900000cb1000000ca9a3b
+    m_ExpandedIDs: 000000006a9000006c9000006e90000070900000729000007490000076900000789000007a900000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
