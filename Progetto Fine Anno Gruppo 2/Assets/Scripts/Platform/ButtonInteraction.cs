@@ -98,6 +98,7 @@ public class ButtonInteraction : Interactable, ISubscriber
 
     public void ActiveLight()
     {
-        m_Activationlight.enabled = !m_Activationlight.enabled;
+        if(m_Activationlight != null)
+            m_Activationlight.enabled = !m_Activationlight.enabled;
     }
 }

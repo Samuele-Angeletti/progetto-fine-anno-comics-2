@@ -45,7 +45,8 @@ public class MovableObject : Interactable, ISubscriber
 
                 m_Activated = !m_Activated;
 
-                m_ButtonInteraction.ActiveTrigger(true);
+                if(m_ButtonInteraction != null)
+                    m_ButtonInteraction.ActiveTrigger(true);
 
                 transform.position = m_EndPivot.position;
                 m_EndPivot.position = m_StartPivot;
@@ -96,8 +97,12 @@ public class MovableObject : Interactable, ISubscriber
             m_Active = true;
             m_StartPivot = transform.position;
         }
-        m_ButtonInteraction.ActiveLight();
-        m_ButtonInteraction.ActiveTrigger(false);
+
+        if (m_ButtonInteraction != null)
+        {
+            m_ButtonInteraction.ActiveLight();
+            m_ButtonInteraction.ActiveTrigger(false);
+        }
     }
 
     internal void SetButtonActivator(ButtonInteraction buttonInteractionHolder)

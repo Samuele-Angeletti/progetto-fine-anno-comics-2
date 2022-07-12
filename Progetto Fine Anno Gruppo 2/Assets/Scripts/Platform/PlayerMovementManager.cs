@@ -82,6 +82,8 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
 
+            PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
+
 
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Jumping, new JumpingPlayerState(this));
@@ -244,6 +246,10 @@ namespace MainGame
             {
                 PlayerCollider.enabled = true;
             }
+            else if(message is StartDialogueMessage)
+            {
+                InputDirection = Vector2.zero;
+            }
         }
 
         public void OnDisableSubscribe()
@@ -255,6 +261,8 @@ namespace MainGame
             PubSub.PubSub.Unsubscribe(this, typeof(DockingCompleteMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
+
+            PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
         }
 
         private void OnDestroy()

@@ -205,7 +205,7 @@ namespace ArchimedesMiniGame
 
         internal void SendLogMessage(string text, float timeDisplay)
         {
-            //m_LogMessageHandler.SpawnMessage(text, timeDisplay);
+            m_LogMessageHandler.SpawnMessage(text, timeDisplay);
         }
     }
 }

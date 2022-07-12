@@ -81,7 +81,7 @@ namespace Commons
             inputControls.Player.Pause.performed -= PauseGame;
         }
 
-        private void DeactiveMovement()
+        public void DeactiveMovement()
         {
             inputControls.Player.MovementWASD.performed -= StartMoving;
             inputControls.Player.MovementWASD.canceled -= StopMoving;

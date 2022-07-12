@@ -78,6 +78,8 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
 
+            PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
+
             m_MapParent.SetActive(false);
             m_ExternalSprite.gameObject.SetActive(true);
             m_Rigidbody.bodyType = RigidbodyType2D.Static;
@@ -440,6 +442,11 @@ namespace ArchimedesMiniGame
                 m_ExternalCollider.enabled = false;
                 m_MapParent.SetActive(true);
             }
+            else if(message is StartDialogueMessage)
+            {
+                if(m_Rigidbody.bodyType != RigidbodyType2D.Static)
+                    Stop();
+            }
         }
 
         public void OnDisableSubscribe()
@@ -450,6 +457,7 @@ namespace ArchimedesMiniGame
             PubSub.PubSub.Unsubscribe(this, typeof(StartEngineModuleMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
             PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
+            PubSub.PubSub.Unsubscribe(this, typeof(StartDialogueMessage));
         }
 
         private void OnDestroy()
