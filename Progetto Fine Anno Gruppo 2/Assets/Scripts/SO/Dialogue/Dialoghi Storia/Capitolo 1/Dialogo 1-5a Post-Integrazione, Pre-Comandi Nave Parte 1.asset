@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a306dc9fa9df15b4eb34792707b7e3c1, type: 3}
-  m_Name: Dialogo 1-5 Post-Integrazione, Pre-Comandi Nave
+  m_Name: Dialogo 1-5a Post-Integrazione, Pre-Comandi Nave Parte 1
   m_EditorClassIdentifier: 
   Dialogo:
   - WhoIsSpeaking: 0
@@ -61,39 +61,3 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: "Ma chi sono io per pormi domande di questo tipo. E\u2019 stato
       proprio il mio troppo ficcanasare che mi ha portato qua."
-  - WhoIsSpeaking: 0
-    DialougueString: <I>(sospira affranto)</I> Mettiamoci al lavoro.
-  - WhoIsSpeaking: 0
-    DialougueString: <I>(digita sulla tastiera)</I>
-  - WhoIsSpeaking: 0
-    DialougueString: <i>Riemann si guarda un attimo confuso attorno dopo un rapido
-      calo della luce</i>
-  - WhoIsSpeaking: 0
-    DialougueString: Ada? Che sta succedendo?
-  - WhoIsSpeaking: 2
-    DialougueString: "<i>Aumento di volume improvviso nella voce</i> \u201CScuse:
-      mi perdoni per il momentaneo calo di prestazioni, signor Riemann.\u201D"
-  - WhoIsSpeaking: 2
-    DialougueString: "Spiegazione: l\u2019integrazione della sua capsula ha causato
-      un momentaneo calo di prestazioni, ma nulla di cui preoccuparsi."
-  - WhoIsSpeaking: 0
-    DialougueString: "<i>(confuso, tra s\xE9 e s\xE9)</i> Una IA del genere che si
-      scusa? Questo s\xEC che \xE8 inusuale."
-  - WhoIsSpeaking: 0
-    DialougueString: "<i>(imbarazzato)</i> N-non c\u2019\xE8 bisogno di scuse!"
-  - WhoIsSpeaking: 0
-    DialougueString: "<i>(ride imbarazzato)</i> \u201CPer\xF2 asfissiare non \xE8
-      il mio passatempo preferito, quindi avvisami in anticipo!\u201D"
-  - WhoIsSpeaking: 2
-    DialougueString: 'Affermativo: ricevuto, signor Riemann.'
-  - WhoIsSpeaking: 0
-    DialougueString: <i>Una notifica appare nell'elmetto di Riemann</i>
-  - WhoIsSpeaking: 2
-    DialougueString: "Avvertimento: il primo modulo che stavamo aspettando \xE8 quasi
-      in gittata del raggio traente.\u201D"
-  - WhoIsSpeaking: 2
-    DialougueString: "Consiglio: venga nella cabina di comando, signor Riemann, cos\xEC
-      le posso mostrare il suo incarico effettivo.\r"
-  - WhoIsSpeaking: 0
-    DialougueString: "Mentirei se dicessi che non vedo l\u2019ora, per\xF2 mi metter\xF2
-      subito al lavoro..."
