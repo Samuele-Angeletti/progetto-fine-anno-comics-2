@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1239666286089822032, guid: 684626349ed634e49bfa80ad54a55b29, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239666286089822032, guid: 684626349ed634e49bfa80ad54a55b29, type: 3}
       propertyPath: DopplerLevel
       value: 0
       objectReference: {fileID: 0}

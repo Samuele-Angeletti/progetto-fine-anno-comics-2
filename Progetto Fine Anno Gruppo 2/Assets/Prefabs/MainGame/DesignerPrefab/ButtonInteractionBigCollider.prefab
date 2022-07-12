@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: InterestedObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4982622388453702751, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_InteractioneAudio
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6241903549894593591, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: m_Size.x
       value: 0.63863564

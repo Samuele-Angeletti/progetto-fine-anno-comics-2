@@ -43,8 +43,13 @@ namespace MainGame
         [Header("Interaction Settings")]
         [SerializeField] public float InteractionAnimationSpeed;
 
-        [Header("Debug Infos")]
+        [Header("Debug Infos"),ReadOnly]
         public Vector2 InputDirection;
+
+        [Header("Audio Setting")]
+        [SerializeField] List<AudioClip> m_listPlayerStepOnMetal;
+        [SerializeField] AudioClip m_jumpAudio;
+        [SerializeField] AudioClip m_landedAudio;
 
         private Interacter m_Interacter;
         private Vector3 m_NextCheckPoint;

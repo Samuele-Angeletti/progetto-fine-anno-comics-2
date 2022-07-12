@@ -10,12 +10,16 @@ using UnityEngine.Events;
 public class ButtonInteraction : Interactable, ISubscriber
 {
     private AudioSource m_soundSource;
+    
     [Header("Button Interaction Settings")]
     [SerializeField] bool m_Active = true;
     [SerializeField] bool m_OneShot;
     [SerializeField] Light2D m_Activationlight;
     [SerializeField] UnityEvent m_SceneEvent;
-    //[SerializeField] AudioHolder m_audioHolder;
+    [Header("Audio Interaction")]
+    [SerializeField] AudioClip m_InteractioneAudio;
+
+
 
     BoxCollider2D m_TriggerCollider;
 
@@ -44,7 +48,7 @@ public class ButtonInteraction : Interactable, ISubscriber
     {
         if (m_Active)
         {
-            //if(m_soundSource != null) m_soundSource.PlayOneShot(m_audioHolder.audioToSend.musicToPlay);
+            if (m_soundSource != null && m_InteractioneAudio != null) m_soundSource.PlayOneShot(m_InteractioneAudio);
             GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter, this);
             m_SceneEvent.Invoke();
             if (m_OneShot) m_Active = false;
