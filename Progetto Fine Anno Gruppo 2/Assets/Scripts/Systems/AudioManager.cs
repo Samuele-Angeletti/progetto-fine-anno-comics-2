@@ -46,8 +46,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
         else
             Destroy(gameObject);
         m_AudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
-        m_coruotineFadeOut = WaitForFade(m_AudioSource, fadeOutTime, 0);
-        m_coruotineFadeIn = WaitForFade(m_AudioSource, fadeInTime, 1);
+
 
 
     }
@@ -65,8 +64,6 @@ public class AudioManager : MonoBehaviour, ISubscriber
     public float fadeInTime;
     public float fadeOutTime;
 
-    private IEnumerator m_coruotineFadeIn;
-    private IEnumerator m_coruotineFadeOut;
 
     [SerializeField,ReadOnly] bool m_courutineIsStarted = false;
     private void Start()
@@ -116,13 +113,14 @@ public class AudioManager : MonoBehaviour, ISubscriber
             musicaDaSuonare = audio.audioClipToSend;
             if (m_AudioSource.clip != null)
             {
-                FadeOutAndIn(musicaDaSuonare);
+                this.RunCoroutine(FadeOutAndIn(musicaDaSuonare));
             }
             else if (m_AudioSource.clip == null)
             {
                 m_AudioSource.clip = musicaDaSuonare;
                 m_AudioSource.Play();
-                this.RunCoroutine(m_coruotineFadeIn);
+                this.RunCoroutine(WaitForFade(m_AudioSource, fadeOutTime, 1));
+
 
             }
 
@@ -144,22 +142,32 @@ public class AudioManager : MonoBehaviour, ISubscriber
 
     }
     
-    private void FadeOutAndIn(AudioClip audio)
+    private IEnumerator FadeOutAndIn(AudioClip audio)
     {
-        this.RunCoroutine(m_coruotineFadeOut);
-        if (m_courutineIsStarted == true) return;
-        m_AudioSource.clip = audio;
-        m_AudioSource.Play();
-        this.RunCoroutine(m_coruotineFadeIn);
+        var coroutine = this.RunCoroutine(WaitForFade(m_AudioSource,audio, fadeOutTime, 0));
+        yield return new WaitUntil(() => coroutine.IsDone);
+        this.RunCoroutine(WaitForFade(m_AudioSource, fadeInTime, 1));
         
     }
-    public IEnumerator WaitForFade(AudioSource audioSource, float duration, float targetVolume)
+    public IEnumerator WaitForFade(AudioSource audioSource,AudioClip audio, float duration, float targetVolume)
     {
        
         var courutine = this.RunCoroutine(StartFade(audioSource, duration, targetVolume));
         yield return new WaitUntil(() =>audioSource.volume == targetVolume);
-    }
+        audioSource.clip = audio;
+        audioSource.Play();
+        m_courutineIsStarted = false;
 
+
+
+    }
+    public IEnumerator WaitForFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+
+        var courutine = this.RunCoroutine(StartFade(audioSource, duration, targetVolume));
+        yield return new WaitUntil(() => audioSource.volume == targetVolume);
+        m_courutineIsStarted=false;
+    }
 
     public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
@@ -172,7 +180,6 @@ public class AudioManager : MonoBehaviour, ISubscriber
             audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
             yield return null;
         }
-        m_courutineIsStarted = false;
         yield break;
     }
 
