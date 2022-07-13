@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Riemann_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 816ff167e1159b844af85db272b7ed77, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 1c4b7bf7f0bbae949a74807f4b9d1fc5, type: 2}
+  - {fileID: 2100000, guid: 1e0b5ca69bb04634ca3a6eca2faae376, type: 2}
+  - {fileID: 2100000, guid: e29b36d7df93a734c8a4d660b53f9568, type: 2}
+  - {fileID: 2100000, guid: 0e4c9e701bc9a9b4b97f311a7bfb641c, type: 2}
+  - {fileID: 2100000, guid: 92ab43d90eb7ab44180ef07287b0f3a3, type: 2}
+  - {fileID: 2100000, guid: 740872bb315134d40bdadbbee930e6c4, type: 2}
+  - {fileID: 2100000, guid: 7b7c0502939c45948b02cd59ff4d4ce8, type: 2}

@@ -31,8 +31,12 @@ public class UIIndicator : MonoBehaviour
 
 	private void UpdateRotation()
 	{
-		Vector3 direction = m_DestinationPoint.position - m_OriginPoint.position;
-		m_Indicator.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        if (m_DestinationPoint != null && m_OriginPoint != null )
+        {
+			Vector3 direction = m_DestinationPoint.position - m_OriginPoint.position;
+			m_Indicator.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+		}
+		
 	}
 
 	private void UpdatePosition()
@@ -42,6 +46,7 @@ public class UIIndicator : MonoBehaviour
 
 	private void UpdateMeters()
     {
+		if (m_DestinationPoint == null && m_OriginPoint == null) return;
 		int meters = (int)Vector3.Distance(m_DestinationPoint.position, m_OriginPoint.position);
 		string text;
 		if (meters >= 10000 && !m_Spawned)

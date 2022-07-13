@@ -3,8 +3,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 using PubSub;
-using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 [DisallowMultipleComponent]
@@ -56,6 +56,7 @@ public class AudioManager : MonoBehaviour, ISubscriber
 
     [Header("MENU MUSIC")]
     [SerializeField] AudioClip m_musicaMenùPrincipale;
+    [SerializeField] AudioClip m_suonoAmbientaleCapsula;
     [ReadOnly]public AudioClip musicaDaSuonare;
     [Header("AUDIO REFERENCE")]
     [SerializeField] AudioSource m_AudioSource;
@@ -63,23 +64,56 @@ public class AudioManager : MonoBehaviour, ISubscriber
     [Header("FADING SETTINGS")]
     public float fadeInTime;
     public float fadeOutTime;
-
-
+   
     [SerializeField,ReadOnly] bool m_courutineIsStarted = false;
-    private void Start()
+
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += this.OnSceneChange;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= this.OnSceneChange;
+    }
+
+
+private void Start()
     {
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
         PubSub.PubSub.Subscribe(this, typeof(SendAudioMessage));
         PubSub.PubSub.Subscribe(this, typeof(GetAudioBeforeChangingMessage));
-        PubSub.PubSub.Publish(new SendAudioMessage(m_musicaMenùPrincipale));
-
+        PubSub.PubSub.Subscribe(this, typeof(PauseGameMessage));
+        PubSub.PubSub.Subscribe(this,typeof(ResumeGameMessage));
         PubSub.PubSub.Publish(new SendAudioSettingsMessage(true,true));
+        PubSub.PubSub.Publish(new SendAudioMessage(m_musicaMenùPrincipale));
         if (m_musicaMenùPrincipale == null) return;
+
 
        
 
     }
+
+    private void OnSceneChange(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu 1")
+        {
+            if (m_AudioSource.clip != m_musicaMenùPrincipale)
+            {
+                PubSub.PubSub.Publish(new SendAudioMessage(m_musicaMenùPrincipale));
+            }
+        }
+        if (scene.name == "TestPlatformPuzzle1")
+        {
+            if (m_AudioSource.clip != m_musicaMenùPrincipale)
+            {
+                PubSub.PubSub.Publish(new SendAudioMessage(m_suonoAmbientaleCapsula));
+            }
+        }
+    }
+
+
 
     #region FOR_SETTINGS
     public void ChangeVolumeSFX(float value)
@@ -131,17 +165,18 @@ public class AudioManager : MonoBehaviour, ISubscriber
             m_AudioSource.playOnAwake = settings.m_PlayOnAwake;
             m_AudioSource.loop = settings.m_CanLoop;
         }
+        else if (message is PauseGameMessage)
+        {
+            m_AudioSource.Stop();
+        }
+        else if (message is ResumeGameMessage)
+        {
+            m_AudioSource.Play();
+        }
     }
 
-    public void OnDisableSubscribe()
-    {
-        PubSub.PubSub.Unsubscribe(this, typeof(OnTriggerEnterAudio));
-        PubSub.PubSub.Unsubscribe(this, typeof(SendAudioMessage));
-        PubSub.PubSub.Unsubscribe(this, typeof(SendAudioSettingsMessage));
-        PubSub.PubSub.Unsubscribe(this, typeof(GetAudioBeforeChangingMessage));
+   
 
-    }
-    
     private IEnumerator FadeOutAndIn(AudioClip audio)
     {
         var coroutine = this.RunCoroutine(WaitForFade(m_AudioSource,audio, fadeOutTime, 0));
@@ -149,6 +184,10 @@ public class AudioManager : MonoBehaviour, ISubscriber
         this.RunCoroutine(WaitForFade(m_AudioSource, fadeInTime, 1));
         
     }
+
+
+
+
     public IEnumerator WaitForFade(AudioSource audioSource,AudioClip audio, float duration, float targetVolume)
     {
        
@@ -157,9 +196,6 @@ public class AudioManager : MonoBehaviour, ISubscriber
         audioSource.clip = audio;
         audioSource.Play();
         m_courutineIsStarted = false;
-
-
-
     }
     public IEnumerator WaitForFade(AudioSource audioSource, float duration, float targetVolume)
     {
@@ -168,6 +204,10 @@ public class AudioManager : MonoBehaviour, ISubscriber
         yield return new WaitUntil(() => audioSource.volume == targetVolume);
         m_courutineIsStarted=false;
     }
+
+
+
+
 
     public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
@@ -183,6 +223,15 @@ public class AudioManager : MonoBehaviour, ISubscriber
         yield break;
     }
 
+    public void OnDisableSubscribe()
+    {
+        PubSub.PubSub.Unsubscribe(this, typeof(OnTriggerEnterAudio));
+        PubSub.PubSub.Unsubscribe(this, typeof(SendAudioMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(SendAudioSettingsMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(GetAudioBeforeChangingMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(PauseGameMessage));
+
+    }
 
 
 }

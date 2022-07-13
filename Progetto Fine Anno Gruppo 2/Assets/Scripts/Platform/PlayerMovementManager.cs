@@ -47,9 +47,9 @@ namespace MainGame
         public Vector2 InputDirection;
 
         [Header("Audio Setting")]
-        [SerializeField] List<AudioClip> m_listPlayerStepOnMetal;
-        [SerializeField] AudioClip m_jumpAudio;
-        [SerializeField] AudioClip m_landedAudio;
+        public List<AudioClip> m_listPlayerStep;
+        public AudioClip m_jumpAudio;
+        public AudioClip m_landedAudio;
 
         private Interacter m_Interacter;
         private Vector3 m_NextCheckPoint;

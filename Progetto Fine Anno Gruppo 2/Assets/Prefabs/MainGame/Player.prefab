@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 6df86beb0bbd56a45999f2e2d069430c, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: d388cc564ccac854db498eb761ee0500, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -202,6 +202,9 @@ MonoBehaviour:
   SpeedInZeroGravity: 250
   InteractionAnimationSpeed: 0.8
   InputDirection: {x: 0, y: 0}
+  m_listPlayerStep: []
+  m_jumpAudio: {fileID: 0}
+  m_landedAudio: {fileID: 0}
   CurrentDirection: 0
 --- !u!114 &543330954
 MonoBehaviour:
