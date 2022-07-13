@@ -35,6 +35,13 @@ namespace ArchimedesMiniGame
         [SerializeField] ParticleSystem m_BurstVFXPrefab;
         [Header("Docking Event")]
         [SerializeField] UnityEvent m_OnDocking;
+        [SerializeField] DialogueHolderSO m_DialogueDocking;
+        [Header("NoBattery Event")]
+        [SerializeField] UnityEvent m_OnNoBattery;
+        [SerializeField] DialogueHolderSO m_DialogueNoBattery;
+        [Header("Destroied Event")]
+        [SerializeField] UnityEvent m_OnModuleDestroied;
+        [SerializeField] DialogueHolderSO m_DialogueDestroied;
 
         private float m_CurrentBattery;
         private Rigidbody2D m_Rigidbody;
@@ -316,6 +323,9 @@ namespace ArchimedesMiniGame
                 m_CurrentBattery = 0;
                 GameManagerES.Instance.UpdateBatterySlider(m_CurrentBattery, m_MaxBattery);
                 PubSub.PubSub.Publish(new NoBatteryMessage());
+                m_OnNoBattery.Invoke();
+                if(m_DialogueNoBattery!=null)
+                    PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueNoBattery.Dialogo, false));
             }
         }
 
@@ -386,6 +396,8 @@ namespace ArchimedesMiniGame
             m_Rigidbody.bodyType = RigidbodyType2D.Static;
 
             m_OnDocking.Invoke();
+            if(m_DialogueDocking!=null)
+                PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueDocking.Dialogo, false));
             PubSub.PubSub.Publish(new DockingCompleteMessage(this));
         }
 
@@ -438,6 +450,13 @@ namespace ArchimedesMiniGame
             }
             else if (message is DockingCompleteMessage || message is NoBatteryMessage || message is ModuleDestroyedMessage)
             {
+                if (message is ModuleDestroyedMessage)
+                {
+                    m_OnModuleDestroied.Invoke();
+                    if(m_DialogueDestroied!=null)
+                        PubSub.PubSub.Publish(new StartDialogueMessage(m_DialogueDestroied.Dialogo, false));
+                }
+
                 m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSprite, EDirection.Down);
                 m_ExternalCollider.enabled = false;
                 m_MapParent.SetActive(true);

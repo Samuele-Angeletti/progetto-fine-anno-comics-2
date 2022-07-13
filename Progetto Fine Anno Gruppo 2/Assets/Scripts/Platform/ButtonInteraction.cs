@@ -34,6 +34,7 @@ public class ButtonInteraction : Interactable, ISubscriber
                 m_TriggerCollider = colliders[i];
             }
         }
+
     }
 
     private void Start()
@@ -43,6 +44,8 @@ public class ButtonInteraction : Interactable, ISubscriber
             PubSub.PubSub.Subscribe(this, typeof(ModuleDestroyedMessage));
             PubSub.PubSub.Subscribe(this, typeof(NoBatteryMessage));
         }
+
+        PubSub.PubSub.Subscribe(this, typeof(ZeroGMessage));
     }
     public override void Interact(Interacter interacter)
     {
@@ -77,12 +80,23 @@ public class ButtonInteraction : Interactable, ISubscriber
         {
             m_Active = true;
         }
+        else if(message is ZeroGMessage)
+        {
+            m_Active = true;
+            Invoke("Unsubscribe", 1f);
+        }
+    }
+
+    private void Unsubscribe()
+    {
+        PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
     }
 
     public void OnDisableSubscribe()
     {
         PubSub.PubSub.Unsubscribe(this, typeof(ModuleDestroyedMessage));
         PubSub.PubSub.Unsubscribe(this, typeof(NoBatteryMessage));
+        PubSub.PubSub.Unsubscribe(this, typeof(ZeroGMessage));
 
     }
 

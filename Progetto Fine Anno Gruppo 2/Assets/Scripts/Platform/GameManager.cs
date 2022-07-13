@@ -40,6 +40,7 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnModule;
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
         [SerializeField] CinemachineVirtualCamera m_CameraOnTransition;
+        [SerializeField] CinemachineVirtualCamera m_CameraOnPlayerFar;
         [SerializeField] BackgroundAxe m_Background;
 
         [Header("Player Settings")]
@@ -187,6 +188,7 @@ namespace MainGame
             if (m_Controllable.GetComponent<PlayerMovementManager>() == null)
             {
                 m_CameraOnPlayer.Follow = m_Player.transform;
+                m_CameraOnPlayerFar.Follow = m_Player.transform;
                 m_CameraOnTransition.Follow = m_Player.transform;
                 SetNewControllable(m_Player);
             }
@@ -276,6 +278,7 @@ namespace MainGame
             if (m_Player != null)
             {
                 m_CameraOnPlayer.Follow = m_Player.transform;
+                m_CameraOnPlayerFar.Follow = m_Player.transform;
                 m_CameraOnTransition.Follow = m_Player.transform;
             }
         }

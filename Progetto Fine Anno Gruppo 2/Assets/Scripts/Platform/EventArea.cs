@@ -1,5 +1,6 @@
 using ArchimedesMiniGame;
 using Commons;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ namespace MainGame
         [SerializeField] bool m_Active;
         [SerializeField] bool m_OneShot;
         [SerializeField] UnityEvent m_EventOnTrigger;
+        [Space(20)]
+        [SerializeField] bool m_ActiveEventOnTriggerExit;
+        [SerializeField] UnityEvent m_EventOnTriggerExit;
         [Header("Interaction Settings")]
         [SerializeField] List<EInteractionType> m_CallInteraction;
         [SerializeField] List<GameObject> m_InterestedObjectsOnInteraction;
@@ -26,7 +30,7 @@ namespace MainGame
                 if (m_Active)
                 {
                     if (m_OneShot) m_Active = false;
-                    Invoke(interacter);
+                    Invoke(interacter, false);
 
                 }
             }
@@ -36,11 +40,24 @@ namespace MainGame
         /// Chiama tutti gli eventi: UnityEvent, Interaction, Dialogue
         /// </summary>
         /// <param name="interacter">Interacter per dialogo</param>
-        public void Invoke(Interacter interacter)
+        public void Invoke(Interacter interacter, bool onTriggerExit)
         {
-            InvokeEvent();
+            if(!onTriggerExit)
+            {
+
+                InvokeEvent();
+            }
+            else
+            {
+                InvokeEventOnExit();
+            }
             InvokeInteraction(interacter);
             InvokeDialogue();
+        }
+
+        private void InvokeEvent()
+        {
+            m_EventOnTrigger.Invoke();
         }
 
         /// <summary>
@@ -75,9 +92,25 @@ namespace MainGame
         /// <summary>
         /// Chiama lo UnityEvent
         /// </summary>
-        public void InvokeEvent()
+        public void InvokeEventOnExit()
         {
-            m_EventOnTrigger.Invoke();
+            m_EventOnTriggerExit.Invoke();
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (m_ActiveEventOnTriggerExit)
+            {
+                if (collision.GetComponent<PlayerMovementManager>() != null)
+                {
+                    Interacter interacter = collision.GetComponent<Interacter>();
+                    if (m_Active)
+                    {
+                        Invoke(interacter, true);
+
+                    }
+                }
+            }
         }
     }
 }

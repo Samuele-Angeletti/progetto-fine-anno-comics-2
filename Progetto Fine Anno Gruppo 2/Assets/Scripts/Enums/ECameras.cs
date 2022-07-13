@@ -3,6 +3,7 @@ public enum ECameras
 {
     Player,
     Module,
-    ModuleFocused
+    ModuleFocused,
+    PlayerFar
 }
 
