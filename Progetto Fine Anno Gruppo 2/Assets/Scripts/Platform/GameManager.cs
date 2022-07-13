@@ -41,6 +41,7 @@ namespace MainGame
         [SerializeField] CinemachineVirtualCamera m_CameraOnModuleFocused;
         [SerializeField] CinemachineVirtualCamera m_CameraOnTransition;
         [SerializeField] CinemachineVirtualCamera m_CameraOnPlayerFar;
+        [SerializeField] CinemachineVirtualCamera m_CameraOnPlayerClose;
         [SerializeField] BackgroundAxe m_Background;
 
         [Header("Player Settings")]
@@ -51,6 +52,9 @@ namespace MainGame
 
         [Header("Archimedes")]
         [SerializeField] Archimedes m_Archimedes;
+
+        [Header("Light Manager")]
+        [SerializeField] LightManager m_LightManager;
 
         [Header("Debug Settings")]
         [SerializeField] DebugText m_ElapsedTimeZeroG;
@@ -189,6 +193,7 @@ namespace MainGame
             {
                 m_CameraOnPlayer.Follow = m_Player.transform;
                 m_CameraOnPlayerFar.Follow = m_Player.transform;
+                m_CameraOnPlayerClose.Follow = m_Player.transform;
                 m_CameraOnTransition.Follow = m_Player.transform;
                 SetNewControllable(m_Player);
             }
@@ -279,9 +284,16 @@ namespace MainGame
             {
                 m_CameraOnPlayer.Follow = m_Player.transform;
                 m_CameraOnPlayerFar.Follow = m_Player.transform;
+                m_CameraOnPlayerClose.Follow = m_Player.transform;
                 m_CameraOnTransition.Follow = m_Player.transform;
             }
         }
+
+        public void SetInternalLight(float newAmount)
+        {
+            m_LightManager.InternalLight = newAmount;
+            m_LightManager.SetGlobalLight(newAmount);
+        }    
 
         internal void GameOver()
         {

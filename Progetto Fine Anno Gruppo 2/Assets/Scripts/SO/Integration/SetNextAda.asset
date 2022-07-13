@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e90644bb60bc68c41ac0e18ed141c8c5, type: 3}
-  m_Name: AumentoLuci
+  m_Name: SetNextAda
   m_EditorClassIdentifier: 
-  integrationEvent: 0
+  integrationEvent: 5
   LightningIncreaser: 0
   CinematicToPlay: {fileID: 0}
   SoundToPlay: {fileID: 0}

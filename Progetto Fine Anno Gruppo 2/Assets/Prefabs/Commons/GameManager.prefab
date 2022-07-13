@@ -62,6 +62,8 @@ MonoBehaviour:
   m_CameraOnModule: {fileID: 0}
   m_CameraOnModuleFocused: {fileID: 0}
   m_CameraOnTransition: {fileID: 0}
+  m_CameraOnPlayerFar: {fileID: 0}
+  m_CameraOnPlayerClose: {fileID: 0}
   m_Background: {fileID: 0}
   m_Controllable: {fileID: 0}
   m_ButtonInteractionSO:
@@ -74,6 +76,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a0f4cdc36dadf884fa0da405c68e3876, type: 2}
   - {fileID: 11400000, guid: e177319f482ec1b4ebfe627f722e61e2, type: 2}
   m_Archimedes: {fileID: 0}
+  m_LightManager: {fileID: 0}
   m_ElapsedTimeZeroG: {fileID: 0}
 --- !u!114 &1583300852
 MonoBehaviour:

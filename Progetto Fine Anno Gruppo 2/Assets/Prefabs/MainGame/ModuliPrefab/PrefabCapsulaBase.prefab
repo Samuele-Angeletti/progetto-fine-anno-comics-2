@@ -123679,6 +123679,10 @@ PrefabInstance:
       value: EventAreaChangeCameraOnPlayer (2)
       objectReference: {fileID: 0}
     - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
+      propertyPath: m_OneShot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
       propertyPath: m_ActiveEventOnTriggerExit
       value: 0
       objectReference: {fileID: 0}
@@ -124738,6 +124742,10 @@ PrefabInstance:
     - target: {fileID: 125329208254651760, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
       propertyPath: m_Name
       value: EventAreaChangeCameraOnPlayer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
+      propertyPath: m_OneShot
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
       propertyPath: m_ActiveEventOnTriggerExit
@@ -130028,6 +130036,10 @@ PrefabInstance:
       value: EventAreaChangeCameraOnPlayer (3)
       objectReference: {fileID: 0}
     - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
+      propertyPath: m_OneShot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
       propertyPath: m_ActiveEventOnTriggerExit
       value: 1
       objectReference: {fileID: 0}
@@ -130727,12 +130739,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 310517903730559559, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
       propertyPath: integrationEventsSO.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 310517903730559559, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
       propertyPath: integrationEventsSO.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 11deab5a960e327489aa9f218ffe88d6, type: 2}
+    - target: {fileID: 310517903730559559, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
+      propertyPath: integrationEventsSO.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bd10b9d397bb5f4684fe52ff00d6072, type: 2}
+    - target: {fileID: 310517903730559559, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
+      propertyPath: integrationEventsSO.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3af6138f58d43c24888636e1c81dce64, type: 2}
     - target: {fileID: 310517903730559559, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
       propertyPath: sceneEvents.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -130768,6 +130788,10 @@ PrefabInstance:
     - target: {fileID: 8244736717007321396, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
       propertyPath: m_Name
       value: IntegrationButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244736717007321402, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
+      propertyPath: m_OneShot
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8244736717007321402, guid: db88953cb1971244cb4a65e41c6d817e, type: 3}
       propertyPath: InterestedObject
@@ -131664,6 +131688,10 @@ PrefabInstance:
     - target: {fileID: 125329208254651760, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
       propertyPath: m_Name
       value: EventAreaChangeCameraOnPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
+      propertyPath: m_OneShot
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 125329208254651762, guid: 7c0928c477c443547b1f4db154373ba7, type: 3}
       propertyPath: m_ActiveEventOnTriggerExit

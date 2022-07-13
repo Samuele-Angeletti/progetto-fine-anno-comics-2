@@ -10,7 +10,7 @@ public class IntegrationEventScriptableObject : ScriptableObject
     public EIntegrationEvent integrationEvent;
 
     [Header("LIGHTS")]
-    [Range(0,1)]
+    [Range(0,10)]
     public float LightningIncreaser;
     [Space(20)]
     [Header("CINEMATICS")]
@@ -25,7 +25,7 @@ public class IntegrationEventScriptableObject : ScriptableObject
         {
             case EIntegrationEvent.LightUp:
 
-                Debug.Log("Luci modificate");
+                gameManager.SetInternalLight(LightningIncreaser);
                 break;
             case EIntegrationEvent.DeactiveZeroG:
 
@@ -44,6 +44,9 @@ public class IntegrationEventScriptableObject : ScriptableObject
             case EIntegrationEvent.SetNextModule:
 
                 gameManagerES.SetNextModuleToCommandPlat();
+                break;
+            case EIntegrationEvent.SetNextAda:
+                PubSub.PubSub.Publish(new AdaChangeMessage());
                 break;
         }
     }

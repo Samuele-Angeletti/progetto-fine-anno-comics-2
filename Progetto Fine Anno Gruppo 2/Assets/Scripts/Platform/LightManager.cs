@@ -16,6 +16,15 @@ namespace MainGame
         [SerializeField] float m_ExternalIntensity;
         [SerializeField] float m_InternalIntensity;
         [SerializeField] float m_PacManIntensity;
+        public float InternalLight
+        {
+            get => m_InternalIntensity;
+            set
+            {
+                m_InternalIntensity = value;
+            }
+        }
+
         int m_GlobalLightLayer;
         private void Start()
         {

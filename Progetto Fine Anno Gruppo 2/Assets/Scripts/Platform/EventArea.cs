@@ -21,6 +21,10 @@ namespace MainGame
         [SerializeField] List<GameObject> m_InterestedObjectsOnInteraction;
         [Header("Dialogue Settings")]
         [SerializeField] DialogueHolderSO m_DialogueHolderSOs;
+        [Space(20)]
+        [Header("Destroy Area")]
+        [SerializeField] bool m_DestroyAfterTrigger;
+        [SerializeField] bool m_DestroyAfterTriggerExit;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -32,6 +36,10 @@ namespace MainGame
                     if (m_OneShot) m_Active = false;
                     Invoke(interacter, false);
 
+                    if(m_DestroyAfterTrigger && !m_DestroyAfterTriggerExit)
+                    {
+                        Destroy(gameObject, 1f);
+                    }
                 }
             }
         }
@@ -108,6 +116,10 @@ namespace MainGame
                     {
                         Invoke(interacter, true);
 
+                        if(m_DestroyAfterTriggerExit)
+                        {
+                            Destroy(gameObject, 1f);
+                        }
                     }
                 }
             }

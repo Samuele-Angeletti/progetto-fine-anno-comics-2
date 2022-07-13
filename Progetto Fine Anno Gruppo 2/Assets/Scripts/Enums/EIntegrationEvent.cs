@@ -8,6 +8,7 @@ public enum EIntegrationEvent
     DeactiveZeroG,
     StartCinematic,
     PlaySound,
-    SetNextModule
+    SetNextModule,
+    SetNextAda
 
 }
