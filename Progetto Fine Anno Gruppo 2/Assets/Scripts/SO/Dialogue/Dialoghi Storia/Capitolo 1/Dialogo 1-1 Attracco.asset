@@ -42,7 +42,7 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: "<i>(digita)</i> \u201CUhh\u2026buongiorno, SOS Archimedes.
       Vi ricevo forte e chiaro. Qui \xE8 il Mezzo di Manutenzione Imperiale\u20262718-EN
-      1828"
+      1828."
   - WhoIsSpeaking: 0
     DialougueString: Mi chiamo Ludwig Riemann. Vengo dal pianeta Huygens, nel sistema
       Hawking.

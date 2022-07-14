@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogo:
   - WhoIsSpeaking: 1
-    DialougueString: "CONFERMAZIONE: Pu\xF2 ora tornare alla porta, Ingegnere Riemann."
+    DialougueString: "CONFERMA: Pu\xF2 ora tornare alla porta, Ingegnere Riemann."
