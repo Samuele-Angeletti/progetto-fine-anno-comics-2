@@ -242,6 +242,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ButtonType: 0
   m_MenuToOpen: 2
+  m_GoToScene: 
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!1 &7135040508608189552
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +711,19 @@ MonoBehaviour:
   m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6926274466939112816, guid: aa87dacbbe39448489f393dbf5f729c1, type: 3}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ChangeMasterVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7135040509436926989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1435,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ButtonType: 2
   m_MenuToOpen: 0
+  m_GoToScene: 
+  m_StoredTerminalToRead: {fileID: 0}
 --- !u!1 &8784616564105846186
 GameObject:
   m_ObjectHideFlags: 0

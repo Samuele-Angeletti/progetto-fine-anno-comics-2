@@ -107,7 +107,7 @@ namespace MainGame
 
         private void OnEvent(TrackEntry trackEntry, Spine.Event e)
         {
-            if (e.Data.Name == "Passi camminata")
+            if (e.Data.Name == "Passi Camminata")
             {
                 stepAudioSource.PlayOneShot(AudioManager.GetRandomAudioClip(listPlayerStep));
             }

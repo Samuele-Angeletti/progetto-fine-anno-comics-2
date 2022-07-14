@@ -144,7 +144,7 @@ MonoBehaviour:
   m_TransitionSpeed: 1
   m_OneShot: 0
   m_RevertOnTriggerExit: 0
-  m_doorSound: {fileID: 0}
+  m_doorSound: {fileID: 8300000, guid: 4aa52c76038706842b4797a3b7636f43, type: 3}
 --- !u!61 &4237420646932340592
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ AudioSource:
   m_GameObject: {fileID: 4237420646932340594}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5792194398389647083, guid: 32b170816a1f1694db956c85c224e545, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

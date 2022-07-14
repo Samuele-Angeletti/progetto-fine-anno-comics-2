@@ -399,7 +399,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  m_InteractioneAudio: {fileID: 0}
+  m_InteractioneAudio: {fileID: 8300000, guid: 8ff779946dde2b6469df631a8d440895, type: 3}
 --- !u!114 &310517903730559559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +464,7 @@ AudioSource:
   m_GameObject: {fileID: 8244736717007321396}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5792194398389647083, guid: 32b170816a1f1694db956c85c224e545, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -36,6 +36,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2833512725853800144, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833512725853800144, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: DopplerLevel
       value: 0
       objectReference: {fileID: 0}
@@ -162,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 4982622388453702751, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: m_InteractioneAudio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 8ff779946dde2b6469df631a8d440895, type: 3}
     - target: {fileID: 6241903549894593591, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: m_Size.x
       value: 0.63863564
