@@ -47,9 +47,14 @@ namespace MainGame
         public Vector2 InputDirection;
 
         [Header("Audio Setting")]
-        public List<AudioClip> m_listPlayerStep;
-        public AudioClip m_jumpAudio;
-        public AudioClip m_landedAudio;
+        public AudioSource stepAudioSource;
+        public AudioSource JumpAudioSource;
+        [Space(10)]
+        public List<AudioClip> listPlayerStep;
+        public AudioClip jumpAudio;
+        public AudioClip landedAudio;
+
+
 
         private Interacter m_Interacter;
         private Vector3 m_NextCheckPoint;
@@ -85,6 +90,9 @@ namespace MainGame
             PubSub.PubSub.Subscribe(this, typeof(StartDialogueMessage));
 
 
+            Skeleton.state.Event += OnEvent;
+
+
             StateMachine.RegisterState(EPlayerState.Walking, new WalkingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.Jumping, new JumpingPlayerState(this));
             StateMachine.RegisterState(EPlayerState.ZeroG, new ZeroGPlayerState(this));
@@ -95,6 +103,14 @@ namespace MainGame
             StateMachine.RegisterState(EPlayerState.Interacting, new InteractingPlayerState(this));
 
             StateMachine.SetState(EPlayerState.Walking);
+        }
+
+        private void OnEvent(TrackEntry trackEntry, Spine.Event e)
+        {
+            if (e.Data.Name == "Passi camminata")
+            {
+                stepAudioSource.PlayOneShot(AudioManager.GetRandomAudioClip(listPlayerStep));
+            }
         }
 
         void Update()

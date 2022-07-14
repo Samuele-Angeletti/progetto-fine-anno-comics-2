@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using PubSub;
 using System.Collections;
 using UnityEngine.SceneManagement;
-
+using System.Collections.Generic;
 
 [DisallowMultipleComponent]
 public class AudioManager : MonoBehaviour, ISubscriber
@@ -221,6 +221,18 @@ private void Start()
             yield return null;
         }
         yield break;
+    }
+    public static AudioClip GetRandomAudioClip(List<AudioClip> clipList)
+    {
+        if (clipList == null) return null;
+        int getRandomIndex = UnityEngine.Random.Range(0, clipList.Count);
+        return clipList[getRandomIndex];
+    }
+    public static AudioClip GetRandomAudioClip(AudioClip[] clips)
+    {
+        if(clips == null) return null;
+        int getRandomIndex = UnityEngine.Random.Range(0,clips.Length);
+        return clips[getRandomIndex];
     }
 
     public void OnDisableSubscribe()
