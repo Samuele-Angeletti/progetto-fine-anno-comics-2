@@ -201,7 +201,7 @@ MonoBehaviour:
   GroundMask:
     serializedVersion: 2
     m_Bits: 1
-  SpeedInZeroGravity: 250
+  SpeedInZeroGravity: 350
   InteractionAnimationSpeed: 0.8
   InputDirection: {x: 0, y: 0}
   stepAudioSource: {fileID: 4124940951311819324}

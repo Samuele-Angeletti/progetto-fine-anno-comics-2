@@ -8268,7 +8268,7 @@ MonoBehaviour:
   - {x: 59.472298, y: 2.0891993, z: 0}
   m_ShapePathHash: -1424550320
   m_Mesh: {fileID: 0}
-  m_InstanceId: -130478
+  m_InstanceId: 80024
 --- !u!1 &1600819483268277170
 GameObject:
   m_ObjectHideFlags: 0
@@ -14880,7 +14880,7 @@ MonoBehaviour:
   - {x: 15.662156, y: -0.9971199, z: 0}
   m_ShapePathHash: -60956964
   m_Mesh: {fileID: 0}
-  m_InstanceId: -131030
+  m_InstanceId: 80052
 --- !u!1 &2447800216174495246
 GameObject:
   m_ObjectHideFlags: 0
@@ -18909,7 +18909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982622388453702750, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.183
+      value: -1.008
       objectReference: {fileID: 0}
     - target: {fileID: 4982622388453702750, guid: 7a19f025d25c52f49a4ed3e4f840af25, type: 3}
       propertyPath: m_LocalPosition.y
