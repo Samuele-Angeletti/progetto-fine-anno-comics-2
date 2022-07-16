@@ -51,11 +51,13 @@ public class ButtonInteraction : Interactable, ISubscriber
     {
         if (m_Active)
         {
+
             if (m_soundSource != null && m_InteractioneAudio != null) m_soundSource.PlayOneShot(m_InteractioneAudio);
             GameManager.Instance.GetButtonInteractionSO(InteractionType).Interact(InterestedObject, interacter, this);
-            m_SceneEvent.Invoke();
+            
             if (m_OneShot) m_Active = false;
 
+            m_SceneEvent.Invoke();
         }
     }
 

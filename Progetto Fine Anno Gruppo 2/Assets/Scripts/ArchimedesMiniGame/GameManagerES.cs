@@ -123,7 +123,7 @@ namespace ArchimedesMiniGame
 
         public void UpdateSpeed(float current, float maxValue)
         {
-            //m_MaxSpeedSlider.value = current / maxValue;
+            
             float percentage = current / maxValue;
 
             m_AnchorIndicator.eulerAngles = new Vector3(0, 0, -360 * Mathf.Abs(percentage));

@@ -142,19 +142,26 @@ namespace MainGame
             {
                 if(m_Player != null)
                     SetNewControllable(m_Player);
+
+                DockingCompleteMessage dockingCompleteMessage = (DockingCompleteMessage)message;
+                if(dockingCompleteMessage.Module.GetComponent<Capsula>() == null)
+                    SetActiveCamera(ECameras.PlayerClose);
             }
             else if(message is StartEngineModuleMessage)
             {
                 StartEngineModuleMessage startEngineModule = (StartEngineModuleMessage)message;
                 SetNewControllable(startEngineModule.Module);
+                SetActiveCamera(ECameras.Module);
             }
             else if(message is ModuleDestroyedMessage)
             {
                 SetNewControllable(m_Player);
+                SetActiveCamera(ECameras.PlayerClose);
             }
             else if(message is NoBatteryMessage)
             {
                 SetNewControllable(m_Player);
+                SetActiveCamera(ECameras.PlayerClose);
             }
         }
 
@@ -230,19 +237,46 @@ namespace MainGame
                     m_CameraOnPlayer.Priority = 1;
                     m_CameraOnModule.Priority = 0;
                     m_CameraOnModuleFocused.Priority = 0;
+                    m_CameraOnPlayerFar.Priority = 0;
+                    m_CameraOnPlayerClose.Priority = 0;
+                    m_CameraOnTransition.Priority = 0;
                     m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnPlayer.m_Lens.OrthographicSize);
                     break;
                 case ECameras.Module:
                     m_CameraOnPlayer.Priority = 0;
                     m_CameraOnModule.Priority = 1;
                     m_CameraOnModuleFocused.Priority = 0;
+                    m_CameraOnPlayerFar.Priority = 0;
+                    m_CameraOnPlayerClose.Priority = 0;
+                    m_CameraOnTransition.Priority = 0;
                     m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnModule.m_Lens.OrthographicSize);
                     break;
                 case ECameras.ModuleFocused:
                     m_CameraOnPlayer.Priority = 0;
                     m_CameraOnModule.Priority = 0;
                     m_CameraOnModuleFocused.Priority = 1;
+                    m_CameraOnPlayerFar.Priority = 0;
+                    m_CameraOnPlayerClose.Priority = 0;
+                    m_CameraOnTransition.Priority = 0;
                     m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnModuleFocused.m_Lens.OrthographicSize);
+                    break;
+                case ECameras.PlayerFar:
+                    m_CameraOnPlayer.Priority = 0;
+                    m_CameraOnModule.Priority = 0;
+                    m_CameraOnModuleFocused.Priority = 0;
+                    m_CameraOnPlayerFar.Priority = 1;
+                    m_CameraOnPlayerClose.Priority = 0;
+                    m_CameraOnTransition.Priority = 0;
+                    m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnPlayerFar.m_Lens.OrthographicSize);
+                    break;
+                case ECameras.PlayerClose:
+                    m_CameraOnPlayer.Priority = 0;
+                    m_CameraOnModule.Priority = 0;
+                    m_CameraOnModuleFocused.Priority = 0;
+                    m_CameraOnPlayerFar.Priority = 0;
+                    m_CameraOnPlayerClose.Priority = 1;
+                    m_CameraOnTransition.Priority = 0;
+                    m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, m_CameraOnPlayerClose.m_Lens.OrthographicSize);
                     break;
             }
             m_ActiveCamera = camera;
@@ -253,6 +287,10 @@ namespace MainGame
             return m_ButtonInteractionSO.Find(x => x.InteractionType == interactionType);
         }
 
+        public void SetBackgroundToCameraSize(CinemachineVirtualCamera camera)
+        {
+            m_Background.ChangeScale(m_CameraOnPlayer.m_Lens.OrthographicSize, camera.m_Lens.OrthographicSize);
+        }
 
         public void Save()
         {
