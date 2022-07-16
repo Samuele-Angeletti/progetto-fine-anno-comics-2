@@ -5,5 +5,6 @@ public enum EButtonType
 	CloaseAllMenu,
 	GoToScene,
 	ForceResume,
-	ReadStoredTerminal
+	ReadStoredTerminal,
+	ForceGoToScene
 }

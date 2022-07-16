@@ -10,12 +10,10 @@ public class UIMainMenu : Menu
     {
         base.Open();
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
     }
 
     public override void Close()
     {
         base.Close();
-        SceneManager.LoadScene("PlatformScenePreview");
     }
 }

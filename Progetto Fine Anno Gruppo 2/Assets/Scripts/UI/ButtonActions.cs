@@ -4,6 +4,9 @@ using UnityEngine;
 using PubSub;
 using System;
 using UnityEngine.SceneManagement;
+using MainGame;
+using ArchimedesMiniGame;
+using MicroGame;
 
 public class ButtonActions : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class ButtonActions : MonoBehaviour
 	[SerializeField] EMenu m_MenuToOpen;
     [SerializeField] string m_GoToScene;
     [SerializeField] TerminalScriptableObject m_StoredTerminalToRead;
+
 	public void Action()
 	{
         switch (m_ButtonType)
@@ -33,12 +37,22 @@ public class ButtonActions : MonoBehaviour
             case EButtonType.ReadStoredTerminal:
                 PubSub.PubSub.Publish(new TerminalMessage(m_StoredTerminalToRead));
                 break;
+            case EButtonType.ForceGoToScene:
+                ForceLoadToScene();
+                break;
         }
     }
 
     private void GoToScene()
     {
         PubSub.PubSub.Publish(new GoToSceneMessage(m_GoToScene));
+    }
+
+    private void ForceLoadToScene()
+    {
+        Destroy(UIManager.Instance.gameObject);
+        SceneManager.UnloadSceneAsync("TestPlatformPuzzle1");
+        SceneManager.LoadScene(m_GoToScene);
     }
 
     private void CloseAllMenus()

@@ -67,11 +67,7 @@ public class UIMainDisplay : MonoBehaviour, ISubscriber
 
     private void DestroyObjects()
     {
-        foreach(GameObject g in m_DestroyOnLoad)
-        {
-            g.SetActive(false);
-            Destroy(g, 3f);
-        }
+        SceneManager.UnloadSceneAsync("MainMenu");
     }
     
     public void ActiveLoadingBackground(bool active)
