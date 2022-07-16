@@ -14,12 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogo:
   - WhoIsSpeaking: 5
-    DialougueString: 'CONFERMA: attracco riuscito.'
-  - WhoIsSpeaking: 0
-    DialougueString: Ok, va bene...
-  - WhoIsSpeaking: 0
-    DialougueString: "PROSEGUO: La attender\xF2 ora all\u2019uscita del modulo per
-      le procedure di entrata nella stazione."
+    DialougueString: "CONFERMA: attracco riuscito. La attender\xF2 ora all\u2019uscita
+      della capsula per le procedure di entrata nella stazione."
   - WhoIsSpeaking: 0
     DialougueString: "<i>(si preme la mano sul volto)</i> Oh no, \xE8 vero, ora devo
       fare quel percorsaccio fino all\u2019uscita del modulo! Maledetto me!"
@@ -59,5 +55,5 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: "Vedr\xF2 soltanto vivendo, che posso dire..."
   - WhoIsSpeaking: 1
-    DialougueString: "AFFERMAZIONE: ricevuto, la aspetter\xF2 all\u2019entrata della
+    DialougueString: "AFFERMAZIONE: Ricevuto, la aspetter\xF2 all\u2019entrata della
       stazione."

@@ -18,19 +18,15 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: ...
   - WhoIsSpeaking: 0
-    DialougueString: ...
-  - WhoIsSpeaking: 0
     DialougueString: "<i>(sconsolato)</i> Finalmente arrivato alla Stazione Archimedes\u2026il
       mio primo giorno di lavoro sta per iniziare\u2026"
   - WhoIsSpeaking: 0
     DialougueString: "Se solo l\u2019Impero fosse stato un attimo pi\xF9 intransigente
       su quell\u2019incidente\u2026"
   - WhoIsSpeaking: 0
-    DialougueString: "<i>(sospira)</i> \u201CInutile rimuginare sul passato ora.
-      Apriamo le comunicazioni."
-  - WhoIsSpeaking: 0
-    DialougueString: "<i>Burp!</i> Ho anche bisogno di un bagno\u2026quel salto da
-      7 parsec mi ha scombussolato lo stomaco."
+    DialougueString: "<i>(sospira)</i> Inutile rimuginare sul passato ora. Gi\xE0
+      il salto iperspaziale mi ha messo in subbuglio lo stomaco. <i>Burp!</i> Apriamo
+      le comunicazioni, va'."
   - WhoIsSpeaking: 1
     DialougueString: 'TRASMISSIONE: ricevente: Stazione di Osservazione Spaziale
       Archimedes.'
@@ -40,19 +36,14 @@ MonoBehaviour:
     DialougueString: "<i>(tra s\xE9 e s\xE9)</i> Una IA? Non c\u2019\xE8 nessun equipaggio
       per rispondere?"
   - WhoIsSpeaking: 0
-    DialougueString: "<i>(digita)</i> \u201CUhh\u2026buongiorno, SOS Archimedes.
-      Vi ricevo forte e chiaro. Qui \xE8 il Mezzo di Manutenzione Imperiale\u20262718-EN
-      1828."
-  - WhoIsSpeaking: 0
-    DialougueString: Mi chiamo Ludwig Riemann. Vengo dal pianeta Huygens, nel sistema
-      Hawking.
+    DialougueString: "<i>(digita)</i> Uhh\u2026buongiorno, SOS Archimedes. Vi ricevo
+      forte e chiaro. Qui \xE8 il Mezzo di Manutenzione Imperiale 2718-EN 1828. Ingegnere
+      Ludwig Riemann del pianeta Huygens alla guida."
   - WhoIsSpeaking: 0
     DialougueString: "Sono stato assegnato come vostro nuovo ingegnere da oggi. Vi
       sto trasmettendo i codici di attracco\u2026ora."
   - WhoIsSpeaking: 0
-    DialougueString: <i>Riemann digita con calma)</i>
+    DialougueString: <i>Riemann digita con calma</i>
   - WhoIsSpeaking: 1
     DialougueString: 'CONFERMA: Permesso accordato, 2718-EN 1828. Attraccare modulo
-      nel luogo predesignato'
-  - WhoIsSpeaking: 1
-    DialougueString: 'ADDENDO: luci presenti per indicare percorso consigliato.'
+      nel luogo predesignato. Segua le luci per attraccare.'
