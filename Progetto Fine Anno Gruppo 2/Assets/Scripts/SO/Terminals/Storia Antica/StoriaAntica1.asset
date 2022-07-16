@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
   m_Name: StoriaAntica1
   m_EditorClassIdentifier: 
-  Title: Il Grande Sogno
+  Title: Il Grande Sogno - Parte 1
   ProgressiveNumber: 1
   Content: "In tempi immemori, sulla Terra primeva, i nostri antenati guardavano
     alle stelle, identificando in loro divinit\xE0, auspici, i loro sogni, a volte

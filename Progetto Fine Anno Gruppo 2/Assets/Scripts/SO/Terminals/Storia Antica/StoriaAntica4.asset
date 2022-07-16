@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
   m_Name: StoriaAntica4
   m_EditorClassIdentifier: 
-  Title: La Grande Frattura
-  ProgressiveNumber: 2
+  Title: La Grande Frattura - Parte 2
+  ProgressiveNumber: 4
   Content: "Altre generazioni passarono dalla fine della Guerra, e quella che sembrava
     una nuova era aurea per l\u2019Impero Terrestre, creata grazie ai sacrifici della
     Imperatrice Baahilo e della sua dinastia di successori, si interruppe drasticamente

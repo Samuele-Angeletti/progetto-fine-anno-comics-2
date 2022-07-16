@@ -19,9 +19,9 @@ MonoBehaviour:
     DialougueString: "Uh\u2026Ada, giusto? Starei per entrare nella Stazione, mi
       apriresti la porta, per piacere?"
   - WhoIsSpeaking: 1
-    DialougueString: "NEGAZIONE: Ingegnere Riemann, non possibile. Il bottone pu\xF2
-      essere attivato soltanto da un essere umano, e si trova in cima alla sezione
-      della capsula dove si trova attualmente lei."
+    DialougueString: "NEGAZIONE: Richiesta negata. Il bottone pu\xF2 essere attivato
+      soltanto da un essere umano, e si trova in cima alla sezione della capsula
+      dove si trova attualmente lei."
   - WhoIsSpeaking: 1
     DialougueString: "CONTINUAZIONE: risparmio energia attivo. Disattivazione remota
       gravit\xE0 in modulo imminente."
@@ -36,11 +36,9 @@ MonoBehaviour:
       aspettavo io, il buon senso mica si pu\xF2 programmare!"
   - WhoIsSpeaking: 1
     DialougueString: "COMMENTO: Inoltre, la Zero-G le permetter\xE0 di raggiungere
-      il pulsante di apertura di emergenza della porta."
-  - WhoIsSpeaking: 1
-    DialougueString: 'CONCLUSIONE: passo e chiudo.'
+      il pulsante di apertura di emergenza della porta. Passo e chiudo."
   - WhoIsSpeaking: 0
     DialougueString: Eeee ha chiuso il canale. Che palle!
   - WhoIsSpeaking: 0
-    DialougueString: "<i>(sospira)</i> Ho fin troppe domande gi\xE0 dopo neanche
-      cinque minuti, e gi\xE0 questa IA mi da pure ordini...."
+    DialougueString: "<i>(sospira)</i> Ho gi\xE0 fin troppe domande dopo neanche
+      cinque minuti, e questa IA era subito pronta a comandarmi a bacchetta..."

@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogo:
   - WhoIsSpeaking: 0
-    DialougueString: "<i>(espira)</i> Ce l\u2019ho fatta a passare quel percorso!"
-  - WhoIsSpeaking: 0
-    DialougueString: "<i>(irritato)</i> Chi cavolo l\u2019ha progettato?! Lo sapevo
-      che volevano uccidermi sin dal principio, accidenti!"
+    DialougueString: "<i>(espira)</i> Ce l\u2019ho fatta a passare quel percorso!
+      Chi cavolo l\u2019ha progettato?! Lo sapevo che volevano uccidermi sin dal
+      principio, accidenti!"
   - WhoIsSpeaking: 1
-    DialougueString: "RISPOSTA: percorso 1 dall\u2019Ingegnera Mari-"
+    DialougueString: "RISPOSTA: Percorso 1 dall\u2019Ingegnera Mari-"
   - WhoIsSpeaking: 0
     DialougueString: Era un modo di dire, Ada.
   - WhoIsSpeaking: 1
@@ -34,9 +33,7 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: ...
   - WhoIsSpeaking: 0
-    DialougueString: A-hem...ehm...
-  - WhoIsSpeaking: 0
-    DialougueString: Ok, Ada, quali sono i miei ordini ora?
+    DialougueString: Oo-ok, Ada, quali sono i miei ordini ora?
   - WhoIsSpeaking: 1
     DialougueString: 'RISPOSTA: fornire autorizzazione per collegamento Mezzo di
       Manutenzione Imperiale 2718-EN 1828 a sistemi della S.O.S. Archimedes, per
@@ -49,15 +46,13 @@ MonoBehaviour:
     DialougueString: "ADDENDO: il pulsante per fornire le autorizzazioni all\u2019accesso
       si trova nella stanza attualmente di fronte a lei."
   - WhoIsSpeaking: 0
-    DialougueString: Ok, perfetto, grazie mille.
-  - WhoIsSpeaking: 0
-    DialougueString: "Per\xF2 ora mi sorge un dubbio: come mai posizionare una S.O.S.
-      in una zona come questa?"
+    DialougueString: "Ok, perfetto, grazie mille. Per\xF2 ora mi sorge un dubbio:
+      come mai posizionare una S.O.S. in una zona come questa?"
   - WhoIsSpeaking: 1
     DialougueString: 'ORDINE: Richiesta elaborazione domanda.'
   - WhoIsSpeaking: 0
     DialougueString: "Siamo nel Deserto Astrale, no? Una zona proprio conosciuta
       per il fatto che, beh, non c\u2019\xE8 nulla."
   - WhoIsSpeaking: 0
-    DialougueString: "Ma chi sono io per pormi domande di questo tipo. E\u2019 stato
-      proprio il mio troppo ficcanasare che mi ha portato qua."
+    DialougueString: "Anzi, no, lascia perdere. E\u2019 stato proprio il mio troppo
+      ficcanasare a portarmi qui."

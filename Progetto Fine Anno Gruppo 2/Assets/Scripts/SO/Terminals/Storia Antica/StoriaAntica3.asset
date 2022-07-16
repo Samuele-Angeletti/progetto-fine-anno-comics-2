@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f20b1edeaf9f4e97e24e8230e1f91, type: 3}
   m_Name: StoriaAntica3
   m_EditorClassIdentifier: 
-  Title: La Grande Frattura
-  ProgressiveNumber: 1
+  Title: La Grande Frattura - Parte 1
+  ProgressiveNumber: 3
   Content: "Ere e regnanti passarono come giorni da quando l\u2019espansione umana
     nella Via Lattea nelle galassie satellite raggiunse il proprio apice. Popolazioni
     nuove nascevano, si arricchivano, fondavano nuovi governi, sotto l\u2019occhio

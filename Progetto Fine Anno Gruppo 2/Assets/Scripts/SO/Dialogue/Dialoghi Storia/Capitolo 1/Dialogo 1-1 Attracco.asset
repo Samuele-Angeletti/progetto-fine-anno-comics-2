@@ -28,22 +28,18 @@ MonoBehaviour:
       il salto iperspaziale mi ha messo in subbuglio lo stomaco. <i>Burp!</i> Apriamo
       le comunicazioni, va'."
   - WhoIsSpeaking: 1
-    DialougueString: 'TRASMISSIONE: ricevente: Stazione di Osservazione Spaziale
-      Archimedes.'
-  - WhoIsSpeaking: 1
-    DialougueString: 'ORDINE: Astro-mezzo non identificato: ID, codici di accesso.'
+    DialougueString: 'RISPOSTA: 10-4, Astro-mezzo non identificato. Qui Stazione
+      di Osservazione Spaziale Archimedes. Fornisca ID e codici di accesso.'
   - WhoIsSpeaking: 0
     DialougueString: "<i>(tra s\xE9 e s\xE9)</i> Una IA? Non c\u2019\xE8 nessun equipaggio
       per rispondere?"
   - WhoIsSpeaking: 0
-    DialougueString: "<i>(digita)</i> Uhh\u2026buongiorno, SOS Archimedes. Vi ricevo
-      forte e chiaro. Qui \xE8 il Mezzo di Manutenzione Imperiale 2718-EN 1828. Ingegnere
-      Ludwig Riemann del pianeta Huygens alla guida."
+    DialougueString: "<i>(digita)</i> Uhh\u2026buongiorno,  Archimedes. Vi ricevo
+      forte e chiaro. Qui \xE8 il Mezzo di Manutenzione Imperiale 2718-EN 1828, con
+      Ingegnere Ludwig Riemann del pianeta Huygens alla guida."
   - WhoIsSpeaking: 0
     DialougueString: "Sono stato assegnato come vostro nuovo ingegnere da oggi. Vi
       sto trasmettendo i codici di attracco\u2026ora."
-  - WhoIsSpeaking: 0
-    DialougueString: <i>Riemann digita con calma</i>
   - WhoIsSpeaking: 1
-    DialougueString: 'CONFERMA: Permesso accordato, 2718-EN 1828. Attraccare modulo
+    DialougueString: 'CONFERMA: Permesso accordato, 2718-EN 1828. Attraccare capsula
       nel luogo predesignato. Segua le luci per attraccare.'

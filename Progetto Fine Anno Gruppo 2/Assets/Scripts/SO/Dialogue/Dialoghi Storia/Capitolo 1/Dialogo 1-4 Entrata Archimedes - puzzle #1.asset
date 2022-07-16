@@ -17,10 +17,8 @@ MonoBehaviour:
     DialougueString: 'COMUNICAZIONE: Benvenuto ufficialmente sulla SOS Archimedes,
       Ingegnere Ludwig Riemann.'
   - WhoIsSpeaking: 0
-    DialougueString: "Alla buon\u2019ora, mi sembra di aver faticato fin troppo gi\xE0
-      prima ancora di entrare qua dentro!"
-  - WhoIsSpeaking: 0
-    DialougueString: Mi ci vorranno interi cicli Solari con questo ritmo a girarla!
+    DialougueString: "Finalmente! Per fortuna la stazione non sembra cos\xEC grossa,
+      almeno non mi ci vorranno interi anni per arrivare alla mia postazione!"
   - WhoIsSpeaking: 1
     DialougueString: "CORREZIONE: pochi minuti rimasti a fine percorso. Ingegnere
       Riemann, lei \xE8 quasi a destinazione."
@@ -36,39 +34,28 @@ MonoBehaviour:
   - WhoIsSpeaking: 1
     DialougueString: 'CORREZIONE: astrotuta non progettata per permettere rimboccamento
       di maniche. Commento quindi da considerarsi errato.'
-  - WhoIsSpeaking: 1
-    DialougueString: 'ADDENDO: se possibile, pelle astronauta a rischio esposizione
-      del vuoto, con conseguenti-'
   - WhoIsSpeaking: 0
     DialougueString: Grazie, Ada, ma anche quello era un modo di dire...
-  - WhoIsSpeaking: 0
-    DialougueString: 'AFFERMAZIONE: ricevuto.'
   - WhoIsSpeaking: 1
-    DialougueString: "PARADOSSO: movimento 0g considerato \u2018divertente\u2019
-      secondo studi imperiali condotti anno scorso, presenti nei database di questa
-      IA."
-  - WhoIsSpeaking: 1
-    DialougueString: 'CORREZIONE: vuoto non salutare per fisico umano. Divertimento
-      incongruente con dossier in database. Richiesta spiegazione.'
+    DialougueString: "PARADOSSO: Studio Imperiale condotto anno scorso evidenzia
+      movimento 0g come \u2018divertente\u2019 . Incongruente con dati in database.
+      Vuoto non salutare per fisico umano. Richiesta spiegazione."
   - WhoIsSpeaking: 0
     DialougueString: "Non lo \xE8, fidati. Semmai ne riparliamo dopo."
   - WhoIsSpeaking: 1
     DialougueString: 'AFFERMAZIONE: ricevuto.'
   - WhoIsSpeaking: 1
     DialougueString: 'ORDINE: Ingegnere Riemann, richiesta presenza su ponte, computer
-      di bordo.'
-  - WhoIsSpeaking: 1
-    DialougueString: 'SPIEGAZIONE: integrazione sistemi mezzo impossibile altrimenti.'
+      di bordo; integrazione sistemi mezzo impossibile altrimenti.'
   - WhoIsSpeaking: 1
     DialougueString: 'AVVERTIMENTO: nel percorso sono presenti dei sistemi di difesa
       anti-intrusione attivi. Calibrazione sistemi IFF (Identificazione Amico/Nemico)
-      assenti nella loro programmazione.'
+      assente nella loro programmazione.'
   - WhoIsSpeaking: 0
     DialougueString: Scusami, avete abbastanza energia per delle trappole mortali
       ma non per permetterci di camminare normalmente?!
   - WhoIsSpeaking: 1
-    DialougueString: 'NOTIFICA: altra interfaccia Ada presente a fine percorso.'
-  - WhoIsSpeaking: 1
-    DialougueString: 'PROMEMORIA: Risparmio energia attivo.'
+    DialougueString: "NOTIFICA: altra interfaccia Ada presente a fine percorso. Inoltre,
+      deve ricordarsi che \xE8 attivo il risparmio energetico. Passo e chiudo."
   - WhoIsSpeaking: 0
     DialougueString: "...mi ha completamente ignorato\u2026"

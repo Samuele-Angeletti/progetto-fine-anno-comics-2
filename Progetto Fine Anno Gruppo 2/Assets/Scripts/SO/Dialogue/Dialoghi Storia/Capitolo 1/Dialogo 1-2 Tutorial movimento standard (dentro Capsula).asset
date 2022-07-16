@@ -13,47 +13,43 @@ MonoBehaviour:
   m_Name: Dialogo 1-2 Tutorial movimento standard (dentro Capsula)
   m_EditorClassIdentifier: 
   Dialogo:
-  - WhoIsSpeaking: 5
-    DialougueString: "CONFERMA: attracco riuscito. La attender\xF2 ora all\u2019uscita
-      della capsula per le procedure di entrata nella stazione."
   - WhoIsSpeaking: 0
-    DialougueString: "<i>(si preme la mano sul volto)</i> Oh no, \xE8 vero, ora devo
-      fare quel percorsaccio fino all\u2019uscita del modulo! Maledetto me!"
+    DialougueString: "Ok, attracco completato. Direi che \xE8 ora di uscire da qua
+      e fare quel percorsaccio prima dell'uscita."
   - WhoIsSpeaking: 0
     DialougueString: <i>(sospira con l'intenzione di farlo per tre anni di fila)</i>
   - WhoIsSpeaking: 1
-    DialougueString: 'DOMANDA: I suoi parametri vitali sono attualmente erratici,
+    DialougueString: 'PARERE: I suoi parametri vitali sono attualmente erratici,
       Ingegnere Riemann, le consiglio di-'
   - WhoIsSpeaking: 0
-    DialougueString: Tranquilli, Archimedes, sto bene.
-  - WhoIsSpeaking: 0
-    DialougueString: "A tal proposito, posso sapere qualcosa su questo posto? Dovr\xF2
-      lavorarci, quindi se possibile..."
+    DialougueString: "Tranquilli, Archimedes, sto bene. Per\xF2, a tal proposito,
+      potrei sapere qualcosa su questo posto? Dovr\xF2 lavorarci, quindi se possibile..."
   - WhoIsSpeaking: 1
     DialougueString: "RISPOSTA: Stazione di Osservazione Spaziale Archimedes. Manifatturiero:
       Impero Raniano. Scopo: osservazione, elaborazione, catalogazione dati di rilevazione
       astronomica della regione conosciuta come \u2018Deserto Astrale\u2019 per fenomeni
       anomali in Via Lattea."
   - WhoIsSpeaking: 1
-    DialougueString: 'CONTINUO: Data inizio costruzione: 4 anni fa. Data di attivazione:
-      TBD. Equipaggio aspettato: due persone.'
+    DialougueString: 'Data inizio costruzione: 4 anni fa. Data di attivazione: TBD.
+      Equipaggio aspettato: due persone.'
   - WhoIsSpeaking: 0
     DialougueString: Due? Almeno mi hanno dato un collega...chi sarebbe, a tal proposito?
   - WhoIsSpeaking: 1
     DialougueString: 'RISPOSTA: Ingegnere Ludwig Riemann e questa IA in comunicazione.'
-  - WhoIsSpeaking: 0
-    DialougueString: AH!
   - WhoIsSpeaking: 1
     DialougueString: 'PRESENTAZIONE: Ada, I.A. classe SOL; ruolo: osservazione, monitorazione,
       logistica.'
   - WhoIsSpeaking: 0
-    DialougueString: <i>(fischia)</i> Addirittura una SOL?
+    DialougueString: Ah! <i>(fischia)</i> Addirittura una SOL?
   - WhoIsSpeaking: 1
     DialougueString: "AFFERMAZIONE: questa stazione \xE8 stata prevista di essere
       provveduta del meglio che le tre nazioni stellari possono offrire lavorando
-      assieme in cooperazione."
+      assieme in cooperazione. Corpo Imperiale, sistemi informatici Triarchici, e
+      sistemi ambientali Ascendenti."
   - WhoIsSpeaking: 0
-    DialougueString: "Vedr\xF2 soltanto vivendo, che posso dire..."
+    DialougueString: "Per\xF2! Non mi sarei aspettato per niente si impegnassero
+      in un progetto del genere, dopo quel che \xE8 successo quattro anni fa! Per\xF2
+      mi sa vedr\xF2 tutto questo soltanto vivendo..."
   - WhoIsSpeaking: 1
     DialougueString: "AFFERMAZIONE: Ricevuto, la aspetter\xF2 all\u2019entrata della
       stazione."
