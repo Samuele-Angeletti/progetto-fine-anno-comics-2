@@ -52,6 +52,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2118436624229661633, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}
+      propertyPath: m_InteractioneAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ff779946dde2b6469df631a8d440895, type: 3}
+    - target: {fileID: 2118436624229661633, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}
       propertyPath: m_SceneEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -71,5 +75,9 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 322643547, guid: dcc71ccfd15affd48bb948d421d79cc0, type: 3}
+    - target: {fileID: 9156185849631768910, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5792194398389647083, guid: 32b170816a1f1694db956c85c224e545, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 037c20f53fba4bf46bd6ccc7f2fbd5eb, type: 3}

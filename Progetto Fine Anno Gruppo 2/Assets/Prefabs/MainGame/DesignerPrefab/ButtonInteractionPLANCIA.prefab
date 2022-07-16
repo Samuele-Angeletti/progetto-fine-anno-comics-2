@@ -58,6 +58,10 @@ MonoBehaviour:
   m_Active: 1
   m_OneShot: 0
   m_Activationlight: {fileID: 5047667539871724456}
+  m_SceneEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_InteractioneAudio: {fileID: 8300000, guid: 8ff779946dde2b6469df631a8d440895, type: 3}
 --- !u!61 &2118436624229661646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106,7 +110,7 @@ AudioSource:
   m_GameObject: {fileID: 2118436624229661647}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5792194398389647083, guid: 32b170816a1f1694db956c85c224e545, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
