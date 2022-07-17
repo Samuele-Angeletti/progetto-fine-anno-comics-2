@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogo:
   - WhoIsSpeaking: 0
-    DialougueString: Ada, sono giunto a destinazione.
-  - WhoIsSpeaking: 0
-    DialougueString: "Oh, mamma, se l\u2019ambiente qua \xE8 opprimente\u2026cavi
-      e tubi a vista d\u2019occhio\u2026\xE8 mai stato progettato per un essere umano
+    DialougueString: "Oh, mamma, l\u2019ambiente qua \xE8 opprimente\u2026cavi e
+      tubi a vista d\u2019occhio\u2026\xE8 mai stato progettato per un essere umano
       questo ambiente?"
   - WhoIsSpeaking: 2
     DialougueString: "Affermativo: questo \xE8 solo lo stile architettonico aerospaziale
@@ -33,10 +31,8 @@ MonoBehaviour:
   - WhoIsSpeaking: 2
     DialougueString: 'Risposta: prego.'
   - WhoIsSpeaking: 2
-    DialougueString: "Continuo: il processo che dovr\xE0 attuare sar\xE0 alquanto
-      simile a quanto gi\xE0 effettuato per la sua capsula, Ingegnere, per\xF2 il
-      pulsante per l\u2019integrazione si trova dove \xE8 presente lei attualmente,
-      in fondo al modulo."
+    DialougueString: 'Continuo: ripeta quanto fatto con la propria capsula, Ingegnere,
+      semplicemente prema il pulsante in fondo al modulo.'
   - WhoIsSpeaking: 2
     DialougueString: "Lei mander\xE0 semplicemente la proposta di handshake, e questa
       IA, nella nave, dar\xE0 l\u2019ok per il processo."

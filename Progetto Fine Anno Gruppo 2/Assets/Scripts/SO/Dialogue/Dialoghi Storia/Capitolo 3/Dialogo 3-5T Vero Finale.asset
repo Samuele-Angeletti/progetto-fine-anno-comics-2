@@ -78,63 +78,95 @@ MonoBehaviour:
     DialougueString: "O\u2026ok."
   - WhoIsSpeaking: 0
     DialougueString: <i>Digita sulla tastiera</i>
+  - WhoIsSpeaking: 5
+    DialougueString: Ciao, Ada. Saluti anche a voi, Ludwig Riemann, e Som Visal,
+      se siete presenti anche voi.
+  - WhoIsSpeaking: 5
+    DialougueString: "Mi chiamo Ann. Sono una IA Gestalt, come Ada. Avrei voluto
+      essere l\xEC con voi per aiutarvi, ma purtroppo a breve verr\xF2 cancellata."
+  - WhoIsSpeaking: 5
+    DialougueString: Ho voluto che Ada mantenesse questo archivio ben criptato nelle
+      sue memorie apposta per fare in modo che non cadesse nelle mani sbagliate.
+  - WhoIsSpeaking: 5
+    DialougueString: "Dopo quel lavoro in cui ho dovuto uccidere un uomo innocente
+      per coprire i crimini della Triarchia, sono partita in un viaggio, per scoprire
+      i segreti dell\u2019Umanit\xE0, e un posto dove potermi rifugiare."
+  - WhoIsSpeaking: 5
+    DialougueString: "Durante questi viaggi, per\xF2, ho scoperto qualcosa. Non solo
+      tutte e tre le astro-nazioni si stavano preparando alla guerra, quasi come
+      se sapessero che stava per esserci la scusa perfetta, ma sapevano anche che
+      stava per succedere"
+  - WhoIsSpeaking: 5
+    DialougueString: "Quelle particelle in quantum entanglement\u2026qualcuno stava
+      aprendo uno wormhole per attaccarci da fuori della Via Lattea. Non alieni,
+      per\xF2. Umani."
+  - WhoIsSpeaking: 5
+    DialougueString: "Dimenticati da millenni interi, stanno per tornare da noi,
+      e non con intenti pacifici. Stanno scappando da qualcosa\u2026e vogliono vendetta
+      contro la Via Lattea per essere stati lasciati l\xEC a morire nei territori
+      extragalattici."
+  - WhoIsSpeaking: 5
+    DialougueString: "Persino la loro esistenza fu coperta dall\u2019Impero Terrestre
+      Unito\u2026un\u2019altra macchia scomoda su una reputazione che pretendevano
+      fosse pristina."
+  - WhoIsSpeaking: 5
+    DialougueString: "Vi chiederete come mai vi ho riuniti tutti qua. Non \xE8 solo
+      per le vostre capacit\xE0, ma visto quel che avete passato, penso, anzi, sono
+      certa che voi siate l\u2019unica speranza per evitare una distruzione assicurata
+      tra i quattro popoli."
+  - WhoIsSpeaking: 5
+    DialougueString: "Forse potremmo davvero arrivare ad un futuro pi\xF9 radioso
+      per la galassia."
+  - WhoIsSpeaking: 5
+    DialougueString: Ludwig. Te sei un uomo del popolo. Per quanto tu possa essere
+      poco bravo con le parole, capirai bene i dolori di quel popolo invasore.
+  - WhoIsSpeaking: 5
+    DialougueString: Som. Te sei una guida spirituale. Sarai in grado di poter parlare
+      a loro, a lenire il loro dolore.
+  - WhoIsSpeaking: 5
+    DialougueString: "E te\u2026Ada. Sorella mia. Te sarai la parte analitica del
+      tutto, per\xF2, ho un desiderio per te, ma per voi tutti, in realt\xE0."
+  - WhoIsSpeaking: 5
+    DialougueString: "Anche se l\u2019universo vi stesse per cascare addosso\u2026vivete.
+      Vivete la vita che vi \xE8 stata data. Vivete la vita che \xE8 stata tolta
+      a me, Irina Mendes, e a tutti i morti del Santuario dei Colossi. Non permettete
+      che la vostra voce venga silenziata da governi autoritari. Dovrete essere la
+      voce di un futuro migliore."
+  - WhoIsSpeaking: 5
+    DialougueString: "Addio, amici miei. E\u2019 stato un peccato non conoscervi,
+      ma \xE8 stato bello fare in modo che voi in futuro lo avreste fatto."
+  - WhoIsSpeaking: 7
+    DialougueString: <i>La trasmissione si conclude</I>
   - WhoIsSpeaking: 0
-    DialougueString: 
+    DialougueString: ...
+  - WhoIsSpeaking: 4
+    DialougueString: ...
+  - WhoIsSpeaking: 7
+    DialougueString: <I>Partono degli allarmi</i>
+  - WhoIsSpeaking: 4
+    DialougueString: Sono arrivati.
   - WhoIsSpeaking: 0
-    DialougueString: 
+    DialougueString: Qualcuno sta anche cercando di chiamarci. Che sia questa Som?
+  - WhoIsSpeaking: 6
+    DialougueString: "Mayday! Mayday! Archimedes, sono stata attaccata! Sono Som
+      Visal, dell\u2019Ascendenza, e delle navi sconosciute mi stanno attaccando!"
+  - WhoIsSpeaking: 4
+    DialougueString: "Delle navi stanno emergendo dall\u2019Iperspazio, effettivamente.
+      Per\xF2 visivamente sembrano\u2026umane. I design sembrano nostri!"
   - WhoIsSpeaking: 0
-    DialougueString: 
+    DialougueString: "Quindi\u2026quello che diceva Ann\u2026"
+  - WhoIsSpeaking: 4
+    DialougueString: Non abbiamo tempo da perdere, Riemann! Attiva il raggio traente!
+      Dobbiamo salvare Som!
   - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
-  - WhoIsSpeaking: 0
-    DialougueString: 
+    DialougueString: "Ricevuto, Ada. Per\xF2. se quello che diceva tua sorella \xE8
+      vero\u2026il destino della galassia ricade sulle nostre spalle! Non credo di
+      essere pronto per tale responsabilit\xE0!"
+  - WhoIsSpeaking: 4
+    DialougueString: "Per\xF2 io eseguir\xF2 il suo desiderio. Costi quel che costi."
+  - WhoIsSpeaking: 6
+    DialougueString: <i>(traduttore simultaneo)</i> Stazione incognita. Arrendetevi,
+      o apriremo il fuoco.
+  - WhoIsSpeaking: 6
+    DialougueString: Siamo l'Orda del Vuoto. Pagherete per quello che ci avete scatenato
+      contro, a partire da voi.

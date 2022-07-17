@@ -15,7 +15,7 @@ MonoBehaviour:
   Dialogo:
   - WhoIsSpeaking: 0
     DialougueString: "Beh, aiutare l\u2019Impero ormai va contro i miei principi,
-      ma devo dire che questo attracco \xE8 stato qualcosa di veramente soddisfacente."
+      ma devo dire che questo \xE8 stato molto soddisfacente."
   - WhoIsSpeaking: 2
     DialougueString: "Quesito: la perplessit\xE0 allora \xE8 come mai ha accettato
       il lavoro qua sulla SOS Archimedes, Ingegnere."
@@ -56,8 +56,8 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: "Pensando potesse essere una trasmissione triarchica o ascendente,
       mi metto a decifrarla\u2026scoprendo, ahim\xE9, che si trattava dell\u2019Impero,
-      intento a muovere grosse quantit\xE0 di antimateria: notizia che ovviamente
-      non sarebbe dovuta trapelare."
+      intento a muovere grosse quantit\xE0 di antimateria in spazio neutrale: notizia
+      che ovviamente non sarebbe dovuta trapelare."
   - WhoIsSpeaking: 2
     DialougueString: "Domanda: richiesta ulteriore elaborazione su quest\u2019ultimo
       punto."
@@ -69,9 +69,9 @@ MonoBehaviour:
       e possegga in database gli eventi sommari."
   - WhoIsSpeaking: 0
     DialougueString: "Allora sappi che quel carico \xE8 passato pericolosamente vicino
-      ai sistemi di Andromeda\u2026se si fosse venuto a sapere, le persone si sarebbero
-      rivoltate contro l\u2019Imperatore Drasko, e inoltre saremmo molto probabilmente
-      stati accusati di aver scatenato il conflitto\u2026"
+      ai sistemi della costellazione di Andromeda\u2026se si fosse venuto a sapere,
+      le persone si sarebbero rivoltate contro l\u2019Imperatore Drasko, e inoltre
+      saremmo molto probabilmente stati accusati di aver scatenato il conflitto\u2026"
   - WhoIsSpeaking: 2
     DialougueString: "Affermativo: \xE8 grato per aver fornito una spiegazione dal
       suo punto di vista."

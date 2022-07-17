@@ -19,13 +19,13 @@ MonoBehaviour:
     DialougueString: "Spiegazione: per facilitare all\u2019equipaggio umano l\u2019operazione
       di ricarica dei moduli, \xE8 stata creata questa interfaccia apposita."
   - WhoIsSpeaking: 0
-    DialougueString: "Continuo: ogni fulmine raccolto provveder\xE0 al modulo una
-      percentuale di energia. Stia per\xF2 attento a non mandare energia alle parti
-      sbagliate della nave, rappresentate dai nemici nel gioco, le faranno perdere
-      tempo e risorse."
+    DialougueString: "Ogni fulmine raccolto provveder\xE0 al modulo una percentuale
+      di energia. Stia per\xF2 attento a non mandare energia alle parti sbagliate
+      della nave, rappresentate dai nemici nel gioco, le faranno perdere tempo e
+      risorse."
   - WhoIsSpeaking: 0
-    DialougueString: 'Conclusione: ricarichi il modulo e potremmo procedere col processo
-      di collegamento nuovamente.'
+    DialougueString: Ricarichi il modulo e potremmo procedere col processo di collegamento
+      nuovamente.
   - WhoIsSpeaking: 0
     DialougueString: "Sono abbastanza sicuro che questo sia anche un gioco che esiste
       dai tempi della Terra pre-et\xE0 cosmica\u2026"

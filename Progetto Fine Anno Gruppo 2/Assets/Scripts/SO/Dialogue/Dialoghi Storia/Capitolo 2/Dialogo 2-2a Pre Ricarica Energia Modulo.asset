@@ -16,9 +16,9 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: "Uhhhh\u2026Ada? Che sta succedendo?"
   - WhoIsSpeaking: 2
-    DialougueString: "Risposta: a quanto pare i motori del modulo sono completamente
-      scarichi. Non potr\xE0 muoverlo ulteriormente fino a che non lo riforniamo
-      in remoto di altra energia dai nostri generatori di emergenza."
+    DialougueString: "Risposta: i motori del modulo sono completamente scarichi.
+      Non potr\xE0 muoverlo ulteriormente fino a che non lo riforniamo in remoto
+      di energia dai nostri generatori di emergenza."
   - WhoIsSpeaking: 0
     DialougueString: "Ma quello \xE8 il modulo con i nostri generatori primari! Ed
       \xE8 scarico!"
@@ -28,10 +28,6 @@ MonoBehaviour:
     DialougueString: "<b>E non noti l\u2019incoerenza in tutto ci\xF2?!</b>"
   - WhoIsSpeaking: 2
     DialougueString: Negativo.
-  - WhoIsSpeaking: 0
-    DialougueString: ...
-  - WhoIsSpeaking: 2
-    DialougueString: ...
   - WhoIsSpeaking: 0
     DialougueString: ...
   - WhoIsSpeaking: 2

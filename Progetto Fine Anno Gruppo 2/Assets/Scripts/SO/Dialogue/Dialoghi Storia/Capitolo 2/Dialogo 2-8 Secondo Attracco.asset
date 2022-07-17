@@ -21,9 +21,13 @@ MonoBehaviour:
   - WhoIsSpeaking: 3
     DialougueString: "Come mai, se \xE8 possibile chiedere?"
   - WhoIsSpeaking: 0
-    DialougueString: Sono un gruppo terrificante di zeloti religiosi, che non esitano
-      a silenziare chiunque si opponga al loro credo. Secondo me devono essere quelle
-      piante che usano nei loro rituali, a controllarle.
+    DialougueString: Sono un gruppo terrificante di zeloti religiosi, e sono poco
+      aperti a collaborare con altri, specialmente se vi sono incluse tecnologie
+      avanzate come te.
+  - WhoIsSpeaking: 0
+    DialougueString: Non esitano a silenziare chiunque si opponga al loro credo.
+      Troppe piante dai fumi psichedelici ti distruggono il cervello e ti rendono
+      manipolabile!
   - WhoIsSpeaking: 0
     DialougueString: Curioso, in un certo modo, quindi voi siete simili.
   - WhoIsSpeaking: 0
@@ -35,11 +39,11 @@ MonoBehaviour:
       il futuro ideale per la specie, non crede?"
   - WhoIsSpeaking: 0
     DialougueString: ...!
-  - WhoIsSpeaking: 0
+  - WhoIsSpeaking: 3
     DialougueString: "I pattern sono identici, il modus operandi \xE8 identico, quindi
       \xE8 curioso che un Imperiale critichi qualcuno per gli stessi errori commessi
       da se stesso, non crede?"
-  - WhoIsSpeaking: 0
+  - WhoIsSpeaking: 3
     DialougueString: "In altre parole, come si diceva anticamente sulla Terra: \u2018da
       che pulpito\u2019."
   - WhoIsSpeaking: 0

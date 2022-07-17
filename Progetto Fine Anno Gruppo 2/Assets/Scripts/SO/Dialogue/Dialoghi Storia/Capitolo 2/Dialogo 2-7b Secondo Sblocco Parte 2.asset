@@ -13,20 +13,14 @@ MonoBehaviour:
   m_Name: Dialogo 2-7b Secondo Sblocco Parte 2
   m_EditorClassIdentifier: 
   Dialogo:
-  - WhoIsSpeaking: 5
-    DialougueString: <i>Riemann preme il pulsante</i>
-  - WhoIsSpeaking: 0
-    DialougueString: Fatto.
-  - WhoIsSpeaking: 5
+  - WhoIsSpeaking: 7
     DialougueString: "<i>C'\xE8 un calo di tensione momentaneo</i>"
   - WhoIsSpeaking: 0
     DialougueString: Ada, sono calate di nuovo le pr-prestazioni, ve-vero?!
-  - WhoIsSpeaking: 5
+  - WhoIsSpeaking: 7
     DialougueString: <i>Riemann sbatte al suolo con un tonfo rumoroso</i>
   - WhoIsSpeaking: 0
-    DialougueString: Ow! Questa ha fatto male!
-  - WhoIsSpeaking: 0
-    DialougueString: ...aspetta un secondo.
+    DialougueString: Ow! Questa ha fatto male! ...aspetta un secondo.
   - WhoIsSpeaking: 3
     DialougueString: "La gravit\xE0 \xE8 tornata permanentemente online con successo,
       Riemann. Ottimo lavoro."
@@ -34,8 +28,8 @@ MonoBehaviour:
     DialougueString: Ada! Stai bene!
   - WhoIsSpeaking: 0
     DialougueString: "E\u2019 stato semplicemente un piccolo attimo in cui andavano
-      riaggiustati i parametri e la potenza di calcolo. I moduli di espressione si
-      sono ulteriormente migliorati, ad esempio."
+      riaggiustati i parametri e la potenza di calcolo. I moduli di espressione sono
+      ulteriormente migliorati, ad esempio."
   - WhoIsSpeaking: 0
     DialougueString: "Oh, uh\u2026\xE8 vero."
   - WhoIsSpeaking: 3

@@ -16,36 +16,26 @@ MonoBehaviour:
   - WhoIsSpeaking: 0
     DialougueString: "...Ada? Che \xE8 \u2018sta roba?"
   - WhoIsSpeaking: 2
-    DialougueString: 'Spiegazione: questa IA ha bisogno di un corpo fisico per poter
-      operare dispositivi che richiedono intervento umano in sua assenza.'
+    DialougueString: "Spiegazione: questo corpo \xE8 stato preprato nell'evenienza
+      serva un corpo fisico per operare dispositivi vari."
   - WhoIsSpeaking: 0
-    DialougueString: "Ehm\u2026diciamo che mi fider\xF2."
-  - WhoIsSpeaking: 0
-    DialougueString: "Ok, per\xF2 ora che devo fare? Vedo questa interfaccia\u2026uhhh,
-      come facciamo a muovere il modulo? Non ha un equipaggio anch\u2019esso?"
-  - WhoIsSpeaking: 0
-    DialougueString: 'Negativo: tutti i moduli sono sprovvisti di equipaggio umano
-      o robotico. Controllo remoto richiesto.'
-  - WhoIsSpeaking: 0
-    DialougueString: "Ah! Quindi\u2026dobbiamo fare qua da noi?"
+    DialougueString: "Ehm\u2026diciamo che mi fider\xF2. Per\xF2...posso fare una
+      domanda?"
   - WhoIsSpeaking: 2
-    DialougueString: Affermativo.
+    DialougueString: 'Affermativo: chieda pure.'
   - WhoIsSpeaking: 0
     DialougueString: "Mi \xE8 stato detto che il mio obiettivo qua sarebbe la costruzione
       della Archimedes, mi sapresti spiegare di pi\xF9, per piacere?"
   - WhoIsSpeaking: 2
     DialougueString: 'Affermativo: la SOS Archimedes si compone di quattro componenti
-      previste, ognuna designata a fornire potenza di calcolo aggiuntiva ed energia
-      al sistema complessivo.'
+      previste, ognuna con uno scopo specifico.'
   - WhoIsSpeaking: 2
-    DialougueString: "\u201CContinuo: inoltre, ogni modulo ha una funzione ben specifica.
-      Il modulo che attualmente lei sta controllando, Ingegnere, \xE8 quello manifatturato
-      dalla Triarchia di Orione."
+    DialougueString: La capsula e il corpo della stazione, Imperiali, provvedono
+      la potenza di calcolo, il modulo Triarchico i generatori elettrici e il modulo
+      Ascendente i sistemi ambientali.
   - WhoIsSpeaking: 2
-    DialougueString: "Spiegazione: conterr\xE0 la maggior parte dei generatori primari
-      ed ausiliari della stazione, oltre a numerosi server e radar per l'osservazione
-      e la elaborazione dei dati. Grazie ad esso, inoltre, potremo ripristinare la
-      gravit\xE0 artificiale in tutta la stazione e in modo permanente."
+    DialougueString: "Con l'energia del modulo triarchico potremmo infatti far partire
+      tutta la strumentazione e ripristinare la gravit\xE0 artificiale permanentemente."
   - WhoIsSpeaking: 2
     DialougueString: "Ordine: Ingegnere Riemann, lei avr\xE0 l\u2019incarico di rilocalizzare,
       roteare e attraccare il modulo triarchico qua sulla stazione, e poi dovr\xE0
@@ -56,11 +46,9 @@ MonoBehaviour:
   - WhoIsSpeaking: 2
     DialougueString: ...
   - WhoIsSpeaking: 0
-    DialougueString: ...
-  - WhoIsSpeaking: 0
     DialougueString: "...perch\xE9 sono finite, vero?"
   - WhoIsSpeaking: 2
     DialougueString: "Update: sono giunte nuove informazioni sul modulo triarchico.
-      Esso possiede sistemi di difesa all\u2019avanguardia."
+      Esso possiede sistemi di difesa all\u2019avanguardia. IFF non rilevato."
   - WhoIsSpeaking: 0
     DialougueString: <i>Impreca in lingue ignote</i>
