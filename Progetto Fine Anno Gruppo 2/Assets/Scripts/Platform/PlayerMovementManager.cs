@@ -51,7 +51,7 @@ namespace MainGame
         public AudioSource JumpAudioSource;
         [Space(10)]
         public List<AudioClip> listPlayerStep;
-        public AudioClip jumpAudio;
+        public List<AudioClip> listJumpAudio;
         public AudioClip landedAudio;
 
 
@@ -110,6 +110,10 @@ namespace MainGame
             if (e.Data.Name == "Passi Camminata")
             {
                 stepAudioSource.PlayOneShot(AudioManager.GetRandomAudioClip(listPlayerStep));
+            }
+            if (e.Data.Name == "Salto Sforzo")
+            {
+                JumpAudioSource.PlayOneShot(AudioManager.GetRandomAudioClip(listJumpAudio));
             }
         }
 

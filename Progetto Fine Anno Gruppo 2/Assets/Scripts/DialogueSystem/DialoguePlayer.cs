@@ -11,16 +11,35 @@ using ArchimedesMiniGame;
 
 public class DialoguePlayer : MonoBehaviour, ISubscriber
 {
-
-    public GameObject dialogueBox;
-    public TextMeshProUGUI textToWrite;
-    public Image spriteToChange;
-    public GameObject ContinueMessage;
+    public DialogueBox dialogueBox;
+    private GameObject m_dialogueBox;
+    private TextMeshProUGUI m_textToWrite;
+    private Image m_spriteToChange;
+    private GameObject m_continueMessage;
 
     [SerializeField] private PlayerInputSystem m_PlayerInputs;
     private Queue<string> m_dialogueLine;
     private Queue<ESpeaker> m_whoIsSpeakingRightNow;
+    private void InitializeVariable()
+    {
+        if (dialogueBox == null)
+        {
+            dialogueBox = FindObjectOfType<DialogueBox>();
+            if (dialogueBox == null)
+            {
+                Debug.Log("NON è PRESENTE UNA BOX DI DIALOGO");
+            }
+            
+        }
+        else if (dialogueBox != null)
+        {
+            m_dialogueBox = dialogueBox.dialogueBox;
+            m_textToWrite = dialogueBox.textToWrite;
+            m_spriteToChange = dialogueBox.spriteToChange;
+            m_continueMessage = dialogueBox.ContinueMessage;
+        }
 
+    }
 
     /* Risolvere problema con il cambio di controllable
      * Risolvere attivazione del dialogue box quando si entra nella modalità navicella
@@ -68,10 +87,12 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
     private void Awake()
     {
+        InitializeVariable();
         DontDestroyOnLoad(gameObject);
         m_whoIsSpeakingRightNow = new Queue<ESpeaker>();
     }
 
+    
 
     private void Start()
     {
@@ -104,7 +125,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         {
             standardMessageIsPlaying = false;
             StopAllCoroutines();
-            dialogueBox.SetActive(false);
+            m_dialogueBox.SetActive(false);
         }
         else if (message is ZeroGMessage)
         {
@@ -140,7 +161,10 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             objectToDestroy.gameObject.SetActive(false);
         }
     }
-
+    public void StartDialogueForEvent(DialogueHolderSO dialogo)
+    {
+        PubSub.PubSub.Publish(new StartDialogueMessage(dialogo.Dialogo, false));
+    }
 
     public IEnumerator Startdialogue(List<DialogueLine> dialogueToEnqueue)
     {
@@ -149,8 +173,8 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         if (dialogueToEnqueue == null) yield return null;
         m_dialogueLine.Clear();
 
-        dialogueBox.SetActive(true);
-	    ContinueMessage.SetActive(false);
+        m_dialogueBox.SetActive(true);
+	    m_continueMessage.SetActive(false);
         for (int i = 0; i < dialogueToEnqueue.Count; i++)
         {
             m_whoIsSpeakingRightNow.Enqueue(dialogueToEnqueue[i].WhoIsSpeaking);
@@ -180,7 +204,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
 
             ChangeSpeakerImage();
 
-            yield return TypeWriteEffect(temp, textToWrite);
+            yield return TypeWriteEffect(temp, m_textToWrite);
         }
         if (m_dialogueLine.Count == 0)
         {
@@ -197,27 +221,27 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
         ESpeaker whoIsSpeakingRightNow = m_whoIsSpeakingRightNow.Dequeue();
         if (whoIsSpeakingRightNow == ESpeaker.Vuoto)
         {
-            spriteToChange.sprite = null;
+            m_spriteToChange.sprite = null;
         }
         else if (whoIsSpeakingRightNow == ESpeaker.Riemann)
         {
-            spriteToChange.sprite = spritePlayer;
+            m_spriteToChange.sprite = spritePlayer;
         }
         else if (whoIsSpeakingRightNow == ESpeaker.AdaPreIntegrazione)
         {
-            spriteToChange.sprite = spriteAdaPreIntegrazione;
+            m_spriteToChange.sprite = spriteAdaPreIntegrazione;
         }
         else if (whoIsSpeakingRightNow == ESpeaker.AdaPrimaIntegrazione)
         {
-            spriteToChange.sprite = spriteAdaPrimaIntegrazione;
+            m_spriteToChange.sprite = spriteAdaPrimaIntegrazione;
         }
         else if (whoIsSpeakingRightNow == ESpeaker.AdaSecondaIntegrazione)
         {
-            spriteToChange.sprite = spriteAdaSecondaIntegrazione;
+            m_spriteToChange.sprite = spriteAdaSecondaIntegrazione;
         }
         else
         {
-            spriteToChange.sprite = spriteAdaFormaFinale;
+            m_spriteToChange.sprite = spriteAdaFormaFinale;
         }
 
     }
@@ -254,7 +278,7 @@ public class DialoguePlayer : MonoBehaviour, ISubscriber
             yield return null;
         }
 
-        ContinueMessage.SetActive(true);
+        m_continueMessage.SetActive(true);
         yield return new WaitUntil(() => m_PlayerInputs.inputControls.Player.Interaction.phase == UnityEngine.InputSystem.InputActionPhase.Performed);
 
         dialogueIsPlaying = false;

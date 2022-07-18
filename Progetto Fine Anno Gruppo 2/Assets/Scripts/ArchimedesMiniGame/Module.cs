@@ -31,6 +31,13 @@ namespace ArchimedesMiniGame
         [SerializeField] float m_MaxBattery;
         [SerializeField] float m_UseSpeed;
         [Space(10)]
+        [Header("Audio clip")]
+        [SerializeField] AudioClip m_engineBootAudio;
+        [SerializeField] AudioClip m_engineDecelleration;
+        [SerializeField] AudioClip m_engineAccelleration;
+        [Space(10)]
+        [Header("Burst Settings")]
+        [Space(10)]
         [SerializeField] Transform m_BurstPivot;
         [SerializeField] ParticleSystem m_BurstVFXPrefab;
         [Header("Docking Event")]
@@ -62,6 +69,7 @@ namespace ArchimedesMiniGame
         private SpriteTransition m_SpriteTransition;
         private bool m_EngineOn;
         private ParticleSystem m_SpawnedEffect;
+        private AudioSource m_AudioSource;
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -71,6 +79,7 @@ namespace ArchimedesMiniGame
             m_MaxSpeedVector = new Vector2(m_MaxSpeed, m_MaxSpeed);
             m_SavableEntity = GetComponent<SavableEntity>();
             m_SpriteTransition = GetComponent<SpriteTransition>();
+            m_AudioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -103,7 +112,26 @@ namespace ArchimedesMiniGame
 
                 UpdateMovement();
                 UpdateRotation();
+                UpdateAudio();
             }
+        }
+
+        private void UpdateAudio()
+        {
+            //if (m_Rigidbody.velocity.x > 0 || m_Rigidbody.velocity.y > 0 )
+            //{
+            //    if (m_Rigidbody.velocity.x < 10 || m_Rigidbody.velocity.y < 10)
+            //    {
+            //        m_AudioSource.clip = m_engineBootAudio;
+            //        m_AudioSource.Play();
+            //        if (m_AudioSource.isPlaying) return;
+                    
+
+                  
+
+            //    }
+
+            //}
         }
 
         private void UpdateRotation()
@@ -444,6 +472,7 @@ namespace ArchimedesMiniGame
             }
             else if (message is StartEngineModuleMessage)
             {
+                m_AudioSource.PlayOneShot(m_engineBootAudio);
                 m_SpriteTransition.ActiveSpriteTransparencyTransition(m_ExternalSprite, EDirection.Up);
                 m_ExternalCollider.enabled = true;
                 m_MapParent.SetActive(false);

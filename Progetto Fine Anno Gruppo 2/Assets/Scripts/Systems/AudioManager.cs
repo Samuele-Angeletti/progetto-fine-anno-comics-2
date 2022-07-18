@@ -45,7 +45,8 @@ public class AudioManager : MonoBehaviour, ISubscriber
         }
         else
             Destroy(gameObject);
-        m_AudioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+        m_AudioSourceMusica.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("BackGroundMusic").Single();
+        m_AudioSourceAmbience.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("AmbientSound").Single();
 
 
 
@@ -56,10 +57,10 @@ public class AudioManager : MonoBehaviour, ISubscriber
 
     [Header("MENU MUSIC")]
     [SerializeField] AudioClip m_musicaMenùPrincipale;
-    [SerializeField] AudioClip m_suonoAmbientaleCapsula;
     [ReadOnly]public AudioClip musicaDaSuonare;
     [Header("AUDIO REFERENCE")]
-    [SerializeField] AudioSource m_AudioSource;
+    [SerializeField] AudioSource m_AudioSourceMusica;
+    [SerializeField] AudioSource m_AudioSourceAmbience;
     [SerializeField] AudioMixer m_audioMixer;
     [Header("FADING SETTINGS")]
     public float fadeInTime;
@@ -68,17 +69,10 @@ public class AudioManager : MonoBehaviour, ISubscriber
     [SerializeField,ReadOnly] bool m_courutineIsStarted = false;
 
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += this.OnSceneChange;
-    }
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= this.OnSceneChange;
-    }
 
 
-private void Start()
+
+    private void Start()
     {
         PubSub.PubSub.Subscribe(this, typeof(SendAudioSettingsMessage));
         PubSub.PubSub.Subscribe(this, typeof(OnTriggerEnterAudio));
@@ -95,23 +89,6 @@ private void Start()
 
     }
 
-    private void OnSceneChange(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "MainMenu 1")
-        {
-            if (m_AudioSource.clip != m_musicaMenùPrincipale)
-            {
-                PubSub.PubSub.Publish(new SendAudioMessage(m_musicaMenùPrincipale));
-            }
-        }
-        if (scene.name == "TestPlatformPuzzle1")
-        {
-            if (m_AudioSource.clip != m_musicaMenùPrincipale)
-            {
-                PubSub.PubSub.Publish(new SendAudioMessage(m_suonoAmbientaleCapsula));
-            }
-        }
-    }
 
 
 
@@ -135,7 +112,10 @@ private void Start()
         m_audioMixer.SetFloat("Master_Volume", Mathf.Log10(value) * 20);
     }
     #endregion
-
+    public void ChangeMusicAndPlay(AudioClip clip)
+    {
+        PubSub.PubSub.Publish(new SendAudioMessage(clip));
+    }
 
 
     public void OnPublish(IMessage message)
@@ -145,15 +125,15 @@ private void Start()
         {
             SendAudioMessage audio = (SendAudioMessage)message;
             musicaDaSuonare = audio.audioClipToSend;
-            if (m_AudioSource.clip != null)
+            if (m_AudioSourceMusica.clip != null)
             {
                 this.RunCoroutine(FadeOutAndIn(musicaDaSuonare));
             }
-            else if (m_AudioSource.clip == null)
+            else if (m_AudioSourceMusica.clip == null)
             {
-                m_AudioSource.clip = musicaDaSuonare;
-                m_AudioSource.Play();
-                this.RunCoroutine(WaitForFade(m_AudioSource, fadeOutTime, 1));
+                m_AudioSourceMusica.clip = musicaDaSuonare;
+                m_AudioSourceMusica.Play();
+                this.RunCoroutine(WaitForFade(m_AudioSourceMusica, fadeOutTime, 1));
 
 
             }
@@ -162,16 +142,16 @@ private void Start()
         else if (message is SendAudioSettingsMessage)
         {
             SendAudioSettingsMessage settings = (SendAudioSettingsMessage)message;
-            m_AudioSource.playOnAwake = settings.m_PlayOnAwake;
-            m_AudioSource.loop = settings.m_CanLoop;
+            m_AudioSourceMusica.playOnAwake = settings.m_PlayOnAwake;
+            m_AudioSourceMusica.loop = settings.m_CanLoop;
         }
         else if (message is PauseGameMessage)
         {
-            m_AudioSource.Stop();
+            m_AudioSourceMusica.Stop();
         }
         else if (message is ResumeGameMessage)
         {
-            m_AudioSource.Play();
+            m_AudioSourceMusica.Play();
         }
     }
 
@@ -179,9 +159,9 @@ private void Start()
 
     private IEnumerator FadeOutAndIn(AudioClip audio)
     {
-        var coroutine = this.RunCoroutine(WaitForFade(m_AudioSource,audio, fadeOutTime, 0));
+        var coroutine = this.RunCoroutine(WaitForFade(m_AudioSourceMusica,audio, fadeOutTime, 0));
         yield return new WaitUntil(() => coroutine.IsDone);
-        this.RunCoroutine(WaitForFade(m_AudioSource, fadeInTime, 1));
+        this.RunCoroutine(WaitForFade(m_AudioSourceMusica, fadeInTime, 1));
         
     }
 

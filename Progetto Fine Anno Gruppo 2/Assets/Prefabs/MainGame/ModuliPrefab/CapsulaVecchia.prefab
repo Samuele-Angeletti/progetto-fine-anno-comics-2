@@ -274,6 +274,18 @@ MonoBehaviour:
   m_UseSpeed: 0
   m_BurstPivot: {fileID: 0}
   m_BurstVFXPrefab: {fileID: 0}
+  m_OnDocking:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DialogueDocking: {fileID: 0}
+  m_OnNoBattery:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DialogueNoBattery: {fileID: 0}
+  m_OnModuleDestroied:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DialogueDestroied: {fileID: 0}
 --- !u!114 &5079094606706925621
 MonoBehaviour:
   m_ObjectHideFlags: 0

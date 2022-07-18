@@ -231,7 +231,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 157bce725c3d80e468233940ec168238, type: 3}
   - {fileID: 8300000, guid: 7db6c8504988f724b806a28011009a78, type: 3}
   - {fileID: 8300000, guid: 404d7c7f757a6b34da7460a018627d53, type: 3}
-  jumpAudio: {fileID: 0}
+  listJumpAudio:
+  - {fileID: 8300000, guid: a593e48cad853544b8f01447f6891a9f, type: 3}
+  - {fileID: 8300000, guid: 6153161980101574fbf92c105bcc4977, type: 3}
+  - {fileID: 8300000, guid: e3e3074342092d2478a06ea10b86f31b, type: 3}
+  - {fileID: 8300000, guid: bf1c9036a560aaf4faf2dae50eba8bd4, type: 3}
   landedAudio: {fileID: 0}
   CurrentDirection: 0
 --- !u!114 &543330954
